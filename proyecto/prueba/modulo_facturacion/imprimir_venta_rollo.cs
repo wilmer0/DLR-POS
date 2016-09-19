@@ -83,14 +83,7 @@ namespace puntoVenta
                 double efectivo = double.Parse(ds.Tables[0].Rows[0][16].ToString());
                 double devuelta = double.Parse(ds.Tables[0].Rows[0][17].ToString());
                 double tarjeta = double.Parse(ds.Tables[0].Rows[0][18].ToString());
-
-
-                //datos detalle factura
-
-
-
-
-               
+                                      
                
                
                
@@ -180,6 +173,7 @@ namespace puntoVenta
                 ds = Utilidades.ejecutarcomando(sql);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
+                    //datos detalle facturas
 
                     letras_size = 5;
                    
@@ -273,8 +267,5 @@ namespace puntoVenta
                 this.Close();
             }
         }
-
-
-
     }
 }

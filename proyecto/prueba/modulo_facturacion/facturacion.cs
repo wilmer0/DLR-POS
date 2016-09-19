@@ -41,12 +41,12 @@ namespace puntoVenta
                 }
                 if (s.puede_crear_pedidos == false)
                 {
-                    ck_pedido.Checked = false;
-                    ck_pedido.Enabled = false;
+                    pedicoCheck.Checked = false;
+                    pedicoCheck.Enabled = false;
                     button12.Enabled = false;
                     button12.BackColor = Color.Black;
                 }
-                ck_credito.Checked = true;
+                
                 //fecha_actual = fecha.Value.ToString("yyyy/MM/dd");
                 cargar_cajero();
                 cargar_comprobantes();
@@ -194,7 +194,7 @@ namespace puntoVenta
 
         }
 
-        private void ck_contado_CheckedChanged(object sender, EventArgs e)
+        private void contadoCheck_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -425,7 +425,7 @@ namespace puntoVenta
 
         }
 
-        private void ck_credito_CheckedChanged(object sender, EventArgs e)
+        private void creditoCheck_CheckedChanged(object sender, EventArgs e)
         {
 
         }
@@ -490,54 +490,11 @@ namespace puntoVenta
             }
         }
 
-        private void ck_credito_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ck_credito.Checked = true;
-                ck_cotizacion.Checked = false;
-                ck_pedido.Checked = false;
-                ck_contado.Checked = false;
-                fecha_hasta.Enabled = true;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error seleccionando el tipo de facturacion");
-            }
-        }
+       
 
-        private void ck_contado_Click(object sender, EventArgs e)
-        {
-            try
-            {
+       
 
-                ck_credito.Checked = false;
-                ck_pedido.Checked = false;
-                fecha_hasta.Enabled = false;
-                ck_contado.Checked = true;
-                ck_cotizacion.Checked = false;
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error seleccionando el tipo de facturacion");
-            }
-        }
-
-        private void ck_cotizacion_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //dias_txt.ReadOnly = true;
-                ck_credito.Checked = false;
-                ck_contado.Checked = false;
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error seleccionando el tipo de facturacion");
-            }
-        }
+       
 
         private void label10_Click(object sender, EventArgs e)
         {
@@ -956,7 +913,7 @@ namespace puntoVenta
                     {
                         if (s.facturacion == true)
                         {
-                            if (ck_contado.Checked == true)
+                            if (contadoCheck.Checked == true)
                             {
                                 /*
                                  ALTER proc [dbo].[insert_factura]
@@ -1053,7 +1010,7 @@ namespace puntoVenta
                                         //se buscara sus deudas siempre y cuando la factura sea a credito
                                         //si es al contado no se busca si debe ya que pagara en efectivo
                                         string tipo_venta = "";
-                                        if (ck_credito.Checked == true)
+                                        if (creditoCheck.Checked == true)
                                         {
                                             tipo_venta = "CRE";
                                             if (limite_credito.ToString() != "0")//para saber que el limite no esta por default
@@ -1117,7 +1074,7 @@ namespace puntoVenta
                                     //donde se puede modificar el pedido
                                     if (codigo_factura_txt.Text.Trim() != "")
                                     {
-                                        if (ck_pedido.Checked == true)
+                                        if (pedicoCheck.Checked == true)
                                         {
                                             string sql = "delete from factura_detalle where cod_factura='" + codigo_factura_txt.Text.Trim() + "'";
                                             DataSet ds = Utilidades.ejecutarcomando(sql);
@@ -1276,9 +1233,9 @@ namespace puntoVenta
                         dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString());
                     }
                     calcular_total();
-                    ck_contado.Checked = false;
-                    ck_credito.Checked = false;
-                    ck_pedido.Checked = true;
+                    contadoCheck.Checked = false;
+                    creditoCheck.Checked = false;
+                    pedicoCheck.Checked = true;
                 }
                 else
                 {
@@ -1415,15 +1372,15 @@ namespace puntoVenta
             }
         }
 
-        private void ck_pedido_Click(object sender, EventArgs e)
+        private void pedicoCheck_Click(object sender, EventArgs e)
         {
             try
             {
-                ck_pedido.Checked = true;
-                ck_contado.Checked = false;
-                ck_credito.Checked = false;
+                pedicoCheck.Checked = true;
+                contadoCheck.Checked = false;
+                creditoCheck.Checked = false;
                 fecha_hasta.Enabled = true;
-                ck_cotizacion.Checked = false;
+                cotizacionCheck.Checked = false;
             }
             catch (Exception)
             {
@@ -1443,15 +1400,15 @@ namespace puntoVenta
                 s = singleton.obtenerDatos();
                 //no se le calcula el limite de credito
                 string tipo_venta = "";
-                if (ck_contado.Checked == true)
+                if (contadoCheck.Checked == true)
                 {
                     tipo_venta = "CON";
                 }
-                if (ck_credito.Checked == true)
+                if (creditoCheck.Checked == true)
                 {
                     tipo_venta = "CRE";
                 }
-                if (ck_pedido.Checked == true)
+                if (pedicoCheck.Checked == true)
                 {
                     tipo_venta = "PED";
                 }
@@ -1472,12 +1429,12 @@ namespace puntoVenta
                 }
                 //entrar los productos al detalle de la factura
                 actualiza_factura_producto();
-                if (ck_contado.Checked == true)
+                if (contadoCheck.Checked == true)
                 {
                     sql = "update factura set efectivo='" + efectivo_global.ToString() + "', devuelta ='" + devuelta_global.ToString() + "',cheque='" + cheque_global.ToString() + "',deposito='" + deposito_global.ToString() + "',tarjeta='" + tarjeta_global.ToString() + "',cod_orden_compra='" + cod_orden_compra_global.ToString() + "',monto_orden_compra='" + monto_orden_compra_global.ToString() + "',descuento='" + descuento_global.ToString() + "' where codigo='" + codigo_factura_txt.Text.Trim() + "'";
                     Utilidades.ejecutarcomando(sql);
                 }
-                if (ck_pedido.Checked == true)
+                if (pedicoCheck.Checked == true)
                 {
                     double total = Convert.ToDouble(cantidad_total_factura_txt.Text.Trim());
                     sql = "update factura set efectivo='0', devuelta ='0',cheque='0',deposito='0',tarjeta='0',cod_orden_compra='0',monto_orden_compra='0',cod_vendedor='" + s.codigo_usuario.ToString() + "',descuento='0' where codigo='" + codigo_factura_txt.Text.Trim() + "'";
@@ -1527,9 +1484,9 @@ namespace puntoVenta
                 //cantidad_total_factura_txt.Clear();
                 //cambio_unidad();
                 dataGridView1.Rows.Clear();
-                //ck_contado.Checked = false;
-                //ck_cotizacion.Checked = false;
-                //ck_credito.Checked = true;
+                //contadoCheck.Checked = false;
+                //cotizacionCheck.Checked = false;
+                //creditoCheck.Checked = true;
 
             }
             catch(Exception ex)
@@ -1566,12 +1523,12 @@ namespace puntoVenta
             }
         }
 
-        private void ck_cotizacion_Click_1(object sender, EventArgs e)
+        private void cotizacionCheck_Click_1(object sender, EventArgs e)
         {
-            ck_cotizacion.Checked = true;
-            ck_contado.Checked = false;
-            ck_credito.Checked = false;
-            ck_pedido.Checked = false;
+            cotizacionCheck.Checked = true;
+            contadoCheck.Checked = false;
+            creditoCheck.Checked = false;
+            pedicoCheck.Checked = false;
         }
         public void cargar_porciento_propina()
         {

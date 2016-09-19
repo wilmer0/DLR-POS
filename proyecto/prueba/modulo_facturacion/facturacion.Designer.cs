@@ -38,8 +38,6 @@
             this.codigo_cliente_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nombre_cliente_txt = new System.Windows.Forms.TextBox();
-            this.ck_credito = new System.Windows.Forms.CheckBox();
-            this.ck_contado = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +86,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.codigo_cajero_txt = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ck_cotizacion = new System.Windows.Forms.CheckBox();
-            this.ck_pedido = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.codigo_tipo_comprobante_txt = new System.Windows.Forms.TextBox();
             this.numero_comprobante_fiscal_txt = new System.Windows.Forms.TextBox();
@@ -119,6 +115,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ck_propina = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.creditoCheck = new System.Windows.Forms.RadioButton();
+            this.contadoCheck = new System.Windows.Forms.RadioButton();
+            this.pedicoCheck = new System.Windows.Forms.RadioButton();
+            this.cotizacionCheck = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -154,36 +154,6 @@
             this.nombre_cliente_txt.Name = "nombre_cliente_txt";
             this.nombre_cliente_txt.Size = new System.Drawing.Size(188, 20);
             this.nombre_cliente_txt.TabIndex = 43;
-            // 
-            // ck_credito
-            // 
-            this.ck_credito.AutoSize = true;
-            this.ck_credito.Checked = true;
-            this.ck_credito.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ck_credito.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_credito.ForeColor = System.Drawing.Color.Black;
-            this.ck_credito.Location = new System.Drawing.Point(5, 60);
-            this.ck_credito.Name = "ck_credito";
-            this.ck_credito.Size = new System.Drawing.Size(89, 28);
-            this.ck_credito.TabIndex = 47;
-            this.ck_credito.Text = "Credito";
-            this.ck_credito.UseVisualStyleBackColor = true;
-            this.ck_credito.CheckedChanged += new System.EventHandler(this.ck_credito_CheckedChanged);
-            this.ck_credito.Click += new System.EventHandler(this.ck_credito_Click);
-            // 
-            // ck_contado
-            // 
-            this.ck_contado.AutoSize = true;
-            this.ck_contado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_contado.ForeColor = System.Drawing.Color.Black;
-            this.ck_contado.Location = new System.Drawing.Point(192, 60);
-            this.ck_contado.Name = "ck_contado";
-            this.ck_contado.Size = new System.Drawing.Size(100, 28);
-            this.ck_contado.TabIndex = 48;
-            this.ck_contado.Text = "Contado";
-            this.ck_contado.UseVisualStyleBackColor = true;
-            this.ck_contado.CheckedChanged += new System.EventHandler(this.ck_contado_CheckedChanged);
-            this.ck_contado.Click += new System.EventHandler(this.ck_contado_Click);
             // 
             // dataGridView1
             // 
@@ -803,43 +773,16 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.ck_cotizacion);
-            this.panel3.Controls.Add(this.ck_pedido);
+            this.panel3.Controls.Add(this.cotizacionCheck);
+            this.panel3.Controls.Add(this.pedicoCheck);
+            this.panel3.Controls.Add(this.contadoCheck);
+            this.panel3.Controls.Add(this.creditoCheck);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.ck_credito);
-            this.panel3.Controls.Add(this.ck_contado);
             this.panel3.Location = new System.Drawing.Point(348, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(295, 192);
             this.panel3.TabIndex = 69;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // ck_cotizacion
-            // 
-            this.ck_cotizacion.AutoSize = true;
-            this.ck_cotizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_cotizacion.ForeColor = System.Drawing.Color.Black;
-            this.ck_cotizacion.Location = new System.Drawing.Point(5, 102);
-            this.ck_cotizacion.Name = "ck_cotizacion";
-            this.ck_cotizacion.Size = new System.Drawing.Size(116, 28);
-            this.ck_cotizacion.TabIndex = 96;
-            this.ck_cotizacion.Text = "Cotizacion";
-            this.ck_cotizacion.UseVisualStyleBackColor = true;
-            this.ck_cotizacion.Visible = false;
-            this.ck_cotizacion.Click += new System.EventHandler(this.ck_cotizacion_Click_1);
-            // 
-            // ck_pedido
-            // 
-            this.ck_pedido.AutoSize = true;
-            this.ck_pedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_pedido.ForeColor = System.Drawing.Color.Black;
-            this.ck_pedido.Location = new System.Drawing.Point(100, 60);
-            this.ck_pedido.Name = "ck_pedido";
-            this.ck_pedido.Size = new System.Drawing.Size(89, 28);
-            this.ck_pedido.TabIndex = 84;
-            this.ck_pedido.Text = "Pedido";
-            this.ck_pedido.UseVisualStyleBackColor = true;
-            this.ck_pedido.Click += new System.EventHandler(this.ck_pedido_Click);
             // 
             // label14
             // 
@@ -1186,6 +1129,52 @@
             this.groupBox2.TabIndex = 100;
             this.groupBox2.TabStop = false;
             // 
+            // creditoCheck
+            // 
+            this.creditoCheck.AutoSize = true;
+            this.creditoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditoCheck.Location = new System.Drawing.Point(109, 62);
+            this.creditoCheck.Name = "creditoCheck";
+            this.creditoCheck.Size = new System.Drawing.Size(88, 29);
+            this.creditoCheck.TabIndex = 97;
+            this.creditoCheck.Text = "crédito";
+            this.creditoCheck.UseVisualStyleBackColor = true;
+            // 
+            // contadoCheck
+            // 
+            this.contadoCheck.AutoSize = true;
+            this.contadoCheck.Checked = true;
+            this.contadoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contadoCheck.Location = new System.Drawing.Point(5, 60);
+            this.contadoCheck.Name = "contadoCheck";
+            this.contadoCheck.Size = new System.Drawing.Size(100, 29);
+            this.contadoCheck.TabIndex = 98;
+            this.contadoCheck.TabStop = true;
+            this.contadoCheck.Text = "contado";
+            this.contadoCheck.UseVisualStyleBackColor = true;
+            // 
+            // pedicoCheck
+            // 
+            this.pedicoCheck.AutoSize = true;
+            this.pedicoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pedicoCheck.Location = new System.Drawing.Point(204, 62);
+            this.pedicoCheck.Name = "pedicoCheck";
+            this.pedicoCheck.Size = new System.Drawing.Size(89, 29);
+            this.pedicoCheck.TabIndex = 99;
+            this.pedicoCheck.Text = "pedido";
+            this.pedicoCheck.UseVisualStyleBackColor = true;
+            // 
+            // cotizacionCheck
+            // 
+            this.cotizacionCheck.AutoSize = true;
+            this.cotizacionCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cotizacionCheck.Location = new System.Drawing.Point(5, 102);
+            this.cotizacionCheck.Name = "cotizacionCheck";
+            this.cotizacionCheck.Size = new System.Drawing.Size(117, 29);
+            this.cotizacionCheck.TabIndex = 100;
+            this.cotizacionCheck.Text = "cotización";
+            this.cotizacionCheck.UseVisualStyleBackColor = true;
+            // 
             // facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1233,8 +1222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nombre_cliente_txt;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox ck_credito;
-        private System.Windows.Forms.CheckBox ck_contado;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1286,7 +1273,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox numero_comprobante_fiscal_txt;
         private System.Windows.Forms.TextBox codigo_tipo_comprobante_txt;
-        private System.Windows.Forms.CheckBox ck_pedido;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button15;
@@ -1297,7 +1283,6 @@
         private System.Windows.Forms.TextBox monto_descuento_txt;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.CheckBox ck_cotizacion;
         private System.Windows.Forms.TextBox porciento_propina_txt;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1313,5 +1298,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descuento_grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn importe;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton creditoCheck;
+        private System.Windows.Forms.RadioButton contadoCheck;
+        private System.Windows.Forms.RadioButton pedicoCheck;
+        private System.Windows.Forms.RadioButton cotizacionCheck;
     }
 }
