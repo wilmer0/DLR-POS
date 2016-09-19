@@ -1060,7 +1060,7 @@ namespace puntoVenta
                                             {
                                                 if (Convert.ToDouble(monto_permitido.ToString()) >= Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()))
                                                 {
-                                                    string sql = "exec insert_factura '" + DateTime.Now.ToString() + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                                                    string sql = "exec insert_factura '" + DateTime.Now.ToString("yyyy-MM-ff") + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
                                                     DataSet ds = Utilidades.ejecutarcomando(sql);
                                                     if (ds.Tables[0].Rows.Count > 0)
                                                     {
@@ -1456,7 +1456,8 @@ namespace puntoVenta
                     tipo_venta = "PED";
                 }
                 s = singleton.obtenerDatos();
-                string sql = "exec insert_factura '" + DateTime.Now.ToString() + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                //MessageBox.Show(DateTime.Now + " - " + DateTime.Today + " - " + DateTime.Now.ToString("yyyy-MM-dd")+ " - "+DateTime.Today.ToString("yyyy-MM-dd"));
+                string sql = "exec insert_factura '" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
 
                 if (ds.Tables[0].Rows[0][0].ToString() != "")
