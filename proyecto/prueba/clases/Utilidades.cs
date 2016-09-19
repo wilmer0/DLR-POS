@@ -13,6 +13,8 @@ using System.Net.Mail;
 using System.Net;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO.Compression;
+
 
 namespace puntoVenta
 {
@@ -319,6 +321,102 @@ namespace puntoVenta
             catch (Exception ex)
             {
                 MessageBox.Show("Error enviando correo electrónico: " + ex.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
+        public static Boolean comprimirArchivo(string rutaArchivo)
+        {
+            try
+            {
+                if (!File.Exists(rutaArchivo))
+                {
+                    MessageBox.Show("Archivo no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                DirectoryInfo directorio = new DirectoryInfo(rutaArchivo);
+                foreach (FileInfo di in directorio.GetFiles())
+                {
+                    Compress(di.ToString());
+                }
+
+                //comprimir
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
+        public static Boolean Compress(string rutaArchivo)
+        {
+            try
+            {
+                // Get the stream of the source file.
+                FileInfo fi = new FileInfo(rutaArchivo);
+                using (FileStream inFile = fi.OpenRead())
+                {
+                    // Prevent compressing hidden and
+                    // already compressed files.
+                    if ((File.GetAttributes(fi.FullName)& FileAttributes.Hidden)!= FileAttributes.Hidden & fi.Extension != ".gz")
+                    {
+                        // Create the compressed file.
+                        using (FileStream outFile =File.Create(fi.FullName + ".gz"))
+                        {
+                            using (GZipStream Compress = new GZipStream(outFile, CompressionMode.Compress))
+                            {
+                                // Copy the source file into
+                                // the compression stream.
+                                inFile.CopyTo(Compress);
+
+                                //Console.WriteLine("Compressed {0} from {1} to {2} bytes.",fi.Name, fi.Length.ToString(), outFile.Length.ToString());
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
+        public static Boolean Decompress(string rutaArchivo)
+        {
+            try
+            {
+                FileInfo fi = new FileInfo(rutaArchivo);
+                // Get the stream of the source file.
+                using (FileStream inFile = fi.OpenRead())
+                {
+                    // Get original file extension, for example
+                    // "doc" from report.doc.gz.
+                    string curFile = fi.FullName;
+                    string origName = curFile.Remove(curFile.Length - fi.Extension.Length);
+                    //Create the decompressed file.
+                    using (FileStream outFile = File.Create(origName))
+                    {
+                        using (GZipStream Decompress = new GZipStream(inFile, CompressionMode.Decompress))
+                        {
+                            // Copy the decompression stream
+                            // into the output file.
+                            Decompress.CopyTo(outFile);
+                            //Console.WriteLine("Decompressed: {0}", fi.Name);
+                        }
+                    }
+                }
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
         }
