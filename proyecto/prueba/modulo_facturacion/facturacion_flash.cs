@@ -838,20 +838,27 @@ namespace puntoVenta
                                                         actualiza_factura_producto();
 
                                                         MessageBox.Show("Factura generada con exito");
-                                                        DialogResult dr = MessageBox.Show("Desea Imprimir en rollo?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                                        DialogResult dr = MessageBox.Show("Desea Imprimir Rollo?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                                                         if (dr == DialogResult.Yes)
                                                         {
-                                                            imprimir_venta_rollo ir = new imprimir_venta_rollo();
-                                                            ir.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            ir.ShowDialog();
+                                                            //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                                                            //iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            //iv.ShowDialog();
+
+                                                            imprimir_venta_rollo ih = new imprimir_venta_rollo();
+                                                            ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            ih.ShowDialog();
                                                         }
-                                                        else
+                                                        if (dr == DialogResult.No)
                                                         {
-                                                            imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
-                                                            iv.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            iv.ShowDialog();
+                                                            //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                                                            //iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            //iv.ShowDialog();
+
+                                                            imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
+                                                            ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            ih.ShowDialog();
                                                         }
-                                                        limpiar();
                                                     }
                                                     else
                                                     {
@@ -1000,6 +1007,32 @@ namespace puntoVenta
                 //ck_credito.Checked = true;
             }
         }
+        //public void actualiza_factura_producto()v1
+        //{
+        //    try
+        //    {
+        //        /*
+        //           ALTER proc [dbo].[insert_factura_detalle]
+        //           @codigo_factura int,@cod_prod int,@cod_unidad int,@precio float,@cantidad float,@itebis float,@monto float,@descuento float
+        //           */
+        //        if (dataGridView1.Rows.Count > 0)
+        //        {
+        //            foreach (DataGridViewRow row in dataGridView1.Rows)
+        //            {
+        //                string sql = "";
+        //                //sql = "exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'";
+        //                //MessageBox.Show("exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'");
+        //                sql = "exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'";
+        //                Utilidades.ejecutarcomando(sql);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error haciendo el detalle de la factura");
+        //    }
+
+        //}
         public void actualiza_factura_producto()
         {
             try
@@ -1012,7 +1045,28 @@ namespace puntoVenta
                 {
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        string sql = "";
+                        string sql = "select codpro_requisito,cod_unidad,cantidad from producto_productos_requisitos where codpro_titular='" + row.Cells[0].Value.ToString() + "'";
+                        DataSet ds = Utilidades.ejecutarcomando(sql);
+                        //MessageBox.Show(ds.Tables[0].Rows.Count.ToString());
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            //es porque de este producto dependen mas productos
+                            //hay que sacar de inventario cada requisito con el que fue creado
+                            foreach (DataRow requisito in ds.Tables[0].Rows)
+                            {
+                                /*
+                                  alter proc reducir_inventario
+                                  @codpro int,@cod_unidad int, @cantidad float
+                                */
+                                double cantidad = Convert.ToDouble(requisito[2].ToString());
+                                cantidad = cantidad * Convert.ToDouble(row.Cells[6].Value.ToString());
+                                string cmd = "exec reducir_inventario '" + requisito[0].ToString() + "','" + requisito[1].ToString() + "','" + cantidad.ToString() + "'";
+                                Utilidades.ejecutarcomando(cmd);
+                            }
+
+                        }
+                        sql = "";
+                        //de este producto no depende mas producto
                         //sql = "exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'";
                         //MessageBox.Show("exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'");
                         sql = "exec insert_factura_detalle '" + codigo_factura_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[5].Value.ToString() + "','" + row.Cells[6].Value.ToString() + "','" + row.Cells[4].Value.ToString() + "','" + row.Cells[8].Value.ToString() + "','" + row.Cells[7].Value.ToString() + "'";
@@ -1020,9 +1074,9 @@ namespace puntoVenta
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error haciendo el detalle de la factura");
+                MessageBox.Show("Error haciendo el detalle de la factura: " + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -1627,6 +1681,11 @@ namespace puntoVenta
              private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
              {
                  
+             }
+
+             private void tipo_comprobante_combo_txt_TextChanged(object sender, EventArgs e)
+             {
+                 cargar_nombre_comprobante();
              }
     }
 }

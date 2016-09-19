@@ -26,8 +26,14 @@ namespace puntoVenta
         string factura_detalles = "";
         private void facturacion_Load(object sender, EventArgs e)
         {
+            loadVentana();
+        }
+
+        public void loadVentana()
+        {
             try
             {
+
                 s = singleton.obtenerDatos();
                 if (s.cambiar_fecha_facturacion == true)
                 {
@@ -55,8 +61,15 @@ namespace puntoVenta
                 logo_empresa += @"\" + ds.Tables[0].Rows[0][1].ToString();
                 //panel5.BackgroundImage = Image.FromFile(logo_empresa.ToString());
                 validar_caja_abierta();
+
+
+
+                unidad_combo_txt.DropDownStyle = ComboBoxStyle.DropDownList;
+                tipo_comprobante_combo_txt.DropDownStyle = ComboBoxStyle.DropDownList;
+                codigo_producto_txt.Focus();
+                codigo_producto_txt.SelectAll();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Error abriendo la facturacion");
             }
@@ -82,9 +95,9 @@ namespace puntoVenta
                     
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error validando la caja abierta");
+                MessageBox.Show("Error validando la caja abierta: "+ex.ToString());
                 return false;
             }
         }
@@ -208,6 +221,9 @@ namespace puntoVenta
                                         {
                                             agregar_producto();
                                             cargar_existencia_producto();
+
+                                            codigo_producto_txt.Focus();
+                                            codigo_producto_txt.SelectAll();
                                         }     
                                         else
                                         {
@@ -217,6 +233,10 @@ namespace puntoVenta
                                     else
                                     {
                                         agregar_producto();
+
+
+                                        codigo_producto_txt.Focus();
+                                        codigo_producto_txt.SelectAll();
                                     }
                                 }
                                 else
@@ -324,6 +344,8 @@ namespace puntoVenta
              //limpiar();
              importe_txt.Clear();
              cantidad_txt.Clear();
+             codigo_producto_txt.Focus();
+             codigo_producto_txt.SelectAll();
         }
     
         double sumatoria_total = 0;
@@ -724,52 +746,29 @@ namespace puntoVenta
 
         private void button9_Click(object sender, EventArgs e)
         {
-            //if (codigo_factura_txt.Text.Trim() != "")
-            //{
-            //    DialogResult dr = MessageBox.Show("Desea Imprimir en rollo?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (dr == DialogResult.Yes)
-            //    {
+            if (codigo_factura_txt.Text.Trim() != "")
+            {
+                DialogResult dr = MessageBox.Show("Desea Imprimir en rollo?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
 
-            //        imprimir_venta_rollo ih = new imprimir_venta_rollo();
-            //        ih.codigo_factura = codigo_factura_txt.Text.Trim();
-            //        ih.ShowDialog();
-            //    }
-            //    else
-            //    {
-            //        imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
-            //        iv.codigo_factura = codigo_factura_txt.Text.Trim();
-            //        iv.ShowDialog();
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe tener una factura seleccionada, el codigo de la factura no puede estar vacio");
-            //}
+                    imprimir_venta_rollo ih = new imprimir_venta_rollo();
+                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                    ih.ShowDialog();
+                }
+                else
+                {
+                    imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                    iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                    iv.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe tener una factura seleccionada, el codigo de la factura no puede estar vacio");
+            }
 
-            Reportes.ventana_reporte ventana = new Reportes.ventana_reporte();
-            ventana.codigo_factura = codigo_factura_txt.Text.Trim();
-            
-            ventana.ShowDialog();
            
-           //List<Microsoft.Reporting.WinForms.ReportParameter> parametros = new List<Microsoft.Reporting.WinForms.ReportParameter>();
-           //parametros.Add(new Microsoft.Reporting.WinForms.ReportParameter("codigo_factura", "1"));
-           //string sql = "select *from tercero where estado='1'";
-
-           //DataSet dataTercero = Utilidades.ejecutarcomando(sql);
-
-           //string rutaReporte = Directory.GetCurrentDirectory();  
-            
-           //rutaReporte+= @"\Reportes\reporte_facturacion.rdlc";
-           //MessageBox.Show(rutaReporte);
-           //Reportes.ventana_reporte reporte = new Reportes.ventana_reporte();
-           //reporte.reportViewer1.ProcessingMode=Microsoft.Reporting.WinForms.ProcessingMode.Local;
-           //reporte.reportViewer1.LocalReport.ReportPath=rutaReporte;
-           //reporte.reportViewer1.LocalReport.DataSources.Clear();
-           //reporte.reportViewer1.LocalReport.SetParameters(parametros);
-           //reporte.reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("tercero", dataTercero));
-           //reporte.reportViewer1.DocumentMapCollapsed = true;
-           //reporte.reportViewer1.RefreshReport();
-           //reporte.ShowDialog();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -1007,9 +1006,9 @@ namespace puntoVenta
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("Error facturando");
+                MessageBox.Show("Error facturando: "+existencia_txt.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             
         }
@@ -1151,9 +1150,9 @@ namespace puntoVenta
                     MessageBox.Show("Falta el cliente");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error guardando la factura");
+                MessageBox.Show("Error guardando la factura: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         
@@ -1171,11 +1170,12 @@ namespace puntoVenta
                     {
                         string sql = "select codpro_requisito,cod_unidad,cantidad from producto_productos_requisitos where codpro_titular='"+row.Cells[0].Value.ToString()+"'";
                         DataSet ds = Utilidades.ejecutarcomando(sql);
-                        if (ds.Tables[0].Rows[0].ToString()!="")
+                        //MessageBox.Show(ds.Tables[0].Rows.Count.ToString());
+                        if (ds.Tables[0].Rows.Count > 0)
                         {
                             //es porque de este producto dependen mas productos
                             //hay que sacar de inventario cada requisito con el que fue creado
-                            foreach(DataRow requisito in ds.Tables[0].Rows)
+                            foreach (DataRow requisito in ds.Tables[0].Rows)
                             {
                                 /*
                                   alter proc reducir_inventario
@@ -1183,7 +1183,7 @@ namespace puntoVenta
                                 */
                                 double cantidad = Convert.ToDouble(requisito[2].ToString());
                                 cantidad = cantidad * Convert.ToDouble(row.Cells[6].Value.ToString());
-                                string cmd = "exec reducir_inventario '" + requisito[0].ToString() + "','" + requisito[1].ToString() + "','" + cantidad.ToString()+ "'";
+                                string cmd = "exec reducir_inventario '" + requisito[0].ToString() + "','" + requisito[1].ToString() + "','" + cantidad.ToString() + "'";
                                 Utilidades.ejecutarcomando(cmd);
                             }
 
@@ -1199,7 +1199,7 @@ namespace puntoVenta
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error haciendo el detalle de la factura: "+ex.ToString());
+                MessageBox.Show("Error haciendo el detalle de la factura: " + ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -1316,6 +1316,8 @@ namespace puntoVenta
                             cargar_itebis();
                             activar_permisos();
                             cargar_descuentos();
+                            unidad_combo_txt.Focus();
+                            unidad_combo_txt.SelectAll();
                         }
                         else
                         {
@@ -1399,11 +1401,6 @@ namespace puntoVenta
             }
         }
 
-        private void tipo_comprobante_combo_txt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button15_Click(object sender, EventArgs e)
         {
             detalles_factura df = new detalles_factura();
@@ -1440,29 +1437,38 @@ namespace puntoVenta
         }
         public void facturar_contado()
         {
+            try
+            {
 
-            //no se le calcula el limite de credito
-            string tipo_venta = "";
-            if (ck_contado.Checked == true)
-            {
-                tipo_venta = "CON";
-            }
-            if (ck_credito.Checked == true)
-            {
-                tipo_venta = "CRE";
-            }
-            if (ck_pedido.Checked == true)
-            {
-                tipo_venta = "PED";
-            }
-            s = singleton.obtenerDatos();
-            string sql = "exec insert_factura '" + fecha.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
-            DataSet ds = Utilidades.ejecutarcomando(sql);
+                s = singleton.obtenerDatos();
+                //no se le calcula el limite de credito
+                string tipo_venta = "";
+                if (ck_contado.Checked == true)
+                {
+                    tipo_venta = "CON";
+                }
+                if (ck_credito.Checked == true)
+                {
+                    tipo_venta = "CRE";
+                }
+                if (ck_pedido.Checked == true)
+                {
+                    tipo_venta = "PED";
+                }
+                s = singleton.obtenerDatos();
+                string sql = "exec insert_factura '" + fecha.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                DataSet ds = Utilidades.ejecutarcomando(sql);
 
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                codigo_factura_txt.Text = ds.Tables[0].Rows[0][0].ToString();
-                numero_comprobante_fiscal_txt.Text = ds.Tables[0].Rows[0][2].ToString();
+                if (ds.Tables[0].Rows[0][0].ToString() != "")
+                {
+                    //MessageBox.Show(ds.Tables[0].Rows[0][0].ToString());
+                    codigo_factura_txt.Text = ds.Tables[0].Rows[0][0].ToString();
+                }
+                if (ds.Tables[0].Rows[0][2].ToString() != "")
+                {
+                    //MessageBox.Show(ds.Tables[0].Rows[0][2].ToString());
+                    numero_comprobante_fiscal_txt.Text = ds.Tables[0].Rows[0][2].ToString();
+                }
                 //entrar los productos al detalle de la factura
                 actualiza_factura_producto();
                 if (ck_contado.Checked == true)
@@ -1491,7 +1497,7 @@ namespace puntoVenta
                     }
                 }
                 MessageBox.Show("Factura generada con exito");
-                DialogResult dr = MessageBox.Show("Desea Imprimir?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("Desea Imprimir Rollo?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
@@ -1502,8 +1508,17 @@ namespace puntoVenta
                     ih.codigo_factura = codigo_factura_txt.Text.Trim();
                     ih.ShowDialog();
                 }
-                //limpiar la pantalla para la proxima venta
+                if (dr == DialogResult.No)
+                {
+                    //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                    //iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                    //iv.ShowDialog();
 
+                    imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
+                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                    ih.ShowDialog();
+                }
+                //limpiar la pantalla para la proxima venta
                 //codigo_factura_txt.Clear();
                 //codigo_cliente_txt.Clear();
                 //nombre_cliente_txt.Clear();
@@ -1514,6 +1529,11 @@ namespace puntoVenta
                 //ck_contado.Checked = false;
                 //ck_cotizacion.Checked = false;
                 //ck_credito.Checked = true;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error facturando al contado: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
         public void ejecutar_descuento_por_ofertas(string dato)
@@ -1585,6 +1605,58 @@ namespace puntoVenta
                 // se aplica la propina
                 cargar_porciento_propina();
                 calcular_total();
+            }
+        }
+
+        private void unidad_combo_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter || e.KeyCode==Keys.Tab)
+            {
+                precio_txt.Focus();
+                precio_txt.SelectAll();
+            }
+        }
+
+        private void precio_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                existencia_txt.Focus();
+                existencia_txt.SelectAll();
+            }
+        }
+
+        private void existencia_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                cantidad_txt.Focus();
+                cantidad_txt.SelectAll();
+            }
+        }
+
+        private void cantidad_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                monto_descuento_txt.Focus();
+                monto_descuento_txt.SelectAll();
+            }
+        }
+
+        private void monto_descuento_txt_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                button2.Focus();
+            }
+        }
+
+        private void facturacion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.F2)
+            {
+                ck_propina.Checked = (!ck_propina.Checked);
             }
         }
     }
