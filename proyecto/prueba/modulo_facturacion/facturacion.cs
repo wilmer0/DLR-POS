@@ -37,7 +37,7 @@ namespace puntoVenta
                 s = singleton.obtenerDatos();
                 if (s.cambiar_fecha_facturacion == true)
                 {
-                    fecha.Enabled = true;
+                    //fecha.Enabled = true;
                 }
                 if (s.puede_crear_pedidos == false)
                 {
@@ -47,7 +47,7 @@ namespace puntoVenta
                     button12.BackColor = Color.Black;
                 }
                 ck_credito.Checked = true;
-                fecha_actual = fecha.Value.ToString("yyyy/MM/dd");
+                //fecha_actual = fecha.Value.ToString("yyyy/MM/dd");
                 cargar_cajero();
                 cargar_comprobantes();
                 cargar_nombre_comprobante();
@@ -78,7 +78,7 @@ namespace puntoVenta
         {
             try
             {
-                string sql = "select max(codigo) from cuadre_caja where cod_cajero='" + codigo_cajero_txt.Text.Trim() + "' and fecha<='" + fecha.Value.ToString("yyyy-MM-dd") + "' and abierta_cerrada='A' and estado='1'";
+                string sql = "select max(codigo) from cuadre_caja where cod_cajero='" + codigo_cajero_txt.Text.Trim() + "' and fecha<='" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "' and abierta_cerrada='A' and estado='1'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 if (ds.Tables[0].Rows[0][0].ToString() != "")
                 {
@@ -498,7 +498,7 @@ namespace puntoVenta
                 ck_cotizacion.Checked = false;
                 ck_pedido.Checked = false;
                 ck_contado.Checked = false;
-                dateTimePicker2.Enabled = true;
+                fecha_hasta.Enabled = true;
             }
             catch (Exception)
             {
@@ -513,7 +513,7 @@ namespace puntoVenta
 
                 ck_credito.Checked = false;
                 ck_pedido.Checked = false;
-                dateTimePicker2.Enabled = false;
+                fecha_hasta.Enabled = false;
                 ck_contado.Checked = true;
                 ck_cotizacion.Checked = false;
 
@@ -590,7 +590,7 @@ namespace puntoVenta
                      //if (s.puede_Cambiar_precio_facturacion == true)
                      //{
                          //me retorna el porciento descuento
-                         string sql = "select po.descuento from producto_oferta po join oferta_producto_detalle pd on po.codigo=pd.cod_oferta where pd.cod_prod='" + codigo_producto_txt.Text.Trim() + "' and pd.estado='1' and (('" + fecha.Value.ToString("yyyy-MM-dd") + "' between fecha_inicial and fecha_final)) and po.estado='1' and po.cod_sucursal='" + s.codigo_sucursal.ToString() + "'";
+                         string sql = "select po.descuento from producto_oferta po join oferta_producto_detalle pd on po.codigo=pd.cod_oferta where pd.cod_prod='" + codigo_producto_txt.Text.Trim() + "' and pd.estado='1' and (('" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "' between fecha_inicial and fecha_final)) and po.estado='1' and po.cod_sucursal='" + s.codigo_sucursal.ToString() + "'";
                          DataSet ds = Utilidades.ejecutarcomando(sql);
                          if (ds.Tables[0].Rows[0][0].ToString() != "")
                          {
@@ -601,7 +601,7 @@ namespace puntoVenta
                          {
                              monto_descuento_txt.Text = "0.00";
                              //no tiene descuento por produto solo entonces se busca si tiene descuento por categoria/sub-categoria
-                             sql = "select top(1) po.descuento from oferta_producto_subcate_detalle ofe join producto p on p.cod_categoria=ofe.cod_categoria or p.cod_subcategoria=ofe.cod_subcategoria join producto_oferta po on po.codigo=ofe.cod_oferta and po.cod_sucursal='" + s.codigo_sucursal.ToString() + "' where p.codigo='" + codigo_producto_txt.Text.Trim() + "' and (('" + fecha.Value.ToString("yyyy-MM-dd") + "' between fecha_inicial and fecha_final)) and po.estado='1'";
+                             sql = "select top(1) po.descuento from oferta_producto_subcate_detalle ofe join producto p on p.cod_categoria=ofe.cod_categoria or p.cod_subcategoria=ofe.cod_subcategoria join producto_oferta po on po.codigo=ofe.cod_oferta and po.cod_sucursal='" + s.codigo_sucursal.ToString() + "' where p.codigo='" + codigo_producto_txt.Text.Trim() + "' and (('" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "' between fecha_inicial and fecha_final)) and po.estado='1'";
                              ds = Utilidades.ejecutarcomando(sql);
                              if (ds.Tables[0].Rows[0][0].ToString() != "")
                              {
@@ -814,8 +814,8 @@ namespace puntoVenta
                 cantidad_txt.Clear();
                 importe_txt.Clear();
                 dataGridView1.Rows.Clear();
-                fecha.Value = DateTime.Today;
-                dateTimePicker2.Value = DateTime.Today;
+                //fecha.Value = DateTime.Today;
+                fecha_hasta.Value = DateTime.Today;
             }
             catch(Exception)
             {
@@ -1060,7 +1060,7 @@ namespace puntoVenta
                                             {
                                                 if (Convert.ToDouble(monto_permitido.ToString()) >= Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()))
                                                 {
-                                                    string sql = "exec insert_factura '" + fecha.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                                                    string sql = "exec insert_factura '" + DateTime.Now.ToString() + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
                                                     DataSet ds = Utilidades.ejecutarcomando(sql);
                                                     if (ds.Tables[0].Rows.Count > 0)
                                                     {
@@ -1422,7 +1422,7 @@ namespace puntoVenta
                 ck_pedido.Checked = true;
                 ck_contado.Checked = false;
                 ck_credito.Checked = false;
-                dateTimePicker2.Enabled = true;
+                fecha_hasta.Enabled = true;
                 ck_cotizacion.Checked = false;
             }
             catch (Exception)
@@ -1456,7 +1456,7 @@ namespace puntoVenta
                     tipo_venta = "PED";
                 }
                 s = singleton.obtenerDatos();
-                string sql = "exec insert_factura '" + fecha.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                string sql = "exec insert_factura '" + DateTime.Now.ToString() + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
 
                 if (ds.Tables[0].Rows[0][0].ToString() != "")
@@ -1554,7 +1554,7 @@ namespace puntoVenta
                 {
                     busqueda_oferta_producto_descuento bo = new busqueda_oferta_producto_descuento();
                     bo.codigo_producto_global = codigo_producto_txt.Text.Trim();
-                    bo.fecha_global = fecha.Value.ToString("yyyy-MM-dd");
+                    bo.fecha_global = Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd");
                     bo.pasado += new busqueda_oferta_producto_descuento.pasar(ejecutar_descuento_por_ofertas);
                     bo.ShowDialog();
                 }
