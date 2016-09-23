@@ -61,7 +61,7 @@ namespace puntoVenta
                 ds = Utilidades.ejecutarcomando(sql);
                 //cliente,total_descuento,nombre_empresa,rnc_empresa,telefono_empresa,secuencia_factura,tipo_venta,
                 //direccion_sucursal,cajero,monto_total,monto_itebis,codigo_empresa,subtotal,comprobante_fiscal,fecha,
-                //detalles_factura,efectivo,devuelta,tarjeta
+                //detalles_factura,efectivo,devuelta,tarjeta,cheque
                 //datos encabezado factura
                 string cliente = ds.Tables[0].Rows[0][0].ToString();
                 double totalDecuento = double.Parse(ds.Tables[0].Rows[0][1].ToString());
@@ -83,20 +83,13 @@ namespace puntoVenta
                 double efectivo = double.Parse(ds.Tables[0].Rows[0][16].ToString());
                 double devuelta = double.Parse(ds.Tables[0].Rows[0][17].ToString());
                 double tarjeta = double.Parse(ds.Tables[0].Rows[0][18].ToString());
-
-
-                //datos detalle factura
-
-
-
-
-               
+                                      
                
                
                
                
                 double deposito = Convert.ToDouble(ds.Tables[0].Rows[0][9].ToString());
-                double cheque = Convert.ToDouble(ds.Tables[0].Rows[0][10].ToString());
+                double cheque = Convert.ToDouble(ds.Tables[0].Rows[0][19].ToString());
              
                
               
@@ -180,6 +173,7 @@ namespace puntoVenta
                 ds = Utilidades.ejecutarcomando(sql);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
+                    //datos detalle facturas
 
                     letras_size = 5;
                    
@@ -273,8 +267,5 @@ namespace puntoVenta
                 this.Close();
             }
         }
-
-
-
     }
 }

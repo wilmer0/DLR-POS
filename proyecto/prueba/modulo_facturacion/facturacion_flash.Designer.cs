@@ -1005,6 +1005,8 @@
             // 
             // tipo_comprobante_combo_txt
             // 
+            this.tipo_comprobante_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipo_comprobante_combo_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tipo_comprobante_combo_txt.FormattingEnabled = true;
             this.tipo_comprobante_combo_txt.Location = new System.Drawing.Point(141, 136);
             this.tipo_comprobante_combo_txt.Name = "tipo_comprobante_combo_txt";
@@ -1052,6 +1054,8 @@
             // 
             // unidad_combo_txt
             // 
+            this.unidad_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidad_combo_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.unidad_combo_txt.FormattingEnabled = true;
             this.unidad_combo_txt.Location = new System.Drawing.Point(305, 37);
             this.unidad_combo_txt.Name = "unidad_combo_txt";
