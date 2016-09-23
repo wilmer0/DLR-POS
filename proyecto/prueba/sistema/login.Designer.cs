@@ -29,37 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
-            this.usuario = new System.Windows.Forms.TextBox();
+            this.usuarioText = new System.Windows.Forms.TextBox();
             this.labelClave = new System.Windows.Forms.Label();
-            this.clave = new System.Windows.Forms.TextBox();
+            this.claveText = new System.Windows.Forms.TextBox();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.labelInicioSesion = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.espanolRadioButton = new System.Windows.Forms.RadioButton();
             this.inglesRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LoginPanel = new System.Windows.Forms.Panel();
             this.SalirPanel = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // usuario
+            // usuarioText
             // 
-            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuario.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.usuario.Location = new System.Drawing.Point(127, 28);
-            this.usuario.MaxLength = 20;
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(225, 26);
-            this.usuario.TabIndex = 1;
-            this.usuario.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.usuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuario_KeyDown);
-            this.usuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.usuario_KeyUp);
+            this.usuarioText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioText.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.usuarioText.Location = new System.Drawing.Point(127, 28);
+            this.usuarioText.MaxLength = 20;
+            this.usuarioText.Name = "usuarioText";
+            this.usuarioText.Size = new System.Drawing.Size(225, 26);
+            this.usuarioText.TabIndex = 1;
+            this.usuarioText.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.usuarioText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usuario_KeyDown);
+            this.usuarioText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.usuario_KeyUp);
             // 
             // labelClave
             // 
@@ -72,16 +72,16 @@
             this.labelClave.TabIndex = 2;
             this.labelClave.Text = "contraseña";
             // 
-            // clave
+            // claveText
             // 
-            this.clave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clave.Location = new System.Drawing.Point(127, 70);
-            this.clave.MaxLength = 20;
-            this.clave.Name = "clave";
-            this.clave.PasswordChar = '*';
-            this.clave.Size = new System.Drawing.Size(225, 26);
-            this.clave.TabIndex = 3;
-            this.clave.KeyDown += new System.Windows.Forms.KeyEventHandler(this.clave_KeyDown);
+            this.claveText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.claveText.Location = new System.Drawing.Point(127, 70);
+            this.claveText.MaxLength = 20;
+            this.claveText.Name = "claveText";
+            this.claveText.PasswordChar = '*';
+            this.claveText.Size = new System.Drawing.Size(225, 26);
+            this.claveText.TabIndex = 3;
+            this.claveText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.clave_KeyDown);
             // 
             // labelUsuario
             // 
@@ -138,6 +138,18 @@
             this.panel2.Size = new System.Drawing.Size(431, 307);
             this.panel2.TabIndex = 8;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.labelUsuario);
+            this.groupBox2.Controls.Add(this.labelClave);
+            this.groupBox2.Controls.Add(this.usuarioText);
+            this.groupBox2.Controls.Add(this.claveText);
+            this.groupBox2.Location = new System.Drawing.Point(12, 115);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(407, 110);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.espanolRadioButton);
@@ -147,8 +159,6 @@
             this.groupBox1.Size = new System.Drawing.Size(407, 58);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "idioma";
-            this.groupBox1.Visible = false;
             // 
             // espanolRadioButton
             // 
@@ -209,18 +219,6 @@
             this.SalirPanel.Click += new System.EventHandler(this.panel7_Click);
             this.SalirPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SalirPanel_Paint);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.labelUsuario);
-            this.groupBox2.Controls.Add(this.labelClave);
-            this.groupBox2.Controls.Add(this.usuario);
-            this.groupBox2.Controls.Add(this.clave);
-            this.groupBox2.Location = new System.Drawing.Point(12, 115);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(407, 110);
-            this.groupBox2.TabIndex = 24;
-            this.groupBox2.TabStop = false;
-            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,19 +239,19 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.login_KeyUp);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox usuario;
+        private System.Windows.Forms.TextBox usuarioText;
         private System.Windows.Forms.Label labelClave;
-        private System.Windows.Forms.TextBox clave;
+        private System.Windows.Forms.TextBox claveText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Button button3;

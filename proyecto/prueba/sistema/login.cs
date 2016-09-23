@@ -29,10 +29,14 @@ namespace puntoVenta
 
         public login()
         {
-            
+            loadVentana();
             InitializeComponent();
         }
 
+        public void loadVentana()
+        {
+
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -59,17 +63,17 @@ namespace puntoVenta
         public Boolean validarCampos()
         {
 
-            if (usuario.Text.Trim() =="")
+            if (usuarioText.Text.Trim() =="")
             {
                 MessageBox.Show("Falta el usuario","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                usuario.Focus();
+                usuarioText.Focus();
                 return false;
             }
 
-            if (clave.Text.Trim() == "")
+            if (claveText.Text.Trim() == "")
             {
                 MessageBox.Show("Falta la clave", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                clave.Focus();
+                claveText.Focus();
                 return false;
             }
 
@@ -111,8 +115,8 @@ namespace puntoVenta
                     return false;
 
                 string cmd = "";
-                string claveEncriptada = Utilidades.encriptar(clave.Text.Trim());
-                cmd = "select *from empleado where login='" + usuario.Text.Trim() + "' and clave ='" + claveEncriptada.ToString() + "' and estado='1'";
+                string claveEncriptada = Utilidades.encriptar(claveText.Text.Trim());
+                cmd = "select *from empleado where login='" + usuarioText.Text.Trim() + "' and clave ='" + claveEncriptada.ToString() + "' and estado='1'";
                 ds = Utilidades.ejecutarcomando(cmd);
                 if (ds.Tables[0].Rows.Count == 1)
                 {
@@ -147,9 +151,9 @@ namespace puntoVenta
         string codigo_sucursal = "";
         public void limpiar()
         {
-            usuario.Clear();
-            clave.Clear();
-            usuario.Focus();
+            usuarioText.Clear();
+            claveText.Clear();
+            usuarioText.Focus();
         }
         internal singleton s { get; set; }
         public void cargar_idioma_combo()
@@ -163,7 +167,7 @@ namespace puntoVenta
                 cargar_idioma_combo();
                 s = singleton.obtenerDatos();
                
-                usuario.Focus();
+                usuarioText.Focus();
             }
             catch(Exception)
             {
@@ -198,7 +202,7 @@ namespace puntoVenta
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
-                clave.Focus();
+                claveText.Focus();
             }
             if(e.KeyCode==Keys.F5)
             {
