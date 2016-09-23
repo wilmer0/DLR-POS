@@ -168,16 +168,12 @@ namespace puntoVenta
                 string autorizado_line = "---------------------------------------------------------------------------------------------";
                 y += 30;
                 x = 10;
-                
-
                 items_por_hoja = 0;
                 items_impreso_por_hoja = 0;
-
-               
+                          
         }
         private void button15_Click(object sender, EventArgs e)
         {
-           
         }
        
        
