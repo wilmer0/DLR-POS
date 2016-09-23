@@ -615,11 +615,11 @@
     <Compile Include="sistema\correo_electronico.Designer.cs">
       <DependentUpon>correo_electronico.cs</DependentUpon>
     </Compile>
-    <Compile Include="sistema\form_base.cs">
+    <Compile Include="sistema\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sistema\form_base.Designer.cs">
-      <DependentUpon>form_base.cs</DependentUpon>
+    <Compile Include="sistema\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
     <Compile Include="modulo_nomina\grupo_usuarios.cs">
       <SubType>Form</SubType>
@@ -1198,8 +1198,8 @@
     <EmbeddedResource Include="sistema\correo_electronico.resx">
       <DependentUpon>correo_electronico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sistema\form_base.resx">
-      <DependentUpon>form_base.cs</DependentUpon>
+    <EmbeddedResource Include="sistema\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modulo_nomina\grupo_usuarios.resx">
       <DependentUpon>grupo_usuarios.cs</DependentUpon>
@@ -1557,7 +1557,9 @@
     <None Include="Resources\registro.png" />
     <None Include="Resources\travelerbag-icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contabilidad\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

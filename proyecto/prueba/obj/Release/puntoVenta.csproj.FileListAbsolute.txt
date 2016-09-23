@@ -231,7 +231,6 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.c
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.estado_resultado.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.busqueda_correo.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.correo_electronico.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.form_base.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.host.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_cobros.resources
@@ -290,3 +289,4 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.v
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.cache
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.compiled
+D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.FormBase.resources
