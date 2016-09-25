@@ -121,7 +121,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("puntoVentaModel", "producto_unidad", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.producto), "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.unidad))]
 
 // Original file name:
-// Generation date: 25/09/2016 12:00:01 p.m.
+// Generation date: 25/09/2016 02:12:28 p.m.
 namespace puntoVentaModelo
 {
     
@@ -23473,15 +23473,6 @@ namespace puntoVentaModelo
         {
             this.OnContextCreated();
         }
-
-        public puntoVentaEntities(string p1, string p2, string p3, string p4)
-        {
-            // TODO: Complete member initialization
-            this.p1 = p1;
-            this.p2 = p2;
-            this.p3 = p3;
-            this.p4 = p4;
-        }
         partial void OnContextCreated();
         /// <summary>
         /// There are no comments for almacen in the schema.
@@ -25081,10 +25072,6 @@ namespace puntoVentaModelo
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> _tercero_vs_telefono;
-        private string p1;
-        private string p2;
-        private string p3;
-        private string p4;
         /// <summary>
         /// There are no comments for almacen in the schema.
         /// </summary>

@@ -13,7 +13,7 @@ namespace puntoVentaModelo.Modelos
             try
             {
                coneccion coneccion = new coneccion();
-               puntoVentaEntities entyti = coneccion.getConeccion();
+               puntoVentaEntities entyti = coneccion.conectar();
                var lista = (from almacen a in entity.almacen
                              where a.nombre == objeto.nombre
                              select a);
@@ -22,6 +22,7 @@ namespace puntoVentaModelo.Modelos
                 {
                     MessageBox.Show("Ya existe un almacen con ese nombre","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
+                
                 entity.AddToalmacen(objeto);
                 entity.SaveChanges();
                 return true;
@@ -38,7 +39,7 @@ namespace puntoVentaModelo.Modelos
             int count = 0;
 
             coneccion coneccion = new coneccion();
-            puntoVentaEntities entity = coneccion.getConeccion();
+            puntoVentaEntities entity = coneccion.conectar();
             try
             {
                 count = entity.almacen.Count();
@@ -62,10 +63,9 @@ namespace puntoVentaModelo.Modelos
         {
 
             coneccion coneccion = new coneccion();
-            puntoVentaEntities entity = coneccion.getConeccion();
+            puntoVentaEntities entity = coneccion.conectar();
             try
             {
-
                 var Lista = (from c in entity.almacen
                              where c.codigo == objeto.codigo
                              select c).FirstOrDefault();
@@ -87,9 +87,7 @@ namespace puntoVentaModelo.Modelos
             finally
             {
                 entity = null;
-
             }
         }
-
-        }
     }
+}

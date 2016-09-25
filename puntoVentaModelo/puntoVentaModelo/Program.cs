@@ -12,25 +12,40 @@ namespace puntoVentaModelo
     {
         static void Main(string[] args)
         {
-           
+            //conectar();
+            agregar();
         }
-
-        public Boolean coneccion()
+        public static void agregar()
         {
             try
             {
-                // Establish a connection to the underlying data provider by 
-                // using the connection string specified in the config file.
-                using (EntityConnection connection = new EntityConnection("Name = puntoVentaEntities"))
-                {
-                    connection.Open();
-                    return true;
-                    connection.Close();
-                }
+                almacen alma = new almacen();
+                Modelos.ModeloAlmacen modelo = new Modelos.ModeloAlmacen();
+                alma.codigo = modelo.getNextId();
+                alma.nombre = "ejemplo";
+                alma.estado = true;
+                modelo.agregar(alma);
             }
             catch (Exception ex)
             {
-                return false;
+                Console.WriteLine("Error agregando: " + ex.ToString());
+                
+            }
+        }
+
+        public static EntityConnection conectar()
+        {
+            try
+            {
+                EntityConnection coneccion = new EntityConnection("Name = puntoVentaEntities");
+                coneccion.Open();
+                Console.WriteLine("Se coneto bien");
+                return coneccion;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error conectando: " + ex.ToString());
+                return null;
             }
         }
     }
