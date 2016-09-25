@@ -13,22 +13,23 @@ namespace puntoVentaModelo
         static void Main(string[] args)
         {
             //conectar();
-            agregar();
+            mostrar();
         }
-        public static void agregar()
+        public static void mostrar()
         {
             try
             {
-                almacen alma = new almacen();
-                Modelos.ModeloAlmacen modelo = new Modelos.ModeloAlmacen();
-                alma.codigo = modelo.getNextId();
-                alma.nombre = "ejemplo";
-                alma.estado = true;
-                modelo.agregar(alma);
+                List<producto> clientes = new List<producto>();
+                Modelos.ModeloCliente modeloCliente=new Modelos.ModeloCliente();
+                clientes=modeloCliente.ListaCompleta();
+                foreach (producto cli in clientes)
+                {
+                    Console.WriteLine(cli.codigo + "-" + cli.nombre+ "-" + cli.reorden + "-"+ cli.referencia);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error agregando: " + ex.ToString());
+                Console.WriteLine("Error mostrando: " + ex.ToString());
                 
             }
         }

@@ -3,3 +3,4 @@ D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\bin\Re
 D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\bin\Release\puntoVentaModelo.pdb
 D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Release\puntoVentaModelo.exe
 D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Release\puntoVentaModelo.pdb
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Release\puntoVentaModelo.csprojResolveAssemblyReference.cache

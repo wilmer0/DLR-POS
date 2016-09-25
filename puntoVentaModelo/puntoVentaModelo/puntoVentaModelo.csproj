@@ -48,6 +48,8 @@
     <Compile Include="Modelos\coneccion.cs" />
     <Compile Include="Modelos\DatosConeccionBD.cs" />
     <Compile Include="Modelos\ModeloAlmacen.cs" />
+    <Compile Include="Modelos\ModeloCaja.cs" />
+    <Compile Include="Modelos\ModeloCliente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puntoVentaModel.Designer.cs">
