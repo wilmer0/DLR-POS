@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e956304b22154912a1e0f2ecab4c6078" Name="Diagram1">
+        <EntityTypeShape EntityType="puntoVentaModel.almacen" Width="1.5" PointX="7.5" PointY="60.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.banco" Width="1.5" PointX="3" PointY="58" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.caja" Width="1.5" PointX="12.75" PointY="72.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cajero" Width="1.5" PointX="15" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cargo" Width="1.5" PointX="20.75" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.catalogo_cuentas" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.categoria_producto" Width="1.5" PointX="7.5" PointY="56.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cliente" Width="1.5" PointX="17.25" PointY="77.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cliente_categoria" Width="1.5" PointX="15" PointY="85.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cliente_subcategoria" Width="1.5" PointX="15" PointY="88.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.combo" Width="1.5" PointX="12" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.compra" Width="1.5" PointX="7.5" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.compra_pago_anulados" Width="1.5" PointX="9.75" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.compra_vs_pagos" Width="1.5" PointX="9.75" PointY="72.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.comprobante_fiscal" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.comprobante_serie" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.comprobante_ventas" Width="1.5" PointX="15" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.correo_electronicos" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cotizacion" Width="1.5" PointX="10.5" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cuadre_caja" Width="1.5" PointX="15" PointY="67.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cuenta_bancaria" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.departamento" Width="1.5" PointX="7.5" PointY="74.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.direccion" Width="1.5" PointX="14.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.egresos_caja" Width="1.5" PointX="17.25" PointY="54.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.egresos_conceptos" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.empleado" Width="1.5" PointX="12.75" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.empleado_vs_cargo" Width="1.5" PointX="23" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.empresa" Width="1.5" PointX="3" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.entrada_salida_inventario" Width="1.5" PointX="15" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.estados_reparacion" Width="1.5" PointX="18" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.factura" Width="1.5" PointX="19.5" PointY="79.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.grupo_usuarios" Width="1.5" PointX="1.5" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.historial_devolucion_compras" Width="1.5" PointX="18" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.historial_devolucion_ventas" Width="1.5" PointX="17.25" PointY="73.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.identificacion" Width="1.5" PointX="3" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.ingresos_caja" Width="1.5" PointX="20.25" PointY="58.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.ingresos_conceptos" Width="1.5" PointX="18" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.inventario" Width="1.5" PointX="17.25" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.inventario_reparacion" Width="1.5" PointX="20.25" PointY="69.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.itebis" Width="1.5" PointX="7.5" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.marcas" Width="1.5" PointX="18" PointY="88.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.mesas" Width="1.5" PointX="12.75" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.modelo" Width="1.5" PointX="20.25" PointY="88.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.moneda" Width="1.5" PointX="10.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.moneda_historial" Width="1.5" PointX="13" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.nomina" Width="1.5" PointX="18" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.nomina_conceptos" Width="1.5" PointX="21" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.nomina_tipos" Width="1.5" PointX="15.75" PointY="51.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.pais" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.pedidos" Width="1.5" PointX="21" PointY="61.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.permiso" Width="1.5" PointX="0.75" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.persona" Width="1.5" PointX="6" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto" Width="1.5" PointX="9.75" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_detalle" Width="1.5" PointX="12.75" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_oferta" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_permisos" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_vs_detalle" Width="1.5" PointX="15" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.provincia" Width="1.5" PointX="10.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.region" Width="1.5" PointX="8" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sector" Width="1.5" PointX="12.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sexo" Width="1.5" PointX="3.75" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sistema_historial" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sistema_modulo_opciones" Width="1.5" PointX="8" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sistema_modulos" Width="1.5" PointX="5.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.situacion_empleado" Width="1.5" PointX="10.5" PointY="53.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.subcategoria_producto" Width="1.5" PointX="7.5" PointY="50.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sucursal" Width="1.5" PointX="5.25" PointY="61.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.suplidor" Width="1.5" PointX="8.25" PointY="77.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tarjetas_credito" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tercero" Width="1.5" PointX="0.75" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tipo_comprobante_fiscal" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tipo_cuenta_bancaria" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tipo_identificacion" Width="1.5" PointX="0.75" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tipo_movimiento_inventario" Width="1.5" PointX="9.75" PointY="50.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.transferencia_inventario" Width="1.5" PointX="12" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.unidad" Width="1.5" PointX="12" PointY="80" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.vendedor" Width="1.5" PointX="3" PointY="72.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.venta_vs_pagos" Width="1.5" PointX="15" PointY="80.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.compra_detalle" Width="1.5" PointX="12" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.cotizacion_detalles" Width="1.5" PointX="20.25" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.empleado_historial_datos" Width="1.5" PointX="23" PointY="66.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.factura_detalle" Width="1.5" PointX="20.25" PointY="74.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.facturas_anuladas" Width="1.5" PointX="21.75" PointY="82.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.mesas_detalles" Width="1.5" PointX="15" PointY="54.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.nomina_detalle" Width="1.5" PointX="23.25" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_codigobarra" Width="1.5" PointX="14.25" PointY="77" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.producto_oferta_historial" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sistema" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.sucursal_vs_empleado" Width="1.5" PointX="18" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tercero_observaciones" Width="1.5" PointX="3" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tercero_vs_email" Width="1.5" PointX="3" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tercero_vs_permiso" Width="1.5" PointX="3" PointY="69" IsExpanded="true" />
+        <EntityTypeShape EntityType="puntoVentaModel.tercero_vs_telefono" Width="1.5" PointX="3" PointY="83.25" IsExpanded="true" />
+        <AssociationConnector Association="puntoVentaModel.FK_almacen_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_movimientos_inventario_almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_movimientos_inventario_almacen1" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_almacen" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_banco_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cajero_caja" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_comprobante_ventas_caja" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cajero_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_egresos_caja_cajero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_ingresos_caja_cajero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_historial_datos_cargo" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_vs_cargo_cargo" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_tipo_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_subcategoria_producto_categoria_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cliente_cliente_categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cliente_cliente_subcategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cliente_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_factura_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_pedidos_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cliente_subcategoria_cliente_categoria" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_combo_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_compra_pago_anulados_compra" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_compra_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_compra_suplidor" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_compra_vs_pagos_compra" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_comprobante_fiscal_comprobante_serie" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_comprobante_fiscal_tipo_comprobante_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_comprobante_ventas_tipo_comprobante_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_detalles_cotizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cuadre_caja_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cuenta_bancaria_tipo_cuenta_bancaria" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_departamento_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_direccion_sector" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_historial_datos_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_historial_datos_empleado1" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_situacion_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_entrada_salida_inventario_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_compras_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_nomina_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_pedidos_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_sucursal_vs_empleado_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_venta_vs_pagos_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empresa_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_sucursal_empresa1" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_entrada_salida_inventario_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_entrada_salida_inventario_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_reparacion_estados_reparacion" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_factura_detalle_factura" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_facturas_anuladas_factura" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_ventas_factura" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_compras_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_compras_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_ventas_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_devolucion_ventas_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_identificacion_tercero1" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_identificacion_tipo_identificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_ingresos_caja_ingresos_conceptos" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_reparacion_marcas" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_reparacion_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_inventario_reparacion_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_itebis" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_modelo_marcas" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_mesas_detalles_mesas" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_moneda_historial_moneda" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_nomina_detalle_nomina" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_nomina_nomina_tipos" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_nomina_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_nomina_detalle_nomina_conceptos" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_region_pais" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_pedidos_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_tercero_vs_permiso_permiso" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_persona_sexo" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_persona_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_suplidor_persona" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_compra_vs_producto_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_detalles_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_factura_detalle_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_movimientos_inventario_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_codigobarra_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_detalle_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_subcategoria_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_mesas_detalles_producto_detalle" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_detalle_producto_especificacion" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_oferta_historial_producto_oferta" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_provincia_region" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_sector_provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_sistema_modulo_opciones_sistema_modulos" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_empleado_historial_datos_situacion_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_sucursal_vs_empleado_sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_transferencia_inventario_sucursal1" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_tercero_observaciones_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_tercero_vs_email_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_tercero_vs_permiso_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_tervero_vs_telefono_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_vendedor_tercero" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_movimientos_inventario_tipo_movimiento_inventario" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_historial_movimientos_inventario_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_cotizacion_detalles_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_factura_detalle_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.FK_producto_codigobarra_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.grupo_usuarios_permisos" ManuallyRouted="false" />
+        <AssociationConnector Association="puntoVentaModel.producto_unidad" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
