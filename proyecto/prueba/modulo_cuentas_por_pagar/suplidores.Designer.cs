@@ -39,8 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -62,11 +60,12 @@
             this.tipo_telefono_combo_txt = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ck_suplidor_dgii = new System.Windows.Forms.CheckBox();
             this.identificacion_txt = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.fecha_ingreso = new System.Windows.Forms.DateTimePicker();
+            this.codigo_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -190,19 +189,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(523, 179);
             this.dataGridView1.TabIndex = 85;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // codigo_producto
-            // 
-            this.codigo_producto.FillWeight = 30F;
-            this.codigo_producto.HeaderText = "COD_PROD";
-            this.codigo_producto.Name = "codigo_producto";
-            this.codigo_producto.ReadOnly = true;
-            // 
-            // nombre_producto
-            // 
-            this.nombre_producto.HeaderText = "PRODUCTO";
-            this.nombre_producto.Name = "nombre_producto";
-            this.nombre_producto.ReadOnly = true;
             // 
             // label7
             // 
@@ -408,6 +394,7 @@
             // 
             // tipo_telefono_combo_txt
             // 
+            this.tipo_telefono_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipo_telefono_combo_txt.FormattingEnabled = true;
             this.tipo_telefono_combo_txt.Items.AddRange(new object[] {
             "CEL",
@@ -430,7 +417,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.ck_suplidor_dgii);
             this.tabPage1.Controls.Add(this.identificacion_txt);
             this.tabPage1.Controls.Add(this.pais_btn);
             this.tabPage1.Controls.Add(this.label1);
@@ -454,18 +440,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos peronales";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // ck_suplidor_dgii
-            // 
-            this.ck_suplidor_dgii.AutoSize = true;
-            this.ck_suplidor_dgii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_suplidor_dgii.ForeColor = System.Drawing.Color.Black;
-            this.ck_suplidor_dgii.Location = new System.Drawing.Point(286, 6);
-            this.ck_suplidor_dgii.Name = "ck_suplidor_dgii";
-            this.ck_suplidor_dgii.Size = new System.Drawing.Size(63, 24);
-            this.ck_suplidor_dgii.TabIndex = 99;
-            this.ck_suplidor_dgii.Text = "DGII";
-            this.ck_suplidor_dgii.UseVisualStyleBackColor = true;
             // 
             // identificacion_txt
             // 
@@ -507,6 +481,19 @@
             this.fecha_ingreso.Name = "fecha_ingreso";
             this.fecha_ingreso.Size = new System.Drawing.Size(196, 20);
             this.fecha_ingreso.TabIndex = 41;
+            // 
+            // codigo_producto
+            // 
+            this.codigo_producto.FillWeight = 20F;
+            this.codigo_producto.HeaderText = "cod";
+            this.codigo_producto.Name = "codigo_producto";
+            this.codigo_producto.ReadOnly = true;
+            // 
+            // nombre_producto
+            // 
+            this.nombre_producto.HeaderText = "producto";
+            this.nombre_producto.Name = "nombre_producto";
+            this.nombre_producto.ReadOnly = true;
             // 
             // suplidores
             // 
@@ -575,14 +562,13 @@
         private System.Windows.Forms.CheckBox ck_activo;
         private System.Windows.Forms.ComboBox tipo_telefono_combo_txt;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox identificacion_txt;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker fecha_ingreso;
-        private System.Windows.Forms.CheckBox ck_suplidor_dgii;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_producto;
     }
 }

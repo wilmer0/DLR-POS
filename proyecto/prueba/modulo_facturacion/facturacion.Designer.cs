@@ -788,7 +788,7 @@
             // 
             this.cotizacionCheck.AutoSize = true;
             this.cotizacionCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cotizacionCheck.Location = new System.Drawing.Point(5, 102);
+            this.cotizacionCheck.Location = new System.Drawing.Point(5, 103);
             this.cotizacionCheck.Name = "cotizacionCheck";
             this.cotizacionCheck.Size = new System.Drawing.Size(117, 29);
             this.cotizacionCheck.TabIndex = 100;
@@ -799,7 +799,7 @@
             // 
             this.pedicoCheck.AutoSize = true;
             this.pedicoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pedicoCheck.Location = new System.Drawing.Point(204, 62);
+            this.pedicoCheck.Location = new System.Drawing.Point(202, 56);
             this.pedicoCheck.Name = "pedicoCheck";
             this.pedicoCheck.Size = new System.Drawing.Size(89, 29);
             this.pedicoCheck.TabIndex = 99;
@@ -811,7 +811,7 @@
             this.contadoCheck.AutoSize = true;
             this.contadoCheck.Checked = true;
             this.contadoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contadoCheck.Location = new System.Drawing.Point(5, 60);
+            this.contadoCheck.Location = new System.Drawing.Point(5, 58);
             this.contadoCheck.Name = "contadoCheck";
             this.contadoCheck.Size = new System.Drawing.Size(100, 29);
             this.contadoCheck.TabIndex = 98;
@@ -823,7 +823,7 @@
             // 
             this.creditoCheck.AutoSize = true;
             this.creditoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditoCheck.Location = new System.Drawing.Point(109, 62);
+            this.creditoCheck.Location = new System.Drawing.Point(108, 56);
             this.creditoCheck.Name = "creditoCheck";
             this.creditoCheck.Size = new System.Drawing.Size(88, 29);
             this.creditoCheck.TabIndex = 97;

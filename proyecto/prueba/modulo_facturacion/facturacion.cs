@@ -105,10 +105,10 @@ namespace puntoVenta
         {
             try
             {
-                string sql="select top(1) codigo from cliente where estado='1'";
+                string sql = "select top(1) codigo from cliente where estado='1' and cliente_contado='1'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 codigo_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
-                
+                cargar_nombre_cliente();
             }
             catch(Exception)
             {
@@ -467,14 +467,17 @@ namespace puntoVenta
         {
             try
             {
+                if (codigo_cliente_txt.Text.Trim() == "")
+                    return;
+
                 string sql = "select (t.nombre+' '+p.apellido) as nombre,t.identificacion from tercero t join persona p on p.codigo=t.codigo where t.codigo='" + codigo_cliente_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 nombre_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 identificacion_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Error cargando el nombre del cliente: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         public void ejecutar_codigo_cliente(string dato)
