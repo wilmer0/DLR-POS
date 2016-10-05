@@ -140,6 +140,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox2.Controls.Add(this.labelUsuario);
             this.groupBox2.Controls.Add(this.labelClave);
             this.groupBox2.Controls.Add(this.usuarioText);
@@ -152,6 +153,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Controls.Add(this.espanolRadioButton);
             this.groupBox1.Controls.Add(this.inglesRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 237);

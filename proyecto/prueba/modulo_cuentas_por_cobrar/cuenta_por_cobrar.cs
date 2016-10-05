@@ -15,6 +15,7 @@ namespace puntoVenta
         public cuenta_por_cobrar()
         {
             InitializeComponent();
+            cargar_facturas();
         }
 
         private void cuenta_por_cobrar_Load(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace puntoVenta
                 codigo_cajero_txt.Text = s.codigo_usuario;
                 cargar_nombre_cajero();
                 validar_caja_abierta();
-                cargar_facturas();
+                
             }
             catch(Exception ex)
             {
@@ -66,7 +67,7 @@ namespace puntoVenta
         }
         public void ejecutarfactura(string dato)
         {
-            numero_factura_txt.Text = dato.ToString();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -76,55 +77,65 @@ namespace puntoVenta
                 bc.ShowDialog();
                 cargar_nombre_cliente();
                 cargar_facturas();
-                calcular_total();
+                
         }
         public void cargar_facturas()
         {
-            dataGridView1.Rows.Clear();
-            if (codigo_cliente_txt.Text.Trim() != "")
+            try
             {
-                string sql = "select f.codigo,f.num_factura,(t.nombre+' '+p.apellido) as nombre_cliente,f.ncf,f.rnc,f.codigo_tipo_factura,f.fecha,f.fecha_limite,f.codigo_empleado from factura f  join cliente c on c.codigo=f.codigo_cliente join tercero t on t.codigo=c.codigo join persona p on p.codigo=c.codigo where f.estado='1' and f.pagada='0' and f.codigo>'0' ";
+                dataGridView1.Rows.Clear();
                 if (codigo_cliente_txt.Text.Trim() != "")
                 {
-                    sql += " and f.codigo_cliente='" + codigo_cliente_txt.Text.Trim() + "'";
-                }
-                if (codigo_cajero_txt.Text.Trim() != "")
-                {
-                    sql += " and f.codigo_empleado='" + codigo_cajero_txt.Text.Trim() + "'";
-                }
-                if (ck_registro_desde.Checked == true)
-                {
-                    sql += " and f.fecha>='" + fecha_desde_txt.Value.ToString("yyyy-MM-dd") + "'";
-                }
-                if (ck_registro_hasta.Checked == true)
-                {
-                    sql += " and f.fecha<='" + fecha_hasta_txt.Value.ToString("yyyy-MM-dd") + "'";
-                }
-                sql += " order by f.codigo desc";
-                DataSet ds = Utilidades.ejecutarcomando(sql);
-                foreach (DataRow row in ds.Tables[0].Rows)
-                {
-                    string nombre_empleado = "";
-                    //sacando el nombre del empleado de la factura
-                    sql = "select (t.nombre+' '+p.apellido) as nombre from tercero t join empleado e on e.codigo=t.codigo join persona p on p.codigo=e.codigo where e.codigo='" + row[8].ToString() + "'";
-                    ds = Utilidades.ejecutarcomando(sql);
-                    if (ds.Tables[0].Rows[0][0].ToString() != "")
+                    string sql = "select f.codigo,f.num_factura,(t.nombre+' '+p.apellido) as nombre_cliente,f.ncf,f.rnc,f.codigo_tipo_factura,f.fecha,f.fecha_limite,f.codigo_empleado from factura f  join cliente c on c.codigo=f.codigo_cliente join tercero t on t.codigo=c.codigo join persona p on p.codigo=c.codigo where f.estado='1' and f.pagada='0' and f.codigo>'0' ";
+                    if (codigo_cliente_txt.Text.Trim() != "")
                     {
-                        nombre_empleado = ds.Tables[0].Rows[0][0].ToString();
+                        sql += " and f.codigo_cliente='" + codigo_cliente_txt.Text.Trim() + "'";
                     }
-                    //pendiente
-                    //total,pendiente,pagado
-                    sql = "exec pendiente_factura_venta '" + row[0].ToString() + "'";
-                    ds = Utilidades.ejecutarcomando(sql);
-                    string faltante = ds.Tables[0].Rows[0][1].ToString();
-                    dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(),row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString(), nombre_empleado.ToString(), faltante.ToString());
+                    if (codigo_cajero_txt.Text.Trim() != "")
+                    {
+                        sql += " and f.codigo_empleado='" + codigo_cajero_txt.Text.Trim() + "'";
+                    }
+                    if (ck_registro_desde.Checked == true)
+                    {
+                        sql += " and f.fecha>='" + fecha_desde_txt.Value.ToString("yyyy-MM-dd") + "'";
+                    }
+                    if (ck_registro_hasta.Checked == true)
+                    {
+                        sql += " and f.fecha<='" + fecha_hasta_txt.Value.ToString("yyyy-MM-dd") + "'";
+                    }
+                    sql += " order by f.codigo desc";
+                    DataSet ds = Utilidades.ejecutarcomando(sql);
+                    foreach (DataRow row in ds.Tables[0].Rows)
+                    {
+                        string nombre_empleado = "";
+                        //sacando el nombre del empleado de la factura
+                        sql = "select (t.nombre+' '+p.apellido) as nombre from tercero t join empleado e on e.codigo=t.codigo join persona p on p.codigo=e.codigo where e.codigo='" + row[8].ToString() + "'";
+                        ds = Utilidades.ejecutarcomando(sql);
+                        if (ds.Tables[0].Rows[0][0].ToString() != "")
+                        {
+                            nombre_empleado = ds.Tables[0].Rows[0][0].ToString();
+                        }
+                        //pendiente
+                        //total,pendiente,pagado
+                        sql = "exec pendiente_factura_venta '" + row[0].ToString() + "'";
+                        ds = Utilidades.ejecutarcomando(sql);
+                        string faltante = ds.Tables[0].Rows[0][1].ToString();
+                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), nombre_empleado.ToString(), faltante.ToString());
+                    }
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        double monto = 0;
+                        monto = Convert.ToDouble(row.Cells[9].Value.ToString());
+                        row.Cells[9].Value = monto.ToString("N");
+
+                        row.Cells[10].Value = 0;
+                    }
+                    calcular_total();
                 }
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    double monto = 0;
-                    monto = Convert.ToDouble(row.Cells[10].Value.ToString());
-                    row.Cells[10].Value = monto.ToString("###,###,###,###,###.#0");
-                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error cargando las facturas: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         public void ejecutarcliente(string dato)
@@ -157,8 +168,8 @@ namespace puntoVenta
 
                     codigo_cliente_txt.Clear();
                     nombre_cliente_txt.Clear();
-                    numero_factura_txt.Clear();
-                    pendiente_txt.Clear();
+                    codigo_cajero_txt.Text = s.codigo_usuario;
+                    cargar_nombre_cajero();
                     monto_txt.Clear();
                     detalle_txt.Clear();
                     dataGridView1.Rows.Clear();
@@ -181,16 +192,6 @@ namespace puntoVenta
         private void button5_Click(object sender, EventArgs e)
         {
         }
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            int fila=dataGridView1.CurrentRow.Index;
-            numero_factura_txt.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-            pendiente_txt.Text = dataGridView1.Rows[fila].Cells[10].Value.ToString();
-        }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         internal singleton s { get; set; }
         double pago_antiguedad = 0;
         string codigo_cobro = "";
@@ -199,138 +200,101 @@ namespace puntoVenta
         double transferencia = 0;
         double cheque = 0;
         double tarjeta = 0;
-        private void button8_Click(object sender, EventArgs e)
+
+
+        public Boolean validarCampos()
+        {
+
+
+            if (Convert.ToDouble(monto_txt.Text.Trim()) >= Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()))
+            {
+                MessageBox.Show("El monto que esta aplicando es mayor que toda la deuda del cliente");
+                return false;
+            }
+            if (s.cobros_cxc != true)
+            {
+                MessageBox.Show("Usted no tiene permiso para hacer cobros");
+                return false;
+            }
+
+
+            return true;
+        }
+
+
+
+
+
+        public Boolean validar()
+        {
+            s = singleton.obtenerDatos();
+            if (Utilidades.validarPermisoEmpleado(s.codigo_usuario.ToString(), "29") == true)
+            {
+                s.cobros_cxc = true;
+            }
+            else
+            {
+                s.cobros_cxc = false;
+                MessageBox.Show("No tiene permisos para cobrar","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return false;
+            }
+
+
+            if(codigo_cliente_txt.Text.Trim()=="")
+            {
+                MessageBox.Show("Falta el cliente", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if(codigo_cajero_txt.Text.Trim()=="")
+            {
+                MessageBox.Show("Falta el cajero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if(dataGridView1.Rows.Count==0)
+            {
+                MessageBox.Show("Falta las facturas", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+
+        public Boolean procesar()
         {
             try
             {
-                DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    s = singleton.obtenerDatos();
-                    if (Convert.ToDouble(monto_txt.Text.Trim()) <= Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()))
-                    {
-                        if (s.cobros_cxc == true)
-                        {
-                            if (numero_factura_txt.Text.Trim() != "")
-                            {
-                                if (monto_txt.Text.Trim() != "")
-                                {
-                                    if (Convert.ToDouble(monto_txt.Text.Trim()) <= Convert.ToDouble(pendiente_txt.Text.Trim()))
-                                    {
-                                        pago_desglose p = new pago_desglose();
-                                        p.total_esperado = monto_txt.Text.Trim();
-                                        p.pasado += new pago_desglose.pasar(guardar);
-                                        p.ShowDialog();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("El monto a pagar debe ser menor o igual que el pendiente");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Debe establecer a pagar para proceder con el desglose");
-                                }
-                            }
-                            else
-                            {
-                                if (ck_aplicar_todo.Checked == true)
-                                {
-                                    if (detalle_txt.Text.Trim() != "")
-                                    {
-                                        double monto_temporal = Convert.ToDouble(monto_txt.Text.Trim());
-                                        double pendiente = 0;
-                                        if (codigo_cajero_txt.Text.Trim() != "")
-                                        {
-                                            while (Convert.ToDouble(monto_txt.Text.Trim()) > 0)
-                                            {
-                                                pendiente = 0;
-                                                int fila = 0;
-                                                pago_antiguedad = Convert.ToDouble(monto_txt.Text.Trim());
-                                                if (monto_txt.Text.Trim() != "0" && pago_antiguedad > 0)
-                                                {
-                                                    pendiente = Convert.ToDouble(dataGridView1.Rows[fila].Cells[10].Value.ToString());
-                                                    pago_antiguedad = Convert.ToDouble(monto_txt.Text.Trim());
-                                                    if (pago_antiguedad > pendiente)
-                                                    {
-                                                        //aplicar lo que quedo pendiente
-                                                        //MessageBox.Show("'" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "','" + pago_antiguedad.ToString() + "','" + detalle_txt.Text.Trim() + "','" + s.codigo_usuario.ToString() + "'");
-                                                        string sql = "exec cobrar_factura '" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "','" + pendiente.ToString() + "','" + detalle_txt.Text.Trim() + "','" + fecha.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "'";
-                                                        DataSet ds = Utilidades.ejecutarcomando(sql);
-                                                        pago_antiguedad -= pendiente;
-                                                        cargar_facturas();
+                bool validar = validarCampos();
+                 DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (dr == DialogResult.Yes)
+                 {
+                     if (!validar)
+                         return false;
 
-                                                        // MessageBox.Show("devuelta-->" + pago_antiguedad.ToString());
-                                                        monto_txt.Text = pago_antiguedad.ToString();
-                                                        if (pago_antiguedad < 0)
-                                                        {
-                                                            monto_txt.Text = "0";
-                                                            break;
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        //aplicar el unico pago
-                                                        //MessageBox.Show("'" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "','" + pago_antiguedad.ToString() + "','" + detalle_txt.Text.Trim() + "','" + s.codigo_usuario.ToString() + "'");
-                                                        string sql = "exec cobrar_factura '" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "','" + pago_antiguedad.ToString() + "','" + detalle_txt.Text.Trim() + "','" + codigo_cajero_txt.Text.Trim() + "'";
-                                                        DataSet ds = Utilidades.ejecutarcomando(sql);
-                                                        pago_antiguedad -= pendiente;
-                                                        dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                                                        if (dr == DialogResult.Yes)
-                                                        {
-                                                            codigo_cobro = ds.Tables[0].Rows[0][0].ToString();
-                                                            imprimir_cobros ic = new imprimir_cobros();
-                                                            ic.codigo_cobro = codigo_cobro.ToString();
-                                                            ic.ShowDialog();
-                                                        }
-                                                        cargar_facturas();
-                                                        //MessageBox.Show("devuelta-->" + pago_antiguedad.ToString());
-                                                        monto_txt.Text = pago_antiguedad.ToString();
 
-                                                        if (pago_antiguedad < 0)
-                                                        {
-                                                            monto_txt.Text = "0";
-                                                            break;
-                                                        }
-                                                    }
-                                                }
-                                                fila++;
-                                                cargar_facturas();
-                                            }
-                                            MessageBox.Show("Se aplicaron los cobros");
-                                            cargar_facturas();
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Falta el cajero");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Falta el detalle de cobro");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Falta seleccionar la factura");
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usted no tiene permiso para hacer cobros");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El monto que esta aplicando es mayor que toda la deuda del cliente");
-                    }
-                }
+                     foreach (DataGridViewRow row in dataGridView1.Rows)
+                     {
+                         if(row.Cells[10].Value.ToString()!="0" && row.Cells[9].Value.ToString()!="")
+                         {
+
+                         }
+                     }
+                     
+                 }
+
+                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: "+ex.ToString());
+                MessageBox.Show("Error: " + ex.ToString());
+                return false;
             }
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            procesar();
         }
         public double efectivo_global = 0;
         public double devuelta_global = 0;
@@ -355,29 +319,35 @@ namespace puntoVenta
                 cod_orden_compra_global = Convert.ToInt16(cod_orden_compra.ToString());
                 monto_orden_compra_global = Convert.ToDouble(monto_orden_compra.ToString());
                 DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                string sql = "exec cobrar_factura '" + numero_factura_txt.Text.Trim() + "','" + efectivo_global.ToString() + "','" + devuelta_global.ToString() + "','" + tarjeta_global.ToString() + "','" + cheque_global.ToString() + "','" + deposito_global.ToString() + "','" + detalle_txt.Text.Trim() + "','"+fecha.Value.ToString("yyyy-MM-dd")+"','" + s.codigo_usuario.ToString() + "'";
-                DataSet ds = Utilidades.ejecutarcomando(sql);
-                codigo_cobro = ds.Tables[0].Rows[0][0].ToString();
-                if (ds.Tables[0].Rows.Count > 0)
+                if (dr == DialogResult.Yes)
                 {
-
-                    cargar_facturas();
-                    MessageBox.Show("Se aplico el cobro");
-                    dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dr == DialogResult.Yes)
+                    if (dataGridView1.Rows.Count > 0)
                     {
-                        imprimir_cobros ic = new imprimir_cobros();
-                        ic.codigo_cobro = codigo_cobro.ToString();
-                        ic.ShowDialog();
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            string sql = "exec cobrar_factura '" + row.Cells[0].Value.ToString() + "','" + efectivo_global.ToString() + "','" + devuelta_global.ToString() + "','" + tarjeta_global.ToString() + "','" + cheque_global.ToString() + "','" + deposito_global.ToString() + "','" + detalle_txt.Text.Trim() + "','" + fecha.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_usuario.ToString() + "'";
+                            DataSet ds = Utilidades.ejecutarcomando(sql);
+                            codigo_cobro = ds.Tables[0].Rows[0][0].ToString();
+                       
+
+                            cargar_facturas();
+                            MessageBox.Show("Se aplico el cobro");
+                            dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dr == DialogResult.Yes)
+                            {
+                                imprimir_cobros ic = new imprimir_cobros();
+                                ic.codigo_cobro = codigo_cobro.ToString();
+                                ic.ShowDialog();
+                            }
+                            cargar_facturas();
+                            monto_txt.Clear();
+                            calcular_total();
+                        }
                     }
-                    cargar_facturas();
-                    monto_txt.Clear();
-                    pendiente_txt.Clear();
-                    calcular_total();
-                }
-                else
-                {
-                    MessageBox.Show("No se aplico el cobro");
+                    else
+                    {
+                        MessageBox.Show("no hay facturas","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    }
                 }
             }
             catch (Exception)
@@ -400,9 +370,9 @@ namespace puntoVenta
                 {
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        if (row.Cells[10].Value != "")
+                        if (row.Cells[9].Value != "")
                         {
-                            sumatoria += Convert.ToDouble(row.Cells[10].Value);
+                            sumatoria += Convert.ToDouble(row.Cells[9].Value);
                         }
                     }
                     cantidad_total_factura_txt.Text = sumatoria.ToString("###,###,###,###.#0");
@@ -482,6 +452,8 @@ namespace puntoVenta
             }
             catch (Exception)
             {
+                codigo_cajero_txt.Clear();
+                nombre_cajero_txt.Clear();
                 MessageBox.Show("Error buscando el nombre del cajero");
             }
         }
@@ -519,6 +491,17 @@ namespace puntoVenta
             {
                 fecha_hasta_txt.Enabled = false;
             }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            int fila = dataGridView1.CurrentRow.Index;
+            
+        }
+
+        private void pendiente_txt_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

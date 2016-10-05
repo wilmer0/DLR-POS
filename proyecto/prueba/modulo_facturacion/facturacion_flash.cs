@@ -838,7 +838,7 @@ namespace puntoVenta
                                                         actualiza_factura_producto();
 
                                                         MessageBox.Show("Factura generada con exito");
-                                                        DialogResult dr = MessageBox.Show("Desea Imprimir Rollo?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                                                        DialogResult dr = MessageBox.Show("Desea Imprimir?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                                                         if (dr == DialogResult.Yes)
                                                         {
                                                             //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
@@ -855,9 +855,9 @@ namespace puntoVenta
                                                             //iv.codigo_factura = codigo_factura_txt.Text.Trim();
                                                             //iv.ShowDialog();
 
-                                                            imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
-                                                            ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            ih.ShowDialog();
+                                                            //imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
+                                                            //ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            //ih.ShowDialog();
                                                         }
                                                     }
                                                     else
