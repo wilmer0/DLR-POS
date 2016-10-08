@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuenta_por_cobrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.codigo_cliente_txt = new System.Windows.Forms.TextBox();
             this.nombre_cliente_txt = new System.Windows.Forms.TextBox();
@@ -83,7 +83,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(8, 16);
+            this.label1.Location = new System.Drawing.Point(8, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             // codigo_cliente_txt
             // 
-            this.codigo_cliente_txt.Location = new System.Drawing.Point(82, 21);
+            this.codigo_cliente_txt.Location = new System.Drawing.Point(82, 85);
             this.codigo_cliente_txt.Name = "codigo_cliente_txt";
             this.codigo_cliente_txt.ReadOnly = true;
             this.codigo_cliente_txt.Size = new System.Drawing.Size(64, 20);
@@ -99,7 +99,7 @@
             // 
             // nombre_cliente_txt
             // 
-            this.nombre_cliente_txt.Location = new System.Drawing.Point(11, 43);
+            this.nombre_cliente_txt.Location = new System.Drawing.Point(11, 107);
             this.nombre_cliente_txt.Name = "nombre_cliente_txt";
             this.nombre_cliente_txt.ReadOnly = true;
             this.nombre_cliente_txt.Size = new System.Drawing.Size(175, 20);
@@ -193,7 +193,7 @@
             // 
             this.button4.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(152, 11);
+            this.button4.Location = new System.Drawing.Point(152, 75);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 30);
             this.button4.TabIndex = 57;
@@ -225,7 +225,7 @@
             this.ck_aplicar_todo.AutoSize = true;
             this.ck_aplicar_todo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ck_aplicar_todo.ForeColor = System.Drawing.Color.Black;
-            this.ck_aplicar_todo.Location = new System.Drawing.Point(225, 83);
+            this.ck_aplicar_todo.Location = new System.Drawing.Point(225, 85);
             this.ck_aplicar_todo.Name = "ck_aplicar_todo";
             this.ck_aplicar_todo.Size = new System.Drawing.Size(209, 28);
             this.ck_aplicar_todo.TabIndex = 85;
@@ -277,17 +277,18 @@
             // 
             // nombre_cajero_txt
             // 
-            this.nombre_cajero_txt.Location = new System.Drawing.Point(14, 105);
+            this.nombre_cajero_txt.Location = new System.Drawing.Point(9, 46);
             this.nombre_cajero_txt.Name = "nombre_cajero_txt";
             this.nombre_cajero_txt.ReadOnly = true;
             this.nombre_cajero_txt.Size = new System.Drawing.Size(175, 20);
             this.nombre_cajero_txt.TabIndex = 102;
+            this.nombre_cajero_txt.Text = " ";
             // 
             // button2
             // 
             this.button2.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(155, 73);
+            this.button2.Location = new System.Drawing.Point(150, 14);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(34, 30);
             this.button2.TabIndex = 101;
@@ -296,7 +297,7 @@
             // 
             // codigo_cajero_txt
             // 
-            this.codigo_cajero_txt.Location = new System.Drawing.Point(85, 83);
+            this.codigo_cajero_txt.Location = new System.Drawing.Point(80, 24);
             this.codigo_cajero_txt.Name = "codigo_cajero_txt";
             this.codigo_cajero_txt.ReadOnly = true;
             this.codigo_cajero_txt.Size = new System.Drawing.Size(64, 20);
@@ -307,7 +308,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(13, 77);
+            this.label10.Location = new System.Drawing.Point(8, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 25);
             this.label10.TabIndex = 99;
@@ -335,10 +336,10 @@
             this.groupBox1.Controls.Add(this.codigo_cliente_txt);
             this.groupBox1.Controls.Add(this.nombre_cajero_txt);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.nombre_cliente_txt);
-            this.groupBox1.Controls.Add(this.codigo_cajero_txt);
             this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.codigo_cajero_txt);
             this.groupBox1.Location = new System.Drawing.Point(18, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(913, 132);
@@ -351,7 +352,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(192, 20);
+            this.label3.Location = new System.Drawing.Point(192, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 20);
             this.label3.TabIndex = 105;
@@ -421,7 +422,7 @@
             "Deposito",
             "Cheque",
             "Tarjeta"});
-            this.tipoPagoText.Location = new System.Drawing.Point(127, 165);
+            this.tipoPagoText.Location = new System.Drawing.Point(127, 166);
             this.tipoPagoText.Name = "tipoPagoText";
             this.tipoPagoText.Size = new System.Drawing.Size(121, 21);
             this.tipoPagoText.TabIndex = 105;
@@ -492,27 +493,27 @@
             // 
             // pendiente
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle9.Format = "N2";
-            dataGridViewCellStyle9.NullValue = "0";
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.pendiente.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle17.Format = "N2";
+            dataGridViewCellStyle17.NullValue = "0";
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.pendiente.DefaultCellStyle = dataGridViewCellStyle17;
             this.pendiente.HeaderText = "Pendiente";
             this.pendiente.Name = "pendiente";
             this.pendiente.ReadOnly = true;
             // 
             // abonogrid
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = "0";
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = "0";
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle18;
             this.abonogrid.HeaderText = "Abono";
             this.abonogrid.Name = "abonogrid";
             // 
