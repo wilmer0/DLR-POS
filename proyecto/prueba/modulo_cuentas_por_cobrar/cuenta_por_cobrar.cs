@@ -531,20 +531,33 @@ namespace puntoVenta
         {
             try
             {
+                double montoAbono = 0;
+                double montoPendiente = 0;
                 int fila = dataGridView1.CurrentRow.Index;
                 //MessageBox.Show(dataGridView1.Rows[fila].Cells[8].Value.ToString());
-                if (dataGridView1.Rows[fila].Cells[9].Value.ToString() == "0")
-                    return;
-
-
-
-                if (tipoPagoText.Text == "")
+                if (tipoPagoText.Text.Trim() == "")
                 {
                     MessageBox.Show("Falta el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tipoPagoText.Focus();
                     return;
                 }
+                if (MontoAbonoText.Text.Trim() == "")
+                {
+                    MessageBox.Show("Falta el monto del abono","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MontoAbonoText.Focus();
+                    MontoAbonoText.SelectAll();
+                    return;
+                }
 
+                montoPendiente =double.Parse(dataGridView1.Rows[fila].Cells[8].Value.ToString());
+                montoAbono = double.Parse(MontoAbonoText.Text.Trim());
+                if(montoAbono>montoPendiente)
+                {
+                    MessageBox.Show("El monto de abono es mayor que el monto pendiente", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MontoAbonoText.Focus();
+                    MontoAbonoText.SelectAll();
+                    return;
+                }
 
                 if (tipoPagoText.Text == "Efectivo")
                     dataGridView1.Rows[fila].Cells[10].Value = "EF";
@@ -555,8 +568,10 @@ namespace puntoVenta
                 if (tipoPagoText.Text == "Tarjeta")
                     dataGridView1.Rows[fila].Cells[10].Value = "TJ";
 
-                if (tipoPagoText.Text == "cheque")
+                if (tipoPagoText.Text == "Cheque")
                     dataGridView1.Rows[fila].Cells[10].Value = "CK";
+
+                dataGridView1.Rows[fila].Cells[9].Value = montoAbono.ToString("N");
             }
             catch(Exception ex)
             {
