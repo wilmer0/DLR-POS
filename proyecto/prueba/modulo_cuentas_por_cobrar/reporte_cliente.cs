@@ -110,7 +110,7 @@ namespace puntoVenta
             int sumax = 120;
             e.Graphics.DrawString(linea, new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 150);
 
-            e.Graphics.DrawString("COD", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
+            e.Graphics.DrawString("ID", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax-50;
             e.Graphics.DrawString("NOMBRE", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax;
@@ -123,9 +123,7 @@ namespace puntoVenta
             e.Graphics.DrawString("LIMITE CRED.", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax;
             e.Graphics.DrawString("CRED. ABIERTO", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
-
             e.Graphics.DrawString(linea, new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x_temporal, 177);
-
             y = y + 50;
             y = 190;
             x = 10;

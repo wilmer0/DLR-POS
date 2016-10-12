@@ -64,7 +64,6 @@ namespace puntoVenta
                 validar_caja_abierta();
 
 
-
                 unidad_combo_txt.DropDownStyle = ComboBoxStyle.DropDownList;
                 secuenciaComprobanteText.DropDownStyle = ComboBoxStyle.DropDownList;
                 codigo_producto_txt.Focus();
@@ -82,8 +81,7 @@ namespace puntoVenta
                 string sql = "select max(codigo) from cuadre_caja where cod_cajero='" + codigo_cajero_txt.Text.Trim() + "' and fecha<='" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "' and abierta_cerrada='A' and estado='1'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 if (ds.Tables[0].Rows[0][0].ToString() != "")
-                {
-                    
+                {    
                     return true;
                 }
                 else
@@ -93,7 +91,6 @@ namespace puntoVenta
                     nombre_cajero_txt.Clear();
                     this.Close();
                     return false;
-                    
                 }
             }
             catch(Exception ex)

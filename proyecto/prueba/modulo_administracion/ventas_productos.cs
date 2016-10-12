@@ -124,7 +124,7 @@ namespace puntoVenta
                                     //MessageBox.Show("prod->"+r[0].ToString()+" monto->"+r[1].ToString());
                                     
                                     //dataGridView1.Rows[fila].Cells[1].Value = nombre_producto.ToString();
-                                    dataGridView1.Rows[fila].Cells[mes].Value = monto.ToString("###,###,###,#0");
+                                    dataGridView1.Rows[fila].Cells[mes].Value = monto.ToString("N");
                                 }
                             }
                             if (ds.Tables[0].Rows.Count == 0)
