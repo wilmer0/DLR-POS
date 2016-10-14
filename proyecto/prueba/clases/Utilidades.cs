@@ -51,8 +51,8 @@ namespace puntoVenta
         public static string conv999(Int64 n)
         {
             if (n == 0) return "";
-            string[] vu = new string[] { null, "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve", "trenta" };
-            string[] vd = new string[] { null, "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
+            string[] unidad = new string[] { null, "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve", "trenta" };
+            string[] decena = new string[] { null, "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
             string cn = n.ToString().PadLeft(3, '0');
             int c = Convert.ToInt16(cn.Substring(0, 1));
             int d = Convert.ToInt16(cn.Substring(1, 1));
@@ -60,14 +60,14 @@ namespace puntoVenta
             int u2 = Convert.ToInt16(cn.Substring(1, 2));
             if (n == 100) return " cien ";
             string letras = "";
-            if (c > 0) letras += vu[c] + " cientos ";
+            if (c > 0) letras += unidad[c] + " cientos ";
             if (u2 > 0)
             {
-                if (u2 < 30) letras += vu[u2];
+                if (u2 < 30) letras += unidad[u2];
                 else
                 {
-                    letras += vd[d];
-                    if (u > 0) letras += " y " + vu[u];
+                    letras += decena[d];
+                    if (u > 0) letras += " y " + unidad[u];
                 }
             }
             //arreglos
