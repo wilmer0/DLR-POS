@@ -51,8 +51,9 @@ namespace puntoVenta
         public static string conv999(Int64 n)
         {
             if (n == 0) return "";
-            string[] unidad = new string[] { null, "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve", "trenta" };
-            string[] decena = new string[] { null, "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa" };
+            string[] unidad = new string[] { null, "uno", "dos", "tres", "cuatro", "cinco", "seis","siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce","quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte","veintiuno", "veintidos", "veintitres", "veinticuatro", "veinticinco", "veintiseis","veintisiete", "veintiocho", "veintinueve", "trenta" };
+            string[] decena = new string[] { null, "diez", "veinte", "treinta", "cuarenta", "cincuenta", 
+                "sesenta", "setenta", "ochenta", "noventa" };
             string cn = n.ToString().PadLeft(3, '0');
             int c = Convert.ToInt16(cn.Substring(0, 1));
             int d = Convert.ToInt16(cn.Substring(1, 1));

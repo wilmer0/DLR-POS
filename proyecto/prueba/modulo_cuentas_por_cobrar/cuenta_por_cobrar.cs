@@ -305,8 +305,13 @@ namespace puntoVenta
                  DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (dr == DialogResult.Yes)
                  {
-                     
 
+
+                     /*
+                        create proc insert_cobro
+                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),
+                        @cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
+                      */
 
                      foreach (DataGridViewRow row in dataGridView1.Rows)
                      {

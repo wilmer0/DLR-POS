@@ -34,7 +34,6 @@ namespace puntoVenta
             //usuarioText.Text = "wilmer";
             //claveText.Text = "123";
             //inicioSesion();
-            
 
         }
 
