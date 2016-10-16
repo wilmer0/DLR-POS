@@ -317,7 +317,7 @@ namespace puntoVenta
                      {
                          if(row.Cells[10].Value.ToString()!="0" && row.Cells[9].Value.ToString()!="")
                          {
-
+                             string sql = "";
                          }
                      }
                      
