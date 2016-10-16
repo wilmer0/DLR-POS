@@ -303,19 +303,18 @@ namespace puntoVenta
                 if (!validar)
                     return false;
 
-
+                s=singleton.obtenerDatos();
                  DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (dr == DialogResult.Yes)
                  {   
                      /*
                         create proc insert_cobro
-                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),
-                        @cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
+                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),@cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
                       */
                      string Efectivo= montoEfectivo();
                      string Pendiente=montoPendiente();
                      double devuelta=double.Parse(Efectivo)-double.Parse(Pendiente);
-                     string sql = "exec insert_cobro '"+Efectivo+"','"+devuelta.ToString()+"','"++"','"++"','"++"','"++"','"++"','"++"','"++"'";
+                     string sql = "exec insert_cobro '"+Efectivo+"','"+devuelta.ToString()+"','"+montoDescuentoText.Text.Trim()+"','"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario.ToString()+"','','1','0'";
                      foreach (DataGridViewRow row in dataGridView1.Rows)
                      {
                          if(row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
@@ -470,7 +469,7 @@ namespace puntoVenta
                             sumatoria += Convert.ToDouble(row.Cells[8].Value);
                         }
                     }
-                    cantidad_total_factura_txt.Text = sumatoria.ToString("N");
+                    MontoTotalPendienteText.Text = sumatoria.ToString("N");
                 }
             }
             catch (Exception ex)
@@ -661,7 +660,12 @@ namespace puntoVenta
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            Utilidades.numero_decimal(this.Text);
+            Utilidades.numero_decimal(this.Text.Trim());
+        }
+
+        private void montoDescuentoText_TextChanged(object sender, EventArgs e)
+        {
+            Utilidades.numero_decimal(this.Text.Trim());
         }
     }
 }

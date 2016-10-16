@@ -54,7 +54,7 @@
             this.detalle_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ck_aplicar_todo = new System.Windows.Forms.CheckBox();
-            this.cantidad_total_factura_txt = new System.Windows.Forms.TextBox();
+            this.MontoTotalPendienteText = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -77,7 +77,9 @@
             this.MontoAbonoText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.montoDescuentoText = new System.Windows.Forms.TextBox();
+            this.MontoTotalAbonarText = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -324,15 +326,15 @@
             this.ck_aplicar_todo.Visible = false;
             this.ck_aplicar_todo.Click += new System.EventHandler(this.ck_aplicar_todo_Click);
             // 
-            // cantidad_total_factura_txt
+            // MontoTotalPendienteText
             // 
-            this.cantidad_total_factura_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad_total_factura_txt.Location = new System.Drawing.Point(762, 456);
-            this.cantidad_total_factura_txt.Name = "cantidad_total_factura_txt";
-            this.cantidad_total_factura_txt.ReadOnly = true;
-            this.cantidad_total_factura_txt.Size = new System.Drawing.Size(169, 26);
-            this.cantidad_total_factura_txt.TabIndex = 87;
-            this.cantidad_total_factura_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MontoTotalPendienteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoTotalPendienteText.Location = new System.Drawing.Point(481, 456);
+            this.MontoTotalPendienteText.Name = "MontoTotalPendienteText";
+            this.MontoTotalPendienteText.ReadOnly = true;
+            this.MontoTotalPendienteText.Size = new System.Drawing.Size(169, 26);
+            this.MontoTotalPendienteText.TabIndex = 87;
+            this.MontoTotalPendienteText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -340,11 +342,11 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(607, 453);
+            this.label19.Location = new System.Drawing.Point(375, 456);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(149, 29);
+            this.label19.Size = new System.Drawing.Size(100, 29);
             this.label19.TabIndex = 86;
-            this.label19.Text = "Total pendiente";
+            this.label19.Text = "Pendiente";
             this.label19.UseCompatibleTextRendering = true;
             // 
             // printDocument1
@@ -414,7 +416,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.ck_registro_hasta);
@@ -435,7 +437,6 @@
             this.groupBox1.Size = new System.Drawing.Size(913, 132);
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda";
             // 
             // label3
             // 
@@ -569,12 +570,36 @@
             this.textBox1.TabIndex = 110;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // textBox2
+            // montoDescuentoText
             // 
-            this.textBox2.Location = new System.Drawing.Point(719, 167);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
-            this.textBox2.TabIndex = 111;
+            this.montoDescuentoText.Location = new System.Drawing.Point(719, 167);
+            this.montoDescuentoText.Name = "montoDescuentoText";
+            this.montoDescuentoText.Size = new System.Drawing.Size(144, 20);
+            this.montoDescuentoText.TabIndex = 111;
+            this.montoDescuentoText.TextChanged += new System.EventHandler(this.montoDescuentoText_TextChanged);
+            // 
+            // MontoTotalAbonarText
+            // 
+            this.MontoTotalAbonarText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoTotalAbonarText.Location = new System.Drawing.Point(762, 456);
+            this.MontoTotalAbonarText.Name = "MontoTotalAbonarText";
+            this.MontoTotalAbonarText.ReadOnly = true;
+            this.MontoTotalAbonarText.Size = new System.Drawing.Size(169, 26);
+            this.MontoTotalAbonarText.TabIndex = 113;
+            this.MontoTotalAbonarText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(682, 455);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 29);
+            this.label7.TabIndex = 112;
+            this.label7.Text = "Abonar";
+            this.label7.UseCompatibleTextRendering = true;
             // 
             // cuenta_por_cobrar
             // 
@@ -582,7 +607,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(943, 622);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.MontoTotalAbonarText);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.montoDescuentoText);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.MontoAbonoText);
@@ -591,7 +618,7 @@
             this.Controls.Add(this.tipoPagoText);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.fecha);
-            this.Controls.Add(this.cantidad_total_factura_txt);
+            this.Controls.Add(this.MontoTotalPendienteText);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.detalle_txt);
@@ -627,7 +654,7 @@
         private System.Windows.Forms.TextBox detalle_txt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox ck_aplicar_todo;
-        private System.Windows.Forms.TextBox cantidad_total_factura_txt;
+        private System.Windows.Forms.TextBox MontoTotalPendienteText;
         private System.Windows.Forms.Label label19;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -661,6 +688,8 @@
         private System.Windows.Forms.TextBox MontoAbonoText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox montoDescuentoText;
+        private System.Windows.Forms.TextBox MontoTotalAbonarText;
+        private System.Windows.Forms.Label label7;
     }
 }
