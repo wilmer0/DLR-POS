@@ -31,6 +31,10 @@ namespace puntoVenta
         {
             loadVentana();
             InitializeComponent();
+            //usuarioText.Text = "wilmer";
+            //claveText.Text = "123";
+            //inicioSesion();
+
         }
 
         public void loadVentana()

@@ -70,6 +70,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.identificacion_txt = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.clienteContadoCheck = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -266,7 +267,7 @@
             this.ck_activo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ck_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ck_activo.ForeColor = System.Drawing.Color.Black;
-            this.ck_activo.Location = new System.Drawing.Point(145, 155);
+            this.ck_activo.Location = new System.Drawing.Point(145, 187);
             this.ck_activo.Name = "ck_activo";
             this.ck_activo.Size = new System.Drawing.Size(80, 28);
             this.ck_activo.TabIndex = 13;
@@ -391,6 +392,7 @@
             // 
             // tipo_telefono_combo_txt
             // 
+            this.tipo_telefono_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipo_telefono_combo_txt.FormattingEnabled = true;
             this.tipo_telefono_combo_txt.Items.AddRange(new object[] {
             "TEL",
@@ -513,6 +515,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.clienteContadoCheck);
             this.tabPage2.Controls.Add(this.codigo_categoria_txt);
             this.tabPage2.Controls.Add(this.credito_txt);
             this.tabPage2.Controls.Add(this.label8);
@@ -532,6 +535,20 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos de cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // clienteContadoCheck
+            // 
+            this.clienteContadoCheck.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.clienteContadoCheck.AutoSize = true;
+            this.clienteContadoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clienteContadoCheck.ForeColor = System.Drawing.Color.Black;
+            this.clienteContadoCheck.Location = new System.Drawing.Point(145, 153);
+            this.clienteContadoCheck.Name = "clienteContadoCheck";
+            this.clienteContadoCheck.Size = new System.Drawing.Size(179, 28);
+            this.clienteContadoCheck.TabIndex = 73;
+            this.clienteContadoCheck.Text = "Cliente al contado";
+            this.clienteContadoCheck.UseVisualStyleBackColor = true;
             // 
             // cliente
             // 
@@ -607,5 +624,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox identificacion_txt;
+        private System.Windows.Forms.CheckBox clienteContadoCheck;
     }
 }

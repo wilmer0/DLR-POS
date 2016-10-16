@@ -1,0 +1,6 @@
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\bin\Debug\puntoVentaModelo.exe.config
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\bin\Debug\puntoVentaModelo.exe
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\bin\Debug\puntoVentaModelo.pdb
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Debug\puntoVentaModelo.csprojResolveAssemblyReference.cache
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Debug\puntoVentaModelo.exe
+D:\wilmer\developer\github\data\DLR-POS\puntoVentaModelo\puntoVentaModelo\obj\Debug\puntoVentaModelo.pdb

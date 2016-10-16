@@ -1,0 +1,2096 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="PuntoVentaModelStoreContainer" CdmEntityContainer="punto_ventaEntities2">
+    <EntitySetMapping Name="almacen">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.almacen)">
+        <MappingFragment StoreEntitySet="almacen">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="banco">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.banco)">
+        <MappingFragment StoreEntitySet="banco">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="caja">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.caja)">
+        <MappingFragment StoreEntitySet="caja">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cajero">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cajero)">
+        <MappingFragment StoreEntitySet="cajero">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cargo">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cargo)">
+        <MappingFragment StoreEntitySet="cargo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catalogo_cuentas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.catalogo_cuentas)">
+        <MappingFragment StoreEntitySet="catalogo_cuentas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="numero_cuenta" ColumnName="numero_cuenta" />
+          <ScalarProperty Name="cuenta_master" ColumnName="cuenta_master" />
+          <ScalarProperty Name="cuenta_sub_master" ColumnName="cuenta_sub_master" />
+          <ScalarProperty Name="cuenta_acumulativa" ColumnName="cuenta_acumulativa" />
+          <ScalarProperty Name="cuenta_movimiento" ColumnName="cuenta_movimiento" />
+          <ScalarProperty Name="origen_credito" ColumnName="origen_credito" />
+          <ScalarProperty Name="origen_debito" ColumnName="origen_debito" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria_producto">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.categoria_producto)">
+        <MappingFragment StoreEntitySet="categoria_producto">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cliente)">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="limite_credito" ColumnName="limite_credito" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_creado" ColumnName="fecha_creado" />
+          <ScalarProperty Name="abrir_credito" ColumnName="abrir_credito" />
+          <ScalarProperty Name="cod_sucursal_creado" ColumnName="cod_sucursal_creado" />
+          <ScalarProperty Name="cliente_contado" ColumnName="cliente_contado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente_categoria">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cliente_categoria)">
+        <MappingFragment StoreEntitySet="cliente_categoria">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente_subcategoria">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cliente_subcategoria)">
+        <MappingFragment StoreEntitySet="cliente_subcategoria">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="combo">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.combo)">
+        <MappingFragment StoreEntitySet="combo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.compra)">
+        <MappingFragment StoreEntitySet="compra">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="num_factura" ColumnName="num_factura" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="ncf" ColumnName="ncf" />
+          <ScalarProperty Name="rnc" ColumnName="rnc" />
+          <ScalarProperty Name="cod_tipo" ColumnName="cod_tipo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_limite" ColumnName="fecha_limite" />
+          <ScalarProperty Name="pagada" ColumnName="pagada" />
+          <ScalarProperty Name="efectivo" ColumnName="efectivo" />
+          <ScalarProperty Name="cheque" ColumnName="cheque" />
+          <ScalarProperty Name="deposito" ColumnName="deposito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra_pago_anulados">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.compra_pago_anulados)">
+        <MappingFragment StoreEntitySet="compra_pago_anulados">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_pago" ColumnName="cod_pago" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra_vs_pagos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.compra_vs_pagos)">
+        <MappingFragment StoreEntitySet="compra_vs_pagos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="devuelta" ColumnName="devuelta" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="cheque" ColumnName="cheque" />
+          <ScalarProperty Name="deposito" ColumnName="deposito" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="cod_empleado_anular" ColumnName="cod_empleado_anular" />
+          <ScalarProperty Name="motivo_anular" ColumnName="motivo_anular" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprobante_fiscal">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.comprobante_fiscal)">
+        <MappingFragment StoreEntitySet="comprobante_fiscal">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_caja" ColumnName="cod_caja" />
+          <ScalarProperty Name="desde_numero" ColumnName="desde_numero" />
+          <ScalarProperty Name="hasta_numero" ColumnName="hasta_numero" />
+          <ScalarProperty Name="contador" ColumnName="contador" />
+          <ScalarProperty Name="avisar" ColumnName="avisar" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprobante_serie">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.comprobante_serie)">
+        <MappingFragment StoreEntitySet="comprobante_serie">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="serie" ColumnName="serie" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprobante_ventas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.comprobante_ventas)">
+        <MappingFragment StoreEntitySet="comprobante_ventas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="contador" ColumnName="contador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="correo_electronicos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.correo_electronicos)">
+        <MappingFragment StoreEntitySet="correo_electronicos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="ssl_activo" ColumnName="ssl_activo" />
+          <ScalarProperty Name="host" ColumnName="host" />
+          <ScalarProperty Name="puerto" ColumnName="puerto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cotizacion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cotizacion)">
+        <MappingFragment StoreEntitySet="cotizacion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="num_cotizacion" ColumnName="num_cotizacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuadre_caja">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cuadre_caja)">
+        <MappingFragment StoreEntitySet="cuadre_caja">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="turno" ColumnName="turno" />
+          <ScalarProperty Name="efectivo" ColumnName="efectivo" />
+          <ScalarProperty Name="cheque" ColumnName="cheque" />
+          <ScalarProperty Name="transferencia" ColumnName="transferencia" />
+          <ScalarProperty Name="efectivo_inicial" ColumnName="efectivo_inicial" />
+          <ScalarProperty Name="sobrante" ColumnName="sobrante" />
+          <ScalarProperty Name="faltante" ColumnName="faltante" />
+          <ScalarProperty Name="abierta_cerrada" ColumnName="abierta_cerrada" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="bonos" ColumnName="bonos" />
+          <ScalarProperty Name="orden_compra" ColumnName="orden_compra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuenta_bancaria">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cuenta_bancaria)">
+        <MappingFragment StoreEntitySet="cuenta_bancaria">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="numero_cuenta" ColumnName="numero_cuenta" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_titular" ColumnName="cod_titular" />
+          <ScalarProperty Name="cod_banco" ColumnName="cod_banco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamento">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.departamento)">
+        <MappingFragment StoreEntitySet="departamento">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="direccion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.direccion)">
+        <MappingFragment StoreEntitySet="direccion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="egresos_caja">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.egresos_caja)">
+        <MappingFragment StoreEntitySet="egresos_caja">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="afecta_cuadre" ColumnName="afecta_cuadre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cuadrado" ColumnName="cuadrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="egresos_conceptos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.egresos_conceptos)">
+        <MappingFragment StoreEntitySet="egresos_conceptos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.empleado)">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="sueldo" ColumnName="sueldo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+          <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+          <ScalarProperty Name="cod_grupo_usuario" ColumnName="cod_grupo_usuario" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="PERMISO" ColumnName="PERMISO" />
+          <ScalarProperty Name="cod_tipo_nomina" ColumnName="cod_tipo_nomina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado_vs_cargo">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.empleado_vs_cargo)">
+        <MappingFragment StoreEntitySet="empleado_vs_cargo">
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresa">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.empresa)">
+        <MappingFragment StoreEntitySet="empresa">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entrada_salida_inventario">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.entrada_salida_inventario)">
+        <MappingFragment StoreEntitySet="entrada_salida_inventario">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tipo_movimiento" ColumnName="tipo_movimiento" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="cod_almacen" ColumnName="cod_almacen" />
+          <ScalarProperty Name="motivo" ColumnName="motivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estados_reparacion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.estados_reparacion)">
+        <MappingFragment StoreEntitySet="estados_reparacion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.factura)">
+        <MappingFragment StoreEntitySet="factura">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="num_factura" ColumnName="num_factura" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="fecha_limite" ColumnName="fecha_limite" />
+          <ScalarProperty Name="codigo_empleado" ColumnName="codigo_empleado" />
+          <ScalarProperty Name="rnc" ColumnName="rnc" />
+          <ScalarProperty Name="ncf" ColumnName="ncf" />
+          <ScalarProperty Name="codigo_tipo_factura" ColumnName="codigo_tipo_factura" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="pagada" ColumnName="pagada" />
+          <ScalarProperty Name="cod_empleado_anular" ColumnName="cod_empleado_anular" />
+          <ScalarProperty Name="devuelta" ColumnName="devuelta" />
+          <ScalarProperty Name="itebis" ColumnName="itebis" />
+          <ScalarProperty Name="efectivo" ColumnName="efectivo" />
+          <ScalarProperty Name="cheque" ColumnName="cheque" />
+          <ScalarProperty Name="deposito" ColumnName="deposito" />
+          <ScalarProperty Name="motivo_anulada" ColumnName="motivo_anulada" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="cod_orden_compra" ColumnName="cod_orden_compra" />
+          <ScalarProperty Name="monto_orden_compra" ColumnName="monto_orden_compra" />
+          <ScalarProperty Name="monto_propina" ColumnName="monto_propina" />
+          <ScalarProperty Name="cod_vendedor" ColumnName="cod_vendedor" />
+          <ScalarProperty Name="despachado" ColumnName="despachado" />
+          <ScalarProperty Name="autorizar_pedido" ColumnName="autorizar_pedido" />
+          <ScalarProperty Name="cuadrado" ColumnName="cuadrado" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="codigo_comprobante" ColumnName="codigo_comprobante" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="grupo_usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.grupo_usuarios)">
+        <MappingFragment StoreEntitySet="grupo_usuarios">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_devolucion_compras">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.historial_devolucion_compras)">
+        <MappingFragment StoreEntitySet="historial_devolucion_compras">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigo_compra" ColumnName="codigo_compra" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial_devolucion_ventas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.historial_devolucion_ventas)">
+        <MappingFragment StoreEntitySet="historial_devolucion_ventas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codigo_empleado" ColumnName="codigo_empleado" />
+          <ScalarProperty Name="tipo_devolucion" ColumnName="tipo_devolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="identificacion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.identificacion)">
+        <MappingFragment StoreEntitySet="identificacion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="identificacion1" ColumnName="identificacion1" />
+          <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingresos_caja">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.ingresos_caja)">
+        <MappingFragment StoreEntitySet="ingresos_caja">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="afecta_cuadre" ColumnName="afecta_cuadre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cuadrado" ColumnName="cuadrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ingresos_conceptos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.ingresos_conceptos)">
+        <MappingFragment StoreEntitySet="ingresos_conceptos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.inventario)">
+        <MappingFragment StoreEntitySet="inventario">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="existencia" ColumnName="existencia" />
+          <ScalarProperty Name="fecha_entrada" ColumnName="fecha_entrada" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inventario_reparacion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.inventario_reparacion)">
+        <MappingFragment StoreEntitySet="inventario_reparacion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_modelo" ColumnName="cod_modelo" />
+          <ScalarProperty Name="imei" ColumnName="imei" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="serial" ColumnName="serial" />
+          <ScalarProperty Name="existencia" ColumnName="existencia" />
+          <ScalarProperty Name="fecha_entrada" ColumnName="fecha_entrada" />
+          <ScalarProperty Name="cod_empleado_modifico" ColumnName="cod_empleado_modifico" />
+          <ScalarProperty Name="cod_cliente_titular" ColumnName="cod_cliente_titular" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="itebis">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.itebis)">
+        <MappingFragment StoreEntitySet="itebis">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="it" ColumnName="it" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marcas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.marcas)">
+        <MappingFragment StoreEntitySet="marcas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.mesas)">
+        <MappingFragment StoreEntitySet="mesas">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modelo">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.modelo)">
+        <MappingFragment StoreEntitySet="modelo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre_modelo" ColumnName="nombre_modelo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="moneda">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.moneda)">
+        <MappingFragment StoreEntitySet="moneda">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tasa_actual" ColumnName="tasa_actual" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="moneda_historial">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.moneda_historial)">
+        <MappingFragment StoreEntitySet="moneda_historial">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="tasa" ColumnName="tasa" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nomina">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.nomina)">
+        <MappingFragment StoreEntitySet="nomina">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="fecha_inicial" ColumnName="fecha_inicial" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="abierta_cerrada" ColumnName="abierta_cerrada" />
+          <ScalarProperty Name="cod_empleado_cerrada" ColumnName="cod_empleado_cerrada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nomina_conceptos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.nomina_conceptos)">
+        <MappingFragment StoreEntitySet="nomina_conceptos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="aumenta_sueldo" ColumnName="aumenta_sueldo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nomina_tipos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.nomina_tipos)">
+        <MappingFragment StoreEntitySet="nomina_tipos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pais">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.pais)">
+        <MappingFragment StoreEntitySet="pais">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedidos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.pedidos)">
+        <MappingFragment StoreEntitySet="pedidos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="num_factura" ColumnName="num_factura" />
+          <ScalarProperty Name="fecha_creado" ColumnName="fecha_creado" />
+          <ScalarProperty Name="fecha_confirmado" ColumnName="fecha_confirmado" />
+          <ScalarProperty Name="fecha_limite" ColumnName="fecha_limite" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_empleado_anulado" ColumnName="cod_empleado_anulado" />
+          <ScalarProperty Name="motivo_anulado" ColumnName="motivo_anulado" />
+          <ScalarProperty Name="costo_envio" ColumnName="costo_envio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permiso">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.permiso)">
+        <MappingFragment StoreEntitySet="permiso">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="persona">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.persona)">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto)">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="reorden" ColumnName="reorden" />
+          <ScalarProperty Name="punto_maximo" ColumnName="punto_maximo" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="cod_unidad_minima" ColumnName="cod_unidad_minima" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_detalle">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_detalle)">
+        <MappingFragment StoreEntitySet="producto_detalle">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_oferta">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_oferta)">
+        <MappingFragment StoreEntitySet="producto_oferta">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="fecha_inicial" ColumnName="fecha_inicial" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_permisos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_permisos)">
+        <MappingFragment StoreEntitySet="producto_permisos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_vs_detalle">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_vs_detalle)">
+        <MappingFragment StoreEntitySet="producto_vs_detalle">
+          <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+          <ScalarProperty Name="codigo_detalle" ColumnName="codigo_detalle" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincia">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.provincia)">
+        <MappingFragment StoreEntitySet="provincia">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="region">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.region)">
+        <MappingFragment StoreEntitySet="region">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sector">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sector)">
+        <MappingFragment StoreEntitySet="sector">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sexo">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sexo)">
+        <MappingFragment StoreEntitySet="sexo">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="sexo1" ColumnName="sexo1" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistema_historial">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sistema_historial)">
+        <MappingFragment StoreEntitySet="sistema_historial">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="ruta_imagen_productos" ColumnName="ruta_imagen_productos" />
+          <ScalarProperty Name="ruta_backup" ColumnName="ruta_backup" />
+          <ScalarProperty Name="ruta_logo_empresa" ColumnName="ruta_logo_empresa" />
+          <ScalarProperty Name="codigo_moneda" ColumnName="codigo_moneda" />
+          <ScalarProperty Name="permisos_por_grupos_usuarios" ColumnName="permisos_por_grupos_usuarios" />
+          <ScalarProperty Name="autorizar_pedidos_apartir" ColumnName="autorizar_pedidos_apartir" />
+          <ScalarProperty Name="limite_egreso_caja" ColumnName="limite_egreso_caja" />
+          <ScalarProperty Name="cod_comprobante_nota_credito" ColumnName="cod_comprobante_nota_credito" />
+          <ScalarProperty Name="usar_comprobantes" ColumnName="usar_comprobantes" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="ip_server" ColumnName="ip_server" />
+          <ScalarProperty Name="base_datos" ColumnName="base_datos" />
+          <ScalarProperty Name="base_datos_usuario" ColumnName="base_datos_usuario" />
+          <ScalarProperty Name="base_datos_clave" ColumnName="base_datos_clave" />
+          <ScalarProperty Name="ver_imagen_fact_Touch" ColumnName="ver_imagen_fact_Touch" />
+          <ScalarProperty Name="ver_nombre_fact_touch" ColumnName="ver_nombre_fact_touch" />
+          <ScalarProperty Name="porciento_propina" ColumnName="porciento_propina" />
+          <ScalarProperty Name="cod_empleado_modifico" ColumnName="cod_empleado_modifico" />
+          <ScalarProperty Name="fecha_modifico" ColumnName="fecha_modifico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistema_modulo_opciones">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sistema_modulo_opciones)">
+        <MappingFragment StoreEntitySet="sistema_modulo_opciones">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_logico" ColumnName="nombre_logico" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistema_modulos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sistema_modulos)">
+        <MappingFragment StoreEntitySet="sistema_modulos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre_logico" ColumnName="nombre_logico" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="situacion_empleado">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.situacion_empleado)">
+        <MappingFragment StoreEntitySet="situacion_empleado">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoria_producto">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.subcategoria_producto)">
+        <MappingFragment StoreEntitySet="subcategoria_producto">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sucursal">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sucursal)">
+        <MappingFragment StoreEntitySet="sucursal">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suplidor">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.suplidor)">
+        <MappingFragment StoreEntitySet="suplidor">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjetas_credito">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tarjetas_credito)">
+        <MappingFragment StoreEntitySet="tarjetas_credito">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tercero">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tercero)">
+        <MappingFragment StoreEntitySet="tercero">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_comprobante_fiscal">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tipo_comprobante_fiscal)">
+        <MappingFragment StoreEntitySet="tipo_comprobante_fiscal">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_cuenta_bancaria">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tipo_cuenta_bancaria)">
+        <MappingFragment StoreEntitySet="tipo_cuenta_bancaria">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_identificacion">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tipo_identificacion)">
+        <MappingFragment StoreEntitySet="tipo_identificacion">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_movimiento_inventario">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tipo_movimiento_inventario)">
+        <MappingFragment StoreEntitySet="tipo_movimiento_inventario">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transferencia_inventario">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.transferencia_inventario)">
+        <MappingFragment StoreEntitySet="transferencia_inventario">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="codigo_almacen_destino" ColumnName="codigo_almacen_destino" />
+          <ScalarProperty Name="codigo_empleado" ColumnName="codigo_empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.unidad)">
+        <MappingFragment StoreEntitySet="unidad">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="unidad_abreviada" ColumnName="unidad_abreviada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendedor">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.vendedor)">
+        <MappingFragment StoreEntitySet="vendedor">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="porciento" ColumnName="porciento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venta_vs_pagos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.venta_vs_pagos)">
+        <MappingFragment StoreEntitySet="venta_vs_pagos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="devuelta" ColumnName="devuelta" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="cheque" ColumnName="cheque" />
+          <ScalarProperty Name="transferencia" ColumnName="transferencia" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="cod_orden_compra" ColumnName="cod_orden_compra" />
+          <ScalarProperty Name="monto_orden_compra" ColumnName="monto_orden_compra" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_empleado_anular" ColumnName="cod_empleado_anular" />
+          <ScalarProperty Name="motivo_anulado" ColumnName="motivo_anulado" />
+          <ScalarProperty Name="cuadrado" ColumnName="cuadrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="compra_detalle">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.compra_detalle)">
+        <MappingFragment StoreEntitySet="compra_detalle">
+          <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="costo" ColumnName="costo" />
+          <ScalarProperty Name="venta" ColumnName="venta" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cotizacion_detalles">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.cotizacion_detalles)">
+        <MappingFragment StoreEntitySet="cotizacion_detalles">
+          <ScalarProperty Name="codigo_cotizacion" ColumnName="codigo_cotizacion" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado_historial_datos">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.empleado_historial_datos)">
+        <MappingFragment StoreEntitySet="empleado_historial_datos">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
+          <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="cod_sexo" ColumnName="cod_sexo" />
+          <ScalarProperty Name="cod_departamento" ColumnName="cod_departamento" />
+          <ScalarProperty Name="sueldo" ColumnName="sueldo" />
+          <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
+          <ScalarProperty Name="cod_tipo_nomina" ColumnName="cod_tipo_nomina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="factura_detalle">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.factura_detalle)">
+        <MappingFragment StoreEntitySet="factura_detalle">
+          <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="itebis" ColumnName="itebis" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facturas_anuladas">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.facturas_anuladas)">
+        <MappingFragment StoreEntitySet="facturas_anuladas">
+          <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesas_detalles">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.mesas_detalles)">
+        <MappingFragment StoreEntitySet="mesas_detalles">
+          <ScalarProperty Name="codigo_mesa" ColumnName="codigo_mesa" />
+          <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nomina_detalle">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.nomina_detalle)">
+        <MappingFragment StoreEntitySet="nomina_detalle">
+          <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
+          <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
+          <ScalarProperty Name="cod_empleado_modifico" ColumnName="cod_empleado_modifico" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_codigobarra">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_codigobarra)">
+        <MappingFragment StoreEntitySet="producto_codigobarra">
+          <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="codigo_barra" ColumnName="codigo_barra" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto_oferta_historial">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.producto_oferta_historial)">
+        <MappingFragment StoreEntitySet="producto_oferta_historial">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="fecha_inicial" ColumnName="fecha_inicial" />
+          <ScalarProperty Name="fecha_final" ColumnName="fecha_final" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha_actualizada" ColumnName="fecha_actualizada" />
+          <ScalarProperty Name="cod_empleado_actualiza" ColumnName="cod_empleado_actualiza" />
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sistema">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sistema)">
+        <MappingFragment StoreEntitySet="sistema">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="ruta_imagen_productos" ColumnName="ruta_imagen_productos" />
+          <ScalarProperty Name="ruta_backup" ColumnName="ruta_backup" />
+          <ScalarProperty Name="ruta_logo_empresa" ColumnName="ruta_logo_empresa" />
+          <ScalarProperty Name="codigo_moneda" ColumnName="codigo_moneda" />
+          <ScalarProperty Name="permisos_por_grupos_usuarios" ColumnName="permisos_por_grupos_usuarios" />
+          <ScalarProperty Name="autorizar_pedidos_apartir" ColumnName="autorizar_pedidos_apartir" />
+          <ScalarProperty Name="limite_egreso_caja" ColumnName="limite_egreso_caja" />
+          <ScalarProperty Name="cod_comprobante_nota_credito" ColumnName="cod_comprobante_nota_credito" />
+          <ScalarProperty Name="usar_comprobantes" ColumnName="usar_comprobantes" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="ip_server" ColumnName="ip_server" />
+          <ScalarProperty Name="base_datos" ColumnName="base_datos" />
+          <ScalarProperty Name="base_datos_usuario" ColumnName="base_datos_usuario" />
+          <ScalarProperty Name="base_datos_clave" ColumnName="base_datos_clave" />
+          <ScalarProperty Name="ver_imagen_fact_touch" ColumnName="ver_imagen_fact_touch" />
+          <ScalarProperty Name="ver_nombre_fact_touch" ColumnName="ver_nombre_fact_touch" />
+          <ScalarProperty Name="porciento_propina" ColumnName="porciento_propina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sucursal_vs_empleado">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.sucursal_vs_empleado)">
+        <MappingFragment StoreEntitySet="sucursal_vs_empleado">
+          <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+          <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tercero_observaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tercero_observaciones)">
+        <MappingFragment StoreEntitySet="tercero_observaciones">
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="entidad" ColumnName="entidad" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tercero_vs_email">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tercero_vs_email)">
+        <MappingFragment StoreEntitySet="tercero_vs_email">
+          <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tipo_entidad" ColumnName="tipo_entidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tercero_vs_permiso">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tercero_vs_permiso)">
+        <MappingFragment StoreEntitySet="tercero_vs_permiso">
+          <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+          <ScalarProperty Name="cod_permiso" ColumnName="cod_permiso" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="tipo_entidad" ColumnName="tipo_entidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tercero_vs_telefono">
+      <EntityTypeMapping TypeName="IsTypeOf(PuntoVentaModel.tercero_vs_telefono)">
+        <MappingFragment StoreEntitySet="tercero_vs_telefono">
+          <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="tipo_entidad" ColumnName="tipo_entidad" />
+          <ScalarProperty Name="tipo_telefono" ColumnName="tipo_telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_almacen_sucursal" TypeName="PuntoVentaModel.FK_almacen_sucursal" StoreEntitySet="almacen">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="almacen">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_movimientos_inventario_almacen" TypeName="PuntoVentaModel.FK_historial_movimientos_inventario_almacen" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="almacen">
+        <ScalarProperty Name="codigo" ColumnName="almacen_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="almacen_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_movimientos_inventario_almacen1" TypeName="PuntoVentaModel.FK_historial_movimientos_inventario_almacen1" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="almacen">
+        <ScalarProperty Name="codigo" ColumnName="almacen1_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="almacen1_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_almacen" TypeName="PuntoVentaModel.FK_producto_almacen" StoreEntitySet="producto">
+      <EndProperty Name="almacen">
+        <ScalarProperty Name="codigo" ColumnName="almacen_codigo" />
+      </EndProperty>
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="almacen_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_banco_tercero" TypeName="PuntoVentaModel.FK_banco_tercero" StoreEntitySet="banco">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="banco">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cajero_caja" TypeName="PuntoVentaModel.FK_cajero_caja" StoreEntitySet="cajero">
+      <EndProperty Name="caja">
+        <ScalarProperty Name="codigo" ColumnName="caja_codigo" />
+      </EndProperty>
+      <EndProperty Name="cajero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="caja_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_comprobante_ventas_caja" TypeName="PuntoVentaModel.FK_comprobante_ventas_caja" StoreEntitySet="comprobante_ventas">
+      <EndProperty Name="caja">
+        <ScalarProperty Name="codigo" ColumnName="caja_codigo" />
+      </EndProperty>
+      <EndProperty Name="comprobante_ventas">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="caja_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cajero_empleado" TypeName="PuntoVentaModel.FK_cajero_empleado" StoreEntitySet="cajero">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="cajero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_egresos_caja_cajero" TypeName="PuntoVentaModel.FK_egresos_caja_cajero" StoreEntitySet="egresos_caja">
+      <EndProperty Name="cajero">
+        <ScalarProperty Name="codigo" ColumnName="cajero_codigo" />
+      </EndProperty>
+      <EndProperty Name="egresos_caja">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cajero_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ingresos_caja_cajero" TypeName="PuntoVentaModel.FK_ingresos_caja_cajero" StoreEntitySet="ingresos_caja">
+      <EndProperty Name="cajero">
+        <ScalarProperty Name="codigo" ColumnName="cajero_codigo" />
+      </EndProperty>
+      <EndProperty Name="ingresos_caja">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cajero_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_historial_datos_cargo" TypeName="PuntoVentaModel.FK_empleado_historial_datos_cargo" StoreEntitySet="empleado_historial_datos">
+      <EndProperty Name="cargo">
+        <ScalarProperty Name="codigo" ColumnName="cod_cargo" />
+      </EndProperty>
+      <EndProperty Name="empleado_historial_datos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
+        <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_vs_cargo_cargo" TypeName="PuntoVentaModel.FK_empleado_vs_cargo_cargo" StoreEntitySet="empleado_vs_cargo">
+      <EndProperty Name="cargo">
+        <ScalarProperty Name="codigo" ColumnName="cod_cargo" />
+      </EndProperty>
+      <EndProperty Name="empleado_vs_cargo">
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_tipo_producto" TypeName="PuntoVentaModel.FK_producto_tipo_producto" StoreEntitySet="producto">
+      <EndProperty Name="categoria_producto">
+        <ScalarProperty Name="codigo" ColumnName="categoria_producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="categoria_producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_subcategoria_producto_categoria_producto" TypeName="PuntoVentaModel.FK_subcategoria_producto_categoria_producto" StoreEntitySet="subcategoria_producto">
+      <EndProperty Name="categoria_producto">
+        <ScalarProperty Name="codigo" ColumnName="categoria_producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="subcategoria_producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="categoria_producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cliente_cliente_categoria" TypeName="PuntoVentaModel.FK_cliente_cliente_categoria" StoreEntitySet="cliente">
+      <EndProperty Name="cliente_categoria">
+        <ScalarProperty Name="codigo" ColumnName="cliente_categoria_codigo" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_categoria_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cliente_cliente_subcategoria" TypeName="PuntoVentaModel.FK_cliente_cliente_subcategoria" StoreEntitySet="cliente">
+      <EndProperty Name="cliente_subcategoria">
+        <ScalarProperty Name="codigo" ColumnName="cliente_subcategoria_codigo" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_subcategoria_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cliente_persona" TypeName="PuntoVentaModel.FK_cliente_persona" StoreEntitySet="cliente">
+      <EndProperty Name="persona">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_cliente" TypeName="PuntoVentaModel.FK_cotizacion_cliente" StoreEntitySet="cotizacion">
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="cliente_codigo" />
+      </EndProperty>
+      <EndProperty Name="cotizacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_factura_cliente" TypeName="PuntoVentaModel.FK_factura_cliente" StoreEntitySet="factura">
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="cliente_codigo" />
+      </EndProperty>
+      <EndProperty Name="factura">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_pedidos_cliente" TypeName="PuntoVentaModel.FK_pedidos_cliente" StoreEntitySet="pedidos">
+      <EndProperty Name="cliente">
+        <ScalarProperty Name="codigo" ColumnName="cliente_codigo" />
+      </EndProperty>
+      <EndProperty Name="pedidos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cliente_subcategoria_cliente_categoria" TypeName="PuntoVentaModel.FK_cliente_subcategoria_cliente_categoria" StoreEntitySet="cliente_subcategoria">
+      <EndProperty Name="cliente_categoria">
+        <ScalarProperty Name="codigo" ColumnName="cliente_categoria_codigo" />
+      </EndProperty>
+      <EndProperty Name="cliente_subcategoria">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="cliente_categoria_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_combo_producto" TypeName="PuntoVentaModel.FK_combo_producto" StoreEntitySet="combo">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="combo">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_compra_pago_anulados_compra" TypeName="PuntoVentaModel.FK_compra_pago_anulados_compra" StoreEntitySet="compra_pago_anulados">
+      <EndProperty Name="compra">
+        <ScalarProperty Name="codigo" ColumnName="compra_codigo" />
+      </EndProperty>
+      <EndProperty Name="compra_pago_anulados">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="compra_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_compra_sucursal" TypeName="PuntoVentaModel.FK_compra_sucursal" StoreEntitySet="compra">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="compra">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_compra_suplidor" TypeName="PuntoVentaModel.FK_compra_suplidor" StoreEntitySet="compra">
+      <EndProperty Name="suplidor">
+        <ScalarProperty Name="codigo" ColumnName="suplidor_codigo" />
+      </EndProperty>
+      <EndProperty Name="compra">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_compra_vs_pagos_compra" TypeName="PuntoVentaModel.FK_compra_vs_pagos_compra" StoreEntitySet="compra_vs_pagos">
+      <EndProperty Name="compra">
+        <ScalarProperty Name="codigo" ColumnName="compra_codigo" />
+      </EndProperty>
+      <EndProperty Name="compra_vs_pagos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_comprobante_fiscal_comprobante_serie" TypeName="PuntoVentaModel.FK_comprobante_fiscal_comprobante_serie" StoreEntitySet="comprobante_fiscal">
+      <EndProperty Name="comprobante_serie">
+        <ScalarProperty Name="codigo" ColumnName="comprobante_serie_codigo" />
+      </EndProperty>
+      <EndProperty Name="comprobante_fiscal">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="comprobante_serie_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_comprobante_fiscal_tipo_comprobante_fiscal" TypeName="PuntoVentaModel.FK_comprobante_fiscal_tipo_comprobante_fiscal" StoreEntitySet="comprobante_fiscal">
+      <EndProperty Name="tipo_comprobante_fiscal">
+        <ScalarProperty Name="codigo" ColumnName="tipo_comprobante_fiscal_codigo" />
+      </EndProperty>
+      <EndProperty Name="comprobante_fiscal">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="tipo_comprobante_fiscal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_comprobante_ventas_tipo_comprobante_fiscal" TypeName="PuntoVentaModel.FK_comprobante_ventas_tipo_comprobante_fiscal" StoreEntitySet="comprobante_ventas">
+      <EndProperty Name="tipo_comprobante_fiscal">
+        <ScalarProperty Name="codigo" ColumnName="tipo_comprobante_fiscal_codigo" />
+      </EndProperty>
+      <EndProperty Name="comprobante_ventas">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="tipo_comprobante_fiscal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_detalles_cotizacion" TypeName="PuntoVentaModel.FK_cotizacion_detalles_cotizacion" StoreEntitySet="cotizacion_detalles">
+      <EndProperty Name="cotizacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo_cotizacion" />
+      </EndProperty>
+      <EndProperty Name="cotizacion_detalles">
+        <ScalarProperty Name="codigo_cotizacion" ColumnName="codigo_cotizacion" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_empleado" TypeName="PuntoVentaModel.FK_cotizacion_empleado" StoreEntitySet="cotizacion">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="cotizacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_sucursal" TypeName="PuntoVentaModel.FK_cotizacion_sucursal" StoreEntitySet="cotizacion">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="cotizacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cuadre_caja_empleado" TypeName="PuntoVentaModel.FK_cuadre_caja_empleado" StoreEntitySet="cuadre_caja">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
+      </EndProperty>
+      <EndProperty Name="cuadre_caja">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+        <ScalarProperty Name="turno" ColumnName="turno" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cuenta_bancaria_tipo_cuenta_bancaria" TypeName="PuntoVentaModel.FK_cuenta_bancaria_tipo_cuenta_bancaria" StoreEntitySet="cuenta_bancaria">
+      <EndProperty Name="tipo_cuenta_bancaria">
+        <ScalarProperty Name="codigo" ColumnName="tipo_cuenta_bancaria_codigo" />
+      </EndProperty>
+      <EndProperty Name="cuenta_bancaria">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_departamento_sucursal" TypeName="PuntoVentaModel.FK_departamento_sucursal" StoreEntitySet="departamento">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="departamento">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_departamento" TypeName="PuntoVentaModel.FK_empleado_departamento" StoreEntitySet="empleado">
+      <EndProperty Name="departamento">
+        <ScalarProperty Name="codigo" ColumnName="departamento_codigo" />
+      </EndProperty>
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="departamento_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_direccion_sector" TypeName="PuntoVentaModel.FK_direccion_sector" StoreEntitySet="direccion">
+      <EndProperty Name="sector">
+        <ScalarProperty Name="codigo" ColumnName="sector_codigo" />
+      </EndProperty>
+      <EndProperty Name="direccion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_historial_datos_empleado" TypeName="PuntoVentaModel.FK_empleado_historial_datos_empleado" StoreEntitySet="empleado_historial_datos">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
+      </EndProperty>
+      <EndProperty Name="empleado_historial_datos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
+        <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_historial_datos_empleado1" TypeName="PuntoVentaModel.FK_empleado_historial_datos_empleado1" StoreEntitySet="empleado_historial_datos">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado1_codigo" />
+      </EndProperty>
+      <EndProperty Name="empleado_historial_datos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
+        <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+      </EndProperty>
+      <Condition ColumnName="empleado1_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_persona" TypeName="PuntoVentaModel.FK_empleado_persona" StoreEntitySet="empleado">
+      <EndProperty Name="persona">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_situacion_empleado" TypeName="PuntoVentaModel.FK_empleado_situacion_empleado" StoreEntitySet="empleado">
+      <EndProperty Name="situacion_empleado">
+        <ScalarProperty Name="codigo" ColumnName="situacion_empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="situacion_empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_sucursal" TypeName="PuntoVentaModel.FK_empleado_sucursal" StoreEntitySet="empleado">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_entrada_salida_inventario_empleado" TypeName="PuntoVentaModel.FK_entrada_salida_inventario_empleado" StoreEntitySet="entrada_salida_inventario">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="entrada_salida_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_compras_empleado" TypeName="PuntoVentaModel.FK_historial_devolucion_compras_empleado" StoreEntitySet="historial_devolucion_compras">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_compras">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_nomina_empleado" TypeName="PuntoVentaModel.FK_nomina_empleado" StoreEntitySet="nomina">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="nomina">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_pedidos_empleado" TypeName="PuntoVentaModel.FK_pedidos_empleado" StoreEntitySet="pedidos">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="pedidos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="empleado_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sucursal_vs_empleado_empleado" TypeName="PuntoVentaModel.FK_sucursal_vs_empleado_empleado" StoreEntitySet="sucursal_vs_empleado">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
+      </EndProperty>
+      <EndProperty Name="sucursal_vs_empleado">
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_venta_vs_pagos_empleado" TypeName="PuntoVentaModel.FK_venta_vs_pagos_empleado" StoreEntitySet="venta_vs_pagos">
+      <EndProperty Name="empleado">
+        <ScalarProperty Name="codigo" ColumnName="empleado_codigo" />
+      </EndProperty>
+      <EndProperty Name="venta_vs_pagos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empresa_tercero" TypeName="PuntoVentaModel.FK_empresa_tercero" StoreEntitySet="empresa">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="empresa">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sucursal_empresa1" TypeName="PuntoVentaModel.FK_sucursal_empresa1" StoreEntitySet="sucursal">
+      <EndProperty Name="empresa">
+        <ScalarProperty Name="codigo" ColumnName="empresa_codigo" />
+      </EndProperty>
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_entrada_salida_inventario_producto" TypeName="PuntoVentaModel.FK_entrada_salida_inventario_producto" StoreEntitySet="entrada_salida_inventario">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="entrada_salida_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_entrada_salida_inventario_unidad" TypeName="PuntoVentaModel.FK_entrada_salida_inventario_unidad" StoreEntitySet="entrada_salida_inventario">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="entrada_salida_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_reparacion_estados_reparacion" TypeName="PuntoVentaModel.FK_inventario_reparacion_estados_reparacion" StoreEntitySet="inventario_reparacion">
+      <EndProperty Name="estados_reparacion">
+        <ScalarProperty Name="codigo" ColumnName="estados_reparacion_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario_reparacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="estados_reparacion_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_factura_detalle_factura" TypeName="PuntoVentaModel.FK_factura_detalle_factura" StoreEntitySet="factura_detalle">
+      <EndProperty Name="factura">
+        <ScalarProperty Name="codigo" ColumnName="cod_factura" />
+      </EndProperty>
+      <EndProperty Name="factura_detalle">
+        <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        <ScalarProperty Name="precio" ColumnName="precio" />
+        <ScalarProperty Name="monto" ColumnName="monto" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_facturas_anuladas_factura" TypeName="PuntoVentaModel.FK_facturas_anuladas_factura" StoreEntitySet="facturas_anuladas">
+      <EndProperty Name="factura">
+        <ScalarProperty Name="codigo" ColumnName="cod_factura" />
+      </EndProperty>
+      <EndProperty Name="facturas_anuladas">
+        <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+        <ScalarProperty Name="detalle" ColumnName="detalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_ventas_factura" TypeName="PuntoVentaModel.FK_historial_devolucion_ventas_factura" StoreEntitySet="historial_devolucion_ventas">
+      <EndProperty Name="factura">
+        <ScalarProperty Name="codigo" ColumnName="factura_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_ventas">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="factura_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_compras_producto" TypeName="PuntoVentaModel.FK_historial_devolucion_compras_producto" StoreEntitySet="historial_devolucion_compras">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_compras">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_compras_unidad" TypeName="PuntoVentaModel.FK_historial_devolucion_compras_unidad" StoreEntitySet="historial_devolucion_compras">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_compras">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_ventas_producto" TypeName="PuntoVentaModel.FK_historial_devolucion_ventas_producto" StoreEntitySet="historial_devolucion_ventas">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_ventas">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_devolucion_ventas_unidad" TypeName="PuntoVentaModel.FK_historial_devolucion_ventas_unidad" StoreEntitySet="historial_devolucion_ventas">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="historial_devolucion_ventas">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_identificacion_tercero1" TypeName="PuntoVentaModel.FK_identificacion_tercero1" StoreEntitySet="identificacion">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
+      </EndProperty>
+      <EndProperty Name="identificacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="identificacion1" ColumnName="identificacion1" />
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_identificacion_tipo_identificacion" TypeName="PuntoVentaModel.FK_identificacion_tipo_identificacion" StoreEntitySet="identificacion">
+      <EndProperty Name="tipo_identificacion">
+        <ScalarProperty Name="codigo" ColumnName="tipo_identificacion_codigo" />
+      </EndProperty>
+      <EndProperty Name="identificacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="identificacion1" ColumnName="identificacion1" />
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ingresos_caja_ingresos_conceptos" TypeName="PuntoVentaModel.FK_ingresos_caja_ingresos_conceptos" StoreEntitySet="ingresos_caja">
+      <EndProperty Name="ingresos_conceptos">
+        <ScalarProperty Name="codigo" ColumnName="ingresos_conceptos_codigo" />
+      </EndProperty>
+      <EndProperty Name="ingresos_caja">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="ingresos_conceptos_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_producto" TypeName="PuntoVentaModel.FK_inventario_producto" StoreEntitySet="inventario">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_unidad" TypeName="PuntoVentaModel.FK_inventario_unidad" StoreEntitySet="inventario">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_reparacion_marcas" TypeName="PuntoVentaModel.FK_inventario_reparacion_marcas" StoreEntitySet="inventario_reparacion">
+      <EndProperty Name="marcas">
+        <ScalarProperty Name="codigo" ColumnName="marcas_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario_reparacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="marcas_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_reparacion_producto" TypeName="PuntoVentaModel.FK_inventario_reparacion_producto" StoreEntitySet="inventario_reparacion">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario_reparacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_inventario_reparacion_unidad" TypeName="PuntoVentaModel.FK_inventario_reparacion_unidad" StoreEntitySet="inventario_reparacion">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="inventario_reparacion">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_itebis" TypeName="PuntoVentaModel.FK_producto_itebis" StoreEntitySet="producto">
+      <EndProperty Name="itebis">
+        <ScalarProperty Name="codigo" ColumnName="itebis_codigo" />
+      </EndProperty>
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="itebis_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_modelo_marcas" TypeName="PuntoVentaModel.FK_modelo_marcas" StoreEntitySet="modelo">
+      <EndProperty Name="marcas">
+        <ScalarProperty Name="codigo" ColumnName="marcas_codigo" />
+      </EndProperty>
+      <EndProperty Name="modelo">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="marcas_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_mesas_detalles_mesas" TypeName="PuntoVentaModel.FK_mesas_detalles_mesas" StoreEntitySet="mesas_detalles">
+      <EndProperty Name="mesas">
+        <ScalarProperty Name="codigo" ColumnName="codigo_mesa" />
+      </EndProperty>
+      <EndProperty Name="mesas_detalles">
+        <ScalarProperty Name="codigo_mesa" ColumnName="codigo_mesa" />
+        <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_moneda_historial_moneda" TypeName="PuntoVentaModel.FK_moneda_historial_moneda" StoreEntitySet="moneda_historial">
+      <EndProperty Name="moneda">
+        <ScalarProperty Name="codigo" ColumnName="moneda_codigo" />
+      </EndProperty>
+      <EndProperty Name="moneda_historial">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_nomina_detalle_nomina" TypeName="PuntoVentaModel.FK_nomina_detalle_nomina" StoreEntitySet="nomina_detalle">
+      <EndProperty Name="nomina">
+        <ScalarProperty Name="codigo" ColumnName="cod_nomina" />
+      </EndProperty>
+      <EndProperty Name="nomina_detalle">
+        <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
+        <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_nomina_nomina_tipos" TypeName="PuntoVentaModel.FK_nomina_nomina_tipos" StoreEntitySet="nomina">
+      <EndProperty Name="nomina_tipos">
+        <ScalarProperty Name="codigo" ColumnName="nomina_tipos_codigo" />
+      </EndProperty>
+      <EndProperty Name="nomina">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="nomina_tipos_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_nomina_sucursal" TypeName="PuntoVentaModel.FK_nomina_sucursal" StoreEntitySet="nomina">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="nomina">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_nomina_detalle_nomina_conceptos" TypeName="PuntoVentaModel.FK_nomina_detalle_nomina_conceptos" StoreEntitySet="nomina_detalle">
+      <EndProperty Name="nomina_conceptos">
+        <ScalarProperty Name="codigo" ColumnName="cod_concepto" />
+      </EndProperty>
+      <EndProperty Name="nomina_detalle">
+        <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
+        <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_region_pais" TypeName="PuntoVentaModel.FK_region_pais" StoreEntitySet="region">
+      <EndProperty Name="pais">
+        <ScalarProperty Name="codigo" ColumnName="pais_codigo" />
+      </EndProperty>
+      <EndProperty Name="region">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_pedidos_sucursal" TypeName="PuntoVentaModel.FK_pedidos_sucursal" StoreEntitySet="pedidos">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="pedidos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_tercero_vs_permiso_permiso" TypeName="PuntoVentaModel.FK_tercero_vs_permiso_permiso" StoreEntitySet="tercero_vs_permiso">
+      <EndProperty Name="permiso">
+        <ScalarProperty Name="codigo" ColumnName="cod_permiso" />
+      </EndProperty>
+      <EndProperty Name="tercero_vs_permiso">
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+        <ScalarProperty Name="cod_permiso" ColumnName="cod_permiso" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_persona_sexo" TypeName="PuntoVentaModel.FK_persona_sexo" StoreEntitySet="persona">
+      <EndProperty Name="sexo">
+        <ScalarProperty Name="codigo" ColumnName="sexo_codigo" />
+      </EndProperty>
+      <EndProperty Name="persona">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sexo_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_persona_tercero" TypeName="PuntoVentaModel.FK_persona_tercero" StoreEntitySet="persona">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="persona">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_suplidor_persona" TypeName="PuntoVentaModel.FK_suplidor_persona" StoreEntitySet="suplidor">
+      <EndProperty Name="persona">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="suplidor">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_compra_vs_producto_producto" TypeName="PuntoVentaModel.FK_compra_vs_producto_producto" StoreEntitySet="compra_detalle">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="cod_producto" />
+      </EndProperty>
+      <EndProperty Name="compra_detalle">
+        <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+        <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        <ScalarProperty Name="monto" ColumnName="monto" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_detalles_producto" TypeName="PuntoVentaModel.FK_cotizacion_detalles_producto" StoreEntitySet="cotizacion_detalles">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="cotizacion_detalles">
+        <ScalarProperty Name="codigo_cotizacion" ColumnName="codigo_cotizacion" />
+      </EndProperty>
+      <Condition ColumnName="producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_factura_detalle_producto" TypeName="PuntoVentaModel.FK_factura_detalle_producto" StoreEntitySet="factura_detalle">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="cod_producto" />
+      </EndProperty>
+      <EndProperty Name="factura_detalle">
+        <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        <ScalarProperty Name="precio" ColumnName="precio" />
+        <ScalarProperty Name="monto" ColumnName="monto" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_movimientos_inventario_producto" TypeName="PuntoVentaModel.FK_historial_movimientos_inventario_producto" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_codigobarra_producto" TypeName="PuntoVentaModel.FK_producto_codigobarra_producto" StoreEntitySet="producto_codigobarra">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="cod_producto" />
+      </EndProperty>
+      <EndProperty Name="producto_codigobarra">
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+        <ScalarProperty Name="codigo_barra" ColumnName="codigo_barra" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_detalle_producto" TypeName="PuntoVentaModel.FK_producto_detalle_producto" StoreEntitySet="producto_vs_detalle">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo_producto" />
+      </EndProperty>
+      <EndProperty Name="producto_vs_detalle">
+        <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+        <ScalarProperty Name="codigo_detalle" ColumnName="codigo_detalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_subcategoria_producto" TypeName="PuntoVentaModel.FK_producto_subcategoria_producto" StoreEntitySet="producto">
+      <EndProperty Name="subcategoria_producto">
+        <ScalarProperty Name="codigo" ColumnName="subcategoria_producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="subcategoria_producto_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_mesas_detalles_producto_detalle" TypeName="PuntoVentaModel.FK_mesas_detalles_producto_detalle" StoreEntitySet="mesas_detalles">
+      <EndProperty Name="producto_detalle">
+        <ScalarProperty Name="codigo" ColumnName="cod_detalle" />
+      </EndProperty>
+      <EndProperty Name="mesas_detalles">
+        <ScalarProperty Name="codigo_mesa" ColumnName="codigo_mesa" />
+        <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_detalle_producto_especificacion" TypeName="PuntoVentaModel.FK_producto_detalle_producto_especificacion" StoreEntitySet="producto_vs_detalle">
+      <EndProperty Name="producto_detalle">
+        <ScalarProperty Name="codigo" ColumnName="codigo_detalle" />
+      </EndProperty>
+      <EndProperty Name="producto_vs_detalle">
+        <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
+        <ScalarProperty Name="codigo_detalle" ColumnName="codigo_detalle" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_oferta_historial_producto_oferta" TypeName="PuntoVentaModel.FK_producto_oferta_historial_producto_oferta" StoreEntitySet="producto_oferta_historial">
+      <EndProperty Name="producto_oferta">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="producto_oferta_historial">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_provincia_region" TypeName="PuntoVentaModel.FK_provincia_region" StoreEntitySet="provincia">
+      <EndProperty Name="region">
+        <ScalarProperty Name="codigo" ColumnName="region_codigo" />
+      </EndProperty>
+      <EndProperty Name="provincia">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sector_provincia" TypeName="PuntoVentaModel.FK_sector_provincia" StoreEntitySet="sector">
+      <EndProperty Name="provincia">
+        <ScalarProperty Name="codigo" ColumnName="provincia_codigo" />
+      </EndProperty>
+      <EndProperty Name="sector">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sistema_modulo_opciones_sistema_modulos" TypeName="PuntoVentaModel.FK_sistema_modulo_opciones_sistema_modulos" StoreEntitySet="sistema_modulo_opciones">
+      <EndProperty Name="sistema_modulos">
+        <ScalarProperty Name="codigo" ColumnName="sistema_modulos_codigo" />
+      </EndProperty>
+      <EndProperty Name="sistema_modulo_opciones">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_empleado_historial_datos_situacion_empleado" TypeName="PuntoVentaModel.FK_empleado_historial_datos_situacion_empleado" StoreEntitySet="empleado_historial_datos">
+      <EndProperty Name="situacion_empleado">
+        <ScalarProperty Name="codigo" ColumnName="cod_situacion" />
+      </EndProperty>
+      <EndProperty Name="empleado_historial_datos">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+        <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
+        <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="fecha" ColumnName="fecha" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_sucursal_vs_empleado_sucursal" TypeName="PuntoVentaModel.FK_sucursal_vs_empleado_sucursal" StoreEntitySet="sucursal_vs_empleado">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="cod_sucursal" />
+      </EndProperty>
+      <EndProperty Name="sucursal_vs_empleado">
+        <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
+        <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_transferencia_inventario_sucursal1" TypeName="PuntoVentaModel.FK_transferencia_inventario_sucursal1" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="sucursal">
+        <ScalarProperty Name="codigo" ColumnName="sucursal_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="sucursal_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_tercero_observaciones_tercero" TypeName="PuntoVentaModel.FK_tercero_observaciones_tercero" StoreEntitySet="tercero_observaciones">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="tercero_codigo" />
+      </EndProperty>
+      <EndProperty Name="tercero_observaciones">
+        <ScalarProperty Name="observacion" ColumnName="observacion" />
+      </EndProperty>
+      <Condition ColumnName="tercero_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_tercero_vs_email_tercero" TypeName="PuntoVentaModel.FK_tercero_vs_email_tercero" StoreEntitySet="tercero_vs_email">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
+      </EndProperty>
+      <EndProperty Name="tercero_vs_email">
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_tercero_vs_permiso_tercero" TypeName="PuntoVentaModel.FK_tercero_vs_permiso_tercero" StoreEntitySet="tercero_vs_permiso">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
+      </EndProperty>
+      <EndProperty Name="tercero_vs_permiso">
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+        <ScalarProperty Name="cod_permiso" ColumnName="cod_permiso" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_tervero_vs_telefono_tercero" TypeName="PuntoVentaModel.FK_tervero_vs_telefono_tercero" StoreEntitySet="tercero_vs_telefono">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
+      </EndProperty>
+      <EndProperty Name="tercero_vs_telefono">
+        <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
+        <ScalarProperty Name="telefono" ColumnName="telefono" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_vendedor_tercero" TypeName="PuntoVentaModel.FK_vendedor_tercero" StoreEntitySet="vendedor">
+      <EndProperty Name="tercero">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <EndProperty Name="vendedor">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_movimientos_inventario_tipo_movimiento_inventario" TypeName="PuntoVentaModel.FK_historial_movimientos_inventario_tipo_movimiento_inventario" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="tipo_movimiento_inventario">
+        <ScalarProperty Name="codigo" ColumnName="tipo_movimiento_inventario_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+      <Condition ColumnName="tipo_movimiento_inventario_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_historial_movimientos_inventario_unidad" TypeName="PuntoVentaModel.FK_historial_movimientos_inventario_unidad" StoreEntitySet="transferencia_inventario">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="transferencia_inventario">
+        <ScalarProperty Name="codigo" ColumnName="codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_cotizacion_detalles_unidad" TypeName="PuntoVentaModel.FK_cotizacion_detalles_unidad" StoreEntitySet="cotizacion_detalles">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="cotizacion_detalles">
+        <ScalarProperty Name="codigo_cotizacion" ColumnName="codigo_cotizacion" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_factura_detalle_unidad" TypeName="PuntoVentaModel.FK_factura_detalle_unidad" StoreEntitySet="factura_detalle">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+      <EndProperty Name="factura_detalle">
+        <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        <ScalarProperty Name="precio" ColumnName="precio" />
+        <ScalarProperty Name="monto" ColumnName="monto" />
+        <ScalarProperty Name="estado" ColumnName="estado" />
+      </EndProperty>
+      <Condition ColumnName="unidad_codigo" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_producto_codigobarra_unidad" TypeName="PuntoVentaModel.FK_producto_codigobarra_unidad" StoreEntitySet="producto_codigobarra">
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
+      </EndProperty>
+      <EndProperty Name="producto_codigobarra">
+        <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
+        <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+        <ScalarProperty Name="codigo_barra" ColumnName="codigo_barra" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="grupo_usuarios_permisos" TypeName="PuntoVentaModel.grupo_usuarios_permisos" StoreEntitySet="grupo_usuarios_permisos">
+      <EndProperty Name="grupo_usuarios">
+        <ScalarProperty Name="codigo" ColumnName="grupo_usuarios_codigo" />
+      </EndProperty>
+      <EndProperty Name="permiso">
+        <ScalarProperty Name="codigo" ColumnName="permiso_codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="producto_unidad" TypeName="PuntoVentaModel.producto_unidad" StoreEntitySet="producto_unidad">
+      <EndProperty Name="producto">
+        <ScalarProperty Name="codigo" ColumnName="producto_codigo" />
+      </EndProperty>
+      <EndProperty Name="unidad">
+        <ScalarProperty Name="codigo" ColumnName="unidad_codigo" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

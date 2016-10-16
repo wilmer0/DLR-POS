@@ -261,6 +261,9 @@ namespace puntoVenta
         {
             try
             {
+                if (codigo_suplidor_txt.Text.Trim() == "")
+                    return;
+
                 string sql = "select t.nombre,p.apellido,t.identificacion,p.cod_sexo,p.fecha_nacimiento,s.estado,s.fecha_creacion from tercero t join persona p on p.codigo=t.codigo join suplidor s on s.codigo=p.codigo where s.codigo='"+codigo_suplidor_txt.Text.Trim()+"'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 string fecha = ds.Tables[0].Rows[0][6].ToString();
@@ -276,7 +279,7 @@ namespace puntoVenta
             }
             catch(Exception)
             {
-                MessageBox.Show("Error cargando datos del suplidor, este usuario no existe como suplidor");
+                MessageBox.Show("No existe como suplidor","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         private void pais_btn_Click(object sender, EventArgs e)

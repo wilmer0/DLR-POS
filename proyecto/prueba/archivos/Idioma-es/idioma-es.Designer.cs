@@ -70,7 +70,7 @@ namespace puntoVenta.archivos.Idioma_es {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to clave.
+        ///   Looks up a localized string similar to contraseña.
         /// </summary>
         internal static string clave {
             get {

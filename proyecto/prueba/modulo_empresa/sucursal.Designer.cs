@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sucursal));
-            this.label1 = new System.Windows.Forms.Label();
             this.codigo_sucursal_txt = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -59,21 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Codigo";
-            this.label1.UseCompatibleTextRendering = true;
-            // 
             // codigo_sucursal_txt
             // 
-            this.codigo_sucursal_txt.Location = new System.Drawing.Point(161, 105);
+            this.codigo_sucursal_txt.Location = new System.Drawing.Point(129, 107);
             this.codigo_sucursal_txt.Name = "codigo_sucursal_txt";
             this.codigo_sucursal_txt.ReadOnly = true;
             this.codigo_sucursal_txt.Size = new System.Drawing.Size(101, 20);
@@ -134,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(12, 144);
+            this.label2.Location = new System.Drawing.Point(36, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 29);
             this.label2.TabIndex = 32;
@@ -143,7 +130,7 @@
             // 
             // sucursal_nombre_txt
             // 
-            this.sucursal_nombre_txt.Location = new System.Drawing.Point(161, 145);
+            this.sucursal_nombre_txt.Location = new System.Drawing.Point(129, 134);
             this.sucursal_nombre_txt.MaxLength = 50;
             this.sucursal_nombre_txt.Name = "sucursal_nombre_txt";
             this.sucursal_nombre_txt.Size = new System.Drawing.Size(147, 20);
@@ -157,7 +144,7 @@
             this.ck_activo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ck_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ck_activo.ForeColor = System.Drawing.Color.Black;
-            this.ck_activo.Location = new System.Drawing.Point(15, 261);
+            this.ck_activo.Location = new System.Drawing.Point(43, 258);
             this.ck_activo.Name = "ck_activo";
             this.ck_activo.Size = new System.Drawing.Size(80, 28);
             this.ck_activo.TabIndex = 34;
@@ -170,16 +157,16 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(12, 221);
+            this.label4.Location = new System.Drawing.Point(30, 218);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 29);
+            this.label4.Size = new System.Drawing.Size(93, 29);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Cod. direccion";
+            this.label4.Text = "Dirección";
             this.label4.UseCompatibleTextRendering = true;
             // 
             // codigo_direccion_txt
             // 
-            this.codigo_direccion_txt.Location = new System.Drawing.Point(161, 227);
+            this.codigo_direccion_txt.Location = new System.Drawing.Point(129, 224);
             this.codigo_direccion_txt.Name = "codigo_direccion_txt";
             this.codigo_direccion_txt.ReadOnly = true;
             this.codigo_direccion_txt.Size = new System.Drawing.Size(101, 20);
@@ -189,7 +176,7 @@
             // 
             this.button6.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Location = new System.Drawing.Point(268, 97);
+            this.button6.Location = new System.Drawing.Point(236, 97);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(40, 32);
             this.button6.TabIndex = 42;
@@ -200,7 +187,7 @@
             // 
             this.button5.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(268, 222);
+            this.button5.Location = new System.Drawing.Point(236, 218);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(40, 29);
             this.button5.TabIndex = 41;
@@ -224,7 +211,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(12, 181);
+            this.label5.Location = new System.Drawing.Point(20, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 29);
             this.label5.TabIndex = 61;
@@ -236,7 +223,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(12, 39);
+            this.label6.Location = new System.Drawing.Point(33, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 29);
             this.label6.TabIndex = 65;
@@ -245,7 +232,7 @@
             // 
             // codigo_empresa_txt
             // 
-            this.codigo_empresa_txt.Location = new System.Drawing.Point(161, 40);
+            this.codigo_empresa_txt.Location = new System.Drawing.Point(129, 39);
             this.codigo_empresa_txt.MaxLength = 50;
             this.codigo_empresa_txt.Name = "codigo_empresa_txt";
             this.codigo_empresa_txt.ReadOnly = true;
@@ -256,7 +243,7 @@
             // 
             this.button8.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Location = new System.Drawing.Point(268, 33);
+            this.button8.Location = new System.Drawing.Point(236, 29);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(40, 32);
             this.button8.TabIndex = 67;
@@ -265,7 +252,7 @@
             // 
             // nombre_empresa_txt
             // 
-            this.nombre_empresa_txt.Location = new System.Drawing.Point(161, 66);
+            this.nombre_empresa_txt.Location = new System.Drawing.Point(129, 64);
             this.nombre_empresa_txt.MaxLength = 50;
             this.nombre_empresa_txt.Name = "nombre_empresa_txt";
             this.nombre_empresa_txt.ReadOnly = true;
@@ -274,6 +261,7 @@
             // 
             // tipo_telefono_combo_txt
             // 
+            this.tipo_telefono_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipo_telefono_combo_txt.FormattingEnabled = true;
             this.tipo_telefono_combo_txt.Items.AddRange(new object[] {
             "TEL",
@@ -340,7 +328,7 @@
             // 
             // secuencia_txt
             // 
-            this.secuencia_txt.Location = new System.Drawing.Point(161, 187);
+            this.secuencia_txt.Location = new System.Drawing.Point(129, 183);
             this.secuencia_txt.MaxLength = 3;
             this.secuencia_txt.Name = "secuencia_txt";
             this.secuencia_txt.Size = new System.Drawing.Size(147, 20);
@@ -372,7 +360,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.sucursal_nombre_txt);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.codigo_sucursal_txt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -390,7 +377,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox codigo_sucursal_txt;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;

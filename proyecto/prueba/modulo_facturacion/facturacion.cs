@@ -27,6 +27,7 @@ namespace puntoVenta
         private void facturacion_Load(object sender, EventArgs e)
         {
             loadVentana();
+            
         }
 
         public void loadVentana()
@@ -63,9 +64,8 @@ namespace puntoVenta
                 validar_caja_abierta();
 
 
-
                 unidad_combo_txt.DropDownStyle = ComboBoxStyle.DropDownList;
-                tipo_comprobante_combo_txt.DropDownStyle = ComboBoxStyle.DropDownList;
+                secuenciaComprobanteText.DropDownStyle = ComboBoxStyle.DropDownList;
                 codigo_producto_txt.Focus();
                 codigo_producto_txt.SelectAll();
             }
@@ -81,8 +81,7 @@ namespace puntoVenta
                 string sql = "select max(codigo) from cuadre_caja where cod_cajero='" + codigo_cajero_txt.Text.Trim() + "' and fecha<='" + Convert.ToDateTime(DateTime.Today).ToString("yyyy-MM-dd") + "' and abierta_cerrada='A' and estado='1'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 if (ds.Tables[0].Rows[0][0].ToString() != "")
-                {
-                    
+                {    
                     return true;
                 }
                 else
@@ -92,7 +91,6 @@ namespace puntoVenta
                     nombre_cajero_txt.Clear();
                     this.Close();
                     return false;
-                    
                 }
             }
             catch(Exception ex)
@@ -105,10 +103,10 @@ namespace puntoVenta
         {
             try
             {
-                string sql="select top(1) codigo from cliente where estado='1'";
+                string sql = "select top(1) codigo from cliente where estado='1' and cliente_contado='1'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 codigo_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
-                
+                cargar_nombre_cliente();
             }
             catch(Exception)
             {
@@ -154,10 +152,10 @@ namespace puntoVenta
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 if (ds.Tables[0].Rows[0][0].ToString() == "1")
                 {
-                    sql = "select nombre from tipo_comprobante_fiscal where secuencia='" + tipo_comprobante_combo_txt.Text.Trim() + "'";
+                    sql = "select nombre from tipo_comprobante_fiscal where secuencia='" + secuenciaComprobanteText.Text.Trim() + "'";
                     ds = Utilidades.ejecutarcomando(sql);
                     nombre_comprobante_txt.Text = ds.Tables[0].Rows[0][0].ToString();
-                    sql = "select codigo,nombre from tipo_comprobante_fiscal where secuencia='" + tipo_comprobante_combo_txt.Text.Trim() + "'";
+                    sql = "select codigo,nombre from tipo_comprobante_fiscal where secuencia='" + secuenciaComprobanteText.Text.Trim() + "'";
                     ds = Utilidades.ejecutarcomando(sql);
                     codigo_tipo_comprobante_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 }
@@ -178,9 +176,9 @@ namespace puntoVenta
                 {
                     sql = "select distinct tc.secuencia from tipo_comprobante_fiscal tc join comprobante_fiscal cf on cf.codigo_tipo=tc.codigo where tc.estado='1' and cf.cod_caja='" + codigo_caja_txt.Text.Trim() + "'";
                     ds = Utilidades.ejecutarcomando(sql);
-                    tipo_comprobante_combo_txt.DataSource = ds.Tables[0];
-                    tipo_comprobante_combo_txt.DisplayMember = "secuencia";
-                    tipo_comprobante_combo_txt.ValueMember = "secuencia";
+                    secuenciaComprobanteText.DataSource = ds.Tables[0];
+                    secuenciaComprobanteText.DisplayMember = "secuencia";
+                    secuenciaComprobanteText.ValueMember = "secuencia";
                 }
             }
             catch (Exception)
@@ -467,14 +465,17 @@ namespace puntoVenta
         {
             try
             {
+                if (codigo_cliente_txt.Text.Trim() == "")
+                    return;
+
                 string sql = "select (t.nombre+' '+p.apellido) as nombre,t.identificacion from tercero t join persona p on p.codigo=t.codigo where t.codigo='" + codigo_cliente_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 nombre_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 identificacion_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Error cargando el nombre del cliente: "+ex.ToString(),"",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         public void ejecutar_codigo_cliente(string dato)
@@ -1017,7 +1018,7 @@ namespace puntoVenta
                                             {
                                                 if (Convert.ToDouble(monto_permitido.ToString()) >= Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()))
                                                 {
-                                                    string sql = "exec insert_factura '" + DateTime.Now.ToString("yyyy-MM-ff") + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
+                                                    string sql = "exec insert_factura '" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + fecha_hasta.Value.ToString("yyyy-MM-dd") + "','" + codigo_cajero_txt.Text.Trim() + "','" + codigo_caja_txt.Text.Trim() + "','" + codigo_cliente_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + tipo_venta.ToString() + "','" + s.codigo_sucursal.ToString() + "','" + codigo_tipo_comprobante_txt.Text.Trim() + "','" + sumatoria_itebis.ToString() + "'";
                                                     DataSet ds = Utilidades.ejecutarcomando(sql);
                                                     if (ds.Tables[0].Rows.Count > 0)
                                                     {
@@ -1028,18 +1029,20 @@ namespace puntoVenta
                                                         actualiza_factura_producto();
 
                                                         MessageBox.Show("Factura generada con exito");
+
                                                         DialogResult dr = MessageBox.Show("Desea Imprimir en rollo?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                                         if (dr == DialogResult.Yes)
                                                         {
-                                                            imprimir_venta_rollo ir = new imprimir_venta_rollo();
-                                                            ir.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            ir.ShowDialog();
+                                                            Utilidades.imprimirVentaRollo(codigo_factura_txt.Text.Trim());
+                                                            //imprimir_venta_rollo ir = new imprimir_venta_rollo();
+                                                            //ir.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            //ir.ShowDialog();
                                                         }
                                                         else
                                                         {
-                                                            imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
-                                                            iv.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            iv.ShowDialog();
+                                                            //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                                                            //iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                                                            //iv.ShowDialog();
                                                         }
                                                         limpiar();
                                                     }
@@ -1349,7 +1352,7 @@ namespace puntoVenta
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 if (ds.Tables[0].Rows.Count>0)
                 {
-                    MessageBox.Show("Importante, solo tiene " + ds.Tables[0].Rows[0][0].ToString() + " comprobantes disponibles de "+nombre_comprobante_txt.Text.Trim());
+                    MessageBox.Show("Solo tienes" + ds.Tables[0].Rows[0][0].ToString() + " comprobantes disponibles de "+nombre_comprobante_txt.Text.Trim(),"",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch(Exception)
@@ -1455,7 +1458,7 @@ namespace puntoVenta
                     }
                 }
                 MessageBox.Show("Factura generada con exito");
-                DialogResult dr = MessageBox.Show("Desea Imprimir Rollo?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("Desea Imprimir?", "Imprimiento", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
                     //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
@@ -1472,9 +1475,9 @@ namespace puntoVenta
                     //iv.codigo_factura = codigo_factura_txt.Text.Trim();
                     //iv.ShowDialog();
 
-                    imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
-                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                    ih.ShowDialog();
+                    //imprimir_venta_hoja_completa ih = new imprimir_venta_hoja_completa();
+                    //ih.codigo_factura = codigo_factura_txt.Text.Trim();
+                    //ih.ShowDialog();
                 }
                 //limpiar la pantalla para la proxima venta
                 //codigo_factura_txt.Clear();

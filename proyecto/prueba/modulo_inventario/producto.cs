@@ -498,17 +498,14 @@ namespace puntoVenta
                     nombre_imagen = ds.Tables[0].Rows[0]["imagen"].ToString();
                     codigo_unidad_minima_txt.Text = ds.Tables[0].Rows[0]["cod_unidad_minima"].ToString();
                     cargar_nombre_unidad_minima();
-                    if (ds.Tables[0].Rows[0][9].ToString() != "" && ds.Tables[0].Rows[0][9].ToString() != null)
+                    if (nombre_imagen!="")//ds.Tables[0].Rows[0][9].ToString() != "" && ds.Tables[0].Rows[0][9].ToString() != null
                     {
                         sql = "select top(1) ruta_imagen_productos from sistema";
                         ds = Utilidades.ejecutarcomando(sql);
                         ruta = ds.Tables[0].Rows[0][0].ToString();
                         ruta += @"\";
-                        ruta += nombre_imagen.ToString();
-                    }
-                    imagen_ruta_txt.Text = ruta;
-                    if (ruta.ToString() != "")
-                    {
+                        ruta += nombre_imagen.ToString(); 
+                        imagen_ruta_txt.Text = ruta;
                         //MessageBox.Show(ruta.ToString());
                         panel4.Visible = true;
                         panel4.BackgroundImage = Image.FromFile(ruta.ToString());
@@ -606,6 +603,10 @@ namespace puntoVenta
         {
             try
             {
+
+                codigo_detalle_producto_txt.Clear();
+                nombre_detalle_producto_txt.Clear();
+                detalle_producto_descripcion_txt.Clear();
                 dataGridView1.Rows.Clear();
                 dataGridView2.Rows.Clear();
                 dataGridView3.Rows.Clear();
@@ -625,7 +626,7 @@ namespace puntoVenta
                 nombre_producto_txt.Focus();
                 codigo_detalle_producto_txt.Clear();
                 nombre_detalle_producto_txt.Clear();
-                detalle_producto_txt.Clear();
+                detalle_producto_descripcion_txt.Clear();
                 codigo_barra_txt.Clear();
                 codigo_unidad_txt.Clear();
                 nombre_unidad_txt.Clear();
@@ -987,7 +988,7 @@ namespace puntoVenta
                 {
                     if(nombre_detalle_producto_txt.Text.Trim()!="")
                     {
-                        if(detalle_producto_txt.Text.Trim()!="")
+                        if(detalle_producto_descripcion_txt.Text.Trim()!="")
                         {
                             foreach (DataGridViewRow row in dataGridView3.Rows)
                             {
@@ -998,7 +999,7 @@ namespace puntoVenta
                             }
                             if (cont == 0)
                             {
-                                dataGridView3.Rows.Add(codigo_detalle_producto_txt.Text.Trim(),nombre_detalle_producto_txt.Text.Trim(),detalle_producto_txt.Text.Trim());
+                                dataGridView3.Rows.Add(codigo_detalle_producto_txt.Text.Trim(),nombre_detalle_producto_txt.Text.Trim(),detalle_producto_descripcion_txt.Text.Trim());
                             }
                             else
                             {

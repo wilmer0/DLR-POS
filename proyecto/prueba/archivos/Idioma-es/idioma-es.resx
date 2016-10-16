@@ -121,7 +121,7 @@
     <value>administración</value>
   </data>
   <data name="clave" xml:space="preserve">
-    <value>clave</value>
+    <value>contraseña</value>
   </data>
   <data name="compania" xml:space="preserve">
     <value>Compañía</value>

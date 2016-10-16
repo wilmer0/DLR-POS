@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(facturacion));
             this.codigo_cliente_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.codigo_tipo_comprobante_txt = new System.Windows.Forms.TextBox();
             this.numero_comprobante_fiscal_txt = new System.Windows.Forms.TextBox();
             this.nombre_comprobante_txt = new System.Windows.Forms.TextBox();
-            this.tipo_comprobante_combo_txt = new System.Windows.Forms.ComboBox();
+            this.secuenciaComprobanteText = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.identificacion_txt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -165,14 +165,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -225,10 +225,10 @@
             // 
             // itebis
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.itebis.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.itebis.DefaultCellStyle = dataGridViewCellStyle2;
             this.itebis.FillWeight = 25.22F;
             this.itebis.HeaderText = "Itbis";
             this.itebis.Name = "itebis";
@@ -236,8 +236,8 @@
             // 
             // precio
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.precio.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.precio.DefaultCellStyle = dataGridViewCellStyle3;
             this.precio.FillWeight = 25.22375F;
             this.precio.HeaderText = "Precio";
             this.precio.Name = "precio";
@@ -245,8 +245,8 @@
             // 
             // cantidad
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle4;
             this.cantidad.FillWeight = 25.22375F;
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
@@ -254,8 +254,8 @@
             // 
             // descuento_grid
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.descuento_grid.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.descuento_grid.DefaultCellStyle = dataGridViewCellStyle5;
             this.descuento_grid.FillWeight = 20F;
             this.descuento_grid.HeaderText = "Descuento";
             this.descuento_grid.Name = "descuento_grid";
@@ -263,10 +263,10 @@
             // 
             // importe
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.ForestGreen;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.ForestGreen;
-            this.importe.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.ForestGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.ForestGreen;
+            this.importe.DefaultCellStyle = dataGridViewCellStyle6;
             this.importe.FillWeight = 25.22375F;
             this.importe.HeaderText = "Importe";
             this.importe.Name = "importe";
@@ -788,7 +788,7 @@
             // 
             this.cotizacionCheck.AutoSize = true;
             this.cotizacionCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cotizacionCheck.Location = new System.Drawing.Point(5, 102);
+            this.cotizacionCheck.Location = new System.Drawing.Point(5, 103);
             this.cotizacionCheck.Name = "cotizacionCheck";
             this.cotizacionCheck.Size = new System.Drawing.Size(117, 29);
             this.cotizacionCheck.TabIndex = 100;
@@ -799,7 +799,7 @@
             // 
             this.pedicoCheck.AutoSize = true;
             this.pedicoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pedicoCheck.Location = new System.Drawing.Point(204, 62);
+            this.pedicoCheck.Location = new System.Drawing.Point(202, 56);
             this.pedicoCheck.Name = "pedicoCheck";
             this.pedicoCheck.Size = new System.Drawing.Size(89, 29);
             this.pedicoCheck.TabIndex = 99;
@@ -811,7 +811,7 @@
             this.contadoCheck.AutoSize = true;
             this.contadoCheck.Checked = true;
             this.contadoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contadoCheck.Location = new System.Drawing.Point(5, 60);
+            this.contadoCheck.Location = new System.Drawing.Point(5, 58);
             this.contadoCheck.Name = "contadoCheck";
             this.contadoCheck.Size = new System.Drawing.Size(100, 29);
             this.contadoCheck.TabIndex = 98;
@@ -823,7 +823,7 @@
             // 
             this.creditoCheck.AutoSize = true;
             this.creditoCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.creditoCheck.Location = new System.Drawing.Point(109, 62);
+            this.creditoCheck.Location = new System.Drawing.Point(108, 56);
             this.creditoCheck.Name = "creditoCheck";
             this.creditoCheck.Size = new System.Drawing.Size(88, 29);
             this.creditoCheck.TabIndex = 97;
@@ -870,16 +870,16 @@
             this.nombre_comprobante_txt.Size = new System.Drawing.Size(277, 20);
             this.nombre_comprobante_txt.TabIndex = 80;
             // 
-            // tipo_comprobante_combo_txt
+            // secuenciaComprobanteText
             // 
-            this.tipo_comprobante_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tipo_comprobante_combo_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tipo_comprobante_combo_txt.FormattingEnabled = true;
-            this.tipo_comprobante_combo_txt.Location = new System.Drawing.Point(132, 65);
-            this.tipo_comprobante_combo_txt.Name = "tipo_comprobante_combo_txt";
-            this.tipo_comprobante_combo_txt.Size = new System.Drawing.Size(64, 21);
-            this.tipo_comprobante_combo_txt.TabIndex = 79;
-            this.tipo_comprobante_combo_txt.TextChanged += new System.EventHandler(this.comprobante_combo_txt_TextChanged);
+            this.secuenciaComprobanteText.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.secuenciaComprobanteText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.secuenciaComprobanteText.FormattingEnabled = true;
+            this.secuenciaComprobanteText.Location = new System.Drawing.Point(132, 65);
+            this.secuenciaComprobanteText.Name = "secuenciaComprobanteText";
+            this.secuenciaComprobanteText.Size = new System.Drawing.Size(64, 21);
+            this.secuenciaComprobanteText.TabIndex = 79;
+            this.secuenciaComprobanteText.TextChanged += new System.EventHandler(this.comprobante_combo_txt_TextChanged);
             // 
             // label17
             // 
@@ -1130,7 +1130,7 @@
             this.groupBox1.Controls.Add(this.numero_comprobante_fiscal_txt);
             this.groupBox1.Controls.Add(this.nombre_comprobante_txt);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.tipo_comprobante_combo_txt);
+            this.groupBox1.Controls.Add(this.secuenciaComprobanteText);
             this.groupBox1.Controls.Add(this.codigo_tipo_comprobante_txt);
             this.groupBox1.Location = new System.Drawing.Point(651, 90);
             this.groupBox1.Name = "groupBox1";
@@ -1254,7 +1254,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox tipo_comprobante_combo_txt;
+        private System.Windows.Forms.ComboBox secuenciaComprobanteText;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox nombre_comprobante_txt;
         private System.Windows.Forms.Label label18;

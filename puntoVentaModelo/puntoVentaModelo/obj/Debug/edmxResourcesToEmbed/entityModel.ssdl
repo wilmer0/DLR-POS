@@ -1,0 +1,3007 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PuntoVentaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="PuntoVentaModelStoreContainer">
+    <EntitySet Name="almacen" EntityType="PuntoVentaModel.Store.almacen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="banco" EntityType="PuntoVentaModel.Store.banco" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="caja" EntityType="PuntoVentaModel.Store.caja" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cajero" EntityType="PuntoVentaModel.Store.cajero" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cargo" EntityType="PuntoVentaModel.Store.cargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="catalogo_cuentas" EntityType="PuntoVentaModel.Store.catalogo_cuentas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="categoria_producto" EntityType="PuntoVentaModel.Store.categoria_producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cliente" EntityType="PuntoVentaModel.Store.cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cliente_categoria" EntityType="PuntoVentaModel.Store.cliente_categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cliente_subcategoria" EntityType="PuntoVentaModel.Store.cliente_subcategoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="combo" EntityType="PuntoVentaModel.Store.combo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="compra" EntityType="PuntoVentaModel.Store.compra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="compra_pago_anulados" EntityType="PuntoVentaModel.Store.compra_pago_anulados" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="compra_vs_pagos" EntityType="PuntoVentaModel.Store.compra_vs_pagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="comprobante_fiscal" EntityType="PuntoVentaModel.Store.comprobante_fiscal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="comprobante_serie" EntityType="PuntoVentaModel.Store.comprobante_serie" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="comprobante_ventas" EntityType="PuntoVentaModel.Store.comprobante_ventas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="correo_electronicos" EntityType="PuntoVentaModel.Store.correo_electronicos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cotizacion" EntityType="PuntoVentaModel.Store.cotizacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cuadre_caja" EntityType="PuntoVentaModel.Store.cuadre_caja" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cuenta_bancaria" EntityType="PuntoVentaModel.Store.cuenta_bancaria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="departamento" EntityType="PuntoVentaModel.Store.departamento" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="direccion" EntityType="PuntoVentaModel.Store.direccion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="egresos_caja" EntityType="PuntoVentaModel.Store.egresos_caja" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="egresos_conceptos" EntityType="PuntoVentaModel.Store.egresos_conceptos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="empleado" EntityType="PuntoVentaModel.Store.empleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="empleado_vs_cargo" EntityType="PuntoVentaModel.Store.empleado_vs_cargo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="empresa" EntityType="PuntoVentaModel.Store.empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="entrada_salida_inventario" EntityType="PuntoVentaModel.Store.entrada_salida_inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="estados_reparacion" EntityType="PuntoVentaModel.Store.estados_reparacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="factura" EntityType="PuntoVentaModel.Store.factura" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="grupo_usuarios" EntityType="PuntoVentaModel.Store.grupo_usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_devolucion_compras" EntityType="PuntoVentaModel.Store.historial_devolucion_compras" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="historial_devolucion_ventas" EntityType="PuntoVentaModel.Store.historial_devolucion_ventas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="identificacion" EntityType="PuntoVentaModel.Store.identificacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ingresos_caja" EntityType="PuntoVentaModel.Store.ingresos_caja" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ingresos_conceptos" EntityType="PuntoVentaModel.Store.ingresos_conceptos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="inventario" EntityType="PuntoVentaModel.Store.inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="inventario_reparacion" EntityType="PuntoVentaModel.Store.inventario_reparacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="itebis" EntityType="PuntoVentaModel.Store.itebis" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="marcas" EntityType="PuntoVentaModel.Store.marcas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mesas" EntityType="PuntoVentaModel.Store.mesas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="modelo" EntityType="PuntoVentaModel.Store.modelo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="moneda" EntityType="PuntoVentaModel.Store.moneda" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="moneda_historial" EntityType="PuntoVentaModel.Store.moneda_historial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="nomina" EntityType="PuntoVentaModel.Store.nomina" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="nomina_conceptos" EntityType="PuntoVentaModel.Store.nomina_conceptos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="nomina_tipos" EntityType="PuntoVentaModel.Store.nomina_tipos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pais" EntityType="PuntoVentaModel.Store.pais" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="pedidos" EntityType="PuntoVentaModel.Store.pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="permiso" EntityType="PuntoVentaModel.Store.permiso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="persona" EntityType="PuntoVentaModel.Store.persona" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto" EntityType="PuntoVentaModel.Store.producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_detalle" EntityType="PuntoVentaModel.Store.producto_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_oferta" EntityType="PuntoVentaModel.Store.producto_oferta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_permisos" EntityType="PuntoVentaModel.Store.producto_permisos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_vs_detalle" EntityType="PuntoVentaModel.Store.producto_vs_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="provincia" EntityType="PuntoVentaModel.Store.provincia" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="region" EntityType="PuntoVentaModel.Store.region" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sector" EntityType="PuntoVentaModel.Store.sector" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sexo" EntityType="PuntoVentaModel.Store.sexo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sistema_historial" EntityType="PuntoVentaModel.Store.sistema_historial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sistema_modulo_opciones" EntityType="PuntoVentaModel.Store.sistema_modulo_opciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sistema_modulos" EntityType="PuntoVentaModel.Store.sistema_modulos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="situacion_empleado" EntityType="PuntoVentaModel.Store.situacion_empleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="subcategoria_producto" EntityType="PuntoVentaModel.Store.subcategoria_producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sucursal" EntityType="PuntoVentaModel.Store.sucursal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="suplidor" EntityType="PuntoVentaModel.Store.suplidor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="PuntoVentaModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tarjetas_credito" EntityType="PuntoVentaModel.Store.tarjetas_credito" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tercero" EntityType="PuntoVentaModel.Store.tercero" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_comprobante_fiscal" EntityType="PuntoVentaModel.Store.tipo_comprobante_fiscal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_cuenta_bancaria" EntityType="PuntoVentaModel.Store.tipo_cuenta_bancaria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_identificacion" EntityType="PuntoVentaModel.Store.tipo_identificacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tipo_movimiento_inventario" EntityType="PuntoVentaModel.Store.tipo_movimiento_inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="transferencia_inventario" EntityType="PuntoVentaModel.Store.transferencia_inventario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unidad" EntityType="PuntoVentaModel.Store.unidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vendedor" EntityType="PuntoVentaModel.Store.vendedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="venta_vs_pagos" EntityType="PuntoVentaModel.Store.venta_vs_pagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="compra_detalle" EntityType="PuntoVentaModel.Store.compra_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cotizacion_detalles" EntityType="PuntoVentaModel.Store.cotizacion_detalles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="empleado_historial_datos" EntityType="PuntoVentaModel.Store.empleado_historial_datos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="factura_detalle" EntityType="PuntoVentaModel.Store.factura_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="facturas_anuladas" EntityType="PuntoVentaModel.Store.facturas_anuladas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="mesas_detalles" EntityType="PuntoVentaModel.Store.mesas_detalles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="nomina_detalle" EntityType="PuntoVentaModel.Store.nomina_detalle" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_codigobarra" EntityType="PuntoVentaModel.Store.producto_codigobarra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_oferta_historial" EntityType="PuntoVentaModel.Store.producto_oferta_historial" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sistema" EntityType="PuntoVentaModel.Store.sistema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sucursal_vs_empleado" EntityType="PuntoVentaModel.Store.sucursal_vs_empleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tercero_observaciones" EntityType="PuntoVentaModel.Store.tercero_observaciones" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tercero_vs_email" EntityType="PuntoVentaModel.Store.tercero_vs_email" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tercero_vs_permiso" EntityType="PuntoVentaModel.Store.tercero_vs_permiso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tercero_vs_telefono" EntityType="PuntoVentaModel.Store.tercero_vs_telefono" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="grupo_usuarios_permisos" EntityType="PuntoVentaModel.Store.grupo_usuarios_permisos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto_unidad" EntityType="PuntoVentaModel.Store.producto_unidad" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_almacen_sucursal" Association="PuntoVentaModel.Store.FK_almacen_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="almacen" EntitySet="almacen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_movimientos_inventario_almacen" Association="PuntoVentaModel.Store.FK_historial_movimientos_inventario_almacen">
+      <End Role="almacen" EntitySet="almacen" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_movimientos_inventario_almacen1" Association="PuntoVentaModel.Store.FK_historial_movimientos_inventario_almacen1">
+      <End Role="almacen" EntitySet="almacen" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_almacen" Association="PuntoVentaModel.Store.FK_producto_almacen">
+      <End Role="almacen" EntitySet="almacen" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_banco_tercero" Association="PuntoVentaModel.Store.FK_banco_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="banco" EntitySet="banco" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cajero_caja" Association="PuntoVentaModel.Store.FK_cajero_caja">
+      <End Role="caja" EntitySet="caja" />
+      <End Role="cajero" EntitySet="cajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comprobante_ventas_caja" Association="PuntoVentaModel.Store.FK_comprobante_ventas_caja">
+      <End Role="caja" EntitySet="caja" />
+      <End Role="comprobante_ventas" EntitySet="comprobante_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cajero_empleado" Association="PuntoVentaModel.Store.FK_cajero_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="cajero" EntitySet="cajero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_egresos_caja_cajero" Association="PuntoVentaModel.Store.FK_egresos_caja_cajero">
+      <End Role="cajero" EntitySet="cajero" />
+      <End Role="egresos_caja" EntitySet="egresos_caja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ingresos_caja_cajero" Association="PuntoVentaModel.Store.FK_ingresos_caja_cajero">
+      <End Role="cajero" EntitySet="cajero" />
+      <End Role="ingresos_caja" EntitySet="ingresos_caja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_historial_datos_cargo" Association="PuntoVentaModel.Store.FK_empleado_historial_datos_cargo">
+      <End Role="cargo" EntitySet="cargo" />
+      <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_vs_cargo_cargo" Association="PuntoVentaModel.Store.FK_empleado_vs_cargo_cargo">
+      <End Role="cargo" EntitySet="cargo" />
+      <End Role="empleado_vs_cargo" EntitySet="empleado_vs_cargo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_tipo_producto" Association="PuntoVentaModel.Store.FK_producto_tipo_producto">
+      <End Role="categoria_producto" EntitySet="categoria_producto" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subcategoria_producto_categoria_producto" Association="PuntoVentaModel.Store.FK_subcategoria_producto_categoria_producto">
+      <End Role="categoria_producto" EntitySet="categoria_producto" />
+      <End Role="subcategoria_producto" EntitySet="subcategoria_producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliente_cliente_categoria" Association="PuntoVentaModel.Store.FK_cliente_cliente_categoria">
+      <End Role="cliente_categoria" EntitySet="cliente_categoria" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliente_cliente_subcategoria" Association="PuntoVentaModel.Store.FK_cliente_cliente_subcategoria">
+      <End Role="cliente_subcategoria" EntitySet="cliente_subcategoria" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliente_persona" Association="PuntoVentaModel.Store.FK_cliente_persona">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_cliente" Association="PuntoVentaModel.Store.FK_cotizacion_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="cotizacion" EntitySet="cotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_factura_cliente" Association="PuntoVentaModel.Store.FK_factura_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="factura" EntitySet="factura" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedidos_cliente" Association="PuntoVentaModel.Store.FK_pedidos_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cliente_subcategoria_cliente_categoria" Association="PuntoVentaModel.Store.FK_cliente_subcategoria_cliente_categoria">
+      <End Role="cliente_categoria" EntitySet="cliente_categoria" />
+      <End Role="cliente_subcategoria" EntitySet="cliente_subcategoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_combo_producto" Association="PuntoVentaModel.Store.FK_combo_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="combo" EntitySet="combo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compra_pago_anulados_compra" Association="PuntoVentaModel.Store.FK_compra_pago_anulados_compra">
+      <End Role="compra" EntitySet="compra" />
+      <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compra_sucursal" Association="PuntoVentaModel.Store.FK_compra_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compra_suplidor" Association="PuntoVentaModel.Store.FK_compra_suplidor">
+      <End Role="suplidor" EntitySet="suplidor" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compra_vs_pagos_compra" Association="PuntoVentaModel.Store.FK_compra_vs_pagos_compra">
+      <End Role="compra" EntitySet="compra" />
+      <End Role="compra_vs_pagos" EntitySet="compra_vs_pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comprobante_fiscal_comprobante_serie" Association="PuntoVentaModel.Store.FK_comprobante_fiscal_comprobante_serie">
+      <End Role="comprobante_serie" EntitySet="comprobante_serie" />
+      <End Role="comprobante_fiscal" EntitySet="comprobante_fiscal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comprobante_fiscal_tipo_comprobante_fiscal" Association="PuntoVentaModel.Store.FK_comprobante_fiscal_tipo_comprobante_fiscal">
+      <End Role="tipo_comprobante_fiscal" EntitySet="tipo_comprobante_fiscal" />
+      <End Role="comprobante_fiscal" EntitySet="comprobante_fiscal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comprobante_ventas_tipo_comprobante_fiscal" Association="PuntoVentaModel.Store.FK_comprobante_ventas_tipo_comprobante_fiscal">
+      <End Role="tipo_comprobante_fiscal" EntitySet="tipo_comprobante_fiscal" />
+      <End Role="comprobante_ventas" EntitySet="comprobante_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_detalles_cotizacion" Association="PuntoVentaModel.Store.FK_cotizacion_detalles_cotizacion">
+      <End Role="cotizacion" EntitySet="cotizacion" />
+      <End Role="cotizacion_detalles" EntitySet="cotizacion_detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_empleado" Association="PuntoVentaModel.Store.FK_cotizacion_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="cotizacion" EntitySet="cotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_sucursal" Association="PuntoVentaModel.Store.FK_cotizacion_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="cotizacion" EntitySet="cotizacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cuadre_caja_empleado" Association="PuntoVentaModel.Store.FK_cuadre_caja_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="cuadre_caja" EntitySet="cuadre_caja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cuenta_bancaria_tipo_cuenta_bancaria" Association="PuntoVentaModel.Store.FK_cuenta_bancaria_tipo_cuenta_bancaria">
+      <End Role="tipo_cuenta_bancaria" EntitySet="tipo_cuenta_bancaria" />
+      <End Role="cuenta_bancaria" EntitySet="cuenta_bancaria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_departamento_sucursal" Association="PuntoVentaModel.Store.FK_departamento_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="departamento" EntitySet="departamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_departamento" Association="PuntoVentaModel.Store.FK_empleado_departamento">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_direccion_sector" Association="PuntoVentaModel.Store.FK_direccion_sector">
+      <End Role="sector" EntitySet="sector" />
+      <End Role="direccion" EntitySet="direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_historial_datos_empleado" Association="PuntoVentaModel.Store.FK_empleado_historial_datos_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_historial_datos_empleado1" Association="PuntoVentaModel.Store.FK_empleado_historial_datos_empleado1">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_persona" Association="PuntoVentaModel.Store.FK_empleado_persona">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_situacion_empleado" Association="PuntoVentaModel.Store.FK_empleado_situacion_empleado">
+      <End Role="situacion_empleado" EntitySet="situacion_empleado" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_sucursal" Association="PuntoVentaModel.Store.FK_empleado_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrada_salida_inventario_empleado" Association="PuntoVentaModel.Store.FK_entrada_salida_inventario_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="entrada_salida_inventario" EntitySet="entrada_salida_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_compras_empleado" Association="PuntoVentaModel.Store.FK_historial_devolucion_compras_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomina_empleado" Association="PuntoVentaModel.Store.FK_nomina_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="nomina" EntitySet="nomina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedidos_empleado" Association="PuntoVentaModel.Store.FK_pedidos_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sucursal_vs_empleado_empleado" Association="PuntoVentaModel.Store.FK_sucursal_vs_empleado_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="sucursal_vs_empleado" EntitySet="sucursal_vs_empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_venta_vs_pagos_empleado" Association="PuntoVentaModel.Store.FK_venta_vs_pagos_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="venta_vs_pagos" EntitySet="venta_vs_pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empresa_tercero" Association="PuntoVentaModel.Store.FK_empresa_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="empresa" EntitySet="empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sucursal_empresa1" Association="PuntoVentaModel.Store.FK_sucursal_empresa1">
+      <End Role="empresa" EntitySet="empresa" />
+      <End Role="sucursal" EntitySet="sucursal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrada_salida_inventario_producto" Association="PuntoVentaModel.Store.FK_entrada_salida_inventario_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="entrada_salida_inventario" EntitySet="entrada_salida_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_entrada_salida_inventario_unidad" Association="PuntoVentaModel.Store.FK_entrada_salida_inventario_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="entrada_salida_inventario" EntitySet="entrada_salida_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_reparacion_estados_reparacion" Association="PuntoVentaModel.Store.FK_inventario_reparacion_estados_reparacion">
+      <End Role="estados_reparacion" EntitySet="estados_reparacion" />
+      <End Role="inventario_reparacion" EntitySet="inventario_reparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_factura_detalle_factura" Association="PuntoVentaModel.Store.FK_factura_detalle_factura">
+      <End Role="factura" EntitySet="factura" />
+      <End Role="factura_detalle" EntitySet="factura_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_facturas_anuladas_factura" Association="PuntoVentaModel.Store.FK_facturas_anuladas_factura">
+      <End Role="factura" EntitySet="factura" />
+      <End Role="facturas_anuladas" EntitySet="facturas_anuladas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_ventas_factura" Association="PuntoVentaModel.Store.FK_historial_devolucion_ventas_factura">
+      <End Role="factura" EntitySet="factura" />
+      <End Role="historial_devolucion_ventas" EntitySet="historial_devolucion_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_compras_producto" Association="PuntoVentaModel.Store.FK_historial_devolucion_compras_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_compras_unidad" Association="PuntoVentaModel.Store.FK_historial_devolucion_compras_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_ventas_producto" Association="PuntoVentaModel.Store.FK_historial_devolucion_ventas_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="historial_devolucion_ventas" EntitySet="historial_devolucion_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_devolucion_ventas_unidad" Association="PuntoVentaModel.Store.FK_historial_devolucion_ventas_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="historial_devolucion_ventas" EntitySet="historial_devolucion_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_identificacion_tercero1" Association="PuntoVentaModel.Store.FK_identificacion_tercero1">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="identificacion" EntitySet="identificacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_identificacion_tipo_identificacion" Association="PuntoVentaModel.Store.FK_identificacion_tipo_identificacion">
+      <End Role="tipo_identificacion" EntitySet="tipo_identificacion" />
+      <End Role="identificacion" EntitySet="identificacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ingresos_caja_ingresos_conceptos" Association="PuntoVentaModel.Store.FK_ingresos_caja_ingresos_conceptos">
+      <End Role="ingresos_conceptos" EntitySet="ingresos_conceptos" />
+      <End Role="ingresos_caja" EntitySet="ingresos_caja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_producto" Association="PuntoVentaModel.Store.FK_inventario_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_unidad" Association="PuntoVentaModel.Store.FK_inventario_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="inventario" EntitySet="inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_reparacion_marcas" Association="PuntoVentaModel.Store.FK_inventario_reparacion_marcas">
+      <End Role="marcas" EntitySet="marcas" />
+      <End Role="inventario_reparacion" EntitySet="inventario_reparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_reparacion_producto" Association="PuntoVentaModel.Store.FK_inventario_reparacion_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="inventario_reparacion" EntitySet="inventario_reparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inventario_reparacion_unidad" Association="PuntoVentaModel.Store.FK_inventario_reparacion_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="inventario_reparacion" EntitySet="inventario_reparacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_itebis" Association="PuntoVentaModel.Store.FK_producto_itebis">
+      <End Role="itebis" EntitySet="itebis" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_modelo_marcas" Association="PuntoVentaModel.Store.FK_modelo_marcas">
+      <End Role="marcas" EntitySet="marcas" />
+      <End Role="modelo" EntitySet="modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesas_detalles_mesas" Association="PuntoVentaModel.Store.FK_mesas_detalles_mesas">
+      <End Role="mesas" EntitySet="mesas" />
+      <End Role="mesas_detalles" EntitySet="mesas_detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_moneda_historial_moneda" Association="PuntoVentaModel.Store.FK_moneda_historial_moneda">
+      <End Role="moneda" EntitySet="moneda" />
+      <End Role="moneda_historial" EntitySet="moneda_historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomina_detalle_nomina" Association="PuntoVentaModel.Store.FK_nomina_detalle_nomina">
+      <End Role="nomina" EntitySet="nomina" />
+      <End Role="nomina_detalle" EntitySet="nomina_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomina_nomina_tipos" Association="PuntoVentaModel.Store.FK_nomina_nomina_tipos">
+      <End Role="nomina_tipos" EntitySet="nomina_tipos" />
+      <End Role="nomina" EntitySet="nomina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomina_sucursal" Association="PuntoVentaModel.Store.FK_nomina_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="nomina" EntitySet="nomina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_nomina_detalle_nomina_conceptos" Association="PuntoVentaModel.Store.FK_nomina_detalle_nomina_conceptos">
+      <End Role="nomina_conceptos" EntitySet="nomina_conceptos" />
+      <End Role="nomina_detalle" EntitySet="nomina_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_region_pais" Association="PuntoVentaModel.Store.FK_region_pais">
+      <End Role="pais" EntitySet="pais" />
+      <End Role="region" EntitySet="region" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedidos_sucursal" Association="PuntoVentaModel.Store.FK_pedidos_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tercero_vs_permiso_permiso" Association="PuntoVentaModel.Store.FK_tercero_vs_permiso_permiso">
+      <End Role="permiso" EntitySet="permiso" />
+      <End Role="tercero_vs_permiso" EntitySet="tercero_vs_permiso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_persona_sexo" Association="PuntoVentaModel.Store.FK_persona_sexo">
+      <End Role="sexo" EntitySet="sexo" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_persona_tercero" Association="PuntoVentaModel.Store.FK_persona_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_suplidor_persona" Association="PuntoVentaModel.Store.FK_suplidor_persona">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="suplidor" EntitySet="suplidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_compra_vs_producto_producto" Association="PuntoVentaModel.Store.FK_compra_vs_producto_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="compra_detalle" EntitySet="compra_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_detalles_producto" Association="PuntoVentaModel.Store.FK_cotizacion_detalles_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="cotizacion_detalles" EntitySet="cotizacion_detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_factura_detalle_producto" Association="PuntoVentaModel.Store.FK_factura_detalle_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="factura_detalle" EntitySet="factura_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_movimientos_inventario_producto" Association="PuntoVentaModel.Store.FK_historial_movimientos_inventario_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_codigobarra_producto" Association="PuntoVentaModel.Store.FK_producto_codigobarra_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="producto_codigobarra" EntitySet="producto_codigobarra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_detalle_producto" Association="PuntoVentaModel.Store.FK_producto_detalle_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="producto_vs_detalle" EntitySet="producto_vs_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_subcategoria_producto" Association="PuntoVentaModel.Store.FK_producto_subcategoria_producto">
+      <End Role="subcategoria_producto" EntitySet="subcategoria_producto" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mesas_detalles_producto_detalle" Association="PuntoVentaModel.Store.FK_mesas_detalles_producto_detalle">
+      <End Role="producto_detalle" EntitySet="producto_detalle" />
+      <End Role="mesas_detalles" EntitySet="mesas_detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_detalle_producto_especificacion" Association="PuntoVentaModel.Store.FK_producto_detalle_producto_especificacion">
+      <End Role="producto_detalle" EntitySet="producto_detalle" />
+      <End Role="producto_vs_detalle" EntitySet="producto_vs_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_oferta_historial_producto_oferta" Association="PuntoVentaModel.Store.FK_producto_oferta_historial_producto_oferta">
+      <End Role="producto_oferta" EntitySet="producto_oferta" />
+      <End Role="producto_oferta_historial" EntitySet="producto_oferta_historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK_provincia_region" Association="PuntoVentaModel.Store.FK_provincia_region">
+      <End Role="region" EntitySet="region" />
+      <End Role="provincia" EntitySet="provincia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sector_provincia" Association="PuntoVentaModel.Store.FK_sector_provincia">
+      <End Role="provincia" EntitySet="provincia" />
+      <End Role="sector" EntitySet="sector" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sistema_modulo_opciones_sistema_modulos" Association="PuntoVentaModel.Store.FK_sistema_modulo_opciones_sistema_modulos">
+      <End Role="sistema_modulos" EntitySet="sistema_modulos" />
+      <End Role="sistema_modulo_opciones" EntitySet="sistema_modulo_opciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_empleado_historial_datos_situacion_empleado" Association="PuntoVentaModel.Store.FK_empleado_historial_datos_situacion_empleado">
+      <End Role="situacion_empleado" EntitySet="situacion_empleado" />
+      <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sucursal_vs_empleado_sucursal" Association="PuntoVentaModel.Store.FK_sucursal_vs_empleado_sucursal">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="sucursal_vs_empleado" EntitySet="sucursal_vs_empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transferencia_inventario_sucursal1" Association="PuntoVentaModel.Store.FK_transferencia_inventario_sucursal1">
+      <End Role="sucursal" EntitySet="sucursal" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tercero_observaciones_tercero" Association="PuntoVentaModel.Store.FK_tercero_observaciones_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="tercero_observaciones" EntitySet="tercero_observaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tercero_vs_email_tercero" Association="PuntoVentaModel.Store.FK_tercero_vs_email_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="tercero_vs_email" EntitySet="tercero_vs_email" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tercero_vs_permiso_tercero" Association="PuntoVentaModel.Store.FK_tercero_vs_permiso_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="tercero_vs_permiso" EntitySet="tercero_vs_permiso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tervero_vs_telefono_tercero" Association="PuntoVentaModel.Store.FK_tervero_vs_telefono_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="tercero_vs_telefono" EntitySet="tercero_vs_telefono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_vendedor_tercero" Association="PuntoVentaModel.Store.FK_vendedor_tercero">
+      <End Role="tercero" EntitySet="tercero" />
+      <End Role="vendedor" EntitySet="vendedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_movimientos_inventario_tipo_movimiento_inventario" Association="PuntoVentaModel.Store.FK_historial_movimientos_inventario_tipo_movimiento_inventario">
+      <End Role="tipo_movimiento_inventario" EntitySet="tipo_movimiento_inventario" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_historial_movimientos_inventario_unidad" Association="PuntoVentaModel.Store.FK_historial_movimientos_inventario_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="transferencia_inventario" EntitySet="transferencia_inventario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cotizacion_detalles_unidad" Association="PuntoVentaModel.Store.FK_cotizacion_detalles_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="cotizacion_detalles" EntitySet="cotizacion_detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_factura_detalle_unidad" Association="PuntoVentaModel.Store.FK_factura_detalle_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="factura_detalle" EntitySet="factura_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_codigobarra_unidad" Association="PuntoVentaModel.Store.FK_producto_codigobarra_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="producto_codigobarra" EntitySet="producto_codigobarra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_grupo_usuarios_permisos_grupo_usuarios" Association="PuntoVentaModel.Store.FK_grupo_usuarios_permisos_grupo_usuarios">
+      <End Role="grupo_usuarios" EntitySet="grupo_usuarios" />
+      <End Role="grupo_usuarios_permisos" EntitySet="grupo_usuarios_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_grupo_usuarios_permisos_permiso" Association="PuntoVentaModel.Store.FK_grupo_usuarios_permisos_permiso">
+      <End Role="permiso" EntitySet="permiso" />
+      <End Role="grupo_usuarios_permisos" EntitySet="grupo_usuarios_permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_unidad_producto" Association="PuntoVentaModel.Store.FK_producto_unidad_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="producto_unidad" EntitySet="producto_unidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_producto_unidad_unidad" Association="PuntoVentaModel.Store.FK_producto_unidad_unidad">
+      <End Role="unidad" EntitySet="unidad" />
+      <End Role="producto_unidad" EntitySet="producto_unidad" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="almacen">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="banco">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caja">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="secuencia" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="cod_sucursal" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cajero">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="caja_codigo" Type="int" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="cargo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="catalogo_cuentas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
+    <Property Name="numero_cuenta" Type="varchar(max)" Nullable="true" />
+    <Property Name="cuenta_master" Type="bit" Nullable="true" />
+    <Property Name="cuenta_sub_master" Type="bit" Nullable="true" />
+    <Property Name="cuenta_acumulativa" Type="bit" Nullable="true" />
+    <Property Name="cuenta_movimiento" Type="bit" Nullable="true" />
+    <Property Name="origen_credito" Type="bit" Nullable="true" />
+    <Property Name="origen_debito" Type="bit" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="categoria_producto">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="limite_credito" Type="float" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="fecha_creado" Type="datetime" Nullable="true" />
+    <Property Name="abrir_credito" Type="bit" Nullable="true" />
+    <Property Name="cod_sucursal_creado" Type="int" Nullable="true" />
+    <Property Name="cliente_contado" Type="bit" Nullable="true" />
+    <Property Name="cliente_categoria_codigo" Type="int" Nullable="true" />
+    <Property Name="cliente_subcategoria_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="cliente_categoria">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="cliente_subcategoria">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="cliente_categoria_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="combo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="precio" Type="float" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="cod_sucursal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="num_factura" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="ncf" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="rnc" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="cod_tipo" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="fecha_limite" Type="datetime" Nullable="true" />
+    <Property Name="pagada" Type="bit" Nullable="true" />
+    <Property Name="efectivo" Type="float" Nullable="true" />
+    <Property Name="cheque" Type="float" Nullable="true" />
+    <Property Name="deposito" Type="float" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+    <Property Name="suplidor_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compra_pago_anulados">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_pago" Type="int" Nullable="true" />
+    <Property Name="detalle" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="cod_empleado" Type="int" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="compra_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="compra_vs_pagos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="monto" Type="float" Nullable="false" />
+    <Property Name="devuelta" Type="float" Nullable="true" />
+    <Property Name="tarjeta" Type="float" Nullable="true" />
+    <Property Name="cheque" Type="float" Nullable="true" />
+    <Property Name="deposito" Type="float" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="cod_empleado" Type="int" Nullable="false" />
+    <Property Name="detalle" Type="varchar" Nullable="true" MaxLength="2000" />
+    <Property Name="cod_empleado_anular" Type="int" Nullable="true" />
+    <Property Name="motivo_anular" Type="varchar(max)" Nullable="true" />
+    <Property Name="compra_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="comprobante_fiscal">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_caja" Type="int" Nullable="true" />
+    <Property Name="desde_numero" Type="int" Nullable="true" />
+    <Property Name="hasta_numero" Type="int" Nullable="true" />
+    <Property Name="contador" Type="int" Nullable="true" />
+    <Property Name="avisar" Type="int" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="comprobante_serie_codigo" Type="int" Nullable="true" />
+    <Property Name="tipo_comprobante_fiscal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="comprobante_serie">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="serie" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="comprobante_ventas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="contador" Type="int" Nullable="true" />
+    <Property Name="caja_codigo" Type="int" Nullable="true" />
+    <Property Name="tipo_comprobante_fiscal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="correo_electronicos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="correo" Type="varchar(max)" Nullable="true" />
+    <Property Name="clave" Type="varchar(max)" Nullable="false" />
+    <Property Name="ssl_activo" Type="bit" Nullable="false" />
+    <Property Name="host" Type="varchar(max)" Nullable="false" />
+    <Property Name="puerto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cotizacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="num_cotizacion" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="cliente_codigo" Type="int" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="cuadre_caja">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="cod_cajero" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="turno" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_cajero" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="turno" Type="int" Nullable="false" />
+    <Property Name="efectivo" Type="float" Nullable="true" />
+    <Property Name="cheque" Type="float" Nullable="true" />
+    <Property Name="transferencia" Type="float" Nullable="true" />
+    <Property Name="efectivo_inicial" Type="float" Nullable="true" />
+    <Property Name="sobrante" Type="float" Nullable="true" />
+    <Property Name="faltante" Type="float" Nullable="true" />
+    <Property Name="abierta_cerrada" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="tarjeta" Type="float" Nullable="true" />
+    <Property Name="bonos" Type="float" Nullable="true" />
+    <Property Name="orden_compra" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="cuenta_bancaria">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="numero_cuenta" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="cod_titular" Type="int" Nullable="true" />
+    <Property Name="cod_banco" Type="int" Nullable="true" />
+    <Property Name="tipo_cuenta_bancaria_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="departamento">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="200" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="direccion">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="sector_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="egresos_caja">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_concepto" Type="int" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="monto" Type="float" Nullable="true" />
+    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
+    <Property Name="afecta_cuadre" Type="int" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="cuadrado" Type="int" Nullable="true" />
+    <Property Name="cajero_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="egresos_conceptos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="login" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="clave" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="sueldo" Type="float" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="cod_cargo" Type="int" Nullable="true" />
+    <Property Name="cod_cliente" Type="int" Nullable="true" />
+    <Property Name="cod_grupo_usuario" Type="int" Nullable="true" />
+    <Property Name="fecha_ingreso" Type="datetime" Nullable="true" />
+    <Property Name="PERMISO" Type="varchar" Nullable="true" MaxLength="1" />
+    <Property Name="cod_tipo_nomina" Type="int" Nullable="true" />
+    <Property Name="departamento_codigo" Type="int" Nullable="true" />
+    <Property Name="situacion_empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="empleado_vs_cargo">
+    <Key>
+      <PropertyRef Name="cod_empleado" />
+      <PropertyRef Name="cod_cargo" />
+    </Key>
+    <Property Name="cod_empleado" Type="int" Nullable="false" />
+    <Property Name="cod_cargo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empresa">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="division" Type="varchar" Nullable="true" MaxLength="2" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="entrada_salida_inventario">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="tipo_movimiento" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="cantidad" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="cod_almacen" Type="int" Nullable="true" />
+    <Property Name="motivo" Type="varchar" Nullable="true" MaxLength="500" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="estados_reparacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="factura">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="num_factura" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="fecha_limite" Type="datetime" Nullable="true" />
+    <Property Name="codigo_empleado" Type="int" Nullable="false" />
+    <Property Name="rnc" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="ncf" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="codigo_tipo_factura" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="cod_sucursal" Type="int" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="pagada" Type="bit" Nullable="true" />
+    <Property Name="cod_empleado_anular" Type="int" Nullable="true" />
+    <Property Name="devuelta" Type="float" Nullable="true" />
+    <Property Name="itebis" Type="float" Nullable="true" />
+    <Property Name="efectivo" Type="float" Nullable="true" />
+    <Property Name="cheque" Type="float" Nullable="true" />
+    <Property Name="deposito" Type="float" Nullable="true" />
+    <Property Name="motivo_anulada" Type="varchar(max)" Nullable="true" />
+    <Property Name="tarjeta" Type="float" Nullable="true" />
+    <Property Name="cod_orden_compra" Type="int" Nullable="true" />
+    <Property Name="monto_orden_compra" Type="float" Nullable="true" />
+    <Property Name="monto_propina" Type="float" Nullable="true" />
+    <Property Name="cod_vendedor" Type="int" Nullable="true" />
+    <Property Name="despachado" Type="int" Nullable="true" />
+    <Property Name="autorizar_pedido" Type="int" Nullable="true" />
+    <Property Name="cuadrado" Type="int" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
+    <Property Name="codigo_comprobante" Type="int" Nullable="true" />
+    <Property Name="cliente_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="grupo_usuarios">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="historial_devolucion_compras">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="codigo_compra" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="true" />
+    <Property Name="costo" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="historial_devolucion_ventas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="codigo_empleado" Type="int" Nullable="true" />
+    <Property Name="tipo_devolucion" Type="varchar(max)" Nullable="true" />
+    <Property Name="factura_codigo" Type="int" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="identificacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="identificacion1" />
+      <PropertyRef Name="cod_tercero" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="identificacion1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="cod_tercero" Type="int" Nullable="false" />
+    <Property Name="tipo_identificacion_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ingresos_caja">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="monto" Type="float" Nullable="true" />
+    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
+    <Property Name="afecta_cuadre" Type="int" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="cuadrado" Type="int" Nullable="true" />
+    <Property Name="cajero_codigo" Type="int" Nullable="true" />
+    <Property Name="ingresos_conceptos_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ingresos_conceptos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="inventario">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="existencia" Type="float" Nullable="false" />
+    <Property Name="fecha_entrada" Type="datetime" Nullable="true" />
+    <Property Name="fecha_vencimiento" Type="datetime" Nullable="true" />
+    <Property Name="costo" Type="float" Nullable="true" />
+    <Property Name="precio" Type="float" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="false" />
+    <Property Name="unidad_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="inventario_reparacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_modelo" Type="int" Nullable="true" />
+    <Property Name="imei" Type="varchar(max)" Nullable="true" />
+    <Property Name="matricula" Type="varchar(max)" Nullable="true" />
+    <Property Name="serial" Type="varchar(max)" Nullable="true" />
+    <Property Name="existencia" Type="float" Nullable="true" />
+    <Property Name="fecha_entrada" Type="datetime" Nullable="true" />
+    <Property Name="cod_empleado_modifico" Type="int" Nullable="true" />
+    <Property Name="cod_cliente_titular" Type="int" Nullable="true" />
+    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="estados_reparacion_codigo" Type="int" Nullable="true" />
+    <Property Name="marcas_codigo" Type="int" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="itebis">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="it" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marcas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="mesas">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="cod_sucursal" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="modelo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre_modelo" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="marcas_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="moneda">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="tasa_actual" Type="float" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="moneda_historial">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="tasa" Type="float" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="moneda_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="nomina">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="fecha_inicial" Type="datetime" Nullable="true" />
+    <Property Name="fecha_final" Type="datetime" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="abierta_cerrada" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="cod_empleado_cerrada" Type="int" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="nomina_tipos_codigo" Type="int" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="nomina_conceptos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="aumenta_sueldo" Type="int" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="nomina_tipos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedidos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="num_factura" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="fecha_creado" Type="datetime" Nullable="true" />
+    <Property Name="fecha_confirmado" Type="datetime" Nullable="true" />
+    <Property Name="fecha_limite" Type="datetime" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="cod_empleado_anulado" Type="int" Nullable="true" />
+    <Property Name="motivo_anulado" Type="varchar(max)" Nullable="true" />
+    <Property Name="costo_envio" Type="float" Nullable="true" />
+    <Property Name="cliente_codigo" Type="int" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="true" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="apellido" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="sexo_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="false" />
+    <Property Name="referencia" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="reorden" Type="float" Nullable="true" />
+    <Property Name="punto_maximo" Type="float" Nullable="true" />
+    <Property Name="imagen" Type="varchar(max)" Nullable="true" />
+    <Property Name="cod_unidad_minima" Type="int" Nullable="true" />
+    <Property Name="almacen_codigo" Type="int" Nullable="true" />
+    <Property Name="categoria_producto_codigo" Type="int" Nullable="true" />
+    <Property Name="itebis_codigo" Type="int" Nullable="true" />
+    <Property Name="subcategoria_producto_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_detalle">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_oferta">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="fecha_inicial" Type="datetime" Nullable="true" />
+    <Property Name="fecha_final" Type="datetime" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="cod_sucursal" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_permisos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_vs_detalle">
+    <Key>
+      <PropertyRef Name="codigo_producto" />
+      <PropertyRef Name="codigo_detalle" />
+    </Key>
+    <Property Name="codigo_producto" Type="int" Nullable="false" />
+    <Property Name="codigo_detalle" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="provincia">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="region_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="region">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="pais_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sector">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="provincia_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sexo">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="sexo1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sistema_historial">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="ruta_imagen_productos" Type="varchar(max)" Nullable="true" />
+    <Property Name="ruta_backup" Type="varchar(max)" Nullable="true" />
+    <Property Name="ruta_logo_empresa" Type="varchar(max)" Nullable="true" />
+    <Property Name="codigo_moneda" Type="int" Nullable="true" />
+    <Property Name="permisos_por_grupos_usuarios" Type="int" Nullable="true" />
+    <Property Name="autorizar_pedidos_apartir" Type="float" Nullable="true" />
+    <Property Name="limite_egreso_caja" Type="float" Nullable="true" />
+    <Property Name="cod_comprobante_nota_credito" Type="int" Nullable="true" />
+    <Property Name="usar_comprobantes" Type="int" Nullable="true" />
+    <Property Name="fecha_vencimiento" Type="datetime" Nullable="true" />
+    <Property Name="ip_server" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos_usuario" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos_clave" Type="varchar(max)" Nullable="true" />
+    <Property Name="ver_imagen_fact_Touch" Type="int" Nullable="true" />
+    <Property Name="ver_nombre_fact_touch" Type="int" Nullable="true" />
+    <Property Name="porciento_propina" Type="float" Nullable="true" />
+    <Property Name="cod_empleado_modifico" Type="int" Nullable="true" />
+    <Property Name="fecha_modifico" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sistema_modulo_opciones">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
+    <Property Name="nombre_logico" Type="varchar(max)" Nullable="true" />
+    <Property Name="imagen" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="sistema_modulos_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sistema_modulos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
+    <Property Name="nombre_logico" Type="varchar(max)" Nullable="true" />
+    <Property Name="imagen" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="situacion_empleado">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subcategoria_producto">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="categoria_producto_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sucursal">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="empresa_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="suplidor">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="fecha_creacion" Type="datetime" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tarjetas_credito">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tercero">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="identificacion" Type="varchar" Nullable="true" MaxLength="11" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_comprobante_fiscal">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="secuencia" Type="varchar" Nullable="true" MaxLength="2" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_cuenta_bancaria">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_identificacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tipo_movimiento_inventario">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transferencia_inventario">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="codigo_almacen_destino" Type="int" Nullable="true" />
+    <Property Name="codigo_empleado" Type="int" Nullable="true" />
+    <Property Name="almacen_codigo" Type="int" Nullable="true" />
+    <Property Name="almacen1_codigo" Type="int" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="false" />
+    <Property Name="sucursal_codigo" Type="int" Nullable="true" />
+    <Property Name="tipo_movimiento_inventario_codigo" Type="varchar" MaxLength="5" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="unidad">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="unidad_abreviada" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="vendedor">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="porciento" Type="float" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="venta_vs_pagos">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="cod_factura" Type="int" Nullable="false" />
+    <Property Name="monto" Type="float" Nullable="false" />
+    <Property Name="devuelta" Type="float" Nullable="true" />
+    <Property Name="tarjeta" Type="float" Nullable="false" />
+    <Property Name="cheque" Type="float" Nullable="false" />
+    <Property Name="transferencia" Type="float" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="cod_orden_compra" Type="int" Nullable="true" />
+    <Property Name="monto_orden_compra" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="detalle" Type="varchar(max)" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="cod_empleado_anular" Type="int" Nullable="true" />
+    <Property Name="motivo_anulado" Type="varchar(max)" Nullable="true" />
+    <Property Name="cuadrado" Type="int" Nullable="true" />
+    <Property Name="empleado_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compra_detalle">
+    <Key>
+      <PropertyRef Name="cod_compra" />
+      <PropertyRef Name="cod_producto" />
+      <PropertyRef Name="cod_unidad" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="monto" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="cod_compra" Type="int" Nullable="false" />
+    <Property Name="cod_producto" Type="int" Nullable="false" />
+    <Property Name="cod_unidad" Type="int" Nullable="false" />
+    <Property Name="costo" Type="float" Nullable="true" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="venta" Type="float" Nullable="true" />
+    <Property Name="monto" Type="float" Nullable="false" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cotizacion_detalles">
+    <Key>
+      <PropertyRef Name="codigo_cotizacion" />
+    </Key>
+    <Property Name="codigo_cotizacion" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="true" />
+    <Property Name="precio" Type="float" Nullable="true" />
+    <Property Name="monto" Type="float" Nullable="true" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="producto_codigo" Type="int" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="empleado_historial_datos">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="cod_empleado" />
+      <PropertyRef Name="cod_situacion" />
+      <PropertyRef Name="cod_cargo" />
+      <PropertyRef Name="cod_sucursal" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cod_empleado" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="apellido" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="identificacion" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="fecha_nacimiento" Type="datetime" Nullable="true" />
+    <Property Name="usuario" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="clave" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="cod_situacion" Type="int" Nullable="false" />
+    <Property Name="cod_sexo" Type="int" Nullable="true" />
+    <Property Name="cod_cargo" Type="int" Nullable="false" />
+    <Property Name="cod_sucursal" Type="int" Nullable="false" />
+    <Property Name="cod_departamento" Type="int" Nullable="true" />
+    <Property Name="sueldo" Type="float" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="fecha_ingreso" Type="datetime" Nullable="true" />
+    <Property Name="cod_tipo_nomina" Type="int" Nullable="true" />
+    <Property Name="empleado1_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="factura_detalle">
+    <Key>
+      <PropertyRef Name="cod_factura" />
+      <PropertyRef Name="cod_producto" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="precio" />
+      <PropertyRef Name="monto" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="cod_factura" Type="int" Nullable="false" />
+    <Property Name="cod_producto" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="float" Nullable="false" />
+    <Property Name="precio" Type="float" Nullable="false" />
+    <Property Name="monto" Type="float" Nullable="false" />
+    <Property Name="itebis" Type="float" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="false" />
+    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
+    <Property Name="unidad_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="facturas_anuladas">
+    <Key>
+      <PropertyRef Name="cod_factura" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="detalle" />
+    </Key>
+    <Property Name="cod_factura" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="detalle" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesas_detalles">
+    <Key>
+      <PropertyRef Name="codigo_mesa" />
+      <PropertyRef Name="cod_detalle" />
+    </Key>
+    <Property Name="codigo_mesa" Type="int" Nullable="false" />
+    <Property Name="cod_detalle" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="nomina_detalle">
+    <Key>
+      <PropertyRef Name="cod_nomina" />
+      <PropertyRef Name="cod_empleado" />
+      <PropertyRef Name="cod_concepto" />
+      <PropertyRef Name="monto_sueldo" />
+    </Key>
+    <Property Name="cod_nomina" Type="int" Nullable="false" />
+    <Property Name="cod_empleado" Type="int" Nullable="false" />
+    <Property Name="cod_concepto" Type="int" Nullable="false" />
+    <Property Name="monto_sueldo" Type="float" Nullable="false" />
+    <Property Name="cod_empleado_modifico" Type="int" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_codigobarra">
+    <Key>
+      <PropertyRef Name="cod_producto" />
+      <PropertyRef Name="cod_unidad" />
+      <PropertyRef Name="codigo_barra" />
+    </Key>
+    <Property Name="cod_producto" Type="int" Nullable="false" />
+    <Property Name="cod_unidad" Type="int" Nullable="false" />
+    <Property Name="codigo_barra" Type="varchar(max)" Nullable="false" />
+    <Property Name="codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="producto_oferta_historial">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar(max)" Nullable="true" />
+    <Property Name="descuento" Type="float" Nullable="true" />
+    <Property Name="fecha_inicial" Type="datetime" Nullable="true" />
+    <Property Name="fecha_final" Type="datetime" Nullable="true" />
+    <Property Name="estado" Type="int" Nullable="true" />
+    <Property Name="fecha_actualizada" Type="datetime" Nullable="true" />
+    <Property Name="cod_empleado_actualiza" Type="int" Nullable="true" />
+    <Property Name="cod_sucursal" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sistema">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ruta_imagen_productos" Type="varchar(max)" Nullable="true" />
+    <Property Name="ruta_backup" Type="varchar(max)" Nullable="true" />
+    <Property Name="ruta_logo_empresa" Type="varchar(max)" Nullable="true" />
+    <Property Name="codigo_moneda" Type="int" Nullable="true" />
+    <Property Name="permisos_por_grupos_usuarios" Type="int" Nullable="true" />
+    <Property Name="autorizar_pedidos_apartir" Type="float" Nullable="true" />
+    <Property Name="limite_egreso_caja" Type="float" Nullable="true" />
+    <Property Name="cod_comprobante_nota_credito" Type="int" Nullable="true" />
+    <Property Name="usar_comprobantes" Type="int" Nullable="true" />
+    <Property Name="fecha_vencimiento" Type="datetime" Nullable="true" />
+    <Property Name="ip_server" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos_usuario" Type="varchar(max)" Nullable="true" />
+    <Property Name="base_datos_clave" Type="varchar(max)" Nullable="true" />
+    <Property Name="ver_imagen_fact_touch" Type="int" Nullable="true" />
+    <Property Name="ver_nombre_fact_touch" Type="int" Nullable="true" />
+    <Property Name="porciento_propina" Type="float" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sucursal_vs_empleado">
+    <Key>
+      <PropertyRef Name="cod_sucursal" />
+      <PropertyRef Name="cod_empleado" />
+    </Key>
+    <Property Name="cod_sucursal" Type="int" Nullable="false" />
+    <Property Name="cod_empleado" Type="int" Nullable="false" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tercero_observaciones">
+    <Key>
+      <PropertyRef Name="observacion" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="true" />
+    <Property Name="observacion" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="entidad" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="estado" Type="bit" Nullable="true" />
+    <Property Name="fecha" Type="datetime" Nullable="true" />
+    <Property Name="tercero_codigo" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tercero_vs_email">
+    <Key>
+      <PropertyRef Name="cod_tercero" />
+    </Key>
+    <Property Name="cod_tercero" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar(max)" Nullable="true" />
+    <Property Name="tipo_entidad" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="tercero_vs_permiso">
+    <Key>
+      <PropertyRef Name="cod_tercero" />
+      <PropertyRef Name="cod_permiso" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="cod_tercero" Type="int" Nullable="false" />
+    <Property Name="cod_permiso" Type="int" Nullable="false" />
+    <Property Name="tipo_entidad" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tercero_vs_telefono">
+    <Key>
+      <PropertyRef Name="cod_tercero" />
+      <PropertyRef Name="telefono" />
+    </Key>
+    <Property Name="cod_tercero" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="tipo_entidad" Type="varchar" Nullable="true" MaxLength="3" />
+    <Property Name="tipo_telefono" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="grupo_usuarios_permisos">
+    <Key>
+      <PropertyRef Name="grupo_usuarios_codigo" />
+      <PropertyRef Name="permiso_codigo" />
+    </Key>
+    <Property Name="grupo_usuarios_codigo" Type="int" Nullable="false" />
+    <Property Name="permiso_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="producto_unidad">
+    <Key>
+      <PropertyRef Name="producto_codigo" />
+      <PropertyRef Name="unidad_codigo" />
+    </Key>
+    <Property Name="producto_codigo" Type="int" Nullable="false" />
+    <Property Name="unidad_codigo" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_almacen_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="1" />
+    <End Role="almacen" Type="PuntoVentaModel.Store.almacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="almacen">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_movimientos_inventario_almacen">
+    <End Role="almacen" Type="PuntoVentaModel.Store.almacen" Multiplicity="0..1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="almacen">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="almacen_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_movimientos_inventario_almacen1">
+    <End Role="almacen" Type="PuntoVentaModel.Store.almacen" Multiplicity="0..1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="almacen">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="almacen1_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_almacen">
+    <End Role="almacen" Type="PuntoVentaModel.Store.almacen" Multiplicity="0..1" />
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="almacen">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="almacen_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_banco_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="banco" Type="PuntoVentaModel.Store.banco" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="banco">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cajero_caja">
+    <End Role="caja" Type="PuntoVentaModel.Store.caja" Multiplicity="0..1" />
+    <End Role="cajero" Type="PuntoVentaModel.Store.cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="caja">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cajero">
+        <PropertyRef Name="caja_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comprobante_ventas_caja">
+    <End Role="caja" Type="PuntoVentaModel.Store.caja" Multiplicity="0..1" />
+    <End Role="comprobante_ventas" Type="PuntoVentaModel.Store.comprobante_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="caja">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="comprobante_ventas">
+        <PropertyRef Name="caja_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cajero_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="cajero" Type="PuntoVentaModel.Store.cajero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cajero">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_egresos_caja_cajero">
+    <End Role="cajero" Type="PuntoVentaModel.Store.cajero" Multiplicity="0..1" />
+    <End Role="egresos_caja" Type="PuntoVentaModel.Store.egresos_caja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cajero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="egresos_caja">
+        <PropertyRef Name="cajero_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ingresos_caja_cajero">
+    <End Role="cajero" Type="PuntoVentaModel.Store.cajero" Multiplicity="0..1" />
+    <End Role="ingresos_caja" Type="PuntoVentaModel.Store.ingresos_caja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cajero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="ingresos_caja">
+        <PropertyRef Name="cajero_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_historial_datos_cargo">
+    <End Role="cargo" Type="PuntoVentaModel.Store.cargo" Multiplicity="1" />
+    <End Role="empleado_historial_datos" Type="PuntoVentaModel.Store.empleado_historial_datos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cargo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado_historial_datos">
+        <PropertyRef Name="cod_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_vs_cargo_cargo">
+    <End Role="cargo" Type="PuntoVentaModel.Store.cargo" Multiplicity="1" />
+    <End Role="empleado_vs_cargo" Type="PuntoVentaModel.Store.empleado_vs_cargo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cargo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado_vs_cargo">
+        <PropertyRef Name="cod_cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_tipo_producto">
+    <End Role="categoria_producto" Type="PuntoVentaModel.Store.categoria_producto" Multiplicity="0..1" />
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="categoria_producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subcategoria_producto_categoria_producto">
+    <End Role="categoria_producto" Type="PuntoVentaModel.Store.categoria_producto" Multiplicity="0..1" />
+    <End Role="subcategoria_producto" Type="PuntoVentaModel.Store.subcategoria_producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="subcategoria_producto">
+        <PropertyRef Name="categoria_producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliente_cliente_categoria">
+    <End Role="cliente_categoria" Type="PuntoVentaModel.Store.cliente_categoria" Multiplicity="0..1" />
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente_categoria">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="cliente_categoria_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliente_cliente_subcategoria">
+    <End Role="cliente_subcategoria" Type="PuntoVentaModel.Store.cliente_subcategoria" Multiplicity="0..1" />
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente_subcategoria">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="cliente_subcategoria_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliente_persona">
+    <End Role="persona" Type="PuntoVentaModel.Store.persona" Multiplicity="1" />
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_cliente">
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="0..1" />
+    <End Role="cotizacion" Type="PuntoVentaModel.Store.cotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion">
+        <PropertyRef Name="cliente_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_factura_cliente">
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="0..1" />
+    <End Role="factura" Type="PuntoVentaModel.Store.factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="factura">
+        <PropertyRef Name="cliente_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedidos_cliente">
+    <End Role="cliente" Type="PuntoVentaModel.Store.cliente" Multiplicity="0..1" />
+    <End Role="pedidos" Type="PuntoVentaModel.Store.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="cliente_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cliente_subcategoria_cliente_categoria">
+    <End Role="cliente_categoria" Type="PuntoVentaModel.Store.cliente_categoria" Multiplicity="0..1" />
+    <End Role="cliente_subcategoria" Type="PuntoVentaModel.Store.cliente_subcategoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente_categoria">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cliente_subcategoria">
+        <PropertyRef Name="cliente_categoria_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_combo_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="combo" Type="PuntoVentaModel.Store.combo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="combo">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compra_pago_anulados_compra">
+    <End Role="compra" Type="PuntoVentaModel.Store.compra" Multiplicity="0..1" />
+    <End Role="compra_pago_anulados" Type="PuntoVentaModel.Store.compra_pago_anulados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compra">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="compra_pago_anulados">
+        <PropertyRef Name="compra_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compra_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="compra" Type="PuntoVentaModel.Store.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compra_suplidor">
+    <End Role="suplidor" Type="PuntoVentaModel.Store.suplidor" Multiplicity="1" />
+    <End Role="compra" Type="PuntoVentaModel.Store.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suplidor">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="suplidor_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compra_vs_pagos_compra">
+    <End Role="compra" Type="PuntoVentaModel.Store.compra" Multiplicity="1" />
+    <End Role="compra_vs_pagos" Type="PuntoVentaModel.Store.compra_vs_pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compra">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="compra_vs_pagos">
+        <PropertyRef Name="compra_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comprobante_fiscal_comprobante_serie">
+    <End Role="comprobante_serie" Type="PuntoVentaModel.Store.comprobante_serie" Multiplicity="0..1" />
+    <End Role="comprobante_fiscal" Type="PuntoVentaModel.Store.comprobante_fiscal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comprobante_serie">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="comprobante_fiscal">
+        <PropertyRef Name="comprobante_serie_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comprobante_fiscal_tipo_comprobante_fiscal">
+    <End Role="tipo_comprobante_fiscal" Type="PuntoVentaModel.Store.tipo_comprobante_fiscal" Multiplicity="0..1" />
+    <End Role="comprobante_fiscal" Type="PuntoVentaModel.Store.comprobante_fiscal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_comprobante_fiscal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="comprobante_fiscal">
+        <PropertyRef Name="tipo_comprobante_fiscal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comprobante_ventas_tipo_comprobante_fiscal">
+    <End Role="tipo_comprobante_fiscal" Type="PuntoVentaModel.Store.tipo_comprobante_fiscal" Multiplicity="0..1" />
+    <End Role="comprobante_ventas" Type="PuntoVentaModel.Store.comprobante_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_comprobante_fiscal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="comprobante_ventas">
+        <PropertyRef Name="tipo_comprobante_fiscal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_detalles_cotizacion">
+    <End Role="cotizacion" Type="PuntoVentaModel.Store.cotizacion" Multiplicity="1" />
+    <End Role="cotizacion_detalles" Type="PuntoVentaModel.Store.cotizacion_detalles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="cotizacion">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion_detalles">
+        <PropertyRef Name="codigo_cotizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="cotizacion" Type="PuntoVentaModel.Store.cotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="cotizacion" Type="PuntoVentaModel.Store.cotizacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cuadre_caja_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="1" />
+    <End Role="cuadre_caja" Type="PuntoVentaModel.Store.cuadre_caja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cuadre_caja">
+        <PropertyRef Name="cod_cajero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cuenta_bancaria_tipo_cuenta_bancaria">
+    <End Role="tipo_cuenta_bancaria" Type="PuntoVentaModel.Store.tipo_cuenta_bancaria" Multiplicity="1" />
+    <End Role="cuenta_bancaria" Type="PuntoVentaModel.Store.cuenta_bancaria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_cuenta_bancaria">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cuenta_bancaria">
+        <PropertyRef Name="tipo_cuenta_bancaria_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_departamento_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="1" />
+    <End Role="departamento" Type="PuntoVentaModel.Store.departamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="departamento">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_departamento">
+    <End Role="departamento" Type="PuntoVentaModel.Store.departamento" Multiplicity="0..1" />
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamento">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="departamento_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_direccion_sector">
+    <End Role="sector" Type="PuntoVentaModel.Store.sector" Multiplicity="1" />
+    <End Role="direccion" Type="PuntoVentaModel.Store.direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sector">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="direccion">
+        <PropertyRef Name="sector_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_historial_datos_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="1" />
+    <End Role="empleado_historial_datos" Type="PuntoVentaModel.Store.empleado_historial_datos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado_historial_datos">
+        <PropertyRef Name="cod_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_historial_datos_empleado1">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="empleado_historial_datos" Type="PuntoVentaModel.Store.empleado_historial_datos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado_historial_datos">
+        <PropertyRef Name="empleado1_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_persona">
+    <End Role="persona" Type="PuntoVentaModel.Store.persona" Multiplicity="1" />
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_situacion_empleado">
+    <End Role="situacion_empleado" Type="PuntoVentaModel.Store.situacion_empleado" Multiplicity="0..1" />
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="situacion_empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="situacion_empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrada_salida_inventario_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="entrada_salida_inventario" Type="PuntoVentaModel.Store.entrada_salida_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="entrada_salida_inventario">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_compras_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="historial_devolucion_compras" Type="PuntoVentaModel.Store.historial_devolucion_compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_compras">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomina_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="nomina" Type="PuntoVentaModel.Store.nomina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="nomina">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedidos_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="0..1" />
+    <End Role="pedidos" Type="PuntoVentaModel.Store.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sucursal_vs_empleado_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="1" />
+    <End Role="sucursal_vs_empleado" Type="PuntoVentaModel.Store.sucursal_vs_empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="sucursal_vs_empleado">
+        <PropertyRef Name="cod_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_venta_vs_pagos_empleado">
+    <End Role="empleado" Type="PuntoVentaModel.Store.empleado" Multiplicity="1" />
+    <End Role="venta_vs_pagos" Type="PuntoVentaModel.Store.venta_vs_pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="venta_vs_pagos">
+        <PropertyRef Name="empleado_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empresa_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="empresa" Type="PuntoVentaModel.Store.empresa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empresa">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sucursal_empresa1">
+    <End Role="empresa" Type="PuntoVentaModel.Store.empresa" Multiplicity="1" />
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empresa">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="sucursal">
+        <PropertyRef Name="empresa_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrada_salida_inventario_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="0..1" />
+    <End Role="entrada_salida_inventario" Type="PuntoVentaModel.Store.entrada_salida_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="entrada_salida_inventario">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_entrada_salida_inventario_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="entrada_salida_inventario" Type="PuntoVentaModel.Store.entrada_salida_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="entrada_salida_inventario">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_reparacion_estados_reparacion">
+    <End Role="estados_reparacion" Type="PuntoVentaModel.Store.estados_reparacion" Multiplicity="0..1" />
+    <End Role="inventario_reparacion" Type="PuntoVentaModel.Store.inventario_reparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estados_reparacion">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario_reparacion">
+        <PropertyRef Name="estados_reparacion_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_factura_detalle_factura">
+    <End Role="factura" Type="PuntoVentaModel.Store.factura" Multiplicity="1" />
+    <End Role="factura_detalle" Type="PuntoVentaModel.Store.factura_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="factura">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="factura_detalle">
+        <PropertyRef Name="cod_factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_facturas_anuladas_factura">
+    <End Role="factura" Type="PuntoVentaModel.Store.factura" Multiplicity="1" />
+    <End Role="facturas_anuladas" Type="PuntoVentaModel.Store.facturas_anuladas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="factura">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="facturas_anuladas">
+        <PropertyRef Name="cod_factura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_ventas_factura">
+    <End Role="factura" Type="PuntoVentaModel.Store.factura" Multiplicity="0..1" />
+    <End Role="historial_devolucion_ventas" Type="PuntoVentaModel.Store.historial_devolucion_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="factura">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_ventas">
+        <PropertyRef Name="factura_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_compras_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="0..1" />
+    <End Role="historial_devolucion_compras" Type="PuntoVentaModel.Store.historial_devolucion_compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_compras">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_compras_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="historial_devolucion_compras" Type="PuntoVentaModel.Store.historial_devolucion_compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_compras">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_ventas_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="0..1" />
+    <End Role="historial_devolucion_ventas" Type="PuntoVentaModel.Store.historial_devolucion_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_ventas">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_devolucion_ventas_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="historial_devolucion_ventas" Type="PuntoVentaModel.Store.historial_devolucion_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="historial_devolucion_ventas">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_identificacion_tercero1">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="identificacion" Type="PuntoVentaModel.Store.identificacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="identificacion">
+        <PropertyRef Name="cod_tercero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_identificacion_tipo_identificacion">
+    <End Role="tipo_identificacion" Type="PuntoVentaModel.Store.tipo_identificacion" Multiplicity="1" />
+    <End Role="identificacion" Type="PuntoVentaModel.Store.identificacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_identificacion">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="identificacion">
+        <PropertyRef Name="tipo_identificacion_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ingresos_caja_ingresos_conceptos">
+    <End Role="ingresos_conceptos" Type="PuntoVentaModel.Store.ingresos_conceptos" Multiplicity="0..1" />
+    <End Role="ingresos_caja" Type="PuntoVentaModel.Store.ingresos_caja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ingresos_conceptos">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="ingresos_caja">
+        <PropertyRef Name="ingresos_conceptos_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="inventario" Type="PuntoVentaModel.Store.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="1" />
+    <End Role="inventario" Type="PuntoVentaModel.Store.inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_reparacion_marcas">
+    <End Role="marcas" Type="PuntoVentaModel.Store.marcas" Multiplicity="0..1" />
+    <End Role="inventario_reparacion" Type="PuntoVentaModel.Store.inventario_reparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marcas">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario_reparacion">
+        <PropertyRef Name="marcas_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_reparacion_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="0..1" />
+    <End Role="inventario_reparacion" Type="PuntoVentaModel.Store.inventario_reparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario_reparacion">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inventario_reparacion_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="inventario_reparacion" Type="PuntoVentaModel.Store.inventario_reparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inventario_reparacion">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_itebis">
+    <End Role="itebis" Type="PuntoVentaModel.Store.itebis" Multiplicity="0..1" />
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="itebis">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="itebis_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_modelo_marcas">
+    <End Role="marcas" Type="PuntoVentaModel.Store.marcas" Multiplicity="0..1" />
+    <End Role="modelo" Type="PuntoVentaModel.Store.modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marcas">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="modelo">
+        <PropertyRef Name="marcas_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesas_detalles_mesas">
+    <End Role="mesas" Type="PuntoVentaModel.Store.mesas" Multiplicity="1" />
+    <End Role="mesas_detalles" Type="PuntoVentaModel.Store.mesas_detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesas">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="mesas_detalles">
+        <PropertyRef Name="codigo_mesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_moneda_historial_moneda">
+    <End Role="moneda" Type="PuntoVentaModel.Store.moneda" Multiplicity="1" />
+    <End Role="moneda_historial" Type="PuntoVentaModel.Store.moneda_historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="moneda">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="moneda_historial">
+        <PropertyRef Name="moneda_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomina_detalle_nomina">
+    <End Role="nomina" Type="PuntoVentaModel.Store.nomina" Multiplicity="1" />
+    <End Role="nomina_detalle" Type="PuntoVentaModel.Store.nomina_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nomina">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="nomina_detalle">
+        <PropertyRef Name="cod_nomina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomina_nomina_tipos">
+    <End Role="nomina_tipos" Type="PuntoVentaModel.Store.nomina_tipos" Multiplicity="0..1" />
+    <End Role="nomina" Type="PuntoVentaModel.Store.nomina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nomina_tipos">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="nomina">
+        <PropertyRef Name="nomina_tipos_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomina_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="nomina" Type="PuntoVentaModel.Store.nomina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="nomina">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_nomina_detalle_nomina_conceptos">
+    <End Role="nomina_conceptos" Type="PuntoVentaModel.Store.nomina_conceptos" Multiplicity="1" />
+    <End Role="nomina_detalle" Type="PuntoVentaModel.Store.nomina_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nomina_conceptos">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="nomina_detalle">
+        <PropertyRef Name="cod_concepto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_region_pais">
+    <End Role="pais" Type="PuntoVentaModel.Store.pais" Multiplicity="1" />
+    <End Role="region" Type="PuntoVentaModel.Store.region" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pais">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="region">
+        <PropertyRef Name="pais_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedidos_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="pedidos" Type="PuntoVentaModel.Store.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tercero_vs_permiso_permiso">
+    <End Role="permiso" Type="PuntoVentaModel.Store.permiso" Multiplicity="1" />
+    <End Role="tercero_vs_permiso" Type="PuntoVentaModel.Store.tercero_vs_permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="permiso">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tercero_vs_permiso">
+        <PropertyRef Name="cod_permiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_persona_sexo">
+    <End Role="sexo" Type="PuntoVentaModel.Store.sexo" Multiplicity="0..1" />
+    <End Role="persona" Type="PuntoVentaModel.Store.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sexo">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="sexo_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_persona_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="persona" Type="PuntoVentaModel.Store.persona" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_suplidor_persona">
+    <End Role="persona" Type="PuntoVentaModel.Store.persona" Multiplicity="1" />
+    <End Role="suplidor" Type="PuntoVentaModel.Store.suplidor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="suplidor">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_compra_vs_producto_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="compra_detalle" Type="PuntoVentaModel.Store.compra_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="compra_detalle">
+        <PropertyRef Name="cod_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_detalles_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="0..1" />
+    <End Role="cotizacion_detalles" Type="PuntoVentaModel.Store.cotizacion_detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion_detalles">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_factura_detalle_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="factura_detalle" Type="PuntoVentaModel.Store.factura_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="factura_detalle">
+        <PropertyRef Name="cod_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_movimientos_inventario_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_codigobarra_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="producto_codigobarra" Type="PuntoVentaModel.Store.producto_codigobarra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_codigobarra">
+        <PropertyRef Name="cod_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_detalle_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="producto_vs_detalle" Type="PuntoVentaModel.Store.producto_vs_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_vs_detalle">
+        <PropertyRef Name="codigo_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_subcategoria_producto">
+    <End Role="subcategoria_producto" Type="PuntoVentaModel.Store.subcategoria_producto" Multiplicity="0..1" />
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcategoria_producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="subcategoria_producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mesas_detalles_producto_detalle">
+    <End Role="producto_detalle" Type="PuntoVentaModel.Store.producto_detalle" Multiplicity="1" />
+    <End Role="mesas_detalles" Type="PuntoVentaModel.Store.mesas_detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto_detalle">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="mesas_detalles">
+        <PropertyRef Name="cod_detalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_detalle_producto_especificacion">
+    <End Role="producto_detalle" Type="PuntoVentaModel.Store.producto_detalle" Multiplicity="1" />
+    <End Role="producto_vs_detalle" Type="PuntoVentaModel.Store.producto_vs_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto_detalle">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_vs_detalle">
+        <PropertyRef Name="codigo_detalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_oferta_historial_producto_oferta">
+    <End Role="producto_oferta" Type="PuntoVentaModel.Store.producto_oferta" Multiplicity="1" />
+    <End Role="producto_oferta_historial" Type="PuntoVentaModel.Store.producto_oferta_historial" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="producto_oferta">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_oferta_historial">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_provincia_region">
+    <End Role="region" Type="PuntoVentaModel.Store.region" Multiplicity="1" />
+    <End Role="provincia" Type="PuntoVentaModel.Store.provincia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="provincia">
+        <PropertyRef Name="region_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sector_provincia">
+    <End Role="provincia" Type="PuntoVentaModel.Store.provincia" Multiplicity="1" />
+    <End Role="sector" Type="PuntoVentaModel.Store.sector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provincia">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="sector">
+        <PropertyRef Name="provincia_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sistema_modulo_opciones_sistema_modulos">
+    <End Role="sistema_modulos" Type="PuntoVentaModel.Store.sistema_modulos" Multiplicity="1" />
+    <End Role="sistema_modulo_opciones" Type="PuntoVentaModel.Store.sistema_modulo_opciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sistema_modulos">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="sistema_modulo_opciones">
+        <PropertyRef Name="sistema_modulos_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_empleado_historial_datos_situacion_empleado">
+    <End Role="situacion_empleado" Type="PuntoVentaModel.Store.situacion_empleado" Multiplicity="1" />
+    <End Role="empleado_historial_datos" Type="PuntoVentaModel.Store.empleado_historial_datos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="situacion_empleado">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="empleado_historial_datos">
+        <PropertyRef Name="cod_situacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sucursal_vs_empleado_sucursal">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="1" />
+    <End Role="sucursal_vs_empleado" Type="PuntoVentaModel.Store.sucursal_vs_empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="sucursal_vs_empleado">
+        <PropertyRef Name="cod_sucursal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transferencia_inventario_sucursal1">
+    <End Role="sucursal" Type="PuntoVentaModel.Store.sucursal" Multiplicity="0..1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sucursal">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="sucursal_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tercero_observaciones_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="0..1" />
+    <End Role="tercero_observaciones" Type="PuntoVentaModel.Store.tercero_observaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tercero_observaciones">
+        <PropertyRef Name="tercero_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tercero_vs_email_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="tercero_vs_email" Type="PuntoVentaModel.Store.tercero_vs_email" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tercero_vs_email">
+        <PropertyRef Name="cod_tercero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tercero_vs_permiso_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="tercero_vs_permiso" Type="PuntoVentaModel.Store.tercero_vs_permiso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tercero_vs_permiso">
+        <PropertyRef Name="cod_tercero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tervero_vs_telefono_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="tercero_vs_telefono" Type="PuntoVentaModel.Store.tercero_vs_telefono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="tercero_vs_telefono">
+        <PropertyRef Name="cod_tercero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_vendedor_tercero">
+    <End Role="tercero" Type="PuntoVentaModel.Store.tercero" Multiplicity="1" />
+    <End Role="vendedor" Type="PuntoVentaModel.Store.vendedor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tercero">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="vendedor">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_movimientos_inventario_tipo_movimiento_inventario">
+    <End Role="tipo_movimiento_inventario" Type="PuntoVentaModel.Store.tipo_movimiento_inventario" Multiplicity="0..1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_movimiento_inventario">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="tipo_movimiento_inventario_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_historial_movimientos_inventario_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="1" />
+    <End Role="transferencia_inventario" Type="PuntoVentaModel.Store.transferencia_inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="transferencia_inventario">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cotizacion_detalles_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="cotizacion_detalles" Type="PuntoVentaModel.Store.cotizacion_detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="cotizacion_detalles">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_factura_detalle_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="0..1" />
+    <End Role="factura_detalle" Type="PuntoVentaModel.Store.factura_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="factura_detalle">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_codigobarra_unidad">
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="1" />
+    <End Role="producto_codigobarra" Type="PuntoVentaModel.Store.producto_codigobarra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_codigobarra">
+        <PropertyRef Name="cod_unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_grupo_usuarios_permisos_grupo_usuarios">
+    <End Role="grupo_usuarios" Type="PuntoVentaModel.Store.grupo_usuarios" Multiplicity="1" />
+    <End Role="grupo_usuarios_permisos" Type="PuntoVentaModel.Store.grupo_usuarios_permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grupo_usuarios">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="grupo_usuarios_permisos">
+        <PropertyRef Name="grupo_usuarios_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_grupo_usuarios_permisos_permiso">
+    <End Role="grupo_usuarios_permisos" Type="PuntoVentaModel.Store.grupo_usuarios_permisos" Multiplicity="*" />
+    <End Role="permiso" Type="PuntoVentaModel.Store.permiso" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="permiso">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="grupo_usuarios_permisos">
+        <PropertyRef Name="permiso_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_unidad_producto">
+    <End Role="producto" Type="PuntoVentaModel.Store.producto" Multiplicity="1" />
+    <End Role="producto_unidad" Type="PuntoVentaModel.Store.producto_unidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_unidad">
+        <PropertyRef Name="producto_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_producto_unidad_unidad">
+    <End Role="producto_unidad" Type="PuntoVentaModel.Store.producto_unidad" Multiplicity="*" />
+    <End Role="unidad" Type="PuntoVentaModel.Store.unidad" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="unidad">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="producto_unidad">
+        <PropertyRef Name="unidad_codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
