@@ -213,17 +213,27 @@ namespace puntoVenta
 
             try
             {
-                if (tipoPagoText.Text.Trim() == "")
-                {
-                    MessageBox.Show("Debe establecer el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tipoPagoText.Focus();
-                    return false;
-                }
-                if (s.cobros_cxc != true)
-                {
-                    MessageBox.Show("Usted no tiene permiso para hacer cobros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+                 foreach (DataGridViewRow row in dataGridView1.Rows)
+                 {
+                     if (double.Parse(row.Cells[9].Value.ToString()) < 0)
+                     {
+                         MessageBox.Show("El monto de abono debe ser igual o mayor que cero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                         dataGridView1.CurrentCell = dataGridView1.Rows[row.Index].Cells[0];
+                         return false;
+                     }
+                     
+                 }
+                 if (tipoPagoText.Text.Trim() == "")
+                 {
+                     MessageBox.Show("Debe establecer el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     tipoPagoText.Focus();
+                     return false;
+                 }
+                 if (s.cobros_cxc != true)
+                 {
+                     MessageBox.Show("Usted no tiene permiso para hacer cobros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     return false;
+                 }
 
                 if (dataGridView1.Rows.Count == 0)
                 {
@@ -338,12 +348,14 @@ namespace puntoVenta
                          /*
                             create proc insert_cobro_detalle
                             @cod_cobro int,@cod_metodo_pago int,@monto float,@monto_descuento float,@estado bit,@codigo int
+                         exec insert_cobro_detalle '1','14','1','10','0','1','0'
 
                           */
-                         if (row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
+                         if (double.Parse(row.Cells[9].Value.ToString())>0)
                          {
-                             sql = "exec insert_cobro_detalle '"+row.Cells[0].Value.ToString() + "','"+codigoCobro + "','" + codigoMetodoPago + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
+                             sql = "exec insert_cobro_detalle '"+codigoCobro.ToString() + "','"+row.Cells[0].Value.ToString() +"','"+ codigoMetodoPago.ToString() + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
                              Utilidades.ejecutarcomando(sql);
+                             MessageBox.Show(sql);
                          }
                      }
 
@@ -599,7 +611,7 @@ namespace puntoVenta
                     {
                         montoAbono += double.Parse(row.Cells[9].Value.ToString());
                     }
-                    MontoAbonoText.Text = montoAbono.ToString("N");
+                    MontoTotalAbonarText.Text = montoAbono.ToString("N");
                 }
             }
             catch (Exception)

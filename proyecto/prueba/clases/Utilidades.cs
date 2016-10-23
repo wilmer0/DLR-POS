@@ -830,7 +830,26 @@ namespace puntoVenta
         //imprimir factura en hoja normales 8.50 x 11
 
 
+        public static string getNombreByTercero(string codigo)
+        {
+            try
+            {
+                string sql = "select (t.nombre +' '+p.apellido) from tercero t join persona p on p.codigo=t.codigo where t.codigo='"+codigo+"'";
+                DataSet ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows[0][0].ToString() == "")
+                    return null;
 
+
+                    return ds.Tables[0].Rows[0][0].ToString();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error obteniendo el nombre.: " + ex.ToString(), "", MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+                return null;
+            }
+        }
         public static string GetIdMetodoPagoByNombre(string metodo)
         {
             try
