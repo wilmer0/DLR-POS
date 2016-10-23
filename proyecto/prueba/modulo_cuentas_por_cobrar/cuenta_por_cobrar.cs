@@ -642,7 +642,7 @@ namespace puntoVenta
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            marcar();
+            //marcar();
         }
 
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
@@ -652,12 +652,37 @@ namespace puntoVenta
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            Utilidades.numero_decimal(this.Text.Trim());
+            try
+            {
+                Utilidades.numero_decimal(this.Text.Trim());
+                double descuentoPorciento = double.Parse(MontoAbonoText.Text.Trim());
+                montoDescuentoText.Text = (double.Parse(MontoAbonoText.Text.Trim())-(descuentoPorciento*double.Parse(MontoAbonoText.Text.Trim()))).ToString("N");
+                int fila = dataGridView1.CurrentRow.Index;
+                dataGridView1.Rows[fila].Cells[10].Value = montoDescuentoText.Text.Trim();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error obteniendo el % descuento", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void montoDescuentoText_TextChanged(object sender, EventArgs e)
         {
-            Utilidades.numero_decimal(this.Text.Trim());
+            try
+            {
+                Utilidades.numero_decimal(this.Text.Trim());
+                double montoDescuento = double.Parse(montoDescuentoText.Text.Trim());
+                descuentoPorCientoText.Text =
+                    (double.Parse(montoDescuentoText.Text.Trim())/double.Parse(MontoAbonoText.Text.Trim())).ToString("N");
+                int fila = dataGridView1.CurrentRow.Index;
+                dataGridView1.Rows[fila].Cells[10].Value = montoDescuento.ToString("N");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error obteniendo el monto descuento", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
     }
 }
