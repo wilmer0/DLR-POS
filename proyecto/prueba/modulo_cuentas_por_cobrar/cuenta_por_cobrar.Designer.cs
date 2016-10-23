@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuenta_por_cobrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.codigo_cliente_txt = new System.Windows.Forms.TextBox();
             this.nombre_cliente_txt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ncf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_de_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipopagogriddd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -43,7 +54,7 @@
             this.detalle_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ck_aplicar_todo = new System.Windows.Forms.CheckBox();
-            this.cantidad_total_factura_txt = new System.Windows.Forms.TextBox();
+            this.MontoTotalPendienteText = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
@@ -62,19 +73,13 @@
             this.fecha_desde_txt = new System.Windows.Forms.DateTimePicker();
             this.tipoPagoText = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ncf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo_de_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipopagogriddd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.MontoAbonoText = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.montoDescuentoText = new System.Windows.Forms.TextBox();
+            this.MontoTotalAbonarText = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -139,6 +144,91 @@
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            // 
+            // codigo
+            // 
+            this.codigo.FillWeight = 60F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // nombre_cliente
+            // 
+            this.nombre_cliente.FillWeight = 150F;
+            this.nombre_cliente.HeaderText = "Nombre Cliente";
+            this.nombre_cliente.Name = "nombre_cliente";
+            this.nombre_cliente.ReadOnly = true;
+            // 
+            // ncf
+            // 
+            this.ncf.FillWeight = 170F;
+            this.ncf.HeaderText = "NCF";
+            this.ncf.Name = "ncf";
+            this.ncf.ReadOnly = true;
+            // 
+            // rnc
+            // 
+            this.rnc.HeaderText = "RNC";
+            this.rnc.Name = "rnc";
+            this.rnc.ReadOnly = true;
+            // 
+            // tipo_de_factura
+            // 
+            this.tipo_de_factura.FillWeight = 80F;
+            this.tipo_de_factura.HeaderText = "Factura";
+            this.tipo_de_factura.Name = "tipo_de_factura";
+            this.tipo_de_factura.ReadOnly = true;
+            // 
+            // fecha_inicial
+            // 
+            this.fecha_inicial.HeaderText = "Fecha Creada";
+            this.fecha_inicial.Name = "fecha_inicial";
+            this.fecha_inicial.ReadOnly = true;
+            // 
+            // fecha_limite
+            // 
+            this.fecha_limite.HeaderText = "Fecha Limite";
+            this.fecha_limite.Name = "fecha_limite";
+            this.fecha_limite.ReadOnly = true;
+            // 
+            // nombre_empleado
+            // 
+            this.nombre_empleado.HeaderText = "Empleado";
+            this.nombre_empleado.Name = "nombre_empleado";
+            this.nombre_empleado.ReadOnly = true;
+            // 
+            // pendiente
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = "0";
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.pendiente.DefaultCellStyle = dataGridViewCellStyle5;
+            this.pendiente.HeaderText = "Pendiente";
+            this.pendiente.Name = "pendiente";
+            this.pendiente.ReadOnly = true;
+            // 
+            // abonogrid
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = "0";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle6;
+            this.abonogrid.HeaderText = "Abono";
+            this.abonogrid.Name = "abonogrid";
+            this.abonogrid.ReadOnly = true;
+            // 
+            // tipopagogriddd
+            // 
+            this.tipopagogriddd.HeaderText = "Tipo pago";
+            this.tipopagogriddd.Name = "tipopagogriddd";
+            this.tipopagogriddd.ReadOnly = true;
             // 
             // panel3
             // 
@@ -236,15 +326,15 @@
             this.ck_aplicar_todo.Visible = false;
             this.ck_aplicar_todo.Click += new System.EventHandler(this.ck_aplicar_todo_Click);
             // 
-            // cantidad_total_factura_txt
+            // MontoTotalPendienteText
             // 
-            this.cantidad_total_factura_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cantidad_total_factura_txt.Location = new System.Drawing.Point(762, 456);
-            this.cantidad_total_factura_txt.Name = "cantidad_total_factura_txt";
-            this.cantidad_total_factura_txt.ReadOnly = true;
-            this.cantidad_total_factura_txt.Size = new System.Drawing.Size(169, 26);
-            this.cantidad_total_factura_txt.TabIndex = 87;
-            this.cantidad_total_factura_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.MontoTotalPendienteText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoTotalPendienteText.Location = new System.Drawing.Point(481, 456);
+            this.MontoTotalPendienteText.Name = "MontoTotalPendienteText";
+            this.MontoTotalPendienteText.ReadOnly = true;
+            this.MontoTotalPendienteText.Size = new System.Drawing.Size(169, 26);
+            this.MontoTotalPendienteText.TabIndex = 87;
+            this.MontoTotalPendienteText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label19
             // 
@@ -252,11 +342,11 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(607, 453);
+            this.label19.Location = new System.Drawing.Point(375, 456);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(149, 29);
+            this.label19.Size = new System.Drawing.Size(100, 29);
             this.label19.TabIndex = 86;
-            this.label19.Text = "Total pendiente";
+            this.label19.Text = "Pendiente";
             this.label19.UseCompatibleTextRendering = true;
             // 
             // printDocument1
@@ -326,7 +416,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.ck_registro_hasta);
@@ -347,7 +437,6 @@
             this.groupBox1.Size = new System.Drawing.Size(913, 132);
             this.groupBox1.TabIndex = 104;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Busqueda";
             // 
             // label3
             // 
@@ -441,91 +530,6 @@
             this.label2.TabIndex = 106;
             this.label2.Text = "Metodo pago";
             // 
-            // codigo
-            // 
-            this.codigo.FillWeight = 60F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // nombre_cliente
-            // 
-            this.nombre_cliente.FillWeight = 150F;
-            this.nombre_cliente.HeaderText = "Nombre Cliente";
-            this.nombre_cliente.Name = "nombre_cliente";
-            this.nombre_cliente.ReadOnly = true;
-            // 
-            // ncf
-            // 
-            this.ncf.FillWeight = 170F;
-            this.ncf.HeaderText = "NCF";
-            this.ncf.Name = "ncf";
-            this.ncf.ReadOnly = true;
-            // 
-            // rnc
-            // 
-            this.rnc.HeaderText = "RNC";
-            this.rnc.Name = "rnc";
-            this.rnc.ReadOnly = true;
-            // 
-            // tipo_de_factura
-            // 
-            this.tipo_de_factura.FillWeight = 80F;
-            this.tipo_de_factura.HeaderText = "Factura";
-            this.tipo_de_factura.Name = "tipo_de_factura";
-            this.tipo_de_factura.ReadOnly = true;
-            // 
-            // fecha_inicial
-            // 
-            this.fecha_inicial.HeaderText = "Fecha Creada";
-            this.fecha_inicial.Name = "fecha_inicial";
-            this.fecha_inicial.ReadOnly = true;
-            // 
-            // fecha_limite
-            // 
-            this.fecha_limite.HeaderText = "Fecha Limite";
-            this.fecha_limite.Name = "fecha_limite";
-            this.fecha_limite.ReadOnly = true;
-            // 
-            // nombre_empleado
-            // 
-            this.nombre_empleado.HeaderText = "Empleado";
-            this.nombre_empleado.Name = "nombre_empleado";
-            this.nombre_empleado.ReadOnly = true;
-            // 
-            // pendiente
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "0";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.pendiente.DefaultCellStyle = dataGridViewCellStyle1;
-            this.pendiente.HeaderText = "Pendiente";
-            this.pendiente.Name = "pendiente";
-            this.pendiente.ReadOnly = true;
-            // 
-            // abonogrid
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = "0";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.abonogrid.HeaderText = "Abono";
-            this.abonogrid.Name = "abonogrid";
-            this.abonogrid.ReadOnly = true;
-            // 
-            // tipopagogriddd
-            // 
-            this.tipopagogriddd.HeaderText = "Tipo pago";
-            this.tipopagogriddd.Name = "tipopagogriddd";
-            this.tipopagogriddd.ReadOnly = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -545,19 +549,76 @@
             this.MontoAbonoText.Size = new System.Drawing.Size(157, 20);
             this.MontoAbonoText.TabIndex = 108;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(561, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 20);
+            this.label6.TabIndex = 109;
+            this.label6.Text = "Descuento %";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(672, 168);
+            this.textBox1.MaxLength = 5;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(41, 20);
+            this.textBox1.TabIndex = 110;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // montoDescuentoText
+            // 
+            this.montoDescuentoText.Location = new System.Drawing.Point(719, 167);
+            this.montoDescuentoText.Name = "montoDescuentoText";
+            this.montoDescuentoText.Size = new System.Drawing.Size(144, 20);
+            this.montoDescuentoText.TabIndex = 111;
+            this.montoDescuentoText.TextChanged += new System.EventHandler(this.montoDescuentoText_TextChanged);
+            // 
+            // MontoTotalAbonarText
+            // 
+            this.MontoTotalAbonarText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoTotalAbonarText.Location = new System.Drawing.Point(762, 456);
+            this.MontoTotalAbonarText.Name = "MontoTotalAbonarText";
+            this.MontoTotalAbonarText.ReadOnly = true;
+            this.MontoTotalAbonarText.Size = new System.Drawing.Size(169, 26);
+            this.MontoTotalAbonarText.TabIndex = 113;
+            this.MontoTotalAbonarText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(682, 455);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 29);
+            this.label7.TabIndex = 112;
+            this.label7.Text = "Abonar";
+            this.label7.UseCompatibleTextRendering = true;
+            // 
             // cuenta_por_cobrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(943, 622);
+            this.Controls.Add(this.MontoTotalAbonarText);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.montoDescuentoText);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.MontoAbonoText);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tipoPagoText);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.fecha);
-            this.Controls.Add(this.cantidad_total_factura_txt);
+            this.Controls.Add(this.MontoTotalPendienteText);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.detalle_txt);
@@ -593,7 +654,7 @@
         private System.Windows.Forms.TextBox detalle_txt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox ck_aplicar_todo;
-        private System.Windows.Forms.TextBox cantidad_total_factura_txt;
+        private System.Windows.Forms.TextBox MontoTotalPendienteText;
         private System.Windows.Forms.Label label19;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -625,5 +686,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipopagogriddd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox MontoAbonoText;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox montoDescuentoText;
+        private System.Windows.Forms.TextBox MontoTotalAbonarText;
+        private System.Windows.Forms.Label label7;
     }
 }

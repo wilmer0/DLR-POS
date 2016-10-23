@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using puntoVenta;
+
+
 namespace puntoVenta
 {
     public partial class cuenta_por_cobrar : Form
@@ -301,25 +303,27 @@ namespace puntoVenta
                 if (!validar)
                     return false;
 
-
+                s=singleton.obtenerDatos();
                  DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (dr == DialogResult.Yes)
-                 {
-
-
+                 {   
                      /*
                         create proc insert_cobro
-                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),
-                        @cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
+                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),@cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
                       */
-
+                     string Efectivo= montoEfectivo();
+                     string Pendiente=montoPendiente();
+                     double devuelta=double.Parse(Efectivo)-double.Parse(Pendiente);
+                     string sql = "exec insert_cobro '"+Efectivo+"','"+devuelta.ToString()+"','"+montoDescuentoText.Text.Trim()+"','"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario.ToString()+"','','1','0'";
                      foreach (DataGridViewRow row in dataGridView1.Rows)
                      {
-                         if(row.Cells[10].Value.ToString()!="0" && row.Cells[9].Value.ToString()!="")
+                         if(row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
                          {
-                             string sql = "";
+                             sql = "";
                          }
                      }
+
+                     MessageBox.Show("Se agrego el cobro","",MessageBoxButtons.OK,MessageBoxIcon.Information);
                      
                  }
 
@@ -331,70 +335,121 @@ namespace puntoVenta
                 return false;
             }
         }
+
+        public string montoPendiente()
+        {
+            try
+            {
+                double pendiente = 0;
+                if(dataGridView1.Rows.Count>0)
+                {
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Cells[9].Value.ToString() != "0" && row.Cells[10].Value.ToString() == "EF")
+                        {
+                            pendiente += double.Parse(row.Cells[8].Value.ToString());
+                        }
+                    }
+                    return pendiente.ToString();
+                }
+                return null;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error sacando el monto pendiente: "+ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
+
+
+        public string montoEfectivo()
+        {
+            try
+            {
+                double efectivo = 0;
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Cells[9].Value.ToString() != "0" && row.Cells[10].Value.ToString() == "EF")
+                        {
+                            efectivo += double.Parse(row.Cells[9].Value.ToString());
+                        }
+                    }
+                    return efectivo.ToString();
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error sacando el monto efectivo: " + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+        }
         private void button8_Click(object sender, EventArgs e)
         {
             procesar();
         }
-        public double efectivo_global = 0;
-        public double devuelta_global = 0;
-        public double cheque_global = 0;
-        public double deposito_global = 0;
-        public double tarjeta_global = 0;
-        public Int16 cod_orden_compra_global = 0;
-        public double monto_orden_compra_global = 0;
-        public void guardar(string efectivo, string devuelta, string cheque, string deposito, string tarjeta, string cod_orden_compra, string monto_orden_compra)
-        {
-            try
-            {
-                /*
-                  create proc cobrar_factura
-                  @codigo_factura int,@efectivo float,@devuelta float,@tarjeta float,@cheque float,@transferencia float,@detalle varchar(300),@fecha,@cod_empleado int
-                */
-                efectivo_global = Convert.ToDouble(efectivo.ToString());
-                devuelta_global = Convert.ToDouble(devuelta.ToString());
-                cheque_global = Convert.ToDouble(cheque.ToString());
-                deposito_global = Convert.ToDouble(deposito.ToString());
-                tarjeta_global = Convert.ToDouble(tarjeta.ToString());
-                cod_orden_compra_global = Convert.ToInt16(cod_orden_compra.ToString());
-                monto_orden_compra_global = Convert.ToDouble(monto_orden_compra.ToString());
-                DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    if (dataGridView1.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in dataGridView1.Rows)
-                        {
-                            string sql = "exec cobrar_factura '" + row.Cells[0].Value.ToString() + "','" + efectivo_global.ToString() + "','" + devuelta_global.ToString() + "','" + tarjeta_global.ToString() + "','" + cheque_global.ToString() + "','" + deposito_global.ToString() + "','" + detalle_txt.Text.Trim() + "','" + fecha.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_usuario.ToString() + "'";
-                            DataSet ds = Utilidades.ejecutarcomando(sql);
-                            codigo_cobro = ds.Tables[0].Rows[0][0].ToString();
+        //public double efectivo_global = 0;
+        //public double devuelta_global = 0;
+        //public double cheque_global = 0;
+        //public double deposito_global = 0;
+        //public double tarjeta_global = 0;
+        //public Int16 cod_orden_compra_global = 0;
+        //public double monto_orden_compra_global = 0;
+        //public void guardar(string efectivo, string devuelta, string cheque, string deposito, string tarjeta, string cod_orden_compra, string monto_orden_compra)
+        //{
+        //    try
+        //    {
+        //        /*
+        //          create proc cobrar_factura
+        //          @codigo_factura int,@efectivo float,@devuelta float,@tarjeta float,@cheque float,@transferencia float,@detalle varchar(300),@fecha,@cod_empleado int
+        //        */
+        //        efectivo_global = Convert.ToDouble(efectivo.ToString());
+        //        devuelta_global = Convert.ToDouble(devuelta.ToString());
+        //        cheque_global = Convert.ToDouble(cheque.ToString());
+        //        deposito_global = Convert.ToDouble(deposito.ToString());
+        //        tarjeta_global = Convert.ToDouble(tarjeta.ToString());
+        //        cod_orden_compra_global = Convert.ToInt16(cod_orden_compra.ToString());
+        //        monto_orden_compra_global = Convert.ToDouble(monto_orden_compra.ToString());
+        //        DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //        if (dr == DialogResult.Yes)
+        //        {
+        //            if (dataGridView1.Rows.Count > 0)
+        //            {
+        //                foreach (DataGridViewRow row in dataGridView1.Rows)
+        //                {
+        //                    string sql = "exec cobrar_factura '" + row.Cells[0].Value.ToString() + "','" + efectivo_global.ToString() + "','" + devuelta_global.ToString() + "','" + tarjeta_global.ToString() + "','" + cheque_global.ToString() + "','" + deposito_global.ToString() + "','" + detalle_txt.Text.Trim() + "','" + fecha.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_usuario.ToString() + "'";
+        //                    DataSet ds = Utilidades.ejecutarcomando(sql);
+        //                    codigo_cobro = ds.Tables[0].Rows[0][0].ToString();
                        
 
-                            cargar_facturas();
-                            MessageBox.Show("Se aplico el cobro");
-                            dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (dr == DialogResult.Yes)
-                            {
-                                imprimir_cobros ic = new imprimir_cobros();
-                                ic.codigo_cobro = codigo_cobro.ToString();
-                                ic.ShowDialog();
-                            }
-                            cargar_facturas();
-                            //monto_txt.Clear();
-                            calcular_total();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("no hay facturas","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error guardando, por favor intentelo nuevamente, si el problema persiste contacte a soporte tecnico");
-            }
+        //                    cargar_facturas();
+        //                    MessageBox.Show("Se aplico el cobro");
+        //                    dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                    if (dr == DialogResult.Yes)
+        //                    {
+        //                        imprimir_cobros ic = new imprimir_cobros();
+        //                        ic.codigo_cobro = codigo_cobro.ToString();
+        //                        ic.ShowDialog();
+        //                    }
+        //                    cargar_facturas();
+        //                    //monto_txt.Clear();
+        //                    calcular_total();
+        //                }
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("no hay facturas","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        MessageBox.Show("Error guardando, por favor intentelo nuevamente, si el problema persiste contacte a soporte tecnico");
+        //    }
           
-        }
+        //}
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -414,7 +469,7 @@ namespace puntoVenta
                             sumatoria += Convert.ToDouble(row.Cells[8].Value);
                         }
                     }
-                    cantidad_total_factura_txt.Text = sumatoria.ToString("N");
+                    MontoTotalPendienteText.Text = sumatoria.ToString("N");
                 }
             }
             catch (Exception ex)
@@ -601,6 +656,16 @@ namespace puntoVenta
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
            
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Utilidades.numero_decimal(this.Text.Trim());
+        }
+
+        private void montoDescuentoText_TextChanged(object sender, EventArgs e)
+        {
+            Utilidades.numero_decimal(this.Text.Trim());
         }
     }
 }
