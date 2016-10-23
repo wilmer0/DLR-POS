@@ -7,8 +7,8 @@
 .metadata
 bin/
 
-DLR-POS/proyecto/prueba/bin/
-DLR-POS/proyecto/prueba/obj/
+proyecto/prueba/bin
+proyecto/prueba/obj
 
 tmp/
 *.tmp
