@@ -45,13 +45,17 @@ namespace puntoVenta
 
         private void button7_Click(object sender, EventArgs e)
         {
+            salir();
+        }
+
+        public void salir()
+        {
             DialogResult dr = MessageBox.Show("Desea salir?", "Saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 this.Close();
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -587,12 +591,12 @@ namespace puntoVenta
                 double montoPendiente = 0;
                 int fila = dataGridView1.CurrentRow.Index;
                 //MessageBox.Show(dataGridView1.Rows[fila].Cells[8].Value.ToString());
-                if (tipoPagoText.Text.Trim() == "")
-                {
-                    MessageBox.Show("Falta el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tipoPagoText.Focus();
-                    return;
-                }
+                //if (tipoPagoText.Text.Trim() == "")
+                //{
+                //    MessageBox.Show("Falta el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    tipoPagoText.Focus();
+                //    return;
+                //}
                 if (MontoAbonoText.Text.Trim() == "")
                 {
                     MessageBox.Show("Falta el monto del abono","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -611,19 +615,21 @@ namespace puntoVenta
                     return;
                 }
 
-                if (tipoPagoText.Text == "Efectivo")
-                    dataGridView1.Rows[fila].Cells[10].Value = "EF";
+                //if (tipoPagoText.Text == "Efectivo")
+                //    dataGridView1.Rows[fila].Cells[10].Value = "EF";
 
-                if (tipoPagoText.Text == "Deposito")
-                    dataGridView1.Rows[fila].Cells[10].Value = "DP";
+                //if (tipoPagoText.Text == "Deposito")
+                //    dataGridView1.Rows[fila].Cells[10].Value = "DP";
 
-                if (tipoPagoText.Text == "Tarjeta")
-                    dataGridView1.Rows[fila].Cells[10].Value = "TJ";
+                //if (tipoPagoText.Text == "Tarjeta")
+                //    dataGridView1.Rows[fila].Cells[10].Value = "TJ";
 
-                if (tipoPagoText.Text == "Cheque")
-                    dataGridView1.Rows[fila].Cells[10].Value = "CK";
+                //if (tipoPagoText.Text == "Cheque")
+                //    dataGridView1.Rows[fila].Cells[10].Value = "CK";
 
-                dataGridView1.Rows[fila].Cells[9].Value = montoAbono.ToString("N");
+                dataGridView1.Rows[fila].Cells[9].Value = montoAbono.ToString();
+                dataGridView1.Rows[fila].Cells[10].Value = montoDescuentoText.Text.Trim();
+
             }
             catch(Exception ex)
             {
@@ -683,6 +689,19 @@ namespace puntoVenta
                 MessageBox.Show("Error obteniendo el monto descuento", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
+        }
+
+        private void cuenta_por_cobrar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                marcar();
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                salir();
+            }
         }
     }
 }
