@@ -140,7 +140,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.labelUsuario);
             this.groupBox2.Controls.Add(this.labelClave);
             this.groupBox2.Controls.Add(this.usuarioText);
@@ -153,7 +153,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.espanolRadioButton);
             this.groupBox1.Controls.Add(this.inglesRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 237);
@@ -180,7 +180,7 @@
             // 
             this.inglesRadioButton.AutoSize = true;
             this.inglesRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inglesRadioButton.Location = new System.Drawing.Point(274, 19);
+            this.inglesRadioButton.Location = new System.Drawing.Point(330, 19);
             this.inglesRadioButton.Name = "inglesRadioButton";
             this.inglesRadioButton.Size = new System.Drawing.Size(71, 21);
             this.inglesRadioButton.TabIndex = 22;

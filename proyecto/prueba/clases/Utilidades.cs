@@ -15,6 +15,7 @@ using System.Data;
 using System.IO.Compression;
 using System.Drawing.Printing;
 using System.Drawing;
+using MySql.Data.MySqlClient;
 
 namespace puntoVenta
 {
