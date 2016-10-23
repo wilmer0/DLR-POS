@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Drawing.Design;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using System.IO;
 using System.Net.Mail;
 using System.Net;
@@ -830,5 +829,24 @@ namespace puntoVenta
         //imprimir factura en hoja normales 8.50 x 11
 
 
+
+        public static string GetIdMetodoPagoByNombre(string metodo)
+        {
+            try
+            {
+                string sql = "select codigo from metodo_pago where metodo='"+metodo+"'";
+                DataSet ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows[0][0] =="")
+                    return null;
+
+                return ds.Tables[0].Rows[0][0].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error obteniendo metodo de pago.: " + ex.ToString(), "", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return null;
+            }
+        }
     }
 }

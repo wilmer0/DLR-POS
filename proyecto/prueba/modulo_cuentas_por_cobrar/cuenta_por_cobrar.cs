@@ -232,7 +232,7 @@ namespace puntoVenta
                     //}
                     if (row.Cells[9].Value.ToString() == "")
                     {
-                        MessageBox.Show("El abono no tiene valor, debe especificar un valor numerico", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("El abono no tiene valor, debe especificar un monto", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         //dataGridView1.Rows[row.Index].Selected = true;   
                         return false;
                     }
@@ -311,15 +311,30 @@ namespace puntoVenta
                         create proc insert_cobro
                         @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),@cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
                       */
-                     string Efectivo= montoEfectivo();
-                     string Pendiente=montoPendiente();
-                     double devuelta=double.Parse(Efectivo)-double.Parse(Pendiente);
-                     string sql = "exec insert_cobro '"+Efectivo+"','"+devuelta.ToString()+"','"+montoDescuentoText.Text.Trim()+"','"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario.ToString()+"','','1','0'";
+                    
+                     
+                     string sql = "exec insert_cobro '"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario.ToString()+"','','1','0'";
+                     DataSet ds = Utilidades.ejecutarcomando(sql);
+                     if (ds.Tables[0].Rows.Count == 0)
+                     {
+                         MessageBox.Show("Error.: No se completo el cobro", "", MessageBoxButtons.OK,
+                             MessageBoxIcon.Error);
+                         return false;
+                     }
+
+                     string codigoCobro = ds.Tables[0].Rows[0][0].ToString();
+                     string codigoMetodoPago = Utilidades.GetIdMetodoPagoByNombre(tipoPagoText.Text);
                      foreach (DataGridViewRow row in dataGridView1.Rows)
                      {
-                         if(row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
+                         /*
+                            create proc insert_cobro_detalle
+                            @cod_cobro int,@cod_metodo_pago int,@monto float,@monto_descuento float,@estado bit,@codigo int
+
+                          */
+                         if (row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
                          {
-                             sql = "";
+                             sql = "exec insert_cobro_detalle '" + codigoCobro + "','" + codigoMetodoPago + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
+                             Utilidades.ejecutarcomando(sql);
                          }
                      }
 
@@ -345,7 +360,7 @@ namespace puntoVenta
                 {
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        if (row.Cells[9].Value.ToString() != "0" && row.Cells[10].Value.ToString() == "EF")
+                        if (row.Cells[8].Value.ToString() != "")
                         {
                             pendiente += double.Parse(row.Cells[8].Value.ToString());
                         }
@@ -362,30 +377,7 @@ namespace puntoVenta
         }
 
 
-        public string montoEfectivo()
-        {
-            try
-            {
-                double efectivo = 0;
-                if (dataGridView1.Rows.Count > 0)
-                {
-                    foreach (DataGridViewRow row in dataGridView1.Rows)
-                    {
-                        if (row.Cells[9].Value.ToString() != "0" && row.Cells[10].Value.ToString() == "EF")
-                        {
-                            efectivo += double.Parse(row.Cells[9].Value.ToString());
-                        }
-                    }
-                    return efectivo.ToString();
-                }
-                return null;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error sacando el monto efectivo: " + ex.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-        }
+       
         private void button8_Click(object sender, EventArgs e)
         {
             procesar();
