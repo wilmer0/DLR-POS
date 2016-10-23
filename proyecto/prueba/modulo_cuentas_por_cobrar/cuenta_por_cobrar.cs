@@ -133,7 +133,7 @@ namespace puntoVenta
                         sql = "exec pendiente_factura_venta '" + row[0].ToString() + "'";
                         ds = Utilidades.ejecutarcomando(sql);
                         double faltante =double.Parse(ds.Tables[0].Rows[0][1].ToString());
-                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(),DateTime.Parse(row[5].ToString()).ToString("d"),DateTime.Parse(row[6].ToString()).ToString("d"), nombre_empleado.ToString(), faltante.ToString("N"),"0");
+                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(),DateTime.Parse(row[5].ToString()).ToString("d"),DateTime.Parse(row[6].ToString()).ToString("d"), nombre_empleado.ToString(), faltante.ToString("N"),"0","0");
                     }
                     
                     calcular_total();
@@ -213,7 +213,12 @@ namespace puntoVenta
 
             try
             {
-                
+                if (tipoPagoText.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe establecer el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tipoPagoText.Focus();
+                    return false;
+                }
                 if (s.cobros_cxc != true)
                 {
                     MessageBox.Show("Usted no tiene permiso para hacer cobros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -310,14 +315,14 @@ namespace puntoVenta
                 s=singleton.obtenerDatos();
                  DialogResult dr = MessageBox.Show("Desea guardar?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (dr == DialogResult.Yes)
-                 {   
+                 {
                      /*
                         create proc insert_cobro
-                        @monto_efectivo float,@monto_devuelta float,@monto_descuento float,@fecha date,@detalle varchar(max),@cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int
-                      */
-                    
-                     
-                     string sql = "exec insert_cobro '"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario.ToString()+"','','1','0'";
+                      @fecha date,@detalle varchar(max),@cod_empleado int,@cod_empleado_anular int,@motivo_anular varchar(max),@estado bit,@codigo_cobro int 
+                      * */
+
+
+                     string sql = "exec insert_cobro '"+fecha.Value.ToString("yyyy-MM-dd")+"','"+detalle_txt.Text.Trim()+"','"+s.codigo_usuario+"','','','1','0'";
                      DataSet ds = Utilidades.ejecutarcomando(sql);
                      if (ds.Tables[0].Rows.Count == 0)
                      {
@@ -337,7 +342,7 @@ namespace puntoVenta
                           */
                          if (row.Cells[9].Value.ToString()!="0" && row.Cells[10].Value.ToString()!="")
                          {
-                             sql = "exec insert_cobro_detalle '" + codigoCobro + "','" + codigoMetodoPago + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
+                             sql = "exec insert_cobro_detalle '"+row.Cells[0].Value.ToString() + "','"+codigoCobro + "','" + codigoMetodoPago + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
                              Utilidades.ejecutarcomando(sql);
                          }
                      }
@@ -583,6 +588,25 @@ namespace puntoVenta
             }
         }
 
+        public void montoAbonado()
+        {
+            try
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    double montoAbono = 0;
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        montoAbono += double.Parse(row.Cells[9].Value.ToString());
+                    }
+                    MontoAbonoText.Text = montoAbono.ToString("N");
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
         public void marcar()
         {
             try
@@ -590,13 +614,6 @@ namespace puntoVenta
                 double montoAbono = 0;
                 double montoPendiente = 0;
                 int fila = dataGridView1.CurrentRow.Index;
-                //MessageBox.Show(dataGridView1.Rows[fila].Cells[8].Value.ToString());
-                //if (tipoPagoText.Text.Trim() == "")
-                //{
-                //    MessageBox.Show("Falta el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    tipoPagoText.Focus();
-                //    return;
-                //}
                 if (MontoAbonoText.Text.Trim() == "")
                 {
                     MessageBox.Show("Falta el monto del abono","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
@@ -607,6 +624,7 @@ namespace puntoVenta
 
                 montoPendiente =double.Parse(dataGridView1.Rows[fila].Cells[8].Value.ToString());
                 montoAbono = double.Parse(MontoAbonoText.Text.Trim());
+                
                 if(montoAbono>montoPendiente)
                 {
                     MessageBox.Show("El monto de abono es mayor que el monto pendiente", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -615,21 +633,12 @@ namespace puntoVenta
                     return;
                 }
 
-                //if (tipoPagoText.Text == "Efectivo")
-                //    dataGridView1.Rows[fila].Cells[10].Value = "EF";
-
-                //if (tipoPagoText.Text == "Deposito")
-                //    dataGridView1.Rows[fila].Cells[10].Value = "DP";
-
-                //if (tipoPagoText.Text == "Tarjeta")
-                //    dataGridView1.Rows[fila].Cells[10].Value = "TJ";
-
-                //if (tipoPagoText.Text == "Cheque")
-                //    dataGridView1.Rows[fila].Cells[10].Value = "CK";
-
+                
                 dataGridView1.Rows[fila].Cells[9].Value = montoAbono.ToString();
                 dataGridView1.Rows[fila].Cells[10].Value = montoDescuentoText.Text.Trim();
-
+                
+                //para presentar todo lo que se ha abonado
+                montoAbonado();
             }
             catch(Exception ex)
             {
@@ -702,6 +711,11 @@ namespace puntoVenta
             {
                 salir();
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            marcar();
         }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cuenta_por_cobrar));
             this.label1 = new System.Windows.Forms.Label();
             this.codigo_cliente_txt = new System.Windows.Forms.TextBox();
@@ -201,27 +201,27 @@
             // 
             // pendiente
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = "0";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.pendiente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "0";
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.pendiente.DefaultCellStyle = dataGridViewCellStyle7;
             this.pendiente.HeaderText = "Pendiente";
             this.pendiente.Name = "pendiente";
             this.pendiente.ReadOnly = true;
             // 
             // abonogrid
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = "0";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle8;
             this.abonogrid.HeaderText = "Abono";
             this.abonogrid.Name = "abonogrid";
             this.abonogrid.ReadOnly = true;
@@ -570,6 +570,7 @@
             this.descuentoPorCientoText.Name = "descuentoPorCientoText";
             this.descuentoPorCientoText.Size = new System.Drawing.Size(41, 20);
             this.descuentoPorCientoText.TabIndex = 110;
+            this.descuentoPorCientoText.Text = "0.00";
             this.descuentoPorCientoText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // montoDescuentoText
@@ -578,6 +579,7 @@
             this.montoDescuentoText.Name = "montoDescuentoText";
             this.montoDescuentoText.Size = new System.Drawing.Size(130, 20);
             this.montoDescuentoText.TabIndex = 111;
+            this.montoDescuentoText.Text = "0";
             this.montoDescuentoText.TextChanged += new System.EventHandler(this.montoDescuentoText_TextChanged);
             // 
             // MontoTotalAbonarText
@@ -614,6 +616,7 @@
             this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 114;
             this.label8.Text = "Aplicar(F2)";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cuenta_por_cobrar
             // 
