@@ -355,10 +355,11 @@ namespace puntoVenta
                          {
                              sql = "exec insert_cobro_detalle '"+codigoCobro.ToString() + "','"+row.Cells[0].Value.ToString() +"','"+ codigoMetodoPago.ToString() + "','" + row.Cells[9].Value.ToString() + "','" + row.Cells[10].Value.ToString() + "','1','0'";
                              Utilidades.ejecutarcomando(sql);
-                             MessageBox.Show(sql);
+                             //MessageBox.Show(sql);
                          }
                      }
 
+                     cargar_facturas();
                      MessageBox.Show("Se agrego el cobro","",MessageBoxButtons.OK,MessageBoxIcon.Information);
                      
                  }
@@ -634,6 +635,13 @@ namespace puntoVenta
                     return;
                 }
 
+                if (double.Parse(MontoAbonoText.Text.Trim()) < 0)
+                {
+                    MessageBox.Show("El monto del abono debe ser igual o mayor que cero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MontoAbonoText.Focus();
+                    MontoAbonoText.SelectAll();
+                    return;
+                }
                 montoPendiente =double.Parse(dataGridView1.Rows[fila].Cells[8].Value.ToString());
                 montoAbono = double.Parse(MontoAbonoText.Text.Trim());
                 

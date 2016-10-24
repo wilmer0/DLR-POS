@@ -91,10 +91,7 @@ namespace puntoVenta
                 }
             }
         }
-        public void cargar_facturas()
-        {
-            
-        }
+       
         private void button4_Click(object sender, EventArgs e)
         {
             try
@@ -103,7 +100,7 @@ namespace puntoVenta
                 bc.pasado += new busqueda_cliente.pasar(ejecutar_codigo_cliente);
                 bc.ShowDialog();
                 cargar_nombre_cliente();
-                cargar_facturas();
+                
             }
             catch(Exception)
             {
@@ -270,14 +267,14 @@ namespace puntoVenta
                 {
                     dataGridView1.Rows.Clear();
                     //--codigo cobro,factura,cliente,metodo pago,monto,fecha,cod_empleado
-                    string sql = "select cd.cod_cobro,cd.cod_factura,ter.nombre,mp.descripcion,(cd.monto_pagado-cd.monto_descontado) as monto_pagado,c.fecha,c.cod_empleado from cobros_detalles cd join cobros c on c.codigo=cd.cod_cobro join factura f on cd.cod_factura=f.codigo join tercero ter on ter.codigo=f.codigo_cliente join metodo_pago mp on mp.codigo=cd.cod_metodo_pago where c.codigo>0 and c.estado='1'";                   
+                    string sql = "select cd.codigo,cd.cod_factura,ter.nombre,mp.descripcion,(cd.monto_pagado-cd.monto_descontado) as monto_pagado,c.fecha,c.cod_empleado from cobros_detalles cd join cobros c on c.codigo=cd.cod_cobro join factura f on cd.cod_factura=f.codigo join tercero ter on ter.codigo=f.codigo_cliente join metodo_pago mp on mp.codigo=cd.cod_metodo_pago where c.codigo>0 and c.estado='1' and c.fecha>='"+fecha_inicial.Value.ToString("yyyy-MM-dd")+"' and c.fecha<='"+fecha_final.Value.ToString("yyyy-MM-dd")+"'";                   
                     if(codigo_cajero_txt.Text.Trim()!="")
                     {
                         sql += " and c.cod_empleado='" + codigo_cajero_txt.Text.Trim() + "'";
                     }
                     if(codigo_cliente_txt.Text.Trim()!="")
                     {
-                        sql += " f.codigo_cliente='" + codigo_cliente_txt.Text.Trim() + "'";
+                        sql += "and f.codigo_cliente='" + codigo_cliente_txt.Text.Trim() + "'";
                     }
                     sql += " order by c.codigo desc";
                     DataSet ds = Utilidades.ejecutarcomando(sql);
@@ -299,9 +296,9 @@ namespace puntoVenta
                     MessageBox.Show("Falta el cajero");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando los cobros");
+                MessageBox.Show("Error cargando los cobros.: "+ex.ToString());
             }
         }
 

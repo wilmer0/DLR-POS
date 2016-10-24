@@ -27,7 +27,9 @@ namespace puntoVenta
         //variables
        static string codigoFactura = "";
        static double numero_de_hojas = 0;
-        
+       static PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+       static PrintDialog printDialog = new PrintDialog();
+        private static string CodigoCobro;
         public static bool primo(Int64 n)
         {
 
@@ -246,7 +248,7 @@ namespace puntoVenta
         {
             try
             {
-                numero.ToString("###,###,###,###,###,###.#0");
+                numero.ToString("###,###,N");
                 return numero.ToString();
             }
             catch(Exception)
@@ -687,7 +689,7 @@ namespace puntoVenta
                     double monto = Convert.ToDouble(row[5].ToString());
 
                     x = 20;
-                    e.Graphics.DrawString(cantidad.ToString("###,###,###,###,###.#0"), pf7, Brushes.Black, x, y);
+                    e.Graphics.DrawString(cantidad.ToString("N"), pf7, Brushes.Black, x, y);
                     y += 10;
                     e.Graphics.DrawString(producto.ToString(), pf7, Brushes.Black, x, y);
                     y += 10;
@@ -725,33 +727,33 @@ namespace puntoVenta
                 y += 10;
                 letras_size = 5;
                 e.Graphics.DrawString("Efectivo:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(efectivo.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(efectivo.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Devuelta:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(devuelta.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(devuelta.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Tarjeta:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(tarjeta.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(tarjeta.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Deposito:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(deposito.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(deposito.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Cheque:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(cheque.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(cheque.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
 
                 e.Graphics.DrawString("Subtotal:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString((subTotal).ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString((subTotal).ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Desc:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString((totalDecuento).ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString((totalDecuento).ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
 
                 e.Graphics.DrawString("Itbis:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString(montoItebis.ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString(montoItebis.ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("Total:", pf7, Brushes.Black, x, y);
-                e.Graphics.DrawString((montoTotal).ToString("###,###,###,###.#0"), pf7, Brushes.Black, (x + 50), y);
+                e.Graphics.DrawString((montoTotal).ToString("N"), pf7, Brushes.Black, (x + 50), y);
                 string autorizado_line = "-------------------------------------------------";
                 y += 20;
                 e.Graphics.DrawString(autorizado_line, pf7, Brushes.Black, (x + 15), y);
@@ -868,5 +870,131 @@ namespace puntoVenta
                 return null;
             }
         }
+
+
+
+
+
+        //imprimir cobros papel rollo
+
+        public static Boolean ImprimirCobroRollo(string codigo)
+        {
+
+            try
+            {
+                if (codigo == null)
+                    return false;
+
+
+
+                CodigoCobro = codigo;
+                int alto = 400;
+                int ancho = 200;
+                PaperSize tamano = new PaperSize("Factura", ancho, alto);
+                PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                PrintDialog printDialog = new PrintDialog();
+                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                string sql = "select count (*) from factura_detalle where cod_factura='" + CodigoCobro.ToString() + "'";
+                DataSet ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows[0][0].ToString() != "")
+                {
+                    int articulos = Convert.ToInt16(ds.Tables[0].Rows[0][0].ToString());
+                    alto = (articulos * 30) + alto;
+                    tamano = new PaperSize("Factura", ancho, alto);
+                }
+                printDocument.DefaultPageSettings.PaperSize = tamano;
+                printDocument.DefaultPageSettings.Landscape = false;
+                printDocument.PrintPage += ImrpimirCobroPrintPage;
+                printPreviewDialog.Document = printDocument;
+                printPreviewDialog.ShowDialog();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error imprimiendo rollo: " + ex.ToString());
+                return false;
+            }
+        }
+        private static void ImrpimirCobroPrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+           
+            string sql = "";
+            DataSet ds = Utilidades.ejecutarcomando(sql);
+            string nombre_sucursal = ds.Tables[0].Rows[0][0].ToString();
+
+
+           
+            //printDocument1.DefaultPageSettings.Landscape = true;
+          
+            float y = 0;
+            string fecha_hoy = DateTime.Today.ToLongDateString();
+            string linea = "----------------------------------------";
+
+
+
+            float x = 0;
+            x = 50;
+            y = 50;
+            e.Graphics.DrawString(nombre_empresa.ToString(), new Font("Georgie", 16, FontStyle.Regular), Brushes.Black, 100, 10);
+            e.Graphics.DrawString(nombre_sucursal, new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, 90, 30);
+            e.Graphics.DrawString("RECIBO DE COBRO", new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, x, y);
+            y += 20;
+            e.Graphics.DrawString("COBRO", new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(".:" + codigo_cobro.ToString(), new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, (x + 60), y);
+            y += 20;
+            e.Graphics.DrawString("Empl", new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(".:" + nombre_empleado.ToString(), new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, (x + 60), y);
+            y += 20;
+            e.Graphics.DrawString("Fecha", new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(".:" + fecha_hoy, new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, (x + 60), y);
+            y += 20;
+            e.Graphics.DrawString("Cliente", new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(".:" + nombre_cliente.ToString(), new Font("Georgie", letra_encabezado, FontStyle.Regular), Brushes.Black, (x + 60), y);
+            y += 20;
+            e.Graphics.DrawString(linea.ToString(), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            //e.Graphics.DrawString(detalle.ToString(), new Font("Georgie", 9, FontStyle.Regular), Brushes.Black, (x), y);
+
+            y += 20;
+            e.Graphics.DrawString("Factura->" + codigo_factura.ToString(), new Font("Georgie", 9, FontStyle.Regular), Brushes.Black, x, y);
+            y += 30;
+            //efectivo
+            e.Graphics.DrawString("Efectivo", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(monto.ToString("N"), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, (x + 100), y);
+            y += 20;
+            //devuelta
+            e.Graphics.DrawString("Devuelta", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(devuelta.ToString("N"), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, (x + 100), y);
+            y += 20;
+            //tarjeta
+            e.Graphics.DrawString("Tarjeta", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(tarjeta.ToString("N"), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, (x + 100), y);
+            y += 20;
+            //cheque
+            e.Graphics.DrawString("Cheque", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(cheque.ToString("N"), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, (x + 100), y);
+            y += 20;
+            //deposito/transferencia
+            e.Graphics.DrawString("Deposito", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            e.Graphics.DrawString(deposito.ToString("N"), new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, (x + 100), y);
+            y += 20;
+            string autorizado_line = "----------------------------------------";
+            y += 30;
+            // Rectangle rec=new Rectangle(izquierda margen,altura margen,largo,ancho);
+            //imprimir la descripcion del cobro
+            e.Graphics.DrawString("Detalles", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, x, y);
+            y += 15;
+            //imprimir el rectangulo con el detalle del cobro
+            Rectangle rec = new Rectangle(50, Convert.ToInt16(y), 300, 500);
+            e.Graphics.DrawString(detalle.ToString(), new Font("Georgie", 10), Brushes.Black, rec);
+            y += 325;
+            //ultima linea para poner cobro revivido y firmado
+            e.Graphics.DrawString(linea, new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, 40, y);
+            y += 15;
+            e.Graphics.DrawString("Autorizado por", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, 80, y);
+        }
+
+
+
     }
 }
