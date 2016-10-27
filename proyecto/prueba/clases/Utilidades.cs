@@ -933,7 +933,7 @@ namespace puntoVenta
 
 
 
-            float x = 0;
+            /*float x = 0;
             x = 50;
             y = 50;
             e.Graphics.DrawString(nombre_empresa.ToString(), new Font("Georgie", 16, FontStyle.Regular), Brushes.Black, 100, 10);
@@ -992,6 +992,7 @@ namespace puntoVenta
             e.Graphics.DrawString(linea, new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, 40, y);
             y += 15;
             e.Graphics.DrawString("Autorizado por", new Font("Georgie", 12, FontStyle.Regular), Brushes.Black, 80, y);
+            */
         }
 
 

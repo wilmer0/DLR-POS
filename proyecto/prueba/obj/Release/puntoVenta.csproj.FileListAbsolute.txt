@@ -229,7 +229,6 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.s
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.FormBase.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.host.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_cobros.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_compra.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_nomina_volante.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_hoja_completa.resources

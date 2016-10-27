@@ -637,12 +637,6 @@
     <Compile Include="sistema\host.Designer.cs">
       <DependentUpon>host.cs</DependentUpon>
     </Compile>
-    <Compile Include="modulo_cuentas_por_cobrar\imprimir_cobros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="modulo_cuentas_por_cobrar\imprimir_cobros.Designer.cs">
-      <DependentUpon>imprimir_cobros.cs</DependentUpon>
-    </Compile>
     <Compile Include="modulo_cuentas_por_pagar\imprimir_compra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1210,9 +1204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sistema\host.resx">
       <DependentUpon>host.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="modulo_cuentas_por_cobrar\imprimir_cobros.resx">
-      <DependentUpon>imprimir_cobros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modulo_cuentas_por_pagar\imprimir_compra.resx">
       <DependentUpon>imprimir_compra.cs</DependentUpon>

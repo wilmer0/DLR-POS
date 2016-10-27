@@ -133,9 +133,9 @@ namespace puntoVenta
             {
                 int fila = dataGridView1.CurrentRow.Index;
                 string codigo_cobro = dataGridView1.Rows[fila].Cells[0].Value.ToString();       
-                imprimir_cobros ic = new imprimir_cobros();
-                ic.codigo_cobro = codigo_cobro.ToString();
-                ic.ShowDialog();
+                //imprimir_cobros ic = new imprimir_cobros();
+                //ic.codigo_cobro = codigo_cobro.ToString();
+                //ic.ShowDialog();
             }
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
