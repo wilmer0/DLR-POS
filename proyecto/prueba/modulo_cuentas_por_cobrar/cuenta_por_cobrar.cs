@@ -199,15 +199,7 @@ namespace puntoVenta
         {
         }
         internal singleton s { get; set; }
-        double pago_antiguedad = 0;
-        string codigo_cobro = "";
-        double efectivo = 0;
-        double devuelta=0;
-        double transferencia = 0;
-        double cheque = 0;
-        double tarjeta = 0;
-
-
+       
         public Boolean validarCampos()
         {
 
