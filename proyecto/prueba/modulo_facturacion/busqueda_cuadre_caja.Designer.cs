@@ -134,9 +134,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 24);
+            this.label1.Size = new System.Drawing.Size(56, 24);
             this.label1.TabIndex = 89;
-            this.label1.Text = "Codigo";
+            this.label1.Text = "cuadre";
             this.label1.UseCompatibleTextRendering = true;
             // 
             // codigo_cuadre_txt
@@ -287,9 +287,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 24);
+            this.label2.Size = new System.Drawing.Size(51, 24);
             this.label2.TabIndex = 102;
-            this.label2.Text = "Cajero";
+            this.label2.Text = "cajero";
             this.label2.UseCompatibleTextRendering = true;
             // 
             // codigo_cajero_txt
