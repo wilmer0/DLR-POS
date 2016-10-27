@@ -205,33 +205,46 @@ namespace puntoVenta
 
             try
             {
-                 foreach (DataGridViewRow row in dataGridView1.Rows)
-                 {
-                     if (double.Parse(row.Cells[9].Value.ToString()) < 0)
-                     {
-                         MessageBox.Show("El monto de abono debe ser igual o mayor que cero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                         dataGridView1.CurrentCell = dataGridView1.Rows[row.Index].Cells[0];
-                         return false;
-                     }
-                     
-                 }
-                 if (tipoPagoText.Text.Trim() == "")
-                 {
-                     MessageBox.Show("Debe establecer el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                     tipoPagoText.Focus();
-                     return false;
-                 }
-                 if (s.cobros_cxc != true)
-                 {
-                     MessageBox.Show("Usted no tiene permiso para hacer cobros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                     return false;
-                 }
+                bool existeAbono = false;
 
+
+                if (s.cobros_cxc != true)
+                {
+                    MessageBox.Show("Usted no tiene permiso para hacer cobros", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("No hay facturas", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
+                if (tipoPagoText.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe establecer el metodo de pago", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    tipoPagoText.Focus();
+                    return false;
+                }
+               
+                 
+                 foreach (DataGridViewRow row in dataGridView1.Rows)
+                 {
+                     if (double.Parse(row.Cells[9].Value.ToString()) > 0)
+                     {
+                         //MessageBox.Show("El monto de abono debe ser igual o mayor que cero", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                         //dataGridView1.CurrentCell = dataGridView1.Rows[row.Index].Cells[0];
+                         //return false;
+                         existeAbono = true;
+                     }
+                 }
+                 if (!existeAbono)
+                 {
+                     MessageBox.Show("No existe ningun abono", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                     return false;
+                 }
+                
+                
+
+               
                 ExistePagos = false;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {

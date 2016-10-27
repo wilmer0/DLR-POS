@@ -137,7 +137,7 @@ namespace puntoVenta
                                     /*
                                      alter proc insert_compra
                                      @numero_factura varchar(10),@cod_suplidor int,@ncf varchar(20),@rnc varchar(20),
-                                     @cod_tipo varchar(5),@fecha date,@fecha_limite date,@cod_sucursal
+                                     @cod_tipo varchar(5),@fecha date,@fecha_limite date,@cod_sucursal,@cod_usuario
                                     */
                                     //MessageBox.Show(dateTimePicker1.Value.ToString("yyyy-mm-dd")+"---"+dateTimePicker2.Value.ToString("yyyy-mm-dd"));
                                 s = singleton.obtenerDatos();
@@ -150,7 +150,7 @@ namespace puntoVenta
                                         ds = Utilidades.ejecutarcomando(sql);
                                         if (ds.Tables[0].Rows.Count == 0)
                                         {
-                                            sql = "exec insert_compra '" + numero_compra_txt.Text.Trim() + "','" + codigo_suplidor_txt.Text.Trim() + "','" + numero_comprobante_fiscal_txt.Text.Trim() + "','" + rnc_txt.Text.Trim() + "','" + tipo_compra.ToString() + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_sucursal.ToString() + "'";
+                                            sql = "exec insert_compra '" + numero_compra_txt.Text.Trim() + "','" + codigo_suplidor_txt.Text.Trim() + "','" + numero_comprobante_fiscal_txt.Text.Trim() + "','" + rnc_txt.Text.Trim() + "','" + tipo_compra.ToString() + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_sucursal.ToString() + "','"+s.codigo_usuario.ToString()+"'";
                                             ds = Utilidades.ejecutarcomando(sql);
                                             if (ds.Tables[0].Rows.Count > 0)
                                             {

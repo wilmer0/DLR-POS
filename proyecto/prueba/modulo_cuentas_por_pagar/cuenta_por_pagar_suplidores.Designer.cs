@@ -37,17 +37,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supligrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ncf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_tipo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_inicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empleadogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto_pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descugrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_suplidor_txt = new System.Windows.Forms.TextBox();
             this.codigo_suplidor_txt = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -56,7 +45,6 @@
             this.fecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.ck_registro_hasta = new System.Windows.Forms.CheckBox();
             this.ck_registro_desde = new System.Windows.Forms.CheckBox();
             this.fecha_hasta_txt = new System.Windows.Forms.DateTimePicker();
@@ -79,6 +67,17 @@
             this.label19 = new System.Windows.Forms.Label();
             this.MontoTotalAbonarText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.codigo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supligrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ncf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rnc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_tipo_compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_inicial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empleadogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto_pendiente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descugrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -163,83 +162,6 @@
             this.dataGridView1.TabIndex = 75;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // codigo_compra
-            // 
-            this.codigo_compra.FillWeight = 40F;
-            this.codigo_compra.HeaderText = "Id";
-            this.codigo_compra.Name = "codigo_compra";
-            this.codigo_compra.ReadOnly = true;
-            // 
-            // supligrid
-            // 
-            this.supligrid.FillWeight = 120F;
-            this.supligrid.HeaderText = "Suplidor";
-            this.supligrid.Name = "supligrid";
-            this.supligrid.ReadOnly = true;
-            // 
-            // ncf
-            // 
-            this.ncf.HeaderText = "NCF";
-            this.ncf.Name = "ncf";
-            this.ncf.ReadOnly = true;
-            // 
-            // rnc
-            // 
-            this.rnc.FillWeight = 70F;
-            this.rnc.HeaderText = "RNC";
-            this.rnc.Name = "rnc";
-            this.rnc.ReadOnly = true;
-            // 
-            // codigo_tipo_compra
-            // 
-            this.codigo_tipo_compra.FillWeight = 50F;
-            this.codigo_tipo_compra.HeaderText = "Compra";
-            this.codigo_tipo_compra.Name = "codigo_tipo_compra";
-            this.codigo_tipo_compra.ReadOnly = true;
-            // 
-            // fecha_inicial
-            // 
-            this.fecha_inicial.FillWeight = 80F;
-            this.fecha_inicial.HeaderText = "Fecha";
-            this.fecha_inicial.Name = "fecha_inicial";
-            this.fecha_inicial.ReadOnly = true;
-            // 
-            // fecha_limite
-            // 
-            this.fecha_limite.HeaderText = "Fecha Limite";
-            this.fecha_limite.Name = "fecha_limite";
-            this.fecha_limite.ReadOnly = true;
-            // 
-            // empleadogrid
-            // 
-            this.empleadogrid.HeaderText = "Empleado";
-            this.empleadogrid.Name = "empleadogrid";
-            this.empleadogrid.ReadOnly = true;
-            // 
-            // monto_pendiente
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.monto_pendiente.DefaultCellStyle = dataGridViewCellStyle1;
-            this.monto_pendiente.HeaderText = "Pendiente";
-            this.monto_pendiente.Name = "monto_pendiente";
-            this.monto_pendiente.ReadOnly = true;
-            // 
-            // abonogrid
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.abonogrid.HeaderText = "Abonto";
-            this.abonogrid.Name = "abonogrid";
-            this.abonogrid.ReadOnly = true;
-            // 
-            // descugrid
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.descugrid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.descugrid.HeaderText = "Descuento";
-            this.descugrid.Name = "descugrid";
-            this.descugrid.ReadOnly = true;
-            // 
             // nombre_suplidor_txt
             // 
             this.nombre_suplidor_txt.Location = new System.Drawing.Point(13, 108);
@@ -261,7 +183,7 @@
             // 
             this.button4.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(157, 74);
+            this.button4.Location = new System.Drawing.Point(157, 76);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(34, 30);
             this.button4.TabIndex = 70;
@@ -301,7 +223,6 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.ck_registro_hasta);
             this.groupBox1.Controls.Add(this.ck_registro_desde);
             this.groupBox1.Controls.Add(this.fecha_hasta_txt);
@@ -331,16 +252,6 @@
             this.label6.Size = new System.Drawing.Size(20, 20);
             this.label6.TabIndex = 105;
             this.label6.Text = "X";
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(902, 74);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(63, 53);
-            this.button3.TabIndex = 105;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // ck_registro_hasta
             // 
@@ -455,6 +366,7 @@
             this.label8.Size = new System.Drawing.Size(86, 20);
             this.label8.TabIndex = 122;
             this.label8.Text = "Aplicar(F2)";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // montoDescuentoText
             // 
@@ -463,6 +375,7 @@
             this.montoDescuentoText.Size = new System.Drawing.Size(130, 20);
             this.montoDescuentoText.TabIndex = 121;
             this.montoDescuentoText.Text = "0";
+            this.montoDescuentoText.TextChanged += new System.EventHandler(this.montoDescuentoText_TextChanged);
             // 
             // descuentoPorCientoText
             // 
@@ -472,6 +385,7 @@
             this.descuentoPorCientoText.Size = new System.Drawing.Size(41, 20);
             this.descuentoPorCientoText.TabIndex = 120;
             this.descuentoPorCientoText.Text = "0.00";
+            this.descuentoPorCientoText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descuentoPorCientoText_KeyDown);
             // 
             // label1
             // 
@@ -577,6 +491,83 @@
             this.label3.Text = "Abonar";
             this.label3.UseCompatibleTextRendering = true;
             // 
+            // codigo_compra
+            // 
+            this.codigo_compra.FillWeight = 40F;
+            this.codigo_compra.HeaderText = "Id";
+            this.codigo_compra.Name = "codigo_compra";
+            this.codigo_compra.ReadOnly = true;
+            // 
+            // supligrid
+            // 
+            this.supligrid.FillWeight = 120F;
+            this.supligrid.HeaderText = "Suplidor";
+            this.supligrid.Name = "supligrid";
+            this.supligrid.ReadOnly = true;
+            // 
+            // ncf
+            // 
+            this.ncf.HeaderText = "NCF";
+            this.ncf.Name = "ncf";
+            this.ncf.ReadOnly = true;
+            // 
+            // rnc
+            // 
+            this.rnc.FillWeight = 70F;
+            this.rnc.HeaderText = "RNC";
+            this.rnc.Name = "rnc";
+            this.rnc.ReadOnly = true;
+            // 
+            // codigo_tipo_compra
+            // 
+            this.codigo_tipo_compra.FillWeight = 50F;
+            this.codigo_tipo_compra.HeaderText = "Compra";
+            this.codigo_tipo_compra.Name = "codigo_tipo_compra";
+            this.codigo_tipo_compra.ReadOnly = true;
+            // 
+            // fecha_inicial
+            // 
+            this.fecha_inicial.FillWeight = 80F;
+            this.fecha_inicial.HeaderText = "Fecha";
+            this.fecha_inicial.Name = "fecha_inicial";
+            this.fecha_inicial.ReadOnly = true;
+            // 
+            // fecha_limite
+            // 
+            this.fecha_limite.HeaderText = "Fecha Limite";
+            this.fecha_limite.Name = "fecha_limite";
+            this.fecha_limite.ReadOnly = true;
+            // 
+            // empleadogrid
+            // 
+            this.empleadogrid.HeaderText = "Empleado";
+            this.empleadogrid.Name = "empleadogrid";
+            this.empleadogrid.ReadOnly = true;
+            // 
+            // monto_pendiente
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.monto_pendiente.DefaultCellStyle = dataGridViewCellStyle1;
+            this.monto_pendiente.HeaderText = "Pendiente";
+            this.monto_pendiente.Name = "monto_pendiente";
+            this.monto_pendiente.ReadOnly = true;
+            // 
+            // abonogrid
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.abonogrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.abonogrid.HeaderText = "Abono";
+            this.abonogrid.Name = "abonogrid";
+            this.abonogrid.ReadOnly = true;
+            // 
+            // descugrid
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.descugrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.descugrid.HeaderText = "Descuento";
+            this.descugrid.Name = "descugrid";
+            this.descugrid.ReadOnly = true;
+            // 
             // cuenta_por_pagar_suplidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,7 +623,6 @@
         private System.Windows.Forms.DateTimePicker fecha;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox ck_registro_hasta;
         private System.Windows.Forms.CheckBox ck_registro_desde;
         private System.Windows.Forms.DateTimePicker fecha_hasta_txt;
@@ -651,6 +641,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox tipoPagoText;
+        private System.Windows.Forms.TextBox MontoTotalPendienteText;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox MontoTotalAbonarText;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_compra;
         private System.Windows.Forms.DataGridViewTextBoxColumn supligrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn ncf;
@@ -662,9 +656,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn monto_pendiente;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonogrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn descugrid;
-        private System.Windows.Forms.TextBox MontoTotalPendienteText;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox MontoTotalAbonarText;
-        private System.Windows.Forms.Label label3;
     }
 }
