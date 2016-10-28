@@ -1,0 +1,1042 @@
+ALTER TABLE `punto_venta`.`sistema_modulo_opciones` 
+CHANGE COLUMN `TRIAL_COLUMN6` `activo` TINYINT(3) UNSIGNED NULL DEFAULT '1' ;
+
+
+
+ALTER TABLE `punto_venta`.`cajero` 
+ADD CONSTRAINT `cajero_empleado`
+  FOREIGN KEY (`codigo`)
+  REFERENCES `punto_venta`.`empleado` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+ALTER TABLE `punto_venta`.`cajero` 
+ADD INDEX `cajero_caja_idx` (`cod_caja` ASC);
+ALTER TABLE `punto_venta`.`cajero` 
+ADD CONSTRAINT `cajero_caja`
+  FOREIGN KEY (`cod_caja`)
+  REFERENCES `punto_venta`.`caja` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+                 
+
+
+ALTER TABLE `punto_venta`.`almacen` 
+ADD INDEX `almacen_sucursal_idx` (`cod_sucursal` ASC);
+ALTER TABLE `punto_venta`.`almacen` 
+ADD CONSTRAINT `almacen_sucursal`
+  FOREIGN KEY (`cod_sucursal`)
+  REFERENCES `punto_venta`.`sucursal` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `punto_venta`.`empleado` 
+CHANGE COLUMN `TRIAL_COLUMN6` `estado` TINYINT(3) UNSIGNED NOT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN7` `cod_sucursal` INT NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN8` `cod_departamento` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN9` `cod_cargo` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN10` `cod_cliente` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN11` `cod_grupo_usuario` INT(11) NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN12` `fecha_ingreso` DATE NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN13` `permiso` VARCHAR(1) CHARACTER SET 'utf8' NULL DEFAULT 'G' ,
+CHANGE COLUMN `TRIAL_COLUMN14` `cod_tipo_nomina` INT(11) NULL DEFAULT NULL ;
+
+
+ALTER TABLE `punto_venta`.`empleado` 
+ADD INDEX `empleado_cargo_idx` (`cod_cargo` ASC);
+ALTER TABLE `punto_venta`.`empleado` 
+ADD CONSTRAINT `empleado_cargo`
+  FOREIGN KEY (`cod_cargo`)
+  REFERENCES `punto_venta`.`cargo` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+ALTER TABLE `punto_venta`.`cliente` 
+CHANGE COLUMN `TRIAL_COLUMN6` `fecha_creado` DATE NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN7` `abrir_credito` TINYINT(3) UNSIGNED NULL DEFAULT '1' ,
+CHANGE COLUMN `TRIAL_COLUMN8` `cod_sucursal_creado` INT NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN9` `cliente_contado` TINYINT(3) UNSIGNED NULL DEFAULT '0' ;
+
+
+
+
+
+ALTER TABLE `punto_venta`.`cliente` 
+ADD INDEX `cliente_categoria_cliente_idx` (`cod_categoria` ASC),
+ADD INDEX `cliente_subcategoria_cliente_idx` (`cod_subcategoria` ASC),
+ADD INDEX `cliente_sucursal_idx` (`cod_sucursal_creado` ASC);
+ALTER TABLE `punto_venta`.`cliente` 
+ADD CONSTRAINT `cliente_categoria_cliente`
+  FOREIGN KEY (`cod_categoria`)
+  REFERENCES `punto_venta`.`cliente_categoria` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `cliente_subcategoria_cliente`
+  FOREIGN KEY (`cod_subcategoria`)
+  REFERENCES `punto_venta`.`cliente_subcategoria` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `cliente_sucursal`
+  FOREIGN KEY (`cod_sucursal_creado`)
+  REFERENCES `punto_venta`.`sucursal` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+
+ALTER TABLE `punto_venta`.`cobros` 
+CHANGE COLUMN `TRIAL_COLUMN6` `detalle` LONGTEXT CHARACTER SET 'utf8' NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN7` `cod_empleado` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN8` `estado` TINYINT(3) UNSIGNED NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN9` `cod_empleado_anular` INT(11) NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN10` `motivo_anulado` LONGTEXT CHARACTER SET 'utf8' NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN11` `cuadrado` TINYINT(3) UNSIGNED NULL DEFAULT '0' ;
+
+
+
+
+
+
+
+ALTER TABLE `punto_venta`.`cobros_detalles` 
+CHANGE COLUMN `monto_pagado` `monto_pagado` DECIMAL(20,2) NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN6` `monto_descontado` DECIMAL(20,2) NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN7` `cod_empleado_anular` INT(11) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN8` `motivo_anulado` LONGTEXT CHARACTER SET 'utf8' NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN9` `estado` TINYINT(3) UNSIGNED NULL DEFAULT '1' ;
+
+
+
+
+
+
+
+ALTER TABLE `punto_venta`.`cobros_detalles` 
+ADD INDEX `cobro_detalles_cobro_idx` (`cod_cobro` ASC),
+ADD INDEX `cobros_detalle_factura_idx` (`cod_factura` ASC),
+ADD INDEX `cobro_detalle_metodo_cobro_idx` (`cod_metodo_pago` ASC);
+ALTER TABLE `punto_venta`.`cobros_detalles` 
+ADD CONSTRAINT `cobro_detalles_cobro`
+  FOREIGN KEY (`cod_cobro`)
+  REFERENCES `punto_venta`.`cobros` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `cobros_detalle_factura`
+  FOREIGN KEY (`cod_factura`)
+  REFERENCES `punto_venta`.`factura` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `cobro_detalle_metodo_cobro`
+  FOREIGN KEY (`cod_metodo_pago`)
+  REFERENCES `punto_venta`.`metodo_pago` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+
+ALTER TABLE `punto_venta`.`factura` 
+CHANGE COLUMN `codigo` `codigo` INT(11) NOT NULL ,
+ADD PRIMARY KEY (`codigo`);
+
+
+
+
+
+ALTER TABLE `punto_venta`.`cobros_detalles` 
+ADD CONSTRAINT `cobro_detalles_factura`
+  FOREIGN KEY (`cod_factura`)
+  REFERENCES `punto_venta`.`factura` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `punto_venta`.`compra` 
+ADD INDEX `compra_suplidor_idx` (`cod_suplidor` ASC),
+ADD INDEX `compra_sucursal_idx` (`cod_sucursal` ASC),
+ADD INDEX `compra_empleado_idx` (`codigo_empleado` ASC);
+ALTER TABLE `punto_venta`.`compra` 
+ADD CONSTRAINT `compra_suplidor`
+  FOREIGN KEY (`cod_suplidor`)
+  REFERENCES `punto_venta`.`suplidor` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `compra_sucursal`
+  FOREIGN KEY (`cod_sucursal`)
+  REFERENCES `punto_venta`.`sucursal` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `compra_empleado`
+  FOREIGN KEY (`codigo_empleado`)
+  REFERENCES `punto_venta`.`empleado` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+
+
+
+
+
+ALTER TABLE `punto_venta`.`compra_detalle` 
+CHANGE COLUMN `costo` `costo` DECIMAL(20,2) NULL DEFAULT NULL ,
+CHANGE COLUMN `cantidad` `cantidad` DECIMAL(20,2) NOT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN6` `venta` DECIMAL(20,2) NULL DEFAULT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN7` `monto` DECIMAL(20,2) NOT NULL ,
+CHANGE COLUMN `TRIAL_COLUMN8` `descuento` DECIMAL(20,2) NULL DEFAULT '0' ,
+CHANGE COLUMN `TRIAL_COLUMN9` `estado` INT(11) NOT NULL DEFAULT '1' ,
+ADD COLUMN `cod_metodo_pago` INT NULL AFTER `estado`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
