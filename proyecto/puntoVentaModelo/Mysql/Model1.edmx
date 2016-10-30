@@ -179,36 +179,6 @@ warning 6002: The table/view 'def.punto_venta.compra_detalle' does not have a pr
           <Property Name="estado" Type="int" Nullable="false" />
           <Property Name="cod_metodo_pago" Type="int" />
         </EntityType>
-        <EntityType Name="compra_pago_anulados">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="int" Nullable="false" />
-          <Property Name="cod_compra" Type="int" />
-          <Property Name="cod_pago" Type="int" />
-          <Property Name="detalle" Type="mediumtext" />
-          <Property Name="cod_empleado" Type="int" />
-          <Property Name="fecha" Type="date" />
-        </EntityType>
-        <EntityType Name="compra_vs_pagos">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="int" Nullable="false" />
-          <Property Name="cod_compra" Type="int" Nullable="false" />
-          <Property Name="monto" Type="float" Nullable="false" />
-          <Property Name="devuelta" Type="float" />
-          <Property Name="tarjeta" Type="float" />
-          <Property Name="TRIAL_COLUMN6" Type="float" />
-          <Property Name="TRIAL_COLUMN7" Type="float" />
-          <Property Name="TRIAL_COLUMN8" Type="float" />
-          <Property Name="TRIAL_COLUMN9" Type="date" Nullable="false" />
-          <Property Name="TRIAL_COLUMN10" Type="utinyint" Nullable="false" />
-          <Property Name="TRIAL_COLUMN11" Type="int" Nullable="false" />
-          <Property Name="TRIAL_COLUMN12" Type="mediumtext" />
-          <Property Name="TRIAL_COLUMN13" Type="int" />
-          <Property Name="TRIAL_COLUMN14" Type="longtext" />
-        </EntityType>
         <EntityType Name="comprobante_fiscal">
           <Key>
             <PropertyRef Name="codigo" />
@@ -263,17 +233,19 @@ warning 6002: The table/view 'def.punto_venta.compra_detalle' does not have a pr
           <Property Name="cod_cajero" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="turno" Type="int" Nullable="false" />
-          <Property Name="efectivo" Type="float" />
-          <Property Name="TRIAL_COLUMN6" Type="float" />
-          <Property Name="TRIAL_COLUMN7" Type="float" />
-          <Property Name="TRIAL_COLUMN8" Type="float" />
-          <Property Name="TRIAL_COLUMN9" Type="float" />
-          <Property Name="TRIAL_COLUMN10" Type="float" />
-          <Property Name="TRIAL_COLUMN11" Type="varchar" MaxLength="10" />
-          <Property Name="TRIAL_COLUMN12" Type="int" />
-          <Property Name="TRIAL_COLUMN13" Type="float" />
-          <Property Name="TRIAL_COLUMN14" Type="float" />
-          <Property Name="TRIAL_COLUMN15" Type="float" />
+          <Property Name="abierta_cerrada" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="estado" Type="tinyint" Nullable="false" />
+          <Property Name="fecha_sistema" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="cuadre_cajacol" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="cuadre_caja_detalles">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="cod_cuadre" Type="int" Nullable="false" />
+          <Property Name="cod_metodo_pago" Type="int" Nullable="false" />
+          <Property Name="monto" Type="decimal" Precision="20" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="cuenta_bancaria">
           <Key>
@@ -1533,6 +1505,21 @@ warning 6002: The table/view 'def.punto_venta.tercero_vs_telefono' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="cuadre_caja_detalles_cuadre_caja" />-->
+        <Association Name="cuadre_caja_detalles_metodo_pago">
+          <End Role="metodo_pago" Type="Self.metodo_pago" Multiplicity="1" />
+          <End Role="cuadre_caja_detalles" Type="Self.cuadre_caja_detalles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="metodo_pago">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="cuadre_caja_detalles">
+              <PropertyRef Name="cod_metodo_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="cuadre_cajero">
           <End Role="cajero" Type="Self.cajero" Multiplicity="1" />
           <End Role="cuadre_caja" Type="Self.cuadre_caja" Multiplicity="*" />
@@ -2241,42 +2228,6 @@ warning 6002: The table/view 'def.punto_venta.tercero_vs_telefono' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="pago_anulado_compra">
-          <End Role="compra" Type="Self.compra" Multiplicity="0..1" />
-          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="compra">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="compra_pago_anulados">
-              <PropertyRef Name="cod_compra" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="pago_anulado_empleado">
-          <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
-          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleado">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="compra_pago_anulados">
-              <PropertyRef Name="cod_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="pago_anulado_pago">
-          <End Role="compra_vs_pagos" Type="Self.compra_vs_pagos" Multiplicity="0..1" />
-          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="compra_vs_pagos">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="compra_pago_anulados">
-              <PropertyRef Name="cod_pago" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="pagos_detalles_factura">
           <End Role="compra" Type="Self.compra" Multiplicity="1" />
           <End Role="pagos_detalles" Type="Self.pagos_detalles" Multiplicity="*" />
@@ -2794,13 +2745,12 @@ warning 6002: The table/view 'def.punto_venta.tercero_vs_telefono' does not have
           <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="correo_electronicos" EntityType="Self.correo_electronicos" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="cuadre_caja" EntityType="Self.cuadre_caja" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cuadre_caja_detalles" EntityType="Self.cuadre_caja_detalles" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="cuenta_bancaria" EntityType="Self.cuenta_bancaria" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="departamento" EntityType="Self.departamento" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="direccion" EntityType="Self.direccion" Schema="punto_venta" store:Type="Tables" />
@@ -3160,6 +3110,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="tipo_comprobante_fiscal" EntitySet="tipo_comprobante_fiscal" />
             <End Role="comprobante_ventas" EntitySet="comprobante_ventas" />
           </AssociationSet>
+          <AssociationSet Name="cuadre_caja_detalles_metodo_pago" Association="Self.cuadre_caja_detalles_metodo_pago">
+            <End Role="metodo_pago" EntitySet="metodo_pago" />
+            <End Role="cuadre_caja_detalles" EntitySet="cuadre_caja_detalles" />
+          </AssociationSet>
           <AssociationSet Name="cuadre_cajero" Association="Self.cuadre_cajero">
             <End Role="cajero" EntitySet="cajero" />
             <End Role="cuadre_caja" EntitySet="cuadre_caja" />
@@ -3396,18 +3350,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="categoria_producto" EntitySet="categoria_producto" />
             <End Role="oferta_producto_categoria_detalle" EntitySet="oferta_producto_categoria_detalle" />
           </AssociationSet>
-          <AssociationSet Name="pago_anulado_compra" Association="Self.pago_anulado_compra">
-            <End Role="compra" EntitySet="compra" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
-          </AssociationSet>
-          <AssociationSet Name="pago_anulado_empleado" Association="Self.pago_anulado_empleado">
-            <End Role="empleado" EntitySet="empleado" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
-          </AssociationSet>
-          <AssociationSet Name="pago_anulado_pago" Association="Self.pago_anulado_pago">
-            <End Role="compra_vs_pagos" EntitySet="compra_vs_pagos" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
-          </AssociationSet>
           <AssociationSet Name="pagos_detalles_factura" Association="Self.pagos_detalles_factura">
             <End Role="compra" EntitySet="compra" />
             <End Role="pagos_detalles" EntitySet="pagos_detalles" />
@@ -3594,13 +3536,12 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <EntitySet Name="cobros" EntityType="punto_ventaModel.cobros" />
           <EntitySet Name="cobros_detalles" EntityType="punto_ventaModel.cobros_detalles" />
           <EntitySet Name="compra" EntityType="punto_ventaModel.compra" />
-          <EntitySet Name="compra_pago_anulados" EntityType="punto_ventaModel.compra_pago_anulados" />
-          <EntitySet Name="compra_vs_pagos" EntityType="punto_ventaModel.compra_vs_pagos" />
           <EntitySet Name="comprobante_fiscal" EntityType="punto_ventaModel.comprobante_fiscal" />
           <EntitySet Name="comprobante_serie" EntityType="punto_ventaModel.comprobante_serie" />
           <EntitySet Name="comprobante_ventas" EntityType="punto_ventaModel.comprobante_ventas" />
           <EntitySet Name="correo_electronicos" EntityType="punto_ventaModel.correo_electronicos" />
           <EntitySet Name="cuadre_caja" EntityType="punto_ventaModel.cuadre_caja" />
+          <EntitySet Name="cuadre_caja_detalles" EntityType="punto_ventaModel.cuadre_caja_detalles" />
           <EntitySet Name="cuenta_bancaria" EntityType="punto_ventaModel.cuenta_bancaria" />
           <EntitySet Name="departamento" EntityType="punto_ventaModel.departamento" />
           <EntitySet Name="direccion" EntityType="punto_ventaModel.direccion" />
@@ -3711,6 +3652,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="cajero" EntitySet="cajero" />
             <End Role="cuadre_caja" EntitySet="cuadre_caja" />
           </AssociationSet>
+          <AssociationSet Name="egresos_caja_cajero" Association="punto_ventaModel.egresos_caja_cajero">
+            <End Role="cajero" EntitySet="cajero" />
+            <End Role="egresos_caja" EntitySet="egresos_caja" />
+          </AssociationSet>
           <AssociationSet Name="facturas_anuladas_cajero" Association="punto_ventaModel.facturas_anuladas_cajero">
             <End Role="cajero" EntitySet="cajero" />
             <End Role="facturas_anuladas" EntitySet="facturas_anuladas" />
@@ -3787,21 +3732,9 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="compra" EntitySet="compra" />
             <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
           </AssociationSet>
-          <AssociationSet Name="pago_anulado_compra" Association="punto_ventaModel.pago_anulado_compra">
-            <End Role="compra" EntitySet="compra" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
-          </AssociationSet>
           <AssociationSet Name="pagos_detalles_factura" Association="punto_ventaModel.pagos_detalles_factura">
             <End Role="compra" EntitySet="compra" />
             <End Role="pagos_detalles" EntitySet="pagos_detalles" />
-          </AssociationSet>
-          <AssociationSet Name="pago_anulado_empleado" Association="punto_ventaModel.pago_anulado_empleado">
-            <End Role="empleado" EntitySet="empleado" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
-          </AssociationSet>
-          <AssociationSet Name="pago_anulado_pago" Association="punto_ventaModel.pago_anulado_pago">
-            <End Role="compra_vs_pagos" EntitySet="compra_vs_pagos" />
-            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
           </AssociationSet>
           <AssociationSet Name="comprobante_serie1" Association="punto_ventaModel.comprobante_serie1">
             <End Role="comprobante_serie" EntitySet="comprobante_serie" />
@@ -3815,6 +3748,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="tipo_comprobante_fiscal" EntitySet="tipo_comprobante_fiscal" />
             <End Role="comprobante_ventas" EntitySet="comprobante_ventas" />
           </AssociationSet>
+          <AssociationSet Name="cuadre_caja_detalles_metodo_pago" Association="punto_ventaModel.cuadre_caja_detalles_metodo_pago">
+            <End Role="metodo_pago" EntitySet="metodo_pago" />
+            <End Role="cuadre_caja_detalles" EntitySet="cuadre_caja_detalles" />
+          </AssociationSet>
           <AssociationSet Name="empleeado_departamento" Association="punto_ventaModel.empleeado_departamento">
             <End Role="departamento" EntitySet="departamento" />
             <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
@@ -3826,6 +3763,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <AssociationSet Name="tercero_vs_direccion_direccion" Association="punto_ventaModel.tercero_vs_direccion_direccion">
             <End Role="direccion" EntitySet="direccion" />
             <End Role="tercero_vs_direccion" EntitySet="tercero_vs_direccion" />
+          </AssociationSet>
+          <AssociationSet Name="egresos_caja_concepto" Association="punto_ventaModel.egresos_caja_concepto">
+            <End Role="egresos_conceptos" EntitySet="egresos_conceptos" />
+            <End Role="egresos_caja" EntitySet="egresos_caja" />
           </AssociationSet>
           <AssociationSet Name="empleado_concepto_nomina_empelado_modifico" Association="punto_ventaModel.empleado_concepto_nomina_empelado_modifico">
             <End Role="empleado" EntitySet="empleado" />
@@ -3874,6 +3815,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <AssociationSet Name="sucursal_vs_empleado_empleado" Association="punto_ventaModel.sucursal_vs_empleado_empleado">
             <End Role="empleado" EntitySet="empleado" />
             <End Role="sucursal_vs_empleado" EntitySet="sucursal_vs_empleado" />
+          </AssociationSet>
+          <AssociationSet Name="vendedor_empleado" Association="punto_ventaModel.vendedor_empleado">
+            <End Role="empleado" EntitySet="empleado" />
+            <End Role="vendedor" EntitySet="vendedor" />
+          </AssociationSet>
+          <AssociationSet Name="empresa_tercero" Association="punto_ventaModel.empresa_tercero">
+            <End Role="tercero" EntitySet="tercero" />
+            <End Role="empresa" EntitySet="empresa" />
           </AssociationSet>
           <AssociationSet Name="inventario_reparacion_estado_reparacion" Association="punto_ventaModel.inventario_reparacion_estado_reparacion">
             <End Role="estados_reparacion" EntitySet="estados_reparacion" />
@@ -3938,6 +3887,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <AssociationSet Name="inventario_reparacion_unidad" Association="punto_ventaModel.inventario_reparacion_unidad">
             <End Role="unidad" EntitySet="unidad" />
             <End Role="inventario_reparacion" EntitySet="inventario_reparacion" />
+          </AssociationSet>
+          <AssociationSet Name="producto_itebis" Association="punto_ventaModel.producto_itebis">
+            <End Role="itebis" EntitySet="itebis" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
           <AssociationSet Name="mesas_detalles_mesa" Association="punto_ventaModel.mesas_detalles_mesa">
             <End Role="mesas" EntitySet="mesas" />
@@ -4155,26 +4108,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="grupo_usuarios" EntitySet="grupo_usuarios" />
             <End Role="permiso" EntitySet="permiso" />
           </AssociationSet>
-          <AssociationSet Name="egresos_caja_cajero" Association="punto_ventaModel.egresos_caja_cajero">
-            <End Role="cajero" EntitySet="cajero" />
-            <End Role="egresos_caja" EntitySet="egresos_caja" />
-          </AssociationSet>
-          <AssociationSet Name="egresos_caja_concepto" Association="punto_ventaModel.egresos_caja_concepto">
-            <End Role="egresos_conceptos" EntitySet="egresos_conceptos" />
-            <End Role="egresos_caja" EntitySet="egresos_caja" />
-          </AssociationSet>
-          <AssociationSet Name="vendedor_empleado" Association="punto_ventaModel.vendedor_empleado">
-            <End Role="empleado" EntitySet="empleado" />
-            <End Role="vendedor" EntitySet="vendedor" />
-          </AssociationSet>
-          <AssociationSet Name="empresa_tercero" Association="punto_ventaModel.empresa_tercero">
-            <End Role="tercero" EntitySet="tercero" />
-            <End Role="empresa" EntitySet="empresa" />
-          </AssociationSet>
-          <AssociationSet Name="producto_itebis" Association="punto_ventaModel.producto_itebis">
-            <End Role="itebis" EntitySet="itebis" />
-            <End Role="producto" EntitySet="producto" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="almacen">
           <Key>
@@ -4216,9 +4149,9 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="caja" Relationship="punto_ventaModel.cajero_caja" FromRole="cajero" ToRole="caja" />
           <NavigationProperty Name="empleado" Relationship="punto_ventaModel.cajero_empleado" FromRole="cajero" ToRole="empleado" />
           <NavigationProperty Name="cuadre_caja" Relationship="punto_ventaModel.cuadre_cajero" FromRole="cajero" ToRole="cuadre_caja" />
+          <NavigationProperty Name="egresos_caja" Relationship="punto_ventaModel.egresos_caja_cajero" FromRole="cajero" ToRole="egresos_caja" />
           <NavigationProperty Name="facturas_anuladas" Relationship="punto_ventaModel.facturas_anuladas_cajero" FromRole="cajero" ToRole="facturas_anuladas" />
           <NavigationProperty Name="ingresos_caja" Relationship="punto_ventaModel.ingresos_caja_cajero" FromRole="cajero" ToRole="ingresos_caja" />
-          <NavigationProperty Name="egresos_caja" Relationship="punto_ventaModel.egresos_caja_cajero" FromRole="cajero" ToRole="egresos_caja" />
         </EntityType>
         <EntityType Name="cargo">
           <Key>
@@ -4326,39 +4259,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="sucursal" Relationship="punto_ventaModel.compra_sucursal" FromRole="compra" ToRole="sucursal" />
           <NavigationProperty Name="suplidor" Relationship="punto_ventaModel.compra_suplidor" FromRole="compra" ToRole="suplidor" />
           <NavigationProperty Name="historial_devolucion_compras" Relationship="punto_ventaModel.historial_devolucion_compras_compra" FromRole="compra" ToRole="historial_devolucion_compras" />
-          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_compra" FromRole="compra" ToRole="compra_pago_anulados" />
           <NavigationProperty Name="pagos_detalles" Relationship="punto_ventaModel.pagos_detalles_factura" FromRole="compra" ToRole="pagos_detalles" />
-        </EntityType>
-        <EntityType Name="compra_pago_anulados">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" />
-          <Property Name="detalle" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
-          <Property Name="fecha" Type="DateTime" />
-          <NavigationProperty Name="compra" Relationship="punto_ventaModel.pago_anulado_compra" FromRole="compra_pago_anulados" ToRole="compra" />
-          <NavigationProperty Name="empleado" Relationship="punto_ventaModel.pago_anulado_empleado" FromRole="compra_pago_anulados" ToRole="empleado" />
-          <NavigationProperty Name="compra_vs_pagos" Relationship="punto_ventaModel.pago_anulado_pago" FromRole="compra_pago_anulados" ToRole="compra_vs_pagos" />
-        </EntityType>
-        <EntityType Name="compra_vs_pagos">
-          <Key>
-            <PropertyRef Name="codigo" />
-          </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" />
-          <Property Name="cod_compra" Type="Int32" Nullable="false" />
-          <Property Name="monto" Type="Single" Nullable="false" />
-          <Property Name="devuelta" Type="Single" />
-          <Property Name="tarjeta" Type="Single" />
-          <Property Name="TRIAL_COLUMN6" Type="Single" />
-          <Property Name="TRIAL_COLUMN7" Type="Single" />
-          <Property Name="TRIAL_COLUMN8" Type="Single" />
-          <Property Name="TRIAL_COLUMN9" Type="DateTime" Nullable="false" />
-          <Property Name="TRIAL_COLUMN10" Type="Byte" Nullable="false" />
-          <Property Name="TRIAL_COLUMN11" Type="Int32" Nullable="false" />
-          <Property Name="TRIAL_COLUMN12" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
-          <Property Name="TRIAL_COLUMN13" Type="Int32" />
-          <Property Name="TRIAL_COLUMN14" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_pago" FromRole="compra_vs_pagos" ToRole="compra_pago_anulados" />
         </EntityType>
         <EntityType Name="comprobante_fiscal">
           <Key>
@@ -4415,18 +4316,20 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="cod_cajero" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" />
           <Property Name="turno" Type="Int32" Nullable="false" />
-          <Property Name="efectivo" Type="Single" />
-          <Property Name="TRIAL_COLUMN6" Type="Single" />
-          <Property Name="TRIAL_COLUMN7" Type="Single" />
-          <Property Name="TRIAL_COLUMN8" Type="Single" />
-          <Property Name="TRIAL_COLUMN9" Type="Single" />
-          <Property Name="TRIAL_COLUMN10" Type="Single" />
-          <Property Name="TRIAL_COLUMN11" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="TRIAL_COLUMN12" Type="Int32" />
-          <Property Name="TRIAL_COLUMN13" Type="Single" />
-          <Property Name="TRIAL_COLUMN14" Type="Single" />
-          <Property Name="TRIAL_COLUMN15" Type="Single" />
+          <Property Name="abierta_cerrada" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="SByte" Nullable="false" />
+          <Property Name="fecha_sistema" Type="DateTime" Nullable="false" />
+          <Property Name="cuadre_cajacol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="cajero" Relationship="punto_ventaModel.cuadre_cajero" FromRole="cuadre_caja" ToRole="cajero" />
+        </EntityType>
+        <EntityType Name="cuadre_caja_detalles">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="cod_cuadre" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="metodo_pago" Relationship="punto_ventaModel.cuadre_caja_detalles_metodo_pago" FromRole="cuadre_caja_detalles" ToRole="metodo_pago" />
         </EntityType>
         <EntityType Name="cuenta_bancaria">
           <Key>
@@ -4465,9 +4368,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <PropertyRef Name="codigo" />
           </Key>
           <Property Name="codigo" Type="Int32" Nullable="false" />
-          <Property Name="cod_concepto" Type="Int32" />
           <Property Name="fecha" Type="DateTime" />
-          <Property Name="cod_cajero" Type="Int32" />
           <Property Name="monto" Type="Decimal" />
           <Property Name="detalles" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
           <Property Name="afecta_cuadre" Type="Int32" />
@@ -4506,7 +4407,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="cargo" Relationship="punto_ventaModel.empleado_cargo" FromRole="empleado" ToRole="cargo" />
           <NavigationProperty Name="cobros" Relationship="punto_ventaModel.cobro_empleado" FromRole="empleado" ToRole="cobros" />
           <NavigationProperty Name="compra" Relationship="punto_ventaModel.compra_empleado" FromRole="empleado" ToRole="compra" />
-          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_empleado" FromRole="empleado" ToRole="compra_pago_anulados" />
           <NavigationProperty Name="empleado_vs_conceptos_nomina" Relationship="punto_ventaModel.empleado_concepto_nomina_empelado_modifico" FromRole="empleado" ToRole="empleado_vs_conceptos_nomina" />
           <NavigationProperty Name="empleado_vs_conceptos_nomina1" Relationship="punto_ventaModel.empleado_concepto_nomina_empleado" FromRole="empleado" ToRole="empleado_vs_conceptos_nomina" />
           <NavigationProperty Name="empleado_historial_datos" Relationship="punto_ventaModel.empleado_empleado" FromRole="empleado" ToRole="empleado_historial_datos" />
@@ -4519,8 +4419,8 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="producto_oferta_historial" Relationship="punto_ventaModel.producto_oferta_historial_empleado" FromRole="empleado" ToRole="producto_oferta_historial" />
           <NavigationProperty Name="sistema_historial" Relationship="punto_ventaModel.sistema_historial_empleado_modifico" FromRole="empleado" ToRole="sistema_historial" />
           <NavigationProperty Name="sucursal_vs_empleado" Relationship="punto_ventaModel.sucursal_vs_empleado_empleado" FromRole="empleado" ToRole="sucursal_vs_empleado" />
-          <NavigationProperty Name="cargo1" Relationship="punto_ventaModel.empleado_vs_cargo" FromRole="empleado" ToRole="cargo" />
           <NavigationProperty Name="vendedor" Relationship="punto_ventaModel.vendedor_empleado" FromRole="empleado" ToRole="vendedor" />
+          <NavigationProperty Name="cargo1" Relationship="punto_ventaModel.empleado_vs_cargo" FromRole="empleado" ToRole="cargo" />
         </EntityType>
         <EntityType Name="empresa">
           <Key>
@@ -4730,6 +4630,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="descripcion" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Byte" />
           <NavigationProperty Name="cobros_detalles" Relationship="punto_ventaModel.cobro_detalle_metodo_pago" FromRole="metodo_pago" ToRole="cobros_detalles" />
+          <NavigationProperty Name="cuadre_caja_detalles" Relationship="punto_ventaModel.cuadre_caja_detalles_metodo_pago" FromRole="metodo_pago" ToRole="cuadre_caja_detalles" />
           <NavigationProperty Name="compra_detalle" Relationship="punto_ventaModel.compra_detalle_metodo_pago" FromRole="metodo_pago" ToRole="compra_detalle" />
           <NavigationProperty Name="pagos_detalles" Relationship="punto_ventaModel.pagos_detalles_metodo_pago" FromRole="metodo_pago" ToRole="pagos_detalles" />
         </EntityType>
@@ -4866,7 +4767,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="estado" Type="Boolean" />
           <Property Name="reorden" Type="Decimal" />
           <Property Name="punto_maximo" Type="Decimal" />
-          <Property Name="cod_itebis" Type="Int32" />
           <Property Name="imagen" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="almacen" Relationship="punto_ventaModel.producto_almacen" FromRole="producto" ToRole="almacen" />
           <NavigationProperty Name="categoria_producto" Relationship="punto_ventaModel.producto_categoria" FromRole="producto" ToRole="categoria_producto" />
@@ -4874,6 +4774,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="historial_devolucion_ventas" Relationship="punto_ventaModel.historial_devolucion_ventas_producto" FromRole="producto" ToRole="historial_devolucion_ventas" />
           <NavigationProperty Name="inventario" Relationship="punto_ventaModel.inventario_producto" FromRole="producto" ToRole="inventario" />
           <NavigationProperty Name="inventario_reparacion" Relationship="punto_ventaModel.inventario_reparacion_producto" FromRole="producto" ToRole="inventario_reparacion" />
+          <NavigationProperty Name="itebis" Relationship="punto_ventaModel.producto_itebis" FromRole="producto" ToRole="itebis" />
           <NavigationProperty Name="compra_detalle" Relationship="punto_ventaModel.compra_detalle_producto" FromRole="producto" ToRole="compra_detalle" />
           <NavigationProperty Name="factura_detalle" Relationship="punto_ventaModel.factura_detalle_producto" FromRole="producto" ToRole="factura_detalle" />
           <NavigationProperty Name="historial_inventario_agotado" Relationship="punto_ventaModel.historial_inventario_agotado_producto" FromRole="producto" ToRole="historial_inventario_agotado" />
@@ -4887,7 +4788,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="producto_vs_detalle" Relationship="punto_ventaModel.producto_vs_detalle_producto" FromRole="producto" ToRole="producto_vs_detalle" />
           <NavigationProperty Name="producto_vs_permisos" Relationship="punto_ventaModel.producto_vs_permisos_producto" FromRole="producto" ToRole="producto_vs_permisos" />
           <NavigationProperty Name="unidad1" Relationship="punto_ventaModel.producto_unidad" FromRole="producto" ToRole="unidad" />
-          <NavigationProperty Name="itebis" Relationship="punto_ventaModel.producto_itebis" FromRole="producto" ToRole="itebis" />
         </EntityType>
         <EntityType Name="producto_detalle">
           <Key>
@@ -5130,6 +5030,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="identificacion" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="empresa" Relationship="punto_ventaModel.empresa_tercero" FromRole="tercero" ToRole="empresa" />
           <NavigationProperty Name="identificacion1" Relationship="punto_ventaModel.identificacion_tercero" FromRole="tercero" ToRole="identificacion" />
           <NavigationProperty Name="persona" Relationship="punto_ventaModel.persona_tercero" FromRole="tercero" ToRole="persona" />
           <NavigationProperty Name="suplidor" Relationship="punto_ventaModel.suplidor_tercero" FromRole="tercero" ToRole="suplidor" />
@@ -5137,7 +5038,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="tercero_vs_direccion" Relationship="punto_ventaModel.tercero_vs_direccion_tercero" FromRole="tercero" ToRole="tercero_vs_direccion" />
           <NavigationProperty Name="tercero_vs_permiso" Relationship="punto_ventaModel.tercero_vs_permiso_tercero" FromRole="tercero" ToRole="tercero_vs_permiso" />
           <NavigationProperty Name="tercero_vs_telefono" Relationship="punto_ventaModel.tercero_vs_telefono_tercero" FromRole="tercero" ToRole="tercero_vs_telefono" />
-          <NavigationProperty Name="empresa" Relationship="punto_ventaModel.empresa_tercero" FromRole="tercero" ToRole="empresa" />
         </EntityType>
         <EntityType Name="tipo_comprobante_fiscal">
           <Key>
@@ -5525,7 +5425,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <End Type="punto_ventaModel.almacen" Role="almacen" Multiplicity="*" />
         </Association>
         <Association Name="producto_almacen">
-          <End Type="punto_ventaModel.almacen" Role="almacen" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.almacen" Role="almacen" Multiplicity="1" />
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="*" />
         </Association>
         <Association Name="cajero_caja">
@@ -5566,6 +5466,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           </ReferentialConstraint>
           
         </Association>
+        <Association Name="egresos_caja_cajero">
+          <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="1" />
+          <End Type="punto_ventaModel.egresos_caja" Role="egresos_caja" Multiplicity="*" />
+        </Association>
         <Association Name="facturas_anuladas_cajero">
           <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="1" />
           <End Type="punto_ventaModel.facturas_anuladas" Role="facturas_anuladas" Multiplicity="*" />
@@ -5592,7 +5496,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <End Type="punto_ventaModel.oferta_producto_categoria_detalle" Role="oferta_producto_categoria_detalle" Multiplicity="*" />
         </Association>
         <Association Name="producto_categoria">
-          <End Type="punto_ventaModel.categoria_producto" Role="categoria_producto" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.categoria_producto" Role="categoria_producto" Multiplicity="1" />
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="*" />
         </Association>
         <Association Name="subcategoria_producto_Categoria">
@@ -5660,21 +5564,9 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="1" />
           <End Type="punto_ventaModel.historial_devolucion_compras" Role="historial_devolucion_compras" Multiplicity="*" />
         </Association>
-        <Association Name="pago_anulado_compra">
-          <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="0..1" />
-          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
-        </Association>
         <Association Name="pagos_detalles_factura">
           <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="1" />
           <End Type="punto_ventaModel.pagos_detalles" Role="pagos_detalles" Multiplicity="*" />
-        </Association>
-        <Association Name="pago_anulado_empleado">
-          <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
-          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
-        </Association>
-        <Association Name="pago_anulado_pago">
-          <End Type="punto_ventaModel.compra_vs_pagos" Role="compra_vs_pagos" Multiplicity="0..1" />
-          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
         </Association>
         <Association Name="comprobante_serie1">
           <End Type="punto_ventaModel.comprobante_serie" Role="comprobante_serie" Multiplicity="0..1" />
@@ -5687,6 +5579,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
         <Association Name="comprobante_ventas_tipo_comprobante">
           <End Type="punto_ventaModel.tipo_comprobante_fiscal" Role="tipo_comprobante_fiscal" Multiplicity="0..1" />
           <End Type="punto_ventaModel.comprobante_ventas" Role="comprobante_ventas" Multiplicity="*" />
+        </Association>
+        <Association Name="cuadre_caja_detalles_metodo_pago">
+          <End Type="punto_ventaModel.metodo_pago" Role="metodo_pago" Multiplicity="1" />
+          <End Type="punto_ventaModel.cuadre_caja_detalles" Role="cuadre_caja_detalles" Multiplicity="*" />
         </Association>
         <Association Name="empleeado_departamento">
           <End Type="punto_ventaModel.departamento" Role="departamento" Multiplicity="0..1" />
@@ -5708,6 +5604,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
           
+        </Association>
+        <Association Name="egresos_caja_concepto">
+          <End Type="punto_ventaModel.egresos_conceptos" Role="egresos_conceptos" Multiplicity="1" />
+          <End Type="punto_ventaModel.egresos_caja" Role="egresos_caja" Multiplicity="*" />
         </Association>
         <Association Name="empleado_concepto_nomina_empelado_modifico">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
@@ -5789,6 +5689,32 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </Principal>
             <Dependent Role="sucursal_vs_empleado">
               <PropertyRef Name="cod_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="vendedor_empleado">
+          <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="1" />
+          <End Type="punto_ventaModel.vendedor" Role="vendedor" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="vendedor">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+          
+        </Association>
+        <Association Name="empresa_tercero">
+          <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
+          <End Type="punto_ventaModel.empresa" Role="empresa" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tercero">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="empresa">
+              <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
           
@@ -5883,6 +5809,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
         <Association Name="inventario_reparacion_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="0..1" />
           <End Type="punto_ventaModel.inventario_reparacion" Role="inventario_reparacion" Multiplicity="*" />
+        </Association>
+        <Association Name="producto_itebis">
+          <End Type="punto_ventaModel.itebis" Role="itebis" Multiplicity="1" />
+          <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="*" />
         </Association>
         <Association Name="mesas_detalles_mesa">
           <End Type="punto_ventaModel.mesas" Role="mesas" Multiplicity="1" />
@@ -6124,7 +6054,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           
         </Association>
         <Association Name="producto_unidad_minima">
-          <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="*" />
         </Association>
         <Association Name="producto_vs_detalle_producto">
@@ -6397,44 +6327,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <End Type="punto_ventaModel.grupo_usuarios" Role="grupo_usuarios" Multiplicity="*" />
           <End Type="punto_ventaModel.permiso" Role="permiso" Multiplicity="*" />
         </Association>
-        <Association Name="egresos_caja_cajero">
-          <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="1" />
-          <End Type="punto_ventaModel.egresos_caja" Role="egresos_caja" Multiplicity="*" />
-        </Association>
-        <Association Name="egresos_caja_concepto">
-          <End Type="punto_ventaModel.egresos_conceptos" Role="egresos_conceptos" Multiplicity="1" />
-          <End Type="punto_ventaModel.egresos_caja" Role="egresos_caja" Multiplicity="*" />
-        </Association>
-        <Association Name="vendedor_empleado">
-          <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="1" />
-          <End Type="punto_ventaModel.vendedor" Role="vendedor" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="empleado">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="vendedor">
-              <PropertyRef Name="codigo" />
-            </Dependent>
-          </ReferentialConstraint>
-          
-        </Association>
-        <Association Name="empresa_tercero">
-          <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
-          <End Type="punto_ventaModel.empresa" Role="empresa" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="tercero">
-              <PropertyRef Name="codigo" />
-            </Principal>
-            <Dependent Role="empresa">
-              <PropertyRef Name="codigo" />
-            </Dependent>
-          </ReferentialConstraint>
-          
-        </Association>
-        <Association Name="producto_itebis">
-          <End Type="punto_ventaModel.itebis" Role="itebis" Multiplicity="1" />
-          <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="*" />
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -6572,35 +6464,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="compra_pago_anulados">
-            <EntityTypeMapping TypeName="punto_ventaModel.compra_pago_anulados">
-              <MappingFragment StoreEntitySet="compra_pago_anulados">
-                <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="detalle" ColumnName="detalle" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="compra_vs_pagos">
-            <EntityTypeMapping TypeName="punto_ventaModel.compra_vs_pagos">
-              <MappingFragment StoreEntitySet="compra_vs_pagos">
-                <ScalarProperty Name="TRIAL_COLUMN14" ColumnName="TRIAL_COLUMN14" />
-                <ScalarProperty Name="TRIAL_COLUMN13" ColumnName="TRIAL_COLUMN13" />
-                <ScalarProperty Name="TRIAL_COLUMN12" ColumnName="TRIAL_COLUMN12" />
-                <ScalarProperty Name="TRIAL_COLUMN11" ColumnName="TRIAL_COLUMN11" />
-                <ScalarProperty Name="TRIAL_COLUMN10" ColumnName="TRIAL_COLUMN10" />
-                <ScalarProperty Name="TRIAL_COLUMN9" ColumnName="TRIAL_COLUMN9" />
-                <ScalarProperty Name="TRIAL_COLUMN8" ColumnName="TRIAL_COLUMN8" />
-                <ScalarProperty Name="TRIAL_COLUMN7" ColumnName="TRIAL_COLUMN7" />
-                <ScalarProperty Name="TRIAL_COLUMN6" ColumnName="TRIAL_COLUMN6" />
-                <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
-                <ScalarProperty Name="devuelta" ColumnName="devuelta" />
-                <ScalarProperty Name="monto" ColumnName="monto" />
-                <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="comprobante_fiscal">
             <EntityTypeMapping TypeName="punto_ventaModel.comprobante_fiscal">
               <MappingFragment StoreEntitySet="comprobante_fiscal">
@@ -6646,20 +6509,22 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <EntitySetMapping Name="cuadre_caja">
             <EntityTypeMapping TypeName="punto_ventaModel.cuadre_caja">
               <MappingFragment StoreEntitySet="cuadre_caja">
-                <ScalarProperty Name="TRIAL_COLUMN15" ColumnName="TRIAL_COLUMN15" />
-                <ScalarProperty Name="TRIAL_COLUMN14" ColumnName="TRIAL_COLUMN14" />
-                <ScalarProperty Name="TRIAL_COLUMN13" ColumnName="TRIAL_COLUMN13" />
-                <ScalarProperty Name="TRIAL_COLUMN12" ColumnName="TRIAL_COLUMN12" />
-                <ScalarProperty Name="TRIAL_COLUMN11" ColumnName="TRIAL_COLUMN11" />
-                <ScalarProperty Name="TRIAL_COLUMN10" ColumnName="TRIAL_COLUMN10" />
-                <ScalarProperty Name="TRIAL_COLUMN9" ColumnName="TRIAL_COLUMN9" />
-                <ScalarProperty Name="TRIAL_COLUMN8" ColumnName="TRIAL_COLUMN8" />
-                <ScalarProperty Name="TRIAL_COLUMN7" ColumnName="TRIAL_COLUMN7" />
-                <ScalarProperty Name="TRIAL_COLUMN6" ColumnName="TRIAL_COLUMN6" />
-                <ScalarProperty Name="efectivo" ColumnName="efectivo" />
+                <ScalarProperty Name="cuadre_cajacol" ColumnName="cuadre_cajacol" />
+                <ScalarProperty Name="fecha_sistema" ColumnName="fecha_sistema" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="abierta_cerrada" ColumnName="abierta_cerrada" />
                 <ScalarProperty Name="turno" ColumnName="turno" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuadre_caja_detalles">
+            <EntityTypeMapping TypeName="punto_ventaModel.cuadre_caja_detalles">
+              <MappingFragment StoreEntitySet="cuadre_caja_detalles">
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="cod_cuadre" ColumnName="cod_cuadre" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -6704,9 +6569,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
                 <ScalarProperty Name="afecta_cuadre" ColumnName="afecta_cuadre" />
                 <ScalarProperty Name="detalles" ColumnName="detalles" />
                 <ScalarProperty Name="monto" ColumnName="monto" />
-                <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
-                <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -7046,7 +6909,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EntityTypeMapping TypeName="punto_ventaModel.producto">
               <MappingFragment StoreEntitySet="producto">
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
-                <ScalarProperty Name="cod_itebis" ColumnName="cod_itebis" />
                 <ScalarProperty Name="punto_maximo" ColumnName="punto_maximo" />
                 <ScalarProperty Name="reorden" ColumnName="reorden" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
@@ -7605,7 +7467,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="almacen">
               <ScalarProperty Name="codigo" ColumnName="cod_almacen" />
             </EndProperty>
-            <Condition ColumnName="cod_almacen" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="cajero_caja" TypeName="punto_ventaModel.cajero_caja" StoreEntitySet="cajero">
             <EndProperty Name="cajero">
@@ -7647,6 +7508,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="turno" ColumnName="turno" />
               <ScalarProperty Name="fecha" ColumnName="fecha" />
               <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="cajero">
+              <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="egresos_caja_cajero" TypeName="punto_ventaModel.egresos_caja_cajero" StoreEntitySet="egresos_caja">
+            <EndProperty Name="egresos_caja">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
             </EndProperty>
             <EndProperty Name="cajero">
@@ -7698,7 +7567,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="categoria_producto">
               <ScalarProperty Name="codigo" ColumnName="cod_categoria" />
             </EndProperty>
-            <Condition ColumnName="cod_categoria" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="subcategoria_producto_Categoria" TypeName="punto_ventaModel.subcategoria_producto_Categoria" StoreEntitySet="subcategoria_producto">
             <EndProperty Name="subcategoria_producto">
@@ -7828,15 +7696,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="codigo_compra" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="pago_anulado_compra" TypeName="punto_ventaModel.pago_anulado_compra" StoreEntitySet="compra_pago_anulados">
-            <EndProperty Name="compra_pago_anulados">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="compra">
-              <ScalarProperty Name="codigo" ColumnName="cod_compra" />
-            </EndProperty>
-            <Condition ColumnName="cod_compra" IsNull="false" />
-          </AssociationSetMapping>
           <AssociationSetMapping Name="pagos_detalles_factura" TypeName="punto_ventaModel.pagos_detalles_factura" StoreEntitySet="pagos_detalles">
             <EndProperty Name="pagos_detalles">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -7844,24 +7703,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="compra">
               <ScalarProperty Name="codigo" ColumnName="cod_compra" />
             </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="pago_anulado_empleado" TypeName="punto_ventaModel.pago_anulado_empleado" StoreEntitySet="compra_pago_anulados">
-            <EndProperty Name="compra_pago_anulados">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
-            </EndProperty>
-            <Condition ColumnName="cod_empleado" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="pago_anulado_pago" TypeName="punto_ventaModel.pago_anulado_pago" StoreEntitySet="compra_pago_anulados">
-            <EndProperty Name="compra_pago_anulados">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="compra_vs_pagos">
-              <ScalarProperty Name="codigo" ColumnName="cod_pago" />
-            </EndProperty>
-            <Condition ColumnName="cod_pago" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="comprobante_serie1" TypeName="punto_ventaModel.comprobante_serie1" StoreEntitySet="comprobante_fiscal">
             <EndProperty Name="comprobante_fiscal">
@@ -7889,6 +7730,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_tipo_comprobante" />
             </EndProperty>
             <Condition ColumnName="cod_tipo_comprobante" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="cuadre_caja_detalles_metodo_pago" TypeName="punto_ventaModel.cuadre_caja_detalles_metodo_pago" StoreEntitySet="cuadre_caja_detalles">
+            <EndProperty Name="cuadre_caja_detalles">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="metodo_pago">
+              <ScalarProperty Name="codigo" ColumnName="cod_metodo_pago" />
+            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="empleeado_departamento" TypeName="punto_ventaModel.empleeado_departamento" StoreEntitySet="empleado_historial_datos">
             <EndProperty Name="empleado_historial_datos">
@@ -7921,6 +7770,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <EndProperty Name="direccion">
               <ScalarProperty Name="codigo" ColumnName="cod_direccion" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="egresos_caja_concepto" TypeName="punto_ventaModel.egresos_caja_concepto" StoreEntitySet="egresos_caja">
+            <EndProperty Name="egresos_caja">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="egresos_conceptos">
+              <ScalarProperty Name="codigo" ColumnName="cod_concepto" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="empleado_concepto_nomina_empelado_modifico" TypeName="punto_ventaModel.empleado_concepto_nomina_empelado_modifico" StoreEntitySet="empleado_vs_conceptos_nomina">
@@ -8044,6 +7901,22 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <EndProperty Name="empleado">
               <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="vendedor_empleado" TypeName="punto_ventaModel.vendedor_empleado" StoreEntitySet="vendedor">
+            <EndProperty Name="vendedor">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="empleado">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="empresa_tercero" TypeName="punto_ventaModel.empresa_tercero" StoreEntitySet="empresa">
+            <EndProperty Name="empresa">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="tercero">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="inventario_reparacion_estado_reparacion" TypeName="punto_ventaModel.inventario_reparacion_estado_reparacion" StoreEntitySet="inventario_reparacion">
@@ -8197,6 +8070,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="codigo_unidad" />
             </EndProperty>
             <Condition ColumnName="codigo_unidad" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="producto_itebis" TypeName="punto_ventaModel.producto_itebis" StoreEntitySet="producto">
+            <EndProperty Name="producto">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="itebis">
+              <ScalarProperty Name="codigo" ColumnName="cod_itebis" />
+            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="mesas_detalles_mesa" TypeName="punto_ventaModel.mesas_detalles_mesa" StoreEntitySet="mesas_detalles">
             <EndProperty Name="mesas_detalles">
@@ -8470,7 +8351,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="unidad">
               <ScalarProperty Name="codigo" ColumnName="cod_unidad_minima" />
             </EndProperty>
-            <Condition ColumnName="cod_unidad_minima" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="producto_vs_detalle_producto" TypeName="punto_ventaModel.producto_vs_detalle_producto" StoreEntitySet="producto_vs_detalle">
             <EndProperty Name="producto_vs_detalle">
@@ -8738,46 +8618,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <EndProperty Name="grupo_usuarios">
               <ScalarProperty Name="codigo" ColumnName="cod_grupo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="egresos_caja_cajero" TypeName="punto_ventaModel.egresos_caja_cajero" StoreEntitySet="egresos_caja">
-            <EndProperty Name="egresos_caja">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="cajero">
-              <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="egresos_caja_concepto" TypeName="punto_ventaModel.egresos_caja_concepto" StoreEntitySet="egresos_caja">
-            <EndProperty Name="egresos_caja">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="egresos_conceptos">
-              <ScalarProperty Name="codigo" ColumnName="cod_concepto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="vendedor_empleado" TypeName="punto_ventaModel.vendedor_empleado" StoreEntitySet="vendedor">
-            <EndProperty Name="vendedor">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empresa_tercero" TypeName="punto_ventaModel.empresa_tercero" StoreEntitySet="empresa">
-            <EndProperty Name="empresa">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_itebis" TypeName="punto_ventaModel.producto_itebis" StoreEntitySet="producto">
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="itebis">
-              <ScalarProperty Name="codigo" ColumnName="cod_itebis" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

@@ -10,17 +10,18 @@
 
 [assembly: global::System.Data.Objects.DataClasses.EdmSchemaAttribute()]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "almacen_sucursal", "sucursal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.sucursal), "almacen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.almacen))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_almacen", "almacen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.almacen), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_almacen", "almacen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.almacen), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cajero_caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cajero))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_ventas_Caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "comprobante_ventas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_ventas))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cajero_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cajero))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cuadre_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "cuadre_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cuadre_caja))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "facturas_anuladas_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "facturas_anuladas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.facturas_anuladas))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "ingresos_caja_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cajero), "ingresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.ingresos_caja))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_cargo", "cargo", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cargo), "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "oferta_producto_subcate_detalle_categoria", "categoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.categoria_producto), "oferta_producto_categoria_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.oferta_producto_categoria_detalle))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_categoria", "categoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.categoria_producto), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_categoria", "categoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.categoria_producto), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "subcategoria_producto_Categoria", "categoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.categoria_producto), "subcategoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.subcategoria_producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cliente_categoria_cliente", "cliente_categoria", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cliente_categoria), "cliente", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cliente))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cliente_subcategoria_cliente", "cliente_subcategoria", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cliente_subcategoria), "cliente", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cliente))]
@@ -35,16 +36,15 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "compra_sucursal", "sucursal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.sucursal), "compra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "compra_suplidor", "suplidor", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.suplidor), "compra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "historial_devolucion_compras_compra", "compra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.compra), "historial_devolucion_compras", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.historial_devolucion_compras))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pago_anulado_compra", "compra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.compra), "compra_pago_anulados", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_pago_anulados))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pagos_detalles_factura", "compra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.compra), "pagos_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.pagos_detalles))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pago_anulado_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "compra_pago_anulados", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_pago_anulados))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pago_anulado_pago", "compra_vs_pagos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.compra_vs_pagos), "compra_pago_anulados", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_pago_anulados))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_serie1", "comprobante_serie", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.comprobante_serie), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_tipo", "tipo_comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.tipo_comprobante_fiscal), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.tipo_comprobante_fiscal), "comprobante_ventas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_ventas))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cuadre_caja_detalles_metodo_pago", "metodo_pago", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.metodo_pago), "cuadre_caja_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cuadre_caja_detalles))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleeado_departamento", "departamento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.departamento), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "direccion_sector", "sector", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.sector), "direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.direccion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_vs_direccion_direccion", "direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.direccion), "tercero_vs_direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_vs_direccion))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_concepto", "egresos_conceptos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.egresos_conceptos), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_empelado_modifico", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
@@ -57,6 +57,8 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_oferta_historial_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "producto_oferta_historial", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_oferta_historial))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "sistema_historial_empleado_modifico", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "sistema_historial", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.sistema_historial))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "sucursal_vs_empleado_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "sucursal_vs_empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.sucursal_vs_empleado))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "vendedor_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "vendedor", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.vendedor))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empresa_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "empresa", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empresa))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "inventario_reparacion_estado_reparacion", "estados_reparacion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.estados_reparacion), "inventario_reparacion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.inventario_reparacion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "factura_detalle_factura", "factura", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.factura), "factura_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.factura_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "facturas_anuladas_factura", "factura", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.factura), "facturas_anuladas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.facturas_anuladas))]
@@ -73,6 +75,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "inventario_reparacion_modelo", "modelo", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.modelo), "inventario_reparacion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.inventario_reparacion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "inventario_reparacion_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.producto), "inventario_reparacion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.inventario_reparacion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "inventario_reparacion_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.unidad), "inventario_reparacion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.inventario_reparacion))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_itebis", "itebis", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.itebis), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "mesas_detalles_mesa", "mesas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.mesas), "mesas_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.mesas_detalles))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "compra_detalle_metodo_pago", "metodo_pago", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.metodo_pago), "compra_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pagos_detalles_metodo_pago", "metodo_pago", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.metodo_pago), "pagos_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.pagos_detalles))]
@@ -99,7 +102,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_productos_requisitos_producto_titular", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_productos_requisitos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_productos_requisitos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_subcategoria", "subcategoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.subcategoria_producto), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad_conversion_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_unidad_conversion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_unidad_conversion))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad_minima", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.unidad), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad_minima", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_vs_detalle_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_vs_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_vs_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_vs_permisos_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.producto), "producto_vs_permisos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_vs_permisos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "mesas_detalles_detalle", "producto_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto_detalle), "mesas_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.mesas_detalles))]
@@ -127,14 +130,9 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_vs_cargo", "cargo", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cargo), "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto), "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.unidad))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "grupo_usuarios_permisos", "grupo_usuarios", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.grupo_usuarios), "permiso", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.permiso))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_concepto", "egresos_conceptos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.egresos_conceptos), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "vendedor_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "vendedor", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.vendedor))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empresa_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "empresa", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empresa))]
-[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_itebis", "itebis", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.itebis), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 
 // Original file name:
-// Generation date: 30/10/2016 06:01:41 p.m.
+// Generation date: 30/10/2016 06:24:39 p.m.
 namespace puntoVentaModelo.Mysql
 {
     
@@ -373,40 +371,6 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<compra> _compra;
         /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra_pago_anulados> compra_pago_anulados
-        {
-            get
-            {
-                if ((this._compra_pago_anulados == null))
-                {
-                    this._compra_pago_anulados = base.CreateQuery<compra_pago_anulados>("[compra_pago_anulados]");
-                }
-                return this._compra_pago_anulados;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra_pago_anulados> _compra_pago_anulados;
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra_vs_pagos> compra_vs_pagos
-        {
-            get
-            {
-                if ((this._compra_vs_pagos == null))
-                {
-                    this._compra_vs_pagos = base.CreateQuery<compra_vs_pagos>("[compra_vs_pagos]");
-                }
-                return this._compra_vs_pagos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra_vs_pagos> _compra_vs_pagos;
-        /// <summary>
         /// There are no comments for comprobante_fiscal in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
@@ -491,6 +455,23 @@ namespace puntoVentaModelo.Mysql
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<cuadre_caja> _cuadre_caja;
+        /// <summary>
+        /// There are no comments for cuadre_caja_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cuadre_caja_detalles> cuadre_caja_detalles
+        {
+            get
+            {
+                if ((this._cuadre_caja_detalles == null))
+                {
+                    this._cuadre_caja_detalles = base.CreateQuery<cuadre_caja_detalles>("[cuadre_caja_detalles]");
+                }
+                return this._cuadre_caja_detalles;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cuadre_caja_detalles> _cuadre_caja_detalles;
         /// <summary>
         /// There are no comments for cuenta_bancaria in the schema.
         /// </summary>
@@ -1982,22 +1963,6 @@ namespace puntoVentaModelo.Mysql
             base.AddObject("compra", compra);
         }
         /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra_pago_anulados(compra_pago_anulados compra_pago_anulados)
-        {
-            base.AddObject("compra_pago_anulados", compra_pago_anulados);
-        }
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra_vs_pagos(compra_vs_pagos compra_vs_pagos)
-        {
-            base.AddObject("compra_vs_pagos", compra_vs_pagos);
-        }
-        /// <summary>
         /// There are no comments for comprobante_fiscal in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
@@ -2036,6 +2001,14 @@ namespace puntoVentaModelo.Mysql
         public void AddTocuadre_caja(cuadre_caja cuadre_caja)
         {
             base.AddObject("cuadre_caja", cuadre_caja);
+        }
+        /// <summary>
+        /// There are no comments for cuadre_caja_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocuadre_caja_detalles(cuadre_caja_detalles cuadre_caja_detalles)
+        {
+            base.AddObject("cuadre_caja_detalles", cuadre_caja_detalles);
         }
         /// <summary>
         /// There are no comments for cuenta_bancaria in the schema.
@@ -3374,6 +3347,28 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for egresos_caja in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_cajero", "egresos_caja")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<egresos_caja> egresos_caja
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for facturas_anuladas in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "facturas_anuladas_cajero", "facturas_anuladas")]
@@ -3414,28 +3409,6 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ingresos_caja>("punto_ventaModel.ingresos_caja_cajero", "ingresos_caja", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for egresos_caja in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_cajero", "egresos_caja")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<egresos_caja> egresos_caja
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja", value);
                 }
             }
         }
@@ -5508,28 +5481,6 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_compra", "compra_pago_anulados")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<compra_pago_anulados> compra_pago_anulados
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_compra", "compra_pago_anulados");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_compra", "compra_pago_anulados", value);
-                }
-            }
-        }
-        /// <summary>
         /// There are no comments for pagos_detalles in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pagos_detalles_factura", "pagos_detalles")]
@@ -5548,660 +5499,6 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<pagos_detalles>("punto_ventaModel.pagos_detalles_factura", "pagos_detalles", value);
-                }
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for punto_ventaModel.compra_pago_anulados in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// codigo
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="compra_pago_anulados")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class compra_pago_anulados : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new compra_pago_anulados object.
-        /// </summary>
-        /// <param name="codigo">Initial value of codigo.</param>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public static compra_pago_anulados Createcompra_pago_anulados(int codigo)
-        {
-            compra_pago_anulados compra_pago_anulados = new compra_pago_anulados();
-            compra_pago_anulados.codigo = codigo;
-            return compra_pago_anulados;
-        }
-        /// <summary>
-        /// There are no comments for property codigo in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public int codigo
-        {
-            get
-            {
-                return this._codigo;
-            }
-            set
-            {
-                this.OncodigoChanging(value);
-                this.ReportPropertyChanging("codigo");
-                this._codigo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("codigo");
-                this.OncodigoChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private int _codigo;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OncodigoChanging(int value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OncodigoChanged();
-        /// <summary>
-        /// There are no comments for property detalle in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string detalle
-        {
-            get
-            {
-                return this._detalle;
-            }
-            set
-            {
-                this.OndetalleChanging(value);
-                this.ReportPropertyChanging("detalle");
-                this._detalle = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("detalle");
-                this.OndetalleChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _detalle;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OndetalleChanging(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OndetalleChanged();
-        /// <summary>
-        /// There are no comments for property fecha in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<global::System.DateTime> fecha
-        {
-            get
-            {
-                return this._fecha;
-            }
-            set
-            {
-                this.OnfechaChanging(value);
-                this.ReportPropertyChanging("fecha");
-                this._fecha = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("fecha");
-                this.OnfechaChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<global::System.DateTime> _fecha;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnfechaChanging(global::System.Nullable<global::System.DateTime> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnfechaChanged();
-        /// <summary>
-        /// There are no comments for compra in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_compra", "compra")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public compra compra
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra>("punto_ventaModel.pago_anulado_compra", "compra").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra>("punto_ventaModel.pago_anulado_compra", "compra").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for compra in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<compra> compraReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra>("punto_ventaModel.pago_anulado_compra", "compra");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<compra>("punto_ventaModel.pago_anulado_compra", "compra", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for empleado in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_empleado", "empleado")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public empleado empleado
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.pago_anulado_empleado", "empleado").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.pago_anulado_empleado", "empleado").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for empleado in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<empleado> empleadoReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.pago_anulado_empleado", "empleado");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empleado>("punto_ventaModel.pago_anulado_empleado", "empleado", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_pago", "compra_vs_pagos")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public compra_vs_pagos compra_vs_pagos
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra_vs_pagos>("punto_ventaModel.pago_anulado_pago", "compra_vs_pagos").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra_vs_pagos>("punto_ventaModel.pago_anulado_pago", "compra_vs_pagos").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<compra_vs_pagos> compra_vs_pagosReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<compra_vs_pagos>("punto_ventaModel.pago_anulado_pago", "compra_vs_pagos");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<compra_vs_pagos>("punto_ventaModel.pago_anulado_pago", "compra_vs_pagos", value);
-                }
-            }
-        }
-    }
-    /// <summary>
-    /// There are no comments for punto_ventaModel.compra_vs_pagos in the schema.
-    /// </summary>
-    /// <KeyProperties>
-    /// codigo
-    /// </KeyProperties>
-    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="compra_vs_pagos")]
-    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
-    [global::System.Serializable()]
-    public partial class compra_vs_pagos : global::System.Data.Objects.DataClasses.EntityObject
-    {
-        /// <summary>
-        /// Create a new compra_vs_pagos object.
-        /// </summary>
-        /// <param name="codigo">Initial value of codigo.</param>
-        /// <param name="cod_compra">Initial value of cod_compra.</param>
-        /// <param name="monto">Initial value of monto.</param>
-        /// <param name="tRIAL_COLUMN9">Initial value of TRIAL_COLUMN9.</param>
-        /// <param name="tRIAL_COLUMN10">Initial value of TRIAL_COLUMN10.</param>
-        /// <param name="tRIAL_COLUMN11">Initial value of TRIAL_COLUMN11.</param>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public static compra_vs_pagos Createcompra_vs_pagos(int codigo, int cod_compra, float monto, global::System.DateTime tRIAL_COLUMN9, byte tRIAL_COLUMN10, int tRIAL_COLUMN11)
-        {
-            compra_vs_pagos compra_vs_pagos = new compra_vs_pagos();
-            compra_vs_pagos.codigo = codigo;
-            compra_vs_pagos.cod_compra = cod_compra;
-            compra_vs_pagos.monto = monto;
-            compra_vs_pagos.TRIAL_COLUMN9 = tRIAL_COLUMN9;
-            compra_vs_pagos.TRIAL_COLUMN10 = tRIAL_COLUMN10;
-            compra_vs_pagos.TRIAL_COLUMN11 = tRIAL_COLUMN11;
-            return compra_vs_pagos;
-        }
-        /// <summary>
-        /// There are no comments for property codigo in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public int codigo
-        {
-            get
-            {
-                return this._codigo;
-            }
-            set
-            {
-                this.OncodigoChanging(value);
-                this.ReportPropertyChanging("codigo");
-                this._codigo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("codigo");
-                this.OncodigoChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private int _codigo;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OncodigoChanging(int value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OncodigoChanged();
-        /// <summary>
-        /// There are no comments for property cod_compra in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public int cod_compra
-        {
-            get
-            {
-                return this._cod_compra;
-            }
-            set
-            {
-                this.Oncod_compraChanging(value);
-                this.ReportPropertyChanging("cod_compra");
-                this._cod_compra = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_compra");
-                this.Oncod_compraChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private int _cod_compra;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_compraChanging(int value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_compraChanged();
-        /// <summary>
-        /// There are no comments for property monto in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public float monto
-        {
-            get
-            {
-                return this._monto;
-            }
-            set
-            {
-                this.OnmontoChanging(value);
-                this.ReportPropertyChanging("monto");
-                this._monto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("monto");
-                this.OnmontoChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private float _monto;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnmontoChanging(float value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnmontoChanged();
-        /// <summary>
-        /// There are no comments for property devuelta in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> devuelta
-        {
-            get
-            {
-                return this._devuelta;
-            }
-            set
-            {
-                this.OndevueltaChanging(value);
-                this.ReportPropertyChanging("devuelta");
-                this._devuelta = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("devuelta");
-                this.OndevueltaChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _devuelta;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OndevueltaChanging(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OndevueltaChanged();
-        /// <summary>
-        /// There are no comments for property tarjeta in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> tarjeta
-        {
-            get
-            {
-                return this._tarjeta;
-            }
-            set
-            {
-                this.OntarjetaChanging(value);
-                this.ReportPropertyChanging("tarjeta");
-                this._tarjeta = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("tarjeta");
-                this.OntarjetaChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _tarjeta;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OntarjetaChanging(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OntarjetaChanged();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN6 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN6
-        {
-            get
-            {
-                return this._TRIAL_COLUMN6;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN6Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN6");
-                this._TRIAL_COLUMN6 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN6");
-                this.OnTRIAL_COLUMN6Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN6;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN6Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN6Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN7 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN7
-        {
-            get
-            {
-                return this._TRIAL_COLUMN7;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN7Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN7");
-                this._TRIAL_COLUMN7 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN7");
-                this.OnTRIAL_COLUMN7Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN7;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN7Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN7Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN8 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN8
-        {
-            get
-            {
-                return this._TRIAL_COLUMN8;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN8Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN8");
-                this._TRIAL_COLUMN8 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN8");
-                this.OnTRIAL_COLUMN8Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN8;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN8Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN8Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN9 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.DateTime TRIAL_COLUMN9
-        {
-            get
-            {
-                return this._TRIAL_COLUMN9;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN9Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN9");
-                this._TRIAL_COLUMN9 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN9");
-                this.OnTRIAL_COLUMN9Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.DateTime _TRIAL_COLUMN9;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN9Changing(global::System.DateTime value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN9Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN10 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public byte TRIAL_COLUMN10
-        {
-            get
-            {
-                return this._TRIAL_COLUMN10;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN10Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN10");
-                this._TRIAL_COLUMN10 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN10");
-                this.OnTRIAL_COLUMN10Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private byte _TRIAL_COLUMN10;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN10Changing(byte value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN10Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN11 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public int TRIAL_COLUMN11
-        {
-            get
-            {
-                return this._TRIAL_COLUMN11;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN11Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN11");
-                this._TRIAL_COLUMN11 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN11");
-                this.OnTRIAL_COLUMN11Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private int _TRIAL_COLUMN11;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN11Changing(int value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN11Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN12 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string TRIAL_COLUMN12
-        {
-            get
-            {
-                return this._TRIAL_COLUMN12;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN12Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN12");
-                this._TRIAL_COLUMN12 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("TRIAL_COLUMN12");
-                this.OnTRIAL_COLUMN12Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _TRIAL_COLUMN12;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN12Changing(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN12Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN13 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> TRIAL_COLUMN13
-        {
-            get
-            {
-                return this._TRIAL_COLUMN13;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN13Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN13");
-                this._TRIAL_COLUMN13 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN13");
-                this.OnTRIAL_COLUMN13Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _TRIAL_COLUMN13;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN13Changing(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN13Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN14 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string TRIAL_COLUMN14
-        {
-            get
-            {
-                return this._TRIAL_COLUMN14;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN14Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN14");
-                this._TRIAL_COLUMN14 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("TRIAL_COLUMN14");
-                this.OnTRIAL_COLUMN14Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _TRIAL_COLUMN14;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN14Changing(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN14Changed();
-        /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_pago", "compra_pago_anulados")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<compra_pago_anulados> compra_pago_anulados
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_pago", "compra_pago_anulados");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_pago", "compra_pago_anulados", value);
                 }
             }
         }
@@ -7032,14 +6329,20 @@ namespace puntoVentaModelo.Mysql
         /// <param name="cod_cajero">Initial value of cod_cajero.</param>
         /// <param name="fecha">Initial value of fecha.</param>
         /// <param name="turno">Initial value of turno.</param>
+        /// <param name="abierta_cerrada">Initial value of abierta_cerrada.</param>
+        /// <param name="estado">Initial value of estado.</param>
+        /// <param name="fecha_sistema">Initial value of fecha_sistema.</param>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public static cuadre_caja Createcuadre_caja(int codigo, int cod_cajero, global::System.DateTime fecha, int turno)
+        public static cuadre_caja Createcuadre_caja(int codigo, int cod_cajero, global::System.DateTime fecha, int turno, string abierta_cerrada, sbyte estado, global::System.DateTime fecha_sistema)
         {
             cuadre_caja cuadre_caja = new cuadre_caja();
             cuadre_caja.codigo = codigo;
             cuadre_caja.cod_cajero = cod_cajero;
             cuadre_caja.fecha = fecha;
             cuadre_caja.turno = turno;
+            cuadre_caja.abierta_cerrada = abierta_cerrada;
+            cuadre_caja.estado = estado;
+            cuadre_caja.fecha_sistema = fecha_sistema;
             return cuadre_caja;
         }
         /// <summary>
@@ -7151,302 +6454,113 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnturnoChanged();
         /// <summary>
-        /// There are no comments for property efectivo in the schema.
+        /// There are no comments for property abierta_cerrada in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> efectivo
+        public string abierta_cerrada
         {
             get
             {
-                return this._efectivo;
+                return this._abierta_cerrada;
             }
             set
             {
-                this.OnefectivoChanging(value);
-                this.ReportPropertyChanging("efectivo");
-                this._efectivo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("efectivo");
-                this.OnefectivoChanged();
+                this.Onabierta_cerradaChanging(value);
+                this.ReportPropertyChanging("abierta_cerrada");
+                this._abierta_cerrada = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("abierta_cerrada");
+                this.Onabierta_cerradaChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _efectivo;
+        private string _abierta_cerrada;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnefectivoChanging(global::System.Nullable<float> value);
+        partial void Onabierta_cerradaChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnefectivoChanged();
+        partial void Onabierta_cerradaChanged();
         /// <summary>
-        /// There are no comments for property TRIAL_COLUMN6 in the schema.
+        /// There are no comments for property estado in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN6
+        public sbyte estado
         {
             get
             {
-                return this._TRIAL_COLUMN6;
+                return this._estado;
             }
             set
             {
-                this.OnTRIAL_COLUMN6Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN6");
-                this._TRIAL_COLUMN6 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN6");
-                this.OnTRIAL_COLUMN6Changed();
+                this.OnestadoChanging(value);
+                this.ReportPropertyChanging("estado");
+                this._estado = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("estado");
+                this.OnestadoChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN6;
+        private sbyte _estado;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN6Changing(global::System.Nullable<float> value);
+        partial void OnestadoChanging(sbyte value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN6Changed();
+        partial void OnestadoChanged();
         /// <summary>
-        /// There are no comments for property TRIAL_COLUMN7 in the schema.
+        /// There are no comments for property fecha_sistema in the schema.
         /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN7
+        public global::System.DateTime fecha_sistema
         {
             get
             {
-                return this._TRIAL_COLUMN7;
+                return this._fecha_sistema;
             }
             set
             {
-                this.OnTRIAL_COLUMN7Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN7");
-                this._TRIAL_COLUMN7 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN7");
-                this.OnTRIAL_COLUMN7Changed();
+                this.Onfecha_sistemaChanging(value);
+                this.ReportPropertyChanging("fecha_sistema");
+                this._fecha_sistema = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("fecha_sistema");
+                this.Onfecha_sistemaChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN7;
+        private global::System.DateTime _fecha_sistema;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN7Changing(global::System.Nullable<float> value);
+        partial void Onfecha_sistemaChanging(global::System.DateTime value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN7Changed();
+        partial void Onfecha_sistemaChanged();
         /// <summary>
-        /// There are no comments for property TRIAL_COLUMN8 in the schema.
+        /// There are no comments for property cuadre_cajacol in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
         [global::System.Runtime.Serialization.DataMemberAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN8
+        public string cuadre_cajacol
         {
             get
             {
-                return this._TRIAL_COLUMN8;
+                return this._cuadre_cajacol;
             }
             set
             {
-                this.OnTRIAL_COLUMN8Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN8");
-                this._TRIAL_COLUMN8 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN8");
-                this.OnTRIAL_COLUMN8Changed();
+                this.Oncuadre_cajacolChanging(value);
+                this.ReportPropertyChanging("cuadre_cajacol");
+                this._cuadre_cajacol = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("cuadre_cajacol");
+                this.Oncuadre_cajacolChanged();
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN8;
+        private string _cuadre_cajacol;
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN8Changing(global::System.Nullable<float> value);
+        partial void Oncuadre_cajacolChanging(string value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN8Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN9 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN9
-        {
-            get
-            {
-                return this._TRIAL_COLUMN9;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN9Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN9");
-                this._TRIAL_COLUMN9 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN9");
-                this.OnTRIAL_COLUMN9Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN9;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN9Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN9Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN10 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN10
-        {
-            get
-            {
-                return this._TRIAL_COLUMN10;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN10Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN10");
-                this._TRIAL_COLUMN10 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN10");
-                this.OnTRIAL_COLUMN10Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN10;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN10Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN10Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN11 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public string TRIAL_COLUMN11
-        {
-            get
-            {
-                return this._TRIAL_COLUMN11;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN11Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN11");
-                this._TRIAL_COLUMN11 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
-                this.ReportPropertyChanged("TRIAL_COLUMN11");
-                this.OnTRIAL_COLUMN11Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private string _TRIAL_COLUMN11;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN11Changing(string value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN11Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN12 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> TRIAL_COLUMN12
-        {
-            get
-            {
-                return this._TRIAL_COLUMN12;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN12Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN12");
-                this._TRIAL_COLUMN12 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN12");
-                this.OnTRIAL_COLUMN12Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _TRIAL_COLUMN12;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN12Changing(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN12Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN13 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN13
-        {
-            get
-            {
-                return this._TRIAL_COLUMN13;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN13Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN13");
-                this._TRIAL_COLUMN13 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN13");
-                this.OnTRIAL_COLUMN13Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN13;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN13Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN13Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN14 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN14
-        {
-            get
-            {
-                return this._TRIAL_COLUMN14;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN14Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN14");
-                this._TRIAL_COLUMN14 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN14");
-                this.OnTRIAL_COLUMN14Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN14;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN14Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN14Changed();
-        /// <summary>
-        /// There are no comments for property TRIAL_COLUMN15 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<float> TRIAL_COLUMN15
-        {
-            get
-            {
-                return this._TRIAL_COLUMN15;
-            }
-            set
-            {
-                this.OnTRIAL_COLUMN15Changing(value);
-                this.ReportPropertyChanging("TRIAL_COLUMN15");
-                this._TRIAL_COLUMN15 = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("TRIAL_COLUMN15");
-                this.OnTRIAL_COLUMN15Changed();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<float> _TRIAL_COLUMN15;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN15Changing(global::System.Nullable<float> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void OnTRIAL_COLUMN15Changed();
+        partial void Oncuadre_cajacolChanged();
         /// <summary>
         /// There are no comments for cajero in the schema.
         /// </summary>
@@ -7483,6 +6597,153 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<cajero>("punto_ventaModel.cuadre_cajero", "cajero", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for punto_ventaModel.cuadre_caja_detalles in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// codigo
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="cuadre_caja_detalles")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class cuadre_caja_detalles : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new cuadre_caja_detalles object.
+        /// </summary>
+        /// <param name="codigo">Initial value of codigo.</param>
+        /// <param name="cod_cuadre">Initial value of cod_cuadre.</param>
+        /// <param name="monto">Initial value of monto.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static cuadre_caja_detalles Createcuadre_caja_detalles(int codigo, int cod_cuadre, decimal monto)
+        {
+            cuadre_caja_detalles cuadre_caja_detalles = new cuadre_caja_detalles();
+            cuadre_caja_detalles.codigo = codigo;
+            cuadre_caja_detalles.cod_cuadre = cod_cuadre;
+            cuadre_caja_detalles.monto = monto;
+            return cuadre_caja_detalles;
+        }
+        /// <summary>
+        /// There are no comments for property codigo in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int codigo
+        {
+            get
+            {
+                return this._codigo;
+            }
+            set
+            {
+                this.OncodigoChanging(value);
+                this.ReportPropertyChanging("codigo");
+                this._codigo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("codigo");
+                this.OncodigoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _codigo;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncodigoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncodigoChanged();
+        /// <summary>
+        /// There are no comments for property cod_cuadre in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_cuadre
+        {
+            get
+            {
+                return this._cod_cuadre;
+            }
+            set
+            {
+                this.Oncod_cuadreChanging(value);
+                this.ReportPropertyChanging("cod_cuadre");
+                this._cod_cuadre = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_cuadre");
+                this.Oncod_cuadreChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_cuadre;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_cuadreChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_cuadreChanged();
+        /// <summary>
+        /// There are no comments for property monto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public decimal monto
+        {
+            get
+            {
+                return this._monto;
+            }
+            set
+            {
+                this.OnmontoChanging(value);
+                this.ReportPropertyChanging("monto");
+                this._monto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("monto");
+                this.OnmontoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private decimal _monto;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnmontoChanging(decimal value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnmontoChanged();
+        /// <summary>
+        /// There are no comments for metodo_pago in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "cuadre_caja_detalles_metodo_pago", "metodo_pago")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public metodo_pago metodo_pago
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<metodo_pago>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "metodo_pago").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<metodo_pago>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "metodo_pago").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for metodo_pago in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<metodo_pago> metodo_pagoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<metodo_pago>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "metodo_pago");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<metodo_pago>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "metodo_pago", value);
                 }
             }
         }
@@ -8079,33 +7340,6 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OncodigoChanged();
         /// <summary>
-        /// There are no comments for property cod_concepto in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> cod_concepto
-        {
-            get
-            {
-                return this._cod_concepto;
-            }
-            set
-            {
-                this.Oncod_conceptoChanging(value);
-                this.ReportPropertyChanging("cod_concepto");
-                this._cod_concepto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_concepto");
-                this.Oncod_conceptoChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _cod_concepto;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_conceptoChanging(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_conceptoChanged();
-        /// <summary>
         /// There are no comments for property fecha in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -8132,33 +7366,6 @@ namespace puntoVentaModelo.Mysql
         partial void OnfechaChanging(global::System.Nullable<global::System.DateTime> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnfechaChanged();
-        /// <summary>
-        /// There are no comments for property cod_cajero in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> cod_cajero
-        {
-            get
-            {
-                return this._cod_cajero;
-            }
-            set
-            {
-                this.Oncod_cajeroChanging(value);
-                this.ReportPropertyChanging("cod_cajero");
-                this._cod_cajero = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_cajero");
-                this.Oncod_cajeroChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _cod_cajero;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_cajeroChanging(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_cajeroChanged();
         /// <summary>
         /// There are no comments for property monto in the schema.
         /// </summary>
@@ -9001,28 +8208,6 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "pago_anulado_empleado", "compra_pago_anulados")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<compra_pago_anulados> compra_pago_anulados
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_empleado", "compra_pago_anulados");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<compra_pago_anulados>("punto_ventaModel.pago_anulado_empleado", "compra_pago_anulados", value);
-                }
-            }
-        }
-        /// <summary>
         /// There are no comments for empleado_vs_conceptos_nomina in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_empelado_modifico", "empleado_vs_conceptos_nomina")]
@@ -9287,28 +8472,6 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
-        /// There are no comments for cargo1 in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_vs_cargo", "cargo")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityCollection<cargo> cargo1
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<cargo>("punto_ventaModel.empleado_vs_cargo", "cargo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<cargo>("punto_ventaModel.empleado_vs_cargo", "cargo", value);
-                }
-            }
-        }
-        /// <summary>
         /// There are no comments for vendedor in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "vendedor_empleado", "vendedor")]
@@ -9344,6 +8507,28 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<vendedor>("punto_ventaModel.vendedor_empleado", "vendedor", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for cargo1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_vs_cargo", "cargo")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<cargo> cargo1
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<cargo>("punto_ventaModel.empleado_vs_cargo", "cargo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<cargo>("punto_ventaModel.empleado_vs_cargo", "cargo", value);
                 }
             }
         }
@@ -13348,6 +12533,28 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for cuadre_caja_detalles in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "cuadre_caja_detalles_metodo_pago", "cuadre_caja_detalles")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<cuadre_caja_detalles> cuadre_caja_detalles
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<cuadre_caja_detalles>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "cuadre_caja_detalles");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<cuadre_caja_detalles>("punto_ventaModel.cuadre_caja_detalles_metodo_pago", "cuadre_caja_detalles", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for compra_detalle in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "compra_detalle_metodo_pago", "compra_detalle")]
@@ -15737,33 +14944,6 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void Onpunto_maximoChanged();
         /// <summary>
-        /// There are no comments for property cod_itebis in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> cod_itebis
-        {
-            get
-            {
-                return this._cod_itebis;
-            }
-            set
-            {
-                this.Oncod_itebisChanging(value);
-                this.ReportPropertyChanging("cod_itebis");
-                this._cod_itebis = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_itebis");
-                this.Oncod_itebisChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _cod_itebis;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_itebisChanging(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_itebisChanged();
-        /// <summary>
         /// There are no comments for property imagen in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -15953,6 +15133,45 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<inventario_reparacion>("punto_ventaModel.inventario_reparacion_producto", "inventario_reparacion", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_itebis", "itebis")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public itebis itebis
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<itebis> itebisReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis", value);
                 }
             }
         }
@@ -16273,45 +15492,6 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<unidad>("punto_ventaModel.producto_unidad", "unidad", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for itebis in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_itebis", "itebis")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public itebis itebis
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for itebis in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<itebis> itebisReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis", value);
                 }
             }
         }
@@ -20559,6 +19739,45 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
         /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empresa_tercero", "empresa")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public empresa empresa
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<empresa> empresaReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for identificacion1 in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "identificacion_tercero", "identificacion")]
@@ -20743,45 +19962,6 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<tercero_vs_telefono>("punto_ventaModel.tercero_vs_telefono_tercero", "tercero_vs_telefono", value);
-                }
-            }
-        }
-        /// <summary>
-        /// There are no comments for empresa in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empresa_tercero", "empresa")]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
-        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public empresa empresa
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value;
-            }
-            set
-            {
-                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value = value;
-            }
-        }
-        /// <summary>
-        /// There are no comments for empresa in the schema.
-        /// </summary>
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        public global::System.Data.Objects.DataClasses.EntityReference<empresa> empresaReference
-        {
-            get
-            {
-                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa", value);
                 }
             }
         }
