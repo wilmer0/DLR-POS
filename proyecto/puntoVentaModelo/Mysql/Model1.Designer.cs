@@ -13,6 +13,7 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_almacen", "almacen", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.almacen), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cajero_caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cajero))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_ventas_Caja", "caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.caja), "comprobante_ventas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_ventas))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cajero_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.cajero))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "cuadre_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "cuadre_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cuadre_caja))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "facturas_anuladas_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "facturas_anuladas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.facturas_anuladas))]
@@ -40,7 +41,12 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pago_anulado_pago", "compra_vs_pagos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.compra_vs_pagos), "compra_pago_anulados", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_pago_anulados))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_serie1", "comprobante_serie", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.comprobante_serie), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_tipo", "tipo_comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.tipo_comprobante_fiscal), "comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_fiscal))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.tipo_comprobante_fiscal), "comprobante_ventas", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.comprobante_ventas))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleeado_departamento", "departamento", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.departamento), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "direccion_sector", "sector", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.sector), "direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.direccion))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_vs_direccion_direccion", "direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.direccion), "tercero_vs_direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_vs_direccion))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_empelado_modifico", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_empleado_cambio", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "historial_devolucion_compras_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empleado), "historial_devolucion_compras", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.historial_devolucion_compras))]
@@ -72,9 +78,11 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pagos_detalles_metodo_pago", "metodo_pago", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.metodo_pago), "pagos_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.pagos_detalles))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "moneda_historial_moneda", "moneda", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.moneda), "moneda_historial", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.moneda_historial))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "sistema_historial_moneda_defecto", "moneda", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.moneda), "sistema_historial", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.sistema_historial))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_nomina", "nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.nomina), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "nomina_detalle_nomina", "nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.nomina), "nomina_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.nomina_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "nomina_sucursal", "sucursal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.sucursal), "nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "nomina_tipo_nomina", "nomina_tipos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.nomina_tipos), "nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.nomina))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_concepto_nomina_concepto", "nomina_conceptos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.nomina_conceptos), "empleado_vs_conceptos_nomina", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_vs_conceptos_nomina))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "nomina_detalle_concepto", "nomina_conceptos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.nomina_conceptos), "nomina_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.nomina_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_tipo_nomina", "nomina_tipos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.nomina_tipos), "empleado_historial_datos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado_historial_datos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "pagos_detalles_pago", "pagos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.pagos), "pagos_detalles", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.pagos_detalles))]
@@ -84,7 +92,11 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "persona_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "persona", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.persona))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "compra_detalle_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "compra_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "factura_detalle_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "factura_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.factura_detalle))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "historial_inventario_agotado_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "historial_inventario_agotado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.historial_inventario_agotado))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "oferta_producto_detalle_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "oferta_producto_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.oferta_producto_detalle))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_codigobarra_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_codigobarra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_codigobarra))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_productos_requisitos_producto_requisito", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_productos_requisitos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_productos_requisitos))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_productos_requisitos_producto_titular", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_productos_requisitos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_productos_requisitos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_subcategoria", "subcategoria_producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.subcategoria_producto), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad_conversion_producto", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.producto), "producto_unidad_conversion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_unidad_conversion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad_minima", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.unidad), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
@@ -104,19 +116,2584 @@
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "sucursal_vs_empleado_sucursal", "sucursal", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.sucursal), "sucursal_vs_empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.sucursal_vs_empleado))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "suplidor_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "suplidor", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.suplidor))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_observaciones_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.tercero), "tercero_observaciones", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_observaciones))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_vs_direccion_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "tercero_vs_direccion", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_vs_direccion))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_vs_permiso_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "tercero_vs_permiso", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_vs_permiso))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "tercero_vs_telefono_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "tercero_vs_telefono", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.tercero_vs_telefono))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "compra_detalle_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "compra_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.compra_detalle))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "factura_detalle_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "factura_detalle", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.factura_detalle))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "historial_inventario_agotado_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "historial_inventario_agotado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.historial_inventario_agotado))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_codigobarra_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "producto_codigobarra", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_codigobarra))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_productos_requisitos_unidad", "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.unidad), "producto_productos_requisitos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto_productos_requisitos))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empleado_vs_cargo", "cargo", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.cargo), "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.empleado))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_unidad", "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto), "unidad", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.unidad))]
 [assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "grupo_usuarios_permisos", "grupo_usuarios", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.grupo_usuarios), "permiso", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.permiso))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_cajero", "cajero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.cajero), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "egresos_caja_concepto", "egresos_conceptos", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.egresos_conceptos), "egresos_caja", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.egresos_caja))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "vendedor_empleado", "empleado", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.empleado), "vendedor", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.vendedor))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "empresa_tercero", "tercero", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.tercero), "empresa", global::System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(puntoVentaModelo.Mysql.empresa))]
+[assembly: global::System.Data.Objects.DataClasses.EdmRelationshipAttribute("punto_ventaModel", "producto_itebis", "itebis", global::System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(puntoVentaModelo.Mysql.itebis), "producto", global::System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(puntoVentaModelo.Mysql.producto))]
 
 // Original file name:
-// Generation date: 30/10/2016 05:22:55 p.m.
+// Generation date: 30/10/2016 06:01:41 p.m.
 namespace puntoVentaModelo.Mysql
 {
     
+    /// <summary>
+    /// There are no comments for puntoVentaEntities in the schema.
+    /// </summary>
+    public partial class puntoVentaEntities : global::System.Data.Objects.ObjectContext
+    {
+        /// <summary>
+        /// Initializes a new puntoVentaEntities object using the connection string found in the 'puntoVentaEntities' section of the application configuration file.
+        /// </summary>
+        public puntoVentaEntities() : 
+                base("name=puntoVentaEntities", "puntoVentaEntities")
+        {
+            this.OnContextCreated();
+        }
+        /// <summary>
+        /// Initialize a new puntoVentaEntities object.
+        /// </summary>
+        public puntoVentaEntities(string connectionString) : 
+                base(connectionString, "puntoVentaEntities")
+        {
+            this.OnContextCreated();
+        }
+        /// <summary>
+        /// Initialize a new puntoVentaEntities object.
+        /// </summary>
+        public puntoVentaEntities(global::System.Data.EntityClient.EntityConnection connection) : 
+                base(connection, "puntoVentaEntities")
+        {
+            this.OnContextCreated();
+        }
+        partial void OnContextCreated();
+        /// <summary>
+        /// There are no comments for almacen in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<almacen> almacen
+        {
+            get
+            {
+                if ((this._almacen == null))
+                {
+                    this._almacen = base.CreateQuery<almacen>("[almacen]");
+                }
+                return this._almacen;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<almacen> _almacen;
+        /// <summary>
+        /// There are no comments for banco in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<banco> banco
+        {
+            get
+            {
+                if ((this._banco == null))
+                {
+                    this._banco = base.CreateQuery<banco>("[banco]");
+                }
+                return this._banco;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<banco> _banco;
+        /// <summary>
+        /// There are no comments for caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<caja> caja
+        {
+            get
+            {
+                if ((this._caja == null))
+                {
+                    this._caja = base.CreateQuery<caja>("[caja]");
+                }
+                return this._caja;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<caja> _caja;
+        /// <summary>
+        /// There are no comments for cajero in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cajero> cajero
+        {
+            get
+            {
+                if ((this._cajero == null))
+                {
+                    this._cajero = base.CreateQuery<cajero>("[cajero]");
+                }
+                return this._cajero;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cajero> _cajero;
+        /// <summary>
+        /// There are no comments for cargo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cargo> cargo
+        {
+            get
+            {
+                if ((this._cargo == null))
+                {
+                    this._cargo = base.CreateQuery<cargo>("[cargo]");
+                }
+                return this._cargo;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cargo> _cargo;
+        /// <summary>
+        /// There are no comments for categoria_producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<categoria_producto> categoria_producto
+        {
+            get
+            {
+                if ((this._categoria_producto == null))
+                {
+                    this._categoria_producto = base.CreateQuery<categoria_producto>("[categoria_producto]");
+                }
+                return this._categoria_producto;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<categoria_producto> _categoria_producto;
+        /// <summary>
+        /// There are no comments for cliente in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cliente> cliente
+        {
+            get
+            {
+                if ((this._cliente == null))
+                {
+                    this._cliente = base.CreateQuery<cliente>("[cliente]");
+                }
+                return this._cliente;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cliente> _cliente;
+        /// <summary>
+        /// There are no comments for cliente_categoria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cliente_categoria> cliente_categoria
+        {
+            get
+            {
+                if ((this._cliente_categoria == null))
+                {
+                    this._cliente_categoria = base.CreateQuery<cliente_categoria>("[cliente_categoria]");
+                }
+                return this._cliente_categoria;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cliente_categoria> _cliente_categoria;
+        /// <summary>
+        /// There are no comments for cliente_subcategoria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cliente_subcategoria> cliente_subcategoria
+        {
+            get
+            {
+                if ((this._cliente_subcategoria == null))
+                {
+                    this._cliente_subcategoria = base.CreateQuery<cliente_subcategoria>("[cliente_subcategoria]");
+                }
+                return this._cliente_subcategoria;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cliente_subcategoria> _cliente_subcategoria;
+        /// <summary>
+        /// There are no comments for cobros in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cobros> cobros
+        {
+            get
+            {
+                if ((this._cobros == null))
+                {
+                    this._cobros = base.CreateQuery<cobros>("[cobros]");
+                }
+                return this._cobros;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cobros> _cobros;
+        /// <summary>
+        /// There are no comments for cobros_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cobros_detalles> cobros_detalles
+        {
+            get
+            {
+                if ((this._cobros_detalles == null))
+                {
+                    this._cobros_detalles = base.CreateQuery<cobros_detalles>("[cobros_detalles]");
+                }
+                return this._cobros_detalles;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cobros_detalles> _cobros_detalles;
+        /// <summary>
+        /// There are no comments for compra in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<compra> compra
+        {
+            get
+            {
+                if ((this._compra == null))
+                {
+                    this._compra = base.CreateQuery<compra>("[compra]");
+                }
+                return this._compra;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<compra> _compra;
+        /// <summary>
+        /// There are no comments for compra_pago_anulados in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<compra_pago_anulados> compra_pago_anulados
+        {
+            get
+            {
+                if ((this._compra_pago_anulados == null))
+                {
+                    this._compra_pago_anulados = base.CreateQuery<compra_pago_anulados>("[compra_pago_anulados]");
+                }
+                return this._compra_pago_anulados;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<compra_pago_anulados> _compra_pago_anulados;
+        /// <summary>
+        /// There are no comments for compra_vs_pagos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<compra_vs_pagos> compra_vs_pagos
+        {
+            get
+            {
+                if ((this._compra_vs_pagos == null))
+                {
+                    this._compra_vs_pagos = base.CreateQuery<compra_vs_pagos>("[compra_vs_pagos]");
+                }
+                return this._compra_vs_pagos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<compra_vs_pagos> _compra_vs_pagos;
+        /// <summary>
+        /// There are no comments for comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<comprobante_fiscal> comprobante_fiscal
+        {
+            get
+            {
+                if ((this._comprobante_fiscal == null))
+                {
+                    this._comprobante_fiscal = base.CreateQuery<comprobante_fiscal>("[comprobante_fiscal]");
+                }
+                return this._comprobante_fiscal;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<comprobante_fiscal> _comprobante_fiscal;
+        /// <summary>
+        /// There are no comments for comprobante_serie in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<comprobante_serie> comprobante_serie
+        {
+            get
+            {
+                if ((this._comprobante_serie == null))
+                {
+                    this._comprobante_serie = base.CreateQuery<comprobante_serie>("[comprobante_serie]");
+                }
+                return this._comprobante_serie;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<comprobante_serie> _comprobante_serie;
+        /// <summary>
+        /// There are no comments for comprobante_ventas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<comprobante_ventas> comprobante_ventas
+        {
+            get
+            {
+                if ((this._comprobante_ventas == null))
+                {
+                    this._comprobante_ventas = base.CreateQuery<comprobante_ventas>("[comprobante_ventas]");
+                }
+                return this._comprobante_ventas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<comprobante_ventas> _comprobante_ventas;
+        /// <summary>
+        /// There are no comments for correo_electronicos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<correo_electronicos> correo_electronicos
+        {
+            get
+            {
+                if ((this._correo_electronicos == null))
+                {
+                    this._correo_electronicos = base.CreateQuery<correo_electronicos>("[correo_electronicos]");
+                }
+                return this._correo_electronicos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<correo_electronicos> _correo_electronicos;
+        /// <summary>
+        /// There are no comments for cuadre_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cuadre_caja> cuadre_caja
+        {
+            get
+            {
+                if ((this._cuadre_caja == null))
+                {
+                    this._cuadre_caja = base.CreateQuery<cuadre_caja>("[cuadre_caja]");
+                }
+                return this._cuadre_caja;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cuadre_caja> _cuadre_caja;
+        /// <summary>
+        /// There are no comments for cuenta_bancaria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<cuenta_bancaria> cuenta_bancaria
+        {
+            get
+            {
+                if ((this._cuenta_bancaria == null))
+                {
+                    this._cuenta_bancaria = base.CreateQuery<cuenta_bancaria>("[cuenta_bancaria]");
+                }
+                return this._cuenta_bancaria;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<cuenta_bancaria> _cuenta_bancaria;
+        /// <summary>
+        /// There are no comments for departamento in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<departamento> departamento
+        {
+            get
+            {
+                if ((this._departamento == null))
+                {
+                    this._departamento = base.CreateQuery<departamento>("[departamento]");
+                }
+                return this._departamento;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<departamento> _departamento;
+        /// <summary>
+        /// There are no comments for direccion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<direccion> direccion
+        {
+            get
+            {
+                if ((this._direccion == null))
+                {
+                    this._direccion = base.CreateQuery<direccion>("[direccion]");
+                }
+                return this._direccion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<direccion> _direccion;
+        /// <summary>
+        /// There are no comments for egresos_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<egresos_caja> egresos_caja
+        {
+            get
+            {
+                if ((this._egresos_caja == null))
+                {
+                    this._egresos_caja = base.CreateQuery<egresos_caja>("[egresos_caja]");
+                }
+                return this._egresos_caja;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<egresos_caja> _egresos_caja;
+        /// <summary>
+        /// There are no comments for egresos_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<egresos_conceptos> egresos_conceptos
+        {
+            get
+            {
+                if ((this._egresos_conceptos == null))
+                {
+                    this._egresos_conceptos = base.CreateQuery<egresos_conceptos>("[egresos_conceptos]");
+                }
+                return this._egresos_conceptos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<egresos_conceptos> _egresos_conceptos;
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<empleado> empleado
+        {
+            get
+            {
+                if ((this._empleado == null))
+                {
+                    this._empleado = base.CreateQuery<empleado>("[empleado]");
+                }
+                return this._empleado;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<empleado> _empleado;
+        /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<empresa> empresa
+        {
+            get
+            {
+                if ((this._empresa == null))
+                {
+                    this._empresa = base.CreateQuery<empresa>("[empresa]");
+                }
+                return this._empresa;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<empresa> _empresa;
+        /// <summary>
+        /// There are no comments for entrada_salida_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<entrada_salida_inventario> entrada_salida_inventario
+        {
+            get
+            {
+                if ((this._entrada_salida_inventario == null))
+                {
+                    this._entrada_salida_inventario = base.CreateQuery<entrada_salida_inventario>("[entrada_salida_inventario]");
+                }
+                return this._entrada_salida_inventario;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<entrada_salida_inventario> _entrada_salida_inventario;
+        /// <summary>
+        /// There are no comments for estados_reparacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<estados_reparacion> estados_reparacion
+        {
+            get
+            {
+                if ((this._estados_reparacion == null))
+                {
+                    this._estados_reparacion = base.CreateQuery<estados_reparacion>("[estados_reparacion]");
+                }
+                return this._estados_reparacion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<estados_reparacion> _estados_reparacion;
+        /// <summary>
+        /// There are no comments for factura in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<factura> factura
+        {
+            get
+            {
+                if ((this._factura == null))
+                {
+                    this._factura = base.CreateQuery<factura>("[factura]");
+                }
+                return this._factura;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<factura> _factura;
+        /// <summary>
+        /// There are no comments for grupo_usuarios in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<grupo_usuarios> grupo_usuarios
+        {
+            get
+            {
+                if ((this._grupo_usuarios == null))
+                {
+                    this._grupo_usuarios = base.CreateQuery<grupo_usuarios>("[grupo_usuarios]");
+                }
+                return this._grupo_usuarios;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<grupo_usuarios> _grupo_usuarios;
+        /// <summary>
+        /// There are no comments for historial_devolucion_compras in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<historial_devolucion_compras> historial_devolucion_compras
+        {
+            get
+            {
+                if ((this._historial_devolucion_compras == null))
+                {
+                    this._historial_devolucion_compras = base.CreateQuery<historial_devolucion_compras>("[historial_devolucion_compras]");
+                }
+                return this._historial_devolucion_compras;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<historial_devolucion_compras> _historial_devolucion_compras;
+        /// <summary>
+        /// There are no comments for historial_devolucion_ventas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<historial_devolucion_ventas> historial_devolucion_ventas
+        {
+            get
+            {
+                if ((this._historial_devolucion_ventas == null))
+                {
+                    this._historial_devolucion_ventas = base.CreateQuery<historial_devolucion_ventas>("[historial_devolucion_ventas]");
+                }
+                return this._historial_devolucion_ventas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<historial_devolucion_ventas> _historial_devolucion_ventas;
+        /// <summary>
+        /// There are no comments for identificacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<identificacion> identificacion
+        {
+            get
+            {
+                if ((this._identificacion == null))
+                {
+                    this._identificacion = base.CreateQuery<identificacion>("[identificacion]");
+                }
+                return this._identificacion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<identificacion> _identificacion;
+        /// <summary>
+        /// There are no comments for ingresos_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<ingresos_caja> ingresos_caja
+        {
+            get
+            {
+                if ((this._ingresos_caja == null))
+                {
+                    this._ingresos_caja = base.CreateQuery<ingresos_caja>("[ingresos_caja]");
+                }
+                return this._ingresos_caja;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<ingresos_caja> _ingresos_caja;
+        /// <summary>
+        /// There are no comments for ingresos_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<ingresos_conceptos> ingresos_conceptos
+        {
+            get
+            {
+                if ((this._ingresos_conceptos == null))
+                {
+                    this._ingresos_conceptos = base.CreateQuery<ingresos_conceptos>("[ingresos_conceptos]");
+                }
+                return this._ingresos_conceptos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<ingresos_conceptos> _ingresos_conceptos;
+        /// <summary>
+        /// There are no comments for inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<inventario> inventario
+        {
+            get
+            {
+                if ((this._inventario == null))
+                {
+                    this._inventario = base.CreateQuery<inventario>("[inventario]");
+                }
+                return this._inventario;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<inventario> _inventario;
+        /// <summary>
+        /// There are no comments for inventario_reparacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<inventario_reparacion> inventario_reparacion
+        {
+            get
+            {
+                if ((this._inventario_reparacion == null))
+                {
+                    this._inventario_reparacion = base.CreateQuery<inventario_reparacion>("[inventario_reparacion]");
+                }
+                return this._inventario_reparacion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<inventario_reparacion> _inventario_reparacion;
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<itebis> itebis
+        {
+            get
+            {
+                if ((this._itebis == null))
+                {
+                    this._itebis = base.CreateQuery<itebis>("[itebis]");
+                }
+                return this._itebis;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<itebis> _itebis;
+        /// <summary>
+        /// There are no comments for marcas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<marcas> marcas
+        {
+            get
+            {
+                if ((this._marcas == null))
+                {
+                    this._marcas = base.CreateQuery<marcas>("[marcas]");
+                }
+                return this._marcas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<marcas> _marcas;
+        /// <summary>
+        /// There are no comments for mesas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<mesas> mesas
+        {
+            get
+            {
+                if ((this._mesas == null))
+                {
+                    this._mesas = base.CreateQuery<mesas>("[mesas]");
+                }
+                return this._mesas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<mesas> _mesas;
+        /// <summary>
+        /// There are no comments for metodo_pago in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<metodo_pago> metodo_pago
+        {
+            get
+            {
+                if ((this._metodo_pago == null))
+                {
+                    this._metodo_pago = base.CreateQuery<metodo_pago>("[metodo_pago]");
+                }
+                return this._metodo_pago;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<metodo_pago> _metodo_pago;
+        /// <summary>
+        /// There are no comments for modelo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<modelo> modelo
+        {
+            get
+            {
+                if ((this._modelo == null))
+                {
+                    this._modelo = base.CreateQuery<modelo>("[modelo]");
+                }
+                return this._modelo;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<modelo> _modelo;
+        /// <summary>
+        /// There are no comments for moneda in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<moneda> moneda
+        {
+            get
+            {
+                if ((this._moneda == null))
+                {
+                    this._moneda = base.CreateQuery<moneda>("[moneda]");
+                }
+                return this._moneda;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<moneda> _moneda;
+        /// <summary>
+        /// There are no comments for moneda_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<moneda_historial> moneda_historial
+        {
+            get
+            {
+                if ((this._moneda_historial == null))
+                {
+                    this._moneda_historial = base.CreateQuery<moneda_historial>("[moneda_historial]");
+                }
+                return this._moneda_historial;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<moneda_historial> _moneda_historial;
+        /// <summary>
+        /// There are no comments for nomina in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<nomina> nomina
+        {
+            get
+            {
+                if ((this._nomina == null))
+                {
+                    this._nomina = base.CreateQuery<nomina>("[nomina]");
+                }
+                return this._nomina;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<nomina> _nomina;
+        /// <summary>
+        /// There are no comments for nomina_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<nomina_conceptos> nomina_conceptos
+        {
+            get
+            {
+                if ((this._nomina_conceptos == null))
+                {
+                    this._nomina_conceptos = base.CreateQuery<nomina_conceptos>("[nomina_conceptos]");
+                }
+                return this._nomina_conceptos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<nomina_conceptos> _nomina_conceptos;
+        /// <summary>
+        /// There are no comments for nomina_tipos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<nomina_tipos> nomina_tipos
+        {
+            get
+            {
+                if ((this._nomina_tipos == null))
+                {
+                    this._nomina_tipos = base.CreateQuery<nomina_tipos>("[nomina_tipos]");
+                }
+                return this._nomina_tipos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<nomina_tipos> _nomina_tipos;
+        /// <summary>
+        /// There are no comments for pagos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<pagos> pagos
+        {
+            get
+            {
+                if ((this._pagos == null))
+                {
+                    this._pagos = base.CreateQuery<pagos>("[pagos]");
+                }
+                return this._pagos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<pagos> _pagos;
+        /// <summary>
+        /// There are no comments for pagos_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<pagos_detalles> pagos_detalles
+        {
+            get
+            {
+                if ((this._pagos_detalles == null))
+                {
+                    this._pagos_detalles = base.CreateQuery<pagos_detalles>("[pagos_detalles]");
+                }
+                return this._pagos_detalles;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<pagos_detalles> _pagos_detalles;
+        /// <summary>
+        /// There are no comments for pais in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<pais> pais
+        {
+            get
+            {
+                if ((this._pais == null))
+                {
+                    this._pais = base.CreateQuery<pais>("[pais]");
+                }
+                return this._pais;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<pais> _pais;
+        /// <summary>
+        /// There are no comments for permiso in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<permiso> permiso
+        {
+            get
+            {
+                if ((this._permiso == null))
+                {
+                    this._permiso = base.CreateQuery<permiso>("[permiso]");
+                }
+                return this._permiso;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<permiso> _permiso;
+        /// <summary>
+        /// There are no comments for persona in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<persona> persona
+        {
+            get
+            {
+                if ((this._persona == null))
+                {
+                    this._persona = base.CreateQuery<persona>("[persona]");
+                }
+                return this._persona;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<persona> _persona;
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto> producto
+        {
+            get
+            {
+                if ((this._producto == null))
+                {
+                    this._producto = base.CreateQuery<producto>("[producto]");
+                }
+                return this._producto;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto> _producto;
+        /// <summary>
+        /// There are no comments for producto_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_detalle> producto_detalle
+        {
+            get
+            {
+                if ((this._producto_detalle == null))
+                {
+                    this._producto_detalle = base.CreateQuery<producto_detalle>("[producto_detalle]");
+                }
+                return this._producto_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_detalle> _producto_detalle;
+        /// <summary>
+        /// There are no comments for producto_oferta in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_oferta> producto_oferta
+        {
+            get
+            {
+                if ((this._producto_oferta == null))
+                {
+                    this._producto_oferta = base.CreateQuery<producto_oferta>("[producto_oferta]");
+                }
+                return this._producto_oferta;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_oferta> _producto_oferta;
+        /// <summary>
+        /// There are no comments for producto_permisos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_permisos> producto_permisos
+        {
+            get
+            {
+                if ((this._producto_permisos == null))
+                {
+                    this._producto_permisos = base.CreateQuery<producto_permisos>("[producto_permisos]");
+                }
+                return this._producto_permisos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_permisos> _producto_permisos;
+        /// <summary>
+        /// There are no comments for producto_unidad_conversion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_unidad_conversion> producto_unidad_conversion
+        {
+            get
+            {
+                if ((this._producto_unidad_conversion == null))
+                {
+                    this._producto_unidad_conversion = base.CreateQuery<producto_unidad_conversion>("[producto_unidad_conversion]");
+                }
+                return this._producto_unidad_conversion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_unidad_conversion> _producto_unidad_conversion;
+        /// <summary>
+        /// There are no comments for producto_vs_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_vs_detalle> producto_vs_detalle
+        {
+            get
+            {
+                if ((this._producto_vs_detalle == null))
+                {
+                    this._producto_vs_detalle = base.CreateQuery<producto_vs_detalle>("[producto_vs_detalle]");
+                }
+                return this._producto_vs_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_vs_detalle> _producto_vs_detalle;
+        /// <summary>
+        /// There are no comments for producto_vs_permisos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_vs_permisos> producto_vs_permisos
+        {
+            get
+            {
+                if ((this._producto_vs_permisos == null))
+                {
+                    this._producto_vs_permisos = base.CreateQuery<producto_vs_permisos>("[producto_vs_permisos]");
+                }
+                return this._producto_vs_permisos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_vs_permisos> _producto_vs_permisos;
+        /// <summary>
+        /// There are no comments for provincia in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<provincia> provincia
+        {
+            get
+            {
+                if ((this._provincia == null))
+                {
+                    this._provincia = base.CreateQuery<provincia>("[provincia]");
+                }
+                return this._provincia;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<provincia> _provincia;
+        /// <summary>
+        /// There are no comments for region in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<region> region
+        {
+            get
+            {
+                if ((this._region == null))
+                {
+                    this._region = base.CreateQuery<region>("[region]");
+                }
+                return this._region;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<region> _region;
+        /// <summary>
+        /// There are no comments for sector in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sector> sector
+        {
+            get
+            {
+                if ((this._sector == null))
+                {
+                    this._sector = base.CreateQuery<sector>("[sector]");
+                }
+                return this._sector;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sector> _sector;
+        /// <summary>
+        /// There are no comments for sexo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sexo> sexo
+        {
+            get
+            {
+                if ((this._sexo == null))
+                {
+                    this._sexo = base.CreateQuery<sexo>("[sexo]");
+                }
+                return this._sexo;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sexo> _sexo;
+        /// <summary>
+        /// There are no comments for sistema in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sistema> sistema
+        {
+            get
+            {
+                if ((this._sistema == null))
+                {
+                    this._sistema = base.CreateQuery<sistema>("[sistema]");
+                }
+                return this._sistema;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sistema> _sistema;
+        /// <summary>
+        /// There are no comments for sistema_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sistema_historial> sistema_historial
+        {
+            get
+            {
+                if ((this._sistema_historial == null))
+                {
+                    this._sistema_historial = base.CreateQuery<sistema_historial>("[sistema_historial]");
+                }
+                return this._sistema_historial;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sistema_historial> _sistema_historial;
+        /// <summary>
+        /// There are no comments for sistema_modulo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sistema_modulo> sistema_modulo
+        {
+            get
+            {
+                if ((this._sistema_modulo == null))
+                {
+                    this._sistema_modulo = base.CreateQuery<sistema_modulo>("[sistema_modulo]");
+                }
+                return this._sistema_modulo;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sistema_modulo> _sistema_modulo;
+        /// <summary>
+        /// There are no comments for sistema_modulo_opciones in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sistema_modulo_opciones> sistema_modulo_opciones
+        {
+            get
+            {
+                if ((this._sistema_modulo_opciones == null))
+                {
+                    this._sistema_modulo_opciones = base.CreateQuery<sistema_modulo_opciones>("[sistema_modulo_opciones]");
+                }
+                return this._sistema_modulo_opciones;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sistema_modulo_opciones> _sistema_modulo_opciones;
+        /// <summary>
+        /// There are no comments for situacion_empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<situacion_empleado> situacion_empleado
+        {
+            get
+            {
+                if ((this._situacion_empleado == null))
+                {
+                    this._situacion_empleado = base.CreateQuery<situacion_empleado>("[situacion_empleado]");
+                }
+                return this._situacion_empleado;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<situacion_empleado> _situacion_empleado;
+        /// <summary>
+        /// There are no comments for subcategoria_producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<subcategoria_producto> subcategoria_producto
+        {
+            get
+            {
+                if ((this._subcategoria_producto == null))
+                {
+                    this._subcategoria_producto = base.CreateQuery<subcategoria_producto>("[subcategoria_producto]");
+                }
+                return this._subcategoria_producto;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<subcategoria_producto> _subcategoria_producto;
+        /// <summary>
+        /// There are no comments for sucursal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sucursal> sucursal
+        {
+            get
+            {
+                if ((this._sucursal == null))
+                {
+                    this._sucursal = base.CreateQuery<sucursal>("[sucursal]");
+                }
+                return this._sucursal;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sucursal> _sucursal;
+        /// <summary>
+        /// There are no comments for suplidor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<suplidor> suplidor
+        {
+            get
+            {
+                if ((this._suplidor == null))
+                {
+                    this._suplidor = base.CreateQuery<suplidor>("[suplidor]");
+                }
+                return this._suplidor;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<suplidor> _suplidor;
+        /// <summary>
+        /// There are no comments for sysdiagrams in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sysdiagrams> sysdiagrams
+        {
+            get
+            {
+                if ((this._sysdiagrams == null))
+                {
+                    this._sysdiagrams = base.CreateQuery<sysdiagrams>("[sysdiagrams]");
+                }
+                return this._sysdiagrams;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sysdiagrams> _sysdiagrams;
+        /// <summary>
+        /// There are no comments for tarjetas_credito in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tarjetas_credito> tarjetas_credito
+        {
+            get
+            {
+                if ((this._tarjetas_credito == null))
+                {
+                    this._tarjetas_credito = base.CreateQuery<tarjetas_credito>("[tarjetas_credito]");
+                }
+                return this._tarjetas_credito;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tarjetas_credito> _tarjetas_credito;
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero> tercero
+        {
+            get
+            {
+                if ((this._tercero == null))
+                {
+                    this._tercero = base.CreateQuery<tercero>("[tercero]");
+                }
+                return this._tercero;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero> _tercero;
+        /// <summary>
+        /// There are no comments for tipo_comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tipo_comprobante_fiscal> tipo_comprobante_fiscal
+        {
+            get
+            {
+                if ((this._tipo_comprobante_fiscal == null))
+                {
+                    this._tipo_comprobante_fiscal = base.CreateQuery<tipo_comprobante_fiscal>("[tipo_comprobante_fiscal]");
+                }
+                return this._tipo_comprobante_fiscal;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tipo_comprobante_fiscal> _tipo_comprobante_fiscal;
+        /// <summary>
+        /// There are no comments for tipo_cuenta_bancaria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tipo_cuenta_bancaria> tipo_cuenta_bancaria
+        {
+            get
+            {
+                if ((this._tipo_cuenta_bancaria == null))
+                {
+                    this._tipo_cuenta_bancaria = base.CreateQuery<tipo_cuenta_bancaria>("[tipo_cuenta_bancaria]");
+                }
+                return this._tipo_cuenta_bancaria;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tipo_cuenta_bancaria> _tipo_cuenta_bancaria;
+        /// <summary>
+        /// There are no comments for tipo_identificacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tipo_identificacion> tipo_identificacion
+        {
+            get
+            {
+                if ((this._tipo_identificacion == null))
+                {
+                    this._tipo_identificacion = base.CreateQuery<tipo_identificacion>("[tipo_identificacion]");
+                }
+                return this._tipo_identificacion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tipo_identificacion> _tipo_identificacion;
+        /// <summary>
+        /// There are no comments for tipo_movimiento_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tipo_movimiento_inventario> tipo_movimiento_inventario
+        {
+            get
+            {
+                if ((this._tipo_movimiento_inventario == null))
+                {
+                    this._tipo_movimiento_inventario = base.CreateQuery<tipo_movimiento_inventario>("[tipo_movimiento_inventario]");
+                }
+                return this._tipo_movimiento_inventario;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tipo_movimiento_inventario> _tipo_movimiento_inventario;
+        /// <summary>
+        /// There are no comments for transferencia_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<transferencia_inventario> transferencia_inventario
+        {
+            get
+            {
+                if ((this._transferencia_inventario == null))
+                {
+                    this._transferencia_inventario = base.CreateQuery<transferencia_inventario>("[transferencia_inventario]");
+                }
+                return this._transferencia_inventario;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<transferencia_inventario> _transferencia_inventario;
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<unidad> unidad
+        {
+            get
+            {
+                if ((this._unidad == null))
+                {
+                    this._unidad = base.CreateQuery<unidad>("[unidad]");
+                }
+                return this._unidad;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<unidad> _unidad;
+        /// <summary>
+        /// There are no comments for vendedor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<vendedor> vendedor
+        {
+            get
+            {
+                if ((this._vendedor == null))
+                {
+                    this._vendedor = base.CreateQuery<vendedor>("[vendedor]");
+                }
+                return this._vendedor;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<vendedor> _vendedor;
+        /// <summary>
+        /// There are no comments for catalogo_cuentas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<catalogo_cuentas> catalogo_cuentas
+        {
+            get
+            {
+                if ((this._catalogo_cuentas == null))
+                {
+                    this._catalogo_cuentas = base.CreateQuery<catalogo_cuentas>("[catalogo_cuentas]");
+                }
+                return this._catalogo_cuentas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<catalogo_cuentas> _catalogo_cuentas;
+        /// <summary>
+        /// There are no comments for compra_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<compra_detalle> compra_detalle
+        {
+            get
+            {
+                if ((this._compra_detalle == null))
+                {
+                    this._compra_detalle = base.CreateQuery<compra_detalle>("[compra_detalle]");
+                }
+                return this._compra_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<compra_detalle> _compra_detalle;
+        /// <summary>
+        /// There are no comments for empleado_historial_datos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<empleado_historial_datos> empleado_historial_datos
+        {
+            get
+            {
+                if ((this._empleado_historial_datos == null))
+                {
+                    this._empleado_historial_datos = base.CreateQuery<empleado_historial_datos>("[empleado_historial_datos]");
+                }
+                return this._empleado_historial_datos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<empleado_historial_datos> _empleado_historial_datos;
+        /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<empleado_vs_conceptos_nomina> empleado_vs_conceptos_nomina
+        {
+            get
+            {
+                if ((this._empleado_vs_conceptos_nomina == null))
+                {
+                    this._empleado_vs_conceptos_nomina = base.CreateQuery<empleado_vs_conceptos_nomina>("[empleado_vs_conceptos_nomina]");
+                }
+                return this._empleado_vs_conceptos_nomina;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<empleado_vs_conceptos_nomina> _empleado_vs_conceptos_nomina;
+        /// <summary>
+        /// There are no comments for factura_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<factura_detalle> factura_detalle
+        {
+            get
+            {
+                if ((this._factura_detalle == null))
+                {
+                    this._factura_detalle = base.CreateQuery<factura_detalle>("[factura_detalle]");
+                }
+                return this._factura_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<factura_detalle> _factura_detalle;
+        /// <summary>
+        /// There are no comments for facturas_anuladas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<facturas_anuladas> facturas_anuladas
+        {
+            get
+            {
+                if ((this._facturas_anuladas == null))
+                {
+                    this._facturas_anuladas = base.CreateQuery<facturas_anuladas>("[facturas_anuladas]");
+                }
+                return this._facturas_anuladas;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<facturas_anuladas> _facturas_anuladas;
+        /// <summary>
+        /// There are no comments for historial_inventario_agotado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<historial_inventario_agotado> historial_inventario_agotado
+        {
+            get
+            {
+                if ((this._historial_inventario_agotado == null))
+                {
+                    this._historial_inventario_agotado = base.CreateQuery<historial_inventario_agotado>("[historial_inventario_agotado]");
+                }
+                return this._historial_inventario_agotado;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<historial_inventario_agotado> _historial_inventario_agotado;
+        /// <summary>
+        /// There are no comments for mesas_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<mesas_detalles> mesas_detalles
+        {
+            get
+            {
+                if ((this._mesas_detalles == null))
+                {
+                    this._mesas_detalles = base.CreateQuery<mesas_detalles>("[mesas_detalles]");
+                }
+                return this._mesas_detalles;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<mesas_detalles> _mesas_detalles;
+        /// <summary>
+        /// There are no comments for nomina_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<nomina_detalle> nomina_detalle
+        {
+            get
+            {
+                if ((this._nomina_detalle == null))
+                {
+                    this._nomina_detalle = base.CreateQuery<nomina_detalle>("[nomina_detalle]");
+                }
+                return this._nomina_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<nomina_detalle> _nomina_detalle;
+        /// <summary>
+        /// There are no comments for oferta_producto_categoria_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<oferta_producto_categoria_detalle> oferta_producto_categoria_detalle
+        {
+            get
+            {
+                if ((this._oferta_producto_categoria_detalle == null))
+                {
+                    this._oferta_producto_categoria_detalle = base.CreateQuery<oferta_producto_categoria_detalle>("[oferta_producto_categoria_detalle]");
+                }
+                return this._oferta_producto_categoria_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<oferta_producto_categoria_detalle> _oferta_producto_categoria_detalle;
+        /// <summary>
+        /// There are no comments for oferta_producto_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<oferta_producto_detalle> oferta_producto_detalle
+        {
+            get
+            {
+                if ((this._oferta_producto_detalle == null))
+                {
+                    this._oferta_producto_detalle = base.CreateQuery<oferta_producto_detalle>("[oferta_producto_detalle]");
+                }
+                return this._oferta_producto_detalle;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<oferta_producto_detalle> _oferta_producto_detalle;
+        /// <summary>
+        /// There are no comments for producto_codigobarra in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_codigobarra> producto_codigobarra
+        {
+            get
+            {
+                if ((this._producto_codigobarra == null))
+                {
+                    this._producto_codigobarra = base.CreateQuery<producto_codigobarra>("[producto_codigobarra]");
+                }
+                return this._producto_codigobarra;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_codigobarra> _producto_codigobarra;
+        /// <summary>
+        /// There are no comments for producto_oferta_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_oferta_historial> producto_oferta_historial
+        {
+            get
+            {
+                if ((this._producto_oferta_historial == null))
+                {
+                    this._producto_oferta_historial = base.CreateQuery<producto_oferta_historial>("[producto_oferta_historial]");
+                }
+                return this._producto_oferta_historial;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_oferta_historial> _producto_oferta_historial;
+        /// <summary>
+        /// There are no comments for producto_productos_requisitos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<producto_productos_requisitos> producto_productos_requisitos
+        {
+            get
+            {
+                if ((this._producto_productos_requisitos == null))
+                {
+                    this._producto_productos_requisitos = base.CreateQuery<producto_productos_requisitos>("[producto_productos_requisitos]");
+                }
+                return this._producto_productos_requisitos;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<producto_productos_requisitos> _producto_productos_requisitos;
+        /// <summary>
+        /// There are no comments for sucursal_vs_empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<sucursal_vs_empleado> sucursal_vs_empleado
+        {
+            get
+            {
+                if ((this._sucursal_vs_empleado == null))
+                {
+                    this._sucursal_vs_empleado = base.CreateQuery<sucursal_vs_empleado>("[sucursal_vs_empleado]");
+                }
+                return this._sucursal_vs_empleado;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<sucursal_vs_empleado> _sucursal_vs_empleado;
+        /// <summary>
+        /// There are no comments for tercero_observaciones in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero_observaciones> tercero_observaciones
+        {
+            get
+            {
+                if ((this._tercero_observaciones == null))
+                {
+                    this._tercero_observaciones = base.CreateQuery<tercero_observaciones>("[tercero_observaciones]");
+                }
+                return this._tercero_observaciones;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero_observaciones> _tercero_observaciones;
+        /// <summary>
+        /// There are no comments for tercero_vs_direccion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero_vs_direccion> tercero_vs_direccion
+        {
+            get
+            {
+                if ((this._tercero_vs_direccion == null))
+                {
+                    this._tercero_vs_direccion = base.CreateQuery<tercero_vs_direccion>("[tercero_vs_direccion]");
+                }
+                return this._tercero_vs_direccion;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero_vs_direccion> _tercero_vs_direccion;
+        /// <summary>
+        /// There are no comments for tercero_vs_email in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero_vs_email> tercero_vs_email
+        {
+            get
+            {
+                if ((this._tercero_vs_email == null))
+                {
+                    this._tercero_vs_email = base.CreateQuery<tercero_vs_email>("[tercero_vs_email]");
+                }
+                return this._tercero_vs_email;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero_vs_email> _tercero_vs_email;
+        /// <summary>
+        /// There are no comments for tercero_vs_permiso in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero_vs_permiso> tercero_vs_permiso
+        {
+            get
+            {
+                if ((this._tercero_vs_permiso == null))
+                {
+                    this._tercero_vs_permiso = base.CreateQuery<tercero_vs_permiso>("[tercero_vs_permiso]");
+                }
+                return this._tercero_vs_permiso;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero_vs_permiso> _tercero_vs_permiso;
+        /// <summary>
+        /// There are no comments for tercero_vs_telefono in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> tercero_vs_telefono
+        {
+            get
+            {
+                if ((this._tercero_vs_telefono == null))
+                {
+                    this._tercero_vs_telefono = base.CreateQuery<tercero_vs_telefono>("[tercero_vs_telefono]");
+                }
+                return this._tercero_vs_telefono;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> _tercero_vs_telefono;
+        /// <summary>
+        /// There are no comments for almacen in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToalmacen(almacen almacen)
+        {
+            base.AddObject("almacen", almacen);
+        }
+        /// <summary>
+        /// There are no comments for banco in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTobanco(banco banco)
+        {
+            base.AddObject("banco", banco);
+        }
+        /// <summary>
+        /// There are no comments for caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocaja(caja caja)
+        {
+            base.AddObject("caja", caja);
+        }
+        /// <summary>
+        /// There are no comments for cajero in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocajero(cajero cajero)
+        {
+            base.AddObject("cajero", cajero);
+        }
+        /// <summary>
+        /// There are no comments for cargo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocargo(cargo cargo)
+        {
+            base.AddObject("cargo", cargo);
+        }
+        /// <summary>
+        /// There are no comments for categoria_producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocategoria_producto(categoria_producto categoria_producto)
+        {
+            base.AddObject("categoria_producto", categoria_producto);
+        }
+        /// <summary>
+        /// There are no comments for cliente in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocliente(cliente cliente)
+        {
+            base.AddObject("cliente", cliente);
+        }
+        /// <summary>
+        /// There are no comments for cliente_categoria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocliente_categoria(cliente_categoria cliente_categoria)
+        {
+            base.AddObject("cliente_categoria", cliente_categoria);
+        }
+        /// <summary>
+        /// There are no comments for cliente_subcategoria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocliente_subcategoria(cliente_subcategoria cliente_subcategoria)
+        {
+            base.AddObject("cliente_subcategoria", cliente_subcategoria);
+        }
+        /// <summary>
+        /// There are no comments for cobros in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocobros(cobros cobros)
+        {
+            base.AddObject("cobros", cobros);
+        }
+        /// <summary>
+        /// There are no comments for cobros_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocobros_detalles(cobros_detalles cobros_detalles)
+        {
+            base.AddObject("cobros_detalles", cobros_detalles);
+        }
+        /// <summary>
+        /// There are no comments for compra in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocompra(compra compra)
+        {
+            base.AddObject("compra", compra);
+        }
+        /// <summary>
+        /// There are no comments for compra_pago_anulados in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocompra_pago_anulados(compra_pago_anulados compra_pago_anulados)
+        {
+            base.AddObject("compra_pago_anulados", compra_pago_anulados);
+        }
+        /// <summary>
+        /// There are no comments for compra_vs_pagos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocompra_vs_pagos(compra_vs_pagos compra_vs_pagos)
+        {
+            base.AddObject("compra_vs_pagos", compra_vs_pagos);
+        }
+        /// <summary>
+        /// There are no comments for comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocomprobante_fiscal(comprobante_fiscal comprobante_fiscal)
+        {
+            base.AddObject("comprobante_fiscal", comprobante_fiscal);
+        }
+        /// <summary>
+        /// There are no comments for comprobante_serie in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocomprobante_serie(comprobante_serie comprobante_serie)
+        {
+            base.AddObject("comprobante_serie", comprobante_serie);
+        }
+        /// <summary>
+        /// There are no comments for comprobante_ventas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocomprobante_ventas(comprobante_ventas comprobante_ventas)
+        {
+            base.AddObject("comprobante_ventas", comprobante_ventas);
+        }
+        /// <summary>
+        /// There are no comments for correo_electronicos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocorreo_electronicos(correo_electronicos correo_electronicos)
+        {
+            base.AddObject("correo_electronicos", correo_electronicos);
+        }
+        /// <summary>
+        /// There are no comments for cuadre_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocuadre_caja(cuadre_caja cuadre_caja)
+        {
+            base.AddObject("cuadre_caja", cuadre_caja);
+        }
+        /// <summary>
+        /// There are no comments for cuenta_bancaria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocuenta_bancaria(cuenta_bancaria cuenta_bancaria)
+        {
+            base.AddObject("cuenta_bancaria", cuenta_bancaria);
+        }
+        /// <summary>
+        /// There are no comments for departamento in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTodepartamento(departamento departamento)
+        {
+            base.AddObject("departamento", departamento);
+        }
+        /// <summary>
+        /// There are no comments for direccion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTodireccion(direccion direccion)
+        {
+            base.AddObject("direccion", direccion);
+        }
+        /// <summary>
+        /// There are no comments for egresos_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToegresos_caja(egresos_caja egresos_caja)
+        {
+            base.AddObject("egresos_caja", egresos_caja);
+        }
+        /// <summary>
+        /// There are no comments for egresos_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToegresos_conceptos(egresos_conceptos egresos_conceptos)
+        {
+            base.AddObject("egresos_conceptos", egresos_conceptos);
+        }
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToempleado(empleado empleado)
+        {
+            base.AddObject("empleado", empleado);
+        }
+        /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToempresa(empresa empresa)
+        {
+            base.AddObject("empresa", empresa);
+        }
+        /// <summary>
+        /// There are no comments for entrada_salida_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToentrada_salida_inventario(entrada_salida_inventario entrada_salida_inventario)
+        {
+            base.AddObject("entrada_salida_inventario", entrada_salida_inventario);
+        }
+        /// <summary>
+        /// There are no comments for estados_reparacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToestados_reparacion(estados_reparacion estados_reparacion)
+        {
+            base.AddObject("estados_reparacion", estados_reparacion);
+        }
+        /// <summary>
+        /// There are no comments for factura in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTofactura(factura factura)
+        {
+            base.AddObject("factura", factura);
+        }
+        /// <summary>
+        /// There are no comments for grupo_usuarios in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTogrupo_usuarios(grupo_usuarios grupo_usuarios)
+        {
+            base.AddObject("grupo_usuarios", grupo_usuarios);
+        }
+        /// <summary>
+        /// There are no comments for historial_devolucion_compras in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTohistorial_devolucion_compras(historial_devolucion_compras historial_devolucion_compras)
+        {
+            base.AddObject("historial_devolucion_compras", historial_devolucion_compras);
+        }
+        /// <summary>
+        /// There are no comments for historial_devolucion_ventas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTohistorial_devolucion_ventas(historial_devolucion_ventas historial_devolucion_ventas)
+        {
+            base.AddObject("historial_devolucion_ventas", historial_devolucion_ventas);
+        }
+        /// <summary>
+        /// There are no comments for identificacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToidentificacion(identificacion identificacion)
+        {
+            base.AddObject("identificacion", identificacion);
+        }
+        /// <summary>
+        /// There are no comments for ingresos_caja in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToingresos_caja(ingresos_caja ingresos_caja)
+        {
+            base.AddObject("ingresos_caja", ingresos_caja);
+        }
+        /// <summary>
+        /// There are no comments for ingresos_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToingresos_conceptos(ingresos_conceptos ingresos_conceptos)
+        {
+            base.AddObject("ingresos_conceptos", ingresos_conceptos);
+        }
+        /// <summary>
+        /// There are no comments for inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToinventario(inventario inventario)
+        {
+            base.AddObject("inventario", inventario);
+        }
+        /// <summary>
+        /// There are no comments for inventario_reparacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToinventario_reparacion(inventario_reparacion inventario_reparacion)
+        {
+            base.AddObject("inventario_reparacion", inventario_reparacion);
+        }
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToitebis(itebis itebis)
+        {
+            base.AddObject("itebis", itebis);
+        }
+        /// <summary>
+        /// There are no comments for marcas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomarcas(marcas marcas)
+        {
+            base.AddObject("marcas", marcas);
+        }
+        /// <summary>
+        /// There are no comments for mesas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomesas(mesas mesas)
+        {
+            base.AddObject("mesas", mesas);
+        }
+        /// <summary>
+        /// There are no comments for metodo_pago in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTometodo_pago(metodo_pago metodo_pago)
+        {
+            base.AddObject("metodo_pago", metodo_pago);
+        }
+        /// <summary>
+        /// There are no comments for modelo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomodelo(modelo modelo)
+        {
+            base.AddObject("modelo", modelo);
+        }
+        /// <summary>
+        /// There are no comments for moneda in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomoneda(moneda moneda)
+        {
+            base.AddObject("moneda", moneda);
+        }
+        /// <summary>
+        /// There are no comments for moneda_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomoneda_historial(moneda_historial moneda_historial)
+        {
+            base.AddObject("moneda_historial", moneda_historial);
+        }
+        /// <summary>
+        /// There are no comments for nomina in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTonomina(nomina nomina)
+        {
+            base.AddObject("nomina", nomina);
+        }
+        /// <summary>
+        /// There are no comments for nomina_conceptos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTonomina_conceptos(nomina_conceptos nomina_conceptos)
+        {
+            base.AddObject("nomina_conceptos", nomina_conceptos);
+        }
+        /// <summary>
+        /// There are no comments for nomina_tipos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTonomina_tipos(nomina_tipos nomina_tipos)
+        {
+            base.AddObject("nomina_tipos", nomina_tipos);
+        }
+        /// <summary>
+        /// There are no comments for pagos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTopagos(pagos pagos)
+        {
+            base.AddObject("pagos", pagos);
+        }
+        /// <summary>
+        /// There are no comments for pagos_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTopagos_detalles(pagos_detalles pagos_detalles)
+        {
+            base.AddObject("pagos_detalles", pagos_detalles);
+        }
+        /// <summary>
+        /// There are no comments for pais in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTopais(pais pais)
+        {
+            base.AddObject("pais", pais);
+        }
+        /// <summary>
+        /// There are no comments for permiso in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTopermiso(permiso permiso)
+        {
+            base.AddObject("permiso", permiso);
+        }
+        /// <summary>
+        /// There are no comments for persona in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTopersona(persona persona)
+        {
+            base.AddObject("persona", persona);
+        }
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto(producto producto)
+        {
+            base.AddObject("producto", producto);
+        }
+        /// <summary>
+        /// There are no comments for producto_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_detalle(producto_detalle producto_detalle)
+        {
+            base.AddObject("producto_detalle", producto_detalle);
+        }
+        /// <summary>
+        /// There are no comments for producto_oferta in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_oferta(producto_oferta producto_oferta)
+        {
+            base.AddObject("producto_oferta", producto_oferta);
+        }
+        /// <summary>
+        /// There are no comments for producto_permisos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_permisos(producto_permisos producto_permisos)
+        {
+            base.AddObject("producto_permisos", producto_permisos);
+        }
+        /// <summary>
+        /// There are no comments for producto_unidad_conversion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_unidad_conversion(producto_unidad_conversion producto_unidad_conversion)
+        {
+            base.AddObject("producto_unidad_conversion", producto_unidad_conversion);
+        }
+        /// <summary>
+        /// There are no comments for producto_vs_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_vs_detalle(producto_vs_detalle producto_vs_detalle)
+        {
+            base.AddObject("producto_vs_detalle", producto_vs_detalle);
+        }
+        /// <summary>
+        /// There are no comments for producto_vs_permisos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_vs_permisos(producto_vs_permisos producto_vs_permisos)
+        {
+            base.AddObject("producto_vs_permisos", producto_vs_permisos);
+        }
+        /// <summary>
+        /// There are no comments for provincia in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToprovincia(provincia provincia)
+        {
+            base.AddObject("provincia", provincia);
+        }
+        /// <summary>
+        /// There are no comments for region in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToregion(region region)
+        {
+            base.AddObject("region", region);
+        }
+        /// <summary>
+        /// There are no comments for sector in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosector(sector sector)
+        {
+            base.AddObject("sector", sector);
+        }
+        /// <summary>
+        /// There are no comments for sexo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosexo(sexo sexo)
+        {
+            base.AddObject("sexo", sexo);
+        }
+        /// <summary>
+        /// There are no comments for sistema in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosistema(sistema sistema)
+        {
+            base.AddObject("sistema", sistema);
+        }
+        /// <summary>
+        /// There are no comments for sistema_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosistema_historial(sistema_historial sistema_historial)
+        {
+            base.AddObject("sistema_historial", sistema_historial);
+        }
+        /// <summary>
+        /// There are no comments for sistema_modulo in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosistema_modulo(sistema_modulo sistema_modulo)
+        {
+            base.AddObject("sistema_modulo", sistema_modulo);
+        }
+        /// <summary>
+        /// There are no comments for sistema_modulo_opciones in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosistema_modulo_opciones(sistema_modulo_opciones sistema_modulo_opciones)
+        {
+            base.AddObject("sistema_modulo_opciones", sistema_modulo_opciones);
+        }
+        /// <summary>
+        /// There are no comments for situacion_empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosituacion_empleado(situacion_empleado situacion_empleado)
+        {
+            base.AddObject("situacion_empleado", situacion_empleado);
+        }
+        /// <summary>
+        /// There are no comments for subcategoria_producto in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosubcategoria_producto(subcategoria_producto subcategoria_producto)
+        {
+            base.AddObject("subcategoria_producto", subcategoria_producto);
+        }
+        /// <summary>
+        /// There are no comments for sucursal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosucursal(sucursal sucursal)
+        {
+            base.AddObject("sucursal", sucursal);
+        }
+        /// <summary>
+        /// There are no comments for suplidor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosuplidor(suplidor suplidor)
+        {
+            base.AddObject("suplidor", suplidor);
+        }
+        /// <summary>
+        /// There are no comments for sysdiagrams in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
+        {
+            base.AddObject("sysdiagrams", sysdiagrams);
+        }
+        /// <summary>
+        /// There are no comments for tarjetas_credito in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotarjetas_credito(tarjetas_credito tarjetas_credito)
+        {
+            base.AddObject("tarjetas_credito", tarjetas_credito);
+        }
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero(tercero tercero)
+        {
+            base.AddObject("tercero", tercero);
+        }
+        /// <summary>
+        /// There are no comments for tipo_comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotipo_comprobante_fiscal(tipo_comprobante_fiscal tipo_comprobante_fiscal)
+        {
+            base.AddObject("tipo_comprobante_fiscal", tipo_comprobante_fiscal);
+        }
+        /// <summary>
+        /// There are no comments for tipo_cuenta_bancaria in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotipo_cuenta_bancaria(tipo_cuenta_bancaria tipo_cuenta_bancaria)
+        {
+            base.AddObject("tipo_cuenta_bancaria", tipo_cuenta_bancaria);
+        }
+        /// <summary>
+        /// There are no comments for tipo_identificacion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotipo_identificacion(tipo_identificacion tipo_identificacion)
+        {
+            base.AddObject("tipo_identificacion", tipo_identificacion);
+        }
+        /// <summary>
+        /// There are no comments for tipo_movimiento_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotipo_movimiento_inventario(tipo_movimiento_inventario tipo_movimiento_inventario)
+        {
+            base.AddObject("tipo_movimiento_inventario", tipo_movimiento_inventario);
+        }
+        /// <summary>
+        /// There are no comments for transferencia_inventario in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotransferencia_inventario(transferencia_inventario transferencia_inventario)
+        {
+            base.AddObject("transferencia_inventario", transferencia_inventario);
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTounidad(unidad unidad)
+        {
+            base.AddObject("unidad", unidad);
+        }
+        /// <summary>
+        /// There are no comments for vendedor in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTovendedor(vendedor vendedor)
+        {
+            base.AddObject("vendedor", vendedor);
+        }
+        /// <summary>
+        /// There are no comments for catalogo_cuentas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocatalogo_cuentas(catalogo_cuentas catalogo_cuentas)
+        {
+            base.AddObject("catalogo_cuentas", catalogo_cuentas);
+        }
+        /// <summary>
+        /// There are no comments for compra_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTocompra_detalle(compra_detalle compra_detalle)
+        {
+            base.AddObject("compra_detalle", compra_detalle);
+        }
+        /// <summary>
+        /// There are no comments for empleado_historial_datos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToempleado_historial_datos(empleado_historial_datos empleado_historial_datos)
+        {
+            base.AddObject("empleado_historial_datos", empleado_historial_datos);
+        }
+        /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToempleado_vs_conceptos_nomina(empleado_vs_conceptos_nomina empleado_vs_conceptos_nomina)
+        {
+            base.AddObject("empleado_vs_conceptos_nomina", empleado_vs_conceptos_nomina);
+        }
+        /// <summary>
+        /// There are no comments for factura_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTofactura_detalle(factura_detalle factura_detalle)
+        {
+            base.AddObject("factura_detalle", factura_detalle);
+        }
+        /// <summary>
+        /// There are no comments for facturas_anuladas in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTofacturas_anuladas(facturas_anuladas facturas_anuladas)
+        {
+            base.AddObject("facturas_anuladas", facturas_anuladas);
+        }
+        /// <summary>
+        /// There are no comments for historial_inventario_agotado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTohistorial_inventario_agotado(historial_inventario_agotado historial_inventario_agotado)
+        {
+            base.AddObject("historial_inventario_agotado", historial_inventario_agotado);
+        }
+        /// <summary>
+        /// There are no comments for mesas_detalles in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTomesas_detalles(mesas_detalles mesas_detalles)
+        {
+            base.AddObject("mesas_detalles", mesas_detalles);
+        }
+        /// <summary>
+        /// There are no comments for nomina_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTonomina_detalle(nomina_detalle nomina_detalle)
+        {
+            base.AddObject("nomina_detalle", nomina_detalle);
+        }
+        /// <summary>
+        /// There are no comments for oferta_producto_categoria_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTooferta_producto_categoria_detalle(oferta_producto_categoria_detalle oferta_producto_categoria_detalle)
+        {
+            base.AddObject("oferta_producto_categoria_detalle", oferta_producto_categoria_detalle);
+        }
+        /// <summary>
+        /// There are no comments for oferta_producto_detalle in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTooferta_producto_detalle(oferta_producto_detalle oferta_producto_detalle)
+        {
+            base.AddObject("oferta_producto_detalle", oferta_producto_detalle);
+        }
+        /// <summary>
+        /// There are no comments for producto_codigobarra in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_codigobarra(producto_codigobarra producto_codigobarra)
+        {
+            base.AddObject("producto_codigobarra", producto_codigobarra);
+        }
+        /// <summary>
+        /// There are no comments for producto_oferta_historial in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_oferta_historial(producto_oferta_historial producto_oferta_historial)
+        {
+            base.AddObject("producto_oferta_historial", producto_oferta_historial);
+        }
+        /// <summary>
+        /// There are no comments for producto_productos_requisitos in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddToproducto_productos_requisitos(producto_productos_requisitos producto_productos_requisitos)
+        {
+            base.AddObject("producto_productos_requisitos", producto_productos_requisitos);
+        }
+        /// <summary>
+        /// There are no comments for sucursal_vs_empleado in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTosucursal_vs_empleado(sucursal_vs_empleado sucursal_vs_empleado)
+        {
+            base.AddObject("sucursal_vs_empleado", sucursal_vs_empleado);
+        }
+        /// <summary>
+        /// There are no comments for tercero_observaciones in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero_observaciones(tercero_observaciones tercero_observaciones)
+        {
+            base.AddObject("tercero_observaciones", tercero_observaciones);
+        }
+        /// <summary>
+        /// There are no comments for tercero_vs_direccion in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero_vs_direccion(tercero_vs_direccion tercero_vs_direccion)
+        {
+            base.AddObject("tercero_vs_direccion", tercero_vs_direccion);
+        }
+        /// <summary>
+        /// There are no comments for tercero_vs_email in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero_vs_email(tercero_vs_email tercero_vs_email)
+        {
+            base.AddObject("tercero_vs_email", tercero_vs_email);
+        }
+        /// <summary>
+        /// There are no comments for tercero_vs_permiso in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero_vs_permiso(tercero_vs_permiso tercero_vs_permiso)
+        {
+            base.AddObject("tercero_vs_permiso", tercero_vs_permiso);
+        }
+        /// <summary>
+        /// There are no comments for tercero_vs_telefono in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public void AddTotercero_vs_telefono(tercero_vs_telefono tercero_vs_telefono)
+        {
+            base.AddObject("tercero_vs_telefono", tercero_vs_telefono);
+        }
+    }
     /// <summary>
     /// There are no comments for punto_ventaModel.almacen in the schema.
     /// </summary>
@@ -570,6 +3147,28 @@ namespace puntoVentaModelo.Mysql
                 }
             }
         }
+        /// <summary>
+        /// There are no comments for comprobante_ventas in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "comprobante_ventas_Caja", "comprobante_ventas")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<comprobante_ventas> comprobante_ventas
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<comprobante_ventas>("punto_ventaModel.comprobante_ventas_Caja", "comprobante_ventas");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<comprobante_ventas>("punto_ventaModel.comprobante_ventas_Caja", "comprobante_ventas", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.cajero in the schema.
@@ -815,6 +3414,28 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<ingresos_caja>("punto_ventaModel.ingresos_caja_cajero", "ingresos_caja", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for egresos_caja in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_cajero", "egresos_caja")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<egresos_caja> egresos_caja
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_cajero", "egresos_caja", value);
                 }
             }
         }
@@ -4092,60 +6713,6 @@ namespace puntoVentaModelo.Mysql
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OncodigoChanged();
         /// <summary>
-        /// There are no comments for property cod_tipo_comprobante in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> cod_tipo_comprobante
-        {
-            get
-            {
-                return this._cod_tipo_comprobante;
-            }
-            set
-            {
-                this.Oncod_tipo_comprobanteChanging(value);
-                this.ReportPropertyChanging("cod_tipo_comprobante");
-                this._cod_tipo_comprobante = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_tipo_comprobante");
-                this.Oncod_tipo_comprobanteChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _cod_tipo_comprobante;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_tipo_comprobanteChanging(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_tipo_comprobanteChanged();
-        /// <summary>
-        /// There are no comments for property cod_caja in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Nullable<int> cod_caja
-        {
-            get
-            {
-                return this._cod_caja;
-            }
-            set
-            {
-                this.Oncod_cajaChanging(value);
-                this.ReportPropertyChanging("cod_caja");
-                this._cod_caja = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_caja");
-                this.Oncod_cajaChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Nullable<int> _cod_caja;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_cajaChanging(global::System.Nullable<int> value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_cajaChanged();
-        /// <summary>
         /// There are no comments for property contador in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
@@ -4172,6 +6739,84 @@ namespace puntoVentaModelo.Mysql
         partial void OncontadorChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OncontadorChanged();
+        /// <summary>
+        /// There are no comments for caja in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "comprobante_ventas_Caja", "caja")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public caja caja
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<caja>("punto_ventaModel.comprobante_ventas_Caja", "caja").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<caja>("punto_ventaModel.comprobante_ventas_Caja", "caja").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for caja in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<caja> cajaReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<caja>("punto_ventaModel.comprobante_ventas_Caja", "caja");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<caja>("punto_ventaModel.comprobante_ventas_Caja", "caja", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for tipo_comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public tipo_comprobante_fiscal tipo_comprobante_fiscal
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tipo_comprobante_fiscal>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tipo_comprobante_fiscal>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for tipo_comprobante_fiscal in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<tipo_comprobante_fiscal> tipo_comprobante_fiscalReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tipo_comprobante_fiscal>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<tipo_comprobante_fiscal>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "tipo_comprobante_fiscal", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.correo_electronicos in the schema.
@@ -5230,15 +7875,13 @@ namespace puntoVentaModelo.Mysql
         /// Create a new direccion object.
         /// </summary>
         /// <param name="codigo">Initial value of codigo.</param>
-        /// <param name="cod_sector">Initial value of cod_sector.</param>
         /// <param name="detalle">Initial value of detalle.</param>
         /// <param name="estado">Initial value of estado.</param>
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public static direccion Createdireccion(int codigo, int cod_sector, string detalle, byte estado)
+        public static direccion Createdireccion(int codigo, string detalle, byte estado)
         {
             direccion direccion = new direccion();
             direccion.codigo = codigo;
-            direccion.cod_sector = cod_sector;
             direccion.detalle = detalle;
             direccion.estado = estado;
             return direccion;
@@ -5270,33 +7913,6 @@ namespace puntoVentaModelo.Mysql
         partial void OncodigoChanging(int value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OncodigoChanged();
-        /// <summary>
-        /// There are no comments for property cod_sector in the schema.
-        /// </summary>
-        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable=false)]
-        [global::System.Runtime.Serialization.DataMemberAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public int cod_sector
-        {
-            get
-            {
-                return this._cod_sector;
-            }
-            set
-            {
-                this.Oncod_sectorChanging(value);
-                this.ReportPropertyChanging("cod_sector");
-                this._cod_sector = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
-                this.ReportPropertyChanged("cod_sector");
-                this.Oncod_sectorChanged();
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private int _cod_sector;
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_sectorChanging(int value);
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        partial void Oncod_sectorChanged();
         /// <summary>
         /// There are no comments for property detalle in the schema.
         /// </summary>
@@ -5351,6 +7967,67 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(byte value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for sector in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "direccion_sector", "sector")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public sector sector
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<sector>("punto_ventaModel.direccion_sector", "sector").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<sector>("punto_ventaModel.direccion_sector", "sector").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for sector in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<sector> sectorReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<sector>("punto_ventaModel.direccion_sector", "sector");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<sector>("punto_ventaModel.direccion_sector", "sector", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for tercero_vs_direccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "tercero_vs_direccion_direccion", "tercero_vs_direccion")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<tercero_vs_direccion> tercero_vs_direccion
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<tercero_vs_direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "tercero_vs_direccion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<tercero_vs_direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "tercero_vs_direccion", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.egresos_caja in the schema.
@@ -5617,6 +8294,84 @@ namespace puntoVentaModelo.Mysql
         partial void OncuadradoChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OncuadradoChanged();
+        /// <summary>
+        /// There are no comments for cajero in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_cajero", "cajero")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public cajero cajero
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<cajero>("punto_ventaModel.egresos_caja_cajero", "cajero").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<cajero>("punto_ventaModel.egresos_caja_cajero", "cajero").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for cajero in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<cajero> cajeroReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<cajero>("punto_ventaModel.egresos_caja_cajero", "cajero");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<cajero>("punto_ventaModel.egresos_caja_cajero", "cajero", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for egresos_conceptos in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_concepto", "egresos_conceptos")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public egresos_conceptos egresos_conceptos
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<egresos_conceptos>("punto_ventaModel.egresos_caja_concepto", "egresos_conceptos").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<egresos_conceptos>("punto_ventaModel.egresos_caja_concepto", "egresos_conceptos").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for egresos_conceptos in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<egresos_conceptos> egresos_conceptosReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<egresos_conceptos>("punto_ventaModel.egresos_caja_concepto", "egresos_conceptos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<egresos_conceptos>("punto_ventaModel.egresos_caja_concepto", "egresos_conceptos", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.egresos_conceptos in the schema.
@@ -5721,6 +8476,28 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for egresos_caja in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "egresos_caja_concepto", "egresos_caja")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<egresos_caja> egresos_caja
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_concepto", "egresos_caja");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<egresos_caja>("punto_ventaModel.egresos_caja_concepto", "egresos_caja", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.empleado in the schema.
@@ -6246,6 +9023,50 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_empelado_modifico", "empleado_vs_conceptos_nomina")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<empleado_vs_conceptos_nomina> empleado_vs_conceptos_nomina
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado_vs_conceptos_nomina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado_vs_conceptos_nomina", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_empleado", "empleado_vs_conceptos_nomina")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<empleado_vs_conceptos_nomina> empleado_vs_conceptos_nomina1
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado_vs_conceptos_nomina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado_vs_conceptos_nomina", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for empleado_historial_datos in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_empleado", "empleado_historial_datos")]
@@ -6487,6 +9308,45 @@ namespace puntoVentaModelo.Mysql
                 }
             }
         }
+        /// <summary>
+        /// There are no comments for vendedor in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "vendedor_empleado", "vendedor")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public vendedor vendedor
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<vendedor>("punto_ventaModel.vendedor_empleado", "vendedor").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<vendedor>("punto_ventaModel.vendedor_empleado", "vendedor").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for vendedor in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<vendedor> vendedorReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<vendedor>("punto_ventaModel.vendedor_empleado", "vendedor");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<vendedor>("punto_ventaModel.vendedor_empleado", "vendedor", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.empresa in the schema.
@@ -6620,6 +9480,45 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(byte value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empresa_tercero", "tercero")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public tercero tercero
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.empresa_tercero", "tercero").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.empresa_tercero", "tercero").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<tercero> terceroReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.empresa_tercero", "tercero");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<tercero>("punto_ventaModel.empresa_tercero", "tercero", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.entrada_salida_inventario in the schema.
@@ -9994,6 +12893,28 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(byte value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_itebis", "producto")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto> producto
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto>("punto_ventaModel.producto_itebis", "producto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto>("punto_ventaModel.producto_itebis", "producto", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.marcas in the schema.
@@ -11170,6 +14091,28 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_nomina", "empleado_vs_conceptos_nomina")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<empleado_vs_conceptos_nomina> empleado_vs_conceptos_nomina
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "empleado_vs_conceptos_nomina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "empleado_vs_conceptos_nomina", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for nomina_detalle in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "nomina_detalle_nomina", "nomina_detalle")]
@@ -11400,6 +14343,28 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for empleado_vs_conceptos_nomina in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_concepto", "empleado_vs_conceptos_nomina")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<empleado_vs_conceptos_nomina> empleado_vs_conceptos_nomina
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_concepto", "empleado_vs_conceptos_nomina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<empleado_vs_conceptos_nomina>("punto_ventaModel.empleado_concepto_nomina_concepto", "empleado_vs_conceptos_nomina", value);
+                }
+            }
+        }
         /// <summary>
         /// There are no comments for nomina_detalle in the schema.
         /// </summary>
@@ -13036,6 +16001,28 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for historial_inventario_agotado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "historial_inventario_agotado_producto", "historial_inventario_agotado")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<historial_inventario_agotado> historial_inventario_agotado
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<historial_inventario_agotado>("punto_ventaModel.historial_inventario_agotado_producto", "historial_inventario_agotado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<historial_inventario_agotado>("punto_ventaModel.historial_inventario_agotado_producto", "historial_inventario_agotado", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for oferta_producto_detalle in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "oferta_producto_detalle_producto", "oferta_producto_detalle")]
@@ -13054,6 +16041,72 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<oferta_producto_detalle>("punto_ventaModel.oferta_producto_detalle_producto", "oferta_producto_detalle", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto_codigobarra in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_codigobarra_producto", "producto_codigobarra")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto_codigobarra> producto_codigobarra
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto_codigobarra>("punto_ventaModel.producto_codigobarra_producto", "producto_codigobarra");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto_codigobarra>("punto_ventaModel.producto_codigobarra_producto", "producto_codigobarra", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto_productos_requisitos in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_producto_requisito", "producto_productos_requisitos")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto_productos_requisitos> producto_productos_requisitos
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto_productos_requisitos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto_productos_requisitos", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto_productos_requisitos1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_producto_titular", "producto_productos_requisitos")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto_productos_requisitos> producto_productos_requisitos1
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto_productos_requisitos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto_productos_requisitos", value);
                 }
             }
         }
@@ -13220,6 +16273,45 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<unidad>("punto_ventaModel.producto_unidad", "unidad", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_itebis", "itebis")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public itebis itebis
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for itebis in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<itebis> itebisReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<itebis>("punto_ventaModel.producto_itebis", "itebis", value);
                 }
             }
         }
@@ -14737,6 +17829,28 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(byte value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for direccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "direccion_sector", "direccion")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<direccion> direccion
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<direccion>("punto_ventaModel.direccion_sector", "direccion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<direccion>("punto_ventaModel.direccion_sector", "direccion", value);
+                }
+            }
+        }
         /// <summary>
         /// There are no comments for provincia in the schema.
         /// </summary>
@@ -17567,6 +20681,28 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for tercero_vs_direccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "tercero_vs_direccion_tercero", "tercero_vs_direccion")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<tercero_vs_direccion> tercero_vs_direccion
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<tercero_vs_direccion>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero_vs_direccion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<tercero_vs_direccion>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero_vs_direccion", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for tercero_vs_permiso in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "tercero_vs_permiso_tercero", "tercero_vs_permiso")]
@@ -17607,6 +20743,45 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<tercero_vs_telefono>("punto_ventaModel.tercero_vs_telefono_tercero", "tercero_vs_telefono", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empresa_tercero", "empresa")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public empresa empresa
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for empresa in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<empresa> empresaReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empresa>("punto_ventaModel.empresa_tercero", "empresa", value);
                 }
             }
         }
@@ -17764,6 +20939,28 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<comprobante_fiscal>("punto_ventaModel.comprobante_tipo", "comprobante_fiscal", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for comprobante_ventas in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "comprobante_ventas_tipo_comprobante", "comprobante_ventas")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<comprobante_ventas> comprobante_ventas
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<comprobante_ventas>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "comprobante_ventas");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<comprobante_ventas>("punto_ventaModel.comprobante_ventas_tipo_comprobante", "comprobante_ventas", value);
                 }
             }
         }
@@ -18723,6 +21920,72 @@ namespace puntoVentaModelo.Mysql
             }
         }
         /// <summary>
+        /// There are no comments for historial_inventario_agotado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "historial_inventario_agotado_unidad", "historial_inventario_agotado")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<historial_inventario_agotado> historial_inventario_agotado
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<historial_inventario_agotado>("punto_ventaModel.historial_inventario_agotado_unidad", "historial_inventario_agotado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<historial_inventario_agotado>("punto_ventaModel.historial_inventario_agotado_unidad", "historial_inventario_agotado", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto_codigobarra in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_codigobarra_unidad", "producto_codigobarra")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto_codigobarra> producto_codigobarra
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto_codigobarra>("punto_ventaModel.producto_codigobarra_unidad", "producto_codigobarra");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto_codigobarra>("punto_ventaModel.producto_codigobarra_unidad", "producto_codigobarra", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto_productos_requisitos in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_unidad", "producto_productos_requisitos")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityCollection<producto_productos_requisitos> producto_productos_requisitos
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_unidad", "producto_productos_requisitos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedCollection<producto_productos_requisitos>("punto_ventaModel.producto_productos_requisitos_unidad", "producto_productos_requisitos", value);
+                }
+            }
+        }
+        /// <summary>
         /// There are no comments for producto1 in the schema.
         /// </summary>
         [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_unidad", "producto")]
@@ -18848,6 +22111,45 @@ namespace puntoVentaModelo.Mysql
         partial void OnestadoChanging(global::System.Nullable<int> value);
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "vendedor_empleado", "empleado")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public empleado empleado
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.vendedor_empleado", "empleado").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.vendedor_empleado", "empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<empleado> empleadoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.vendedor_empleado", "empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empleado>("punto_ventaModel.vendedor_empleado", "empleado", value);
+                }
+            }
+        }
     }
     /// <summary>
     /// There are no comments for punto_ventaModel.catalogo_cuentas in the schema.
@@ -20305,6 +23607,299 @@ namespace puntoVentaModelo.Mysql
         }
     }
     /// <summary>
+    /// There are no comments for punto_ventaModel.empleado_vs_conceptos_nomina in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// cod_nomina
+    /// cod_empleado
+    /// cod_concepto
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="empleado_vs_conceptos_nomina")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class empleado_vs_conceptos_nomina : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new empleado_vs_conceptos_nomina object.
+        /// </summary>
+        /// <param name="cod_nomina">Initial value of cod_nomina.</param>
+        /// <param name="cod_empleado">Initial value of cod_empleado.</param>
+        /// <param name="cod_concepto">Initial value of cod_concepto.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static empleado_vs_conceptos_nomina Createempleado_vs_conceptos_nomina(int cod_nomina, int cod_empleado, int cod_concepto)
+        {
+            empleado_vs_conceptos_nomina empleado_vs_conceptos_nomina = new empleado_vs_conceptos_nomina();
+            empleado_vs_conceptos_nomina.cod_nomina = cod_nomina;
+            empleado_vs_conceptos_nomina.cod_empleado = cod_empleado;
+            empleado_vs_conceptos_nomina.cod_concepto = cod_concepto;
+            return empleado_vs_conceptos_nomina;
+        }
+        /// <summary>
+        /// There are no comments for property cod_nomina in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_nomina
+        {
+            get
+            {
+                return this._cod_nomina;
+            }
+            set
+            {
+                this.Oncod_nominaChanging(value);
+                this.ReportPropertyChanging("cod_nomina");
+                this._cod_nomina = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_nomina");
+                this.Oncod_nominaChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_nomina;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_nominaChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_nominaChanged();
+        /// <summary>
+        /// There are no comments for property cod_empleado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_empleado
+        {
+            get
+            {
+                return this._cod_empleado;
+            }
+            set
+            {
+                this.Oncod_empleadoChanging(value);
+                this.ReportPropertyChanging("cod_empleado");
+                this._cod_empleado = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_empleado");
+                this.Oncod_empleadoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_empleado;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_empleadoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_empleadoChanged();
+        /// <summary>
+        /// There are no comments for property cod_concepto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_concepto
+        {
+            get
+            {
+                return this._cod_concepto;
+            }
+            set
+            {
+                this.Oncod_conceptoChanging(value);
+                this.ReportPropertyChanging("cod_concepto");
+                this._cod_concepto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_concepto");
+                this.Oncod_conceptoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_concepto;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_conceptoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_conceptoChanged();
+        /// <summary>
+        /// There are no comments for property monto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<float> monto
+        {
+            get
+            {
+                return this._monto;
+            }
+            set
+            {
+                this.OnmontoChanging(value);
+                this.ReportPropertyChanging("monto");
+                this._monto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("monto");
+                this.OnmontoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<float> _monto;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnmontoChanging(global::System.Nullable<float> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnmontoChanged();
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_empelado_modifico", "empleado")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public empleado empleado
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for empleado in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<empleado> empleadoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empelado_modifico", "empleado", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for empleado1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_empleado", "empleado")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public empleado empleado1
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for empleado1 in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<empleado> empleado1Reference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<empleado>("punto_ventaModel.empleado_concepto_nomina_empleado", "empleado", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for nomina in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_nomina", "nomina")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public nomina nomina
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "nomina").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "nomina").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for nomina in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<nomina> nominaReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "nomina");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<nomina>("punto_ventaModel.empleado_concepto_nomina_nomina", "nomina", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for nomina_conceptos in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "empleado_concepto_nomina_concepto", "nomina_conceptos")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public nomina_conceptos nomina_conceptos
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina_conceptos>("punto_ventaModel.empleado_concepto_nomina_concepto", "nomina_conceptos").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina_conceptos>("punto_ventaModel.empleado_concepto_nomina_concepto", "nomina_conceptos").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for nomina_conceptos in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<nomina_conceptos> nomina_conceptosReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<nomina_conceptos>("punto_ventaModel.empleado_concepto_nomina_concepto", "nomina_conceptos");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<nomina_conceptos>("punto_ventaModel.empleado_concepto_nomina_concepto", "nomina_conceptos", value);
+                }
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for punto_ventaModel.factura_detalle in the schema.
     /// </summary>
     /// <KeyProperties>
@@ -20952,6 +24547,299 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<factura>("punto_ventaModel.facturas_anuladas_factura", "factura", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for punto_ventaModel.historial_inventario_agotado in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// cod_producto
+    /// cod_unidad
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="historial_inventario_agotado")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class historial_inventario_agotado : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new historial_inventario_agotado object.
+        /// </summary>
+        /// <param name="cod_producto">Initial value of cod_producto.</param>
+        /// <param name="cod_unidad">Initial value of cod_unidad.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static historial_inventario_agotado Createhistorial_inventario_agotado(int cod_producto, int cod_unidad)
+        {
+            historial_inventario_agotado historial_inventario_agotado = new historial_inventario_agotado();
+            historial_inventario_agotado.cod_producto = cod_producto;
+            historial_inventario_agotado.cod_unidad = cod_unidad;
+            return historial_inventario_agotado;
+        }
+        /// <summary>
+        /// There are no comments for property cod_producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_producto
+        {
+            get
+            {
+                return this._cod_producto;
+            }
+            set
+            {
+                this.Oncod_productoChanging(value);
+                this.ReportPropertyChanging("cod_producto");
+                this._cod_producto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_producto");
+                this.Oncod_productoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_producto;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_productoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_productoChanged();
+        /// <summary>
+        /// There are no comments for property cod_unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_unidad
+        {
+            get
+            {
+                return this._cod_unidad;
+            }
+            set
+            {
+                this.Oncod_unidadChanging(value);
+                this.ReportPropertyChanging("cod_unidad");
+                this._cod_unidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_unidad");
+                this.Oncod_unidadChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_unidad;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanged();
+        /// <summary>
+        /// There are no comments for property existencia in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<decimal> existencia
+        {
+            get
+            {
+                return this._existencia;
+            }
+            set
+            {
+                this.OnexistenciaChanging(value);
+                this.ReportPropertyChanging("existencia");
+                this._existencia = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("existencia");
+                this.OnexistenciaChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<decimal> _existencia;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnexistenciaChanging(global::System.Nullable<decimal> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnexistenciaChanged();
+        /// <summary>
+        /// There are no comments for property fecha_entrada in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<global::System.DateTime> fecha_entrada
+        {
+            get
+            {
+                return this._fecha_entrada;
+            }
+            set
+            {
+                this.Onfecha_entradaChanging(value);
+                this.ReportPropertyChanging("fecha_entrada");
+                this._fecha_entrada = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("fecha_entrada");
+                this.Onfecha_entradaChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<global::System.DateTime> _fecha_entrada;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Onfecha_entradaChanging(global::System.Nullable<global::System.DateTime> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Onfecha_entradaChanged();
+        /// <summary>
+        /// There are no comments for property fecha_vencimiento in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<global::System.DateTime> fecha_vencimiento
+        {
+            get
+            {
+                return this._fecha_vencimiento;
+            }
+            set
+            {
+                this.Onfecha_vencimientoChanging(value);
+                this.ReportPropertyChanging("fecha_vencimiento");
+                this._fecha_vencimiento = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("fecha_vencimiento");
+                this.Onfecha_vencimientoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<global::System.DateTime> _fecha_vencimiento;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Onfecha_vencimientoChanging(global::System.Nullable<global::System.DateTime> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Onfecha_vencimientoChanged();
+        /// <summary>
+        /// There are no comments for property costo in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<decimal> costo
+        {
+            get
+            {
+                return this._costo;
+            }
+            set
+            {
+                this.OncostoChanging(value);
+                this.ReportPropertyChanging("costo");
+                this._costo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("costo");
+                this.OncostoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<decimal> _costo;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncostoChanging(global::System.Nullable<decimal> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncostoChanged();
+        /// <summary>
+        /// There are no comments for property precio in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<decimal> precio
+        {
+            get
+            {
+                return this._precio;
+            }
+            set
+            {
+                this.OnprecioChanging(value);
+                this.ReportPropertyChanging("precio");
+                this._precio = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("precio");
+                this.OnprecioChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<decimal> _precio;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnprecioChanging(global::System.Nullable<decimal> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnprecioChanged();
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "historial_inventario_agotado_producto", "producto")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public producto producto
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.historial_inventario_agotado_producto", "producto").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.historial_inventario_agotado_producto", "producto").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<producto> productoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.historial_inventario_agotado_producto", "producto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<producto>("punto_ventaModel.historial_inventario_agotado_producto", "producto", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "historial_inventario_agotado_unidad", "unidad")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public unidad unidad
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.historial_inventario_agotado_unidad", "unidad").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.historial_inventario_agotado_unidad", "unidad").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<unidad> unidadReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.historial_inventario_agotado_unidad", "unidad");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<unidad>("punto_ventaModel.historial_inventario_agotado_unidad", "unidad", value);
                 }
             }
         }
@@ -21754,6 +25642,218 @@ namespace puntoVentaModelo.Mysql
         }
     }
     /// <summary>
+    /// There are no comments for punto_ventaModel.producto_codigobarra in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// cod_producto
+    /// cod_unidad
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="producto_codigobarra")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class producto_codigobarra : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new producto_codigobarra object.
+        /// </summary>
+        /// <param name="cod_producto">Initial value of cod_producto.</param>
+        /// <param name="cod_unidad">Initial value of cod_unidad.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static producto_codigobarra Createproducto_codigobarra(int cod_producto, int cod_unidad)
+        {
+            producto_codigobarra producto_codigobarra = new producto_codigobarra();
+            producto_codigobarra.cod_producto = cod_producto;
+            producto_codigobarra.cod_unidad = cod_unidad;
+            return producto_codigobarra;
+        }
+        /// <summary>
+        /// There are no comments for property codigo in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<int> codigo
+        {
+            get
+            {
+                return this._codigo;
+            }
+            set
+            {
+                this.OncodigoChanging(value);
+                this.ReportPropertyChanging("codigo");
+                this._codigo = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("codigo");
+                this.OncodigoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<int> _codigo;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncodigoChanging(global::System.Nullable<int> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncodigoChanged();
+        /// <summary>
+        /// There are no comments for property cod_producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_producto
+        {
+            get
+            {
+                return this._cod_producto;
+            }
+            set
+            {
+                this.Oncod_productoChanging(value);
+                this.ReportPropertyChanging("cod_producto");
+                this._cod_producto = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_producto");
+                this.Oncod_productoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_producto;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_productoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_productoChanged();
+        /// <summary>
+        /// There are no comments for property cod_unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_unidad
+        {
+            get
+            {
+                return this._cod_unidad;
+            }
+            set
+            {
+                this.Oncod_unidadChanging(value);
+                this.ReportPropertyChanging("cod_unidad");
+                this._cod_unidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_unidad");
+                this.Oncod_unidadChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_unidad;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanged();
+        /// <summary>
+        /// There are no comments for property codigo_barra in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string codigo_barra
+        {
+            get
+            {
+                return this._codigo_barra;
+            }
+            set
+            {
+                this.Oncodigo_barraChanging(value);
+                this.ReportPropertyChanging("codigo_barra");
+                this._codigo_barra = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, true);
+                this.ReportPropertyChanged("codigo_barra");
+                this.Oncodigo_barraChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _codigo_barra;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodigo_barraChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodigo_barraChanged();
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_codigobarra_producto", "producto")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public producto producto
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_codigobarra_producto", "producto").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_codigobarra_producto", "producto").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<producto> productoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_codigobarra_producto", "producto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<producto>("punto_ventaModel.producto_codigobarra_producto", "producto", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_codigobarra_unidad", "unidad")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public unidad unidad
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_codigobarra_unidad", "unidad").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_codigobarra_unidad", "unidad").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<unidad> unidadReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_codigobarra_unidad", "unidad");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<unidad>("punto_ventaModel.producto_codigobarra_unidad", "unidad", value);
+                }
+            }
+        }
+    }
+    /// <summary>
     /// There are no comments for punto_ventaModel.producto_oferta_historial in the schema.
     /// </summary>
     /// <KeyProperties>
@@ -22069,6 +26169,260 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<sucursal>("punto_ventaModel.producto_oferta_historial_sucursal", "sucursal", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for punto_ventaModel.producto_productos_requisitos in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// codpro_titular
+    /// codpro_requisito
+    /// cod_unidad
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="producto_productos_requisitos")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class producto_productos_requisitos : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new producto_productos_requisitos object.
+        /// </summary>
+        /// <param name="codpro_titular">Initial value of codpro_titular.</param>
+        /// <param name="codpro_requisito">Initial value of codpro_requisito.</param>
+        /// <param name="cod_unidad">Initial value of cod_unidad.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static producto_productos_requisitos Createproducto_productos_requisitos(int codpro_titular, int codpro_requisito, int cod_unidad)
+        {
+            producto_productos_requisitos producto_productos_requisitos = new producto_productos_requisitos();
+            producto_productos_requisitos.codpro_titular = codpro_titular;
+            producto_productos_requisitos.codpro_requisito = codpro_requisito;
+            producto_productos_requisitos.cod_unidad = cod_unidad;
+            return producto_productos_requisitos;
+        }
+        /// <summary>
+        /// There are no comments for property codpro_titular in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int codpro_titular
+        {
+            get
+            {
+                return this._codpro_titular;
+            }
+            set
+            {
+                this.Oncodpro_titularChanging(value);
+                this.ReportPropertyChanging("codpro_titular");
+                this._codpro_titular = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("codpro_titular");
+                this.Oncodpro_titularChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _codpro_titular;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodpro_titularChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodpro_titularChanged();
+        /// <summary>
+        /// There are no comments for property codpro_requisito in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int codpro_requisito
+        {
+            get
+            {
+                return this._codpro_requisito;
+            }
+            set
+            {
+                this.Oncodpro_requisitoChanging(value);
+                this.ReportPropertyChanging("codpro_requisito");
+                this._codpro_requisito = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("codpro_requisito");
+                this.Oncodpro_requisitoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _codpro_requisito;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodpro_requisitoChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncodpro_requisitoChanged();
+        /// <summary>
+        /// There are no comments for property cod_unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_unidad
+        {
+            get
+            {
+                return this._cod_unidad;
+            }
+            set
+            {
+                this.Oncod_unidadChanging(value);
+                this.ReportPropertyChanging("cod_unidad");
+                this._cod_unidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_unidad");
+                this.Oncod_unidadChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_unidad;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_unidadChanged();
+        /// <summary>
+        /// There are no comments for property cantidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public global::System.Nullable<decimal> cantidad
+        {
+            get
+            {
+                return this._cantidad;
+            }
+            set
+            {
+                this.OncantidadChanging(value);
+                this.ReportPropertyChanging("cantidad");
+                this._cantidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cantidad");
+                this.OncantidadChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private global::System.Nullable<decimal> _cantidad;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncantidadChanging(global::System.Nullable<decimal> value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OncantidadChanged();
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_producto_requisito", "producto")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public producto producto
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<producto> productoReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_requisito", "producto", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto1 in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_producto_titular", "producto")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public producto producto1
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for producto1 in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<producto> producto1Reference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<producto>("punto_ventaModel.producto_productos_requisitos_producto_titular", "producto", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "producto_productos_requisitos_unidad", "unidad")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public unidad unidad
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_productos_requisitos_unidad", "unidad").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_productos_requisitos_unidad", "unidad").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for unidad in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<unidad> unidadReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<unidad>("punto_ventaModel.producto_productos_requisitos_unidad", "unidad");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<unidad>("punto_ventaModel.producto_productos_requisitos_unidad", "unidad", value);
                 }
             }
         }
@@ -22451,6 +26805,224 @@ namespace puntoVentaModelo.Mysql
                 if ((value != null))
                 {
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<tercero>("punto_ventaModel.tercero_observaciones_tercero", "tercero", value);
+                }
+            }
+        }
+    }
+    /// <summary>
+    /// There are no comments for punto_ventaModel.tercero_vs_direccion in the schema.
+    /// </summary>
+    /// <KeyProperties>
+    /// cod_tercero
+    /// cod_direccion
+    /// estado
+    /// tipo_entidad
+    /// </KeyProperties>
+    [global::System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName="punto_ventaModel", Name="tercero_vs_direccion")]
+    [global::System.Runtime.Serialization.DataContractAttribute(IsReference=true)]
+    [global::System.Serializable()]
+    public partial class tercero_vs_direccion : global::System.Data.Objects.DataClasses.EntityObject
+    {
+        /// <summary>
+        /// Create a new tercero_vs_direccion object.
+        /// </summary>
+        /// <param name="cod_tercero">Initial value of cod_tercero.</param>
+        /// <param name="cod_direccion">Initial value of cod_direccion.</param>
+        /// <param name="estado">Initial value of estado.</param>
+        /// <param name="tipo_entidad">Initial value of tipo_entidad.</param>
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public static tercero_vs_direccion Createtercero_vs_direccion(int cod_tercero, int cod_direccion, byte estado, string tipo_entidad)
+        {
+            tercero_vs_direccion tercero_vs_direccion = new tercero_vs_direccion();
+            tercero_vs_direccion.cod_tercero = cod_tercero;
+            tercero_vs_direccion.cod_direccion = cod_direccion;
+            tercero_vs_direccion.estado = estado;
+            tercero_vs_direccion.tipo_entidad = tipo_entidad;
+            return tercero_vs_direccion;
+        }
+        /// <summary>
+        /// There are no comments for property cod_tercero in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_tercero
+        {
+            get
+            {
+                return this._cod_tercero;
+            }
+            set
+            {
+                this.Oncod_terceroChanging(value);
+                this.ReportPropertyChanging("cod_tercero");
+                this._cod_tercero = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_tercero");
+                this.Oncod_terceroChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_tercero;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_terceroChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_terceroChanged();
+        /// <summary>
+        /// There are no comments for property cod_direccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public int cod_direccion
+        {
+            get
+            {
+                return this._cod_direccion;
+            }
+            set
+            {
+                this.Oncod_direccionChanging(value);
+                this.ReportPropertyChanging("cod_direccion");
+                this._cod_direccion = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("cod_direccion");
+                this.Oncod_direccionChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private int _cod_direccion;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_direccionChanging(int value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Oncod_direccionChanged();
+        /// <summary>
+        /// There are no comments for property estado in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public byte estado
+        {
+            get
+            {
+                return this._estado;
+            }
+            set
+            {
+                this.OnestadoChanging(value);
+                this.ReportPropertyChanging("estado");
+                this._estado = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value);
+                this.ReportPropertyChanged("estado");
+                this.OnestadoChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private byte _estado;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnestadoChanging(byte value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void OnestadoChanged();
+        /// <summary>
+        /// There are no comments for property tipo_entidad in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        public string tipo_entidad
+        {
+            get
+            {
+                return this._tipo_entidad;
+            }
+            set
+            {
+                this.Ontipo_entidadChanging(value);
+                this.ReportPropertyChanging("tipo_entidad");
+                this._tipo_entidad = global::System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value, false);
+                this.ReportPropertyChanged("tipo_entidad");
+                this.Ontipo_entidadChanged();
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        private string _tipo_entidad;
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Ontipo_entidadChanging(string value);
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        partial void Ontipo_entidadChanged();
+        /// <summary>
+        /// There are no comments for direccion in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "tercero_vs_direccion_direccion", "direccion")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public direccion direccion
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "direccion").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "direccion").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for direccion in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<direccion> direccionReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "direccion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<direccion>("punto_ventaModel.tercero_vs_direccion_direccion", "direccion", value);
+                }
+            }
+        }
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("punto_ventaModel", "tercero_vs_direccion_tercero", "tercero")]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Xml.Serialization.XmlIgnoreAttribute()]
+        [global::System.Xml.Serialization.SoapIgnoreAttribute()]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public tercero tercero
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero").Value;
+            }
+            set
+            {
+                ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero").Value = value;
+            }
+        }
+        /// <summary>
+        /// There are no comments for tercero in the schema.
+        /// </summary>
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
+        [global::System.Runtime.Serialization.DataMemberAttribute()]
+        public global::System.Data.Objects.DataClasses.EntityReference<tercero> terceroReference
+        {
+            get
+            {
+                return ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.GetRelatedReference<tercero>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<tercero>("punto_ventaModel.tercero_vs_direccion_tercero", "tercero", value);
                 }
             }
         }
@@ -22945,2437 +27517,6 @@ namespace puntoVentaModelo.Mysql
                     ((global::System.Data.Objects.DataClasses.IEntityWithRelationships)(this)).RelationshipManager.InitializeRelatedReference<tercero>("punto_ventaModel.tercero_vs_telefono_tercero", "tercero", value);
                 }
             }
-        }
-    }
-    /// <summary>
-    /// There are no comments for puntoVentaEntities in the schema.
-    /// </summary>
-    public partial class puntoVentaEntities : global::System.Data.Objects.ObjectContext
-    {
-        /// <summary>
-        /// Initializes a new puntoVentaEntities object using the connection string found in the 'puntoVentaEntities' section of the application configuration file.
-        /// </summary>
-        public puntoVentaEntities() : 
-                base("name=puntoVentaEntities", "puntoVentaEntities")
-        {
-            this.OnContextCreated();
-        }
-        /// <summary>
-        /// Initialize a new puntoVentaEntities object.
-        /// </summary>
-        public puntoVentaEntities(string connectionString) : 
-                base(connectionString, "puntoVentaEntities")
-        {
-            this.OnContextCreated();
-        }
-        /// <summary>
-        /// Initialize a new puntoVentaEntities object.
-        /// </summary>
-        public puntoVentaEntities(global::System.Data.EntityClient.EntityConnection connection) : 
-                base(connection, "puntoVentaEntities")
-        {
-            this.OnContextCreated();
-        }
-        partial void OnContextCreated();
-        /// <summary>
-        /// There are no comments for almacen in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<almacen> almacen
-        {
-            get
-            {
-                if ((this._almacen == null))
-                {
-                    this._almacen = base.CreateQuery<almacen>("[almacen]");
-                }
-                return this._almacen;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<almacen> _almacen;
-        /// <summary>
-        /// There are no comments for banco in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<banco> banco
-        {
-            get
-            {
-                if ((this._banco == null))
-                {
-                    this._banco = base.CreateQuery<banco>("[banco]");
-                }
-                return this._banco;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<banco> _banco;
-        /// <summary>
-        /// There are no comments for caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<caja> caja
-        {
-            get
-            {
-                if ((this._caja == null))
-                {
-                    this._caja = base.CreateQuery<caja>("[caja]");
-                }
-                return this._caja;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<caja> _caja;
-        /// <summary>
-        /// There are no comments for cajero in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cajero> cajero
-        {
-            get
-            {
-                if ((this._cajero == null))
-                {
-                    this._cajero = base.CreateQuery<cajero>("[cajero]");
-                }
-                return this._cajero;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cajero> _cajero;
-        /// <summary>
-        /// There are no comments for cargo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cargo> cargo
-        {
-            get
-            {
-                if ((this._cargo == null))
-                {
-                    this._cargo = base.CreateQuery<cargo>("[cargo]");
-                }
-                return this._cargo;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cargo> _cargo;
-        /// <summary>
-        /// There are no comments for categoria_producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<categoria_producto> categoria_producto
-        {
-            get
-            {
-                if ((this._categoria_producto == null))
-                {
-                    this._categoria_producto = base.CreateQuery<categoria_producto>("[categoria_producto]");
-                }
-                return this._categoria_producto;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<categoria_producto> _categoria_producto;
-        /// <summary>
-        /// There are no comments for cliente in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cliente> cliente
-        {
-            get
-            {
-                if ((this._cliente == null))
-                {
-                    this._cliente = base.CreateQuery<cliente>("[cliente]");
-                }
-                return this._cliente;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cliente> _cliente;
-        /// <summary>
-        /// There are no comments for cliente_categoria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cliente_categoria> cliente_categoria
-        {
-            get
-            {
-                if ((this._cliente_categoria == null))
-                {
-                    this._cliente_categoria = base.CreateQuery<cliente_categoria>("[cliente_categoria]");
-                }
-                return this._cliente_categoria;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cliente_categoria> _cliente_categoria;
-        /// <summary>
-        /// There are no comments for cliente_subcategoria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cliente_subcategoria> cliente_subcategoria
-        {
-            get
-            {
-                if ((this._cliente_subcategoria == null))
-                {
-                    this._cliente_subcategoria = base.CreateQuery<cliente_subcategoria>("[cliente_subcategoria]");
-                }
-                return this._cliente_subcategoria;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cliente_subcategoria> _cliente_subcategoria;
-        /// <summary>
-        /// There are no comments for cobros in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cobros> cobros
-        {
-            get
-            {
-                if ((this._cobros == null))
-                {
-                    this._cobros = base.CreateQuery<cobros>("[cobros]");
-                }
-                return this._cobros;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cobros> _cobros;
-        /// <summary>
-        /// There are no comments for cobros_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cobros_detalles> cobros_detalles
-        {
-            get
-            {
-                if ((this._cobros_detalles == null))
-                {
-                    this._cobros_detalles = base.CreateQuery<cobros_detalles>("[cobros_detalles]");
-                }
-                return this._cobros_detalles;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cobros_detalles> _cobros_detalles;
-        /// <summary>
-        /// There are no comments for compra in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra> compra
-        {
-            get
-            {
-                if ((this._compra == null))
-                {
-                    this._compra = base.CreateQuery<compra>("[compra]");
-                }
-                return this._compra;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra> _compra;
-        /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra_pago_anulados> compra_pago_anulados
-        {
-            get
-            {
-                if ((this._compra_pago_anulados == null))
-                {
-                    this._compra_pago_anulados = base.CreateQuery<compra_pago_anulados>("[compra_pago_anulados]");
-                }
-                return this._compra_pago_anulados;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra_pago_anulados> _compra_pago_anulados;
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra_vs_pagos> compra_vs_pagos
-        {
-            get
-            {
-                if ((this._compra_vs_pagos == null))
-                {
-                    this._compra_vs_pagos = base.CreateQuery<compra_vs_pagos>("[compra_vs_pagos]");
-                }
-                return this._compra_vs_pagos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra_vs_pagos> _compra_vs_pagos;
-        /// <summary>
-        /// There are no comments for comprobante_fiscal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<comprobante_fiscal> comprobante_fiscal
-        {
-            get
-            {
-                if ((this._comprobante_fiscal == null))
-                {
-                    this._comprobante_fiscal = base.CreateQuery<comprobante_fiscal>("[comprobante_fiscal]");
-                }
-                return this._comprobante_fiscal;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<comprobante_fiscal> _comprobante_fiscal;
-        /// <summary>
-        /// There are no comments for comprobante_serie in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<comprobante_serie> comprobante_serie
-        {
-            get
-            {
-                if ((this._comprobante_serie == null))
-                {
-                    this._comprobante_serie = base.CreateQuery<comprobante_serie>("[comprobante_serie]");
-                }
-                return this._comprobante_serie;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<comprobante_serie> _comprobante_serie;
-        /// <summary>
-        /// There are no comments for comprobante_ventas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<comprobante_ventas> comprobante_ventas
-        {
-            get
-            {
-                if ((this._comprobante_ventas == null))
-                {
-                    this._comprobante_ventas = base.CreateQuery<comprobante_ventas>("[comprobante_ventas]");
-                }
-                return this._comprobante_ventas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<comprobante_ventas> _comprobante_ventas;
-        /// <summary>
-        /// There are no comments for correo_electronicos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<correo_electronicos> correo_electronicos
-        {
-            get
-            {
-                if ((this._correo_electronicos == null))
-                {
-                    this._correo_electronicos = base.CreateQuery<correo_electronicos>("[correo_electronicos]");
-                }
-                return this._correo_electronicos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<correo_electronicos> _correo_electronicos;
-        /// <summary>
-        /// There are no comments for cuadre_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cuadre_caja> cuadre_caja
-        {
-            get
-            {
-                if ((this._cuadre_caja == null))
-                {
-                    this._cuadre_caja = base.CreateQuery<cuadre_caja>("[cuadre_caja]");
-                }
-                return this._cuadre_caja;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cuadre_caja> _cuadre_caja;
-        /// <summary>
-        /// There are no comments for cuenta_bancaria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<cuenta_bancaria> cuenta_bancaria
-        {
-            get
-            {
-                if ((this._cuenta_bancaria == null))
-                {
-                    this._cuenta_bancaria = base.CreateQuery<cuenta_bancaria>("[cuenta_bancaria]");
-                }
-                return this._cuenta_bancaria;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<cuenta_bancaria> _cuenta_bancaria;
-        /// <summary>
-        /// There are no comments for departamento in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<departamento> departamento
-        {
-            get
-            {
-                if ((this._departamento == null))
-                {
-                    this._departamento = base.CreateQuery<departamento>("[departamento]");
-                }
-                return this._departamento;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<departamento> _departamento;
-        /// <summary>
-        /// There are no comments for direccion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<direccion> direccion
-        {
-            get
-            {
-                if ((this._direccion == null))
-                {
-                    this._direccion = base.CreateQuery<direccion>("[direccion]");
-                }
-                return this._direccion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<direccion> _direccion;
-        /// <summary>
-        /// There are no comments for egresos_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<egresos_caja> egresos_caja
-        {
-            get
-            {
-                if ((this._egresos_caja == null))
-                {
-                    this._egresos_caja = base.CreateQuery<egresos_caja>("[egresos_caja]");
-                }
-                return this._egresos_caja;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<egresos_caja> _egresos_caja;
-        /// <summary>
-        /// There are no comments for egresos_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<egresos_conceptos> egresos_conceptos
-        {
-            get
-            {
-                if ((this._egresos_conceptos == null))
-                {
-                    this._egresos_conceptos = base.CreateQuery<egresos_conceptos>("[egresos_conceptos]");
-                }
-                return this._egresos_conceptos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<egresos_conceptos> _egresos_conceptos;
-        /// <summary>
-        /// There are no comments for empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<empleado> empleado
-        {
-            get
-            {
-                if ((this._empleado == null))
-                {
-                    this._empleado = base.CreateQuery<empleado>("[empleado]");
-                }
-                return this._empleado;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<empleado> _empleado;
-        /// <summary>
-        /// There are no comments for empresa in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<empresa> empresa
-        {
-            get
-            {
-                if ((this._empresa == null))
-                {
-                    this._empresa = base.CreateQuery<empresa>("[empresa]");
-                }
-                return this._empresa;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<empresa> _empresa;
-        /// <summary>
-        /// There are no comments for entrada_salida_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<entrada_salida_inventario> entrada_salida_inventario
-        {
-            get
-            {
-                if ((this._entrada_salida_inventario == null))
-                {
-                    this._entrada_salida_inventario = base.CreateQuery<entrada_salida_inventario>("[entrada_salida_inventario]");
-                }
-                return this._entrada_salida_inventario;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<entrada_salida_inventario> _entrada_salida_inventario;
-        /// <summary>
-        /// There are no comments for estados_reparacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<estados_reparacion> estados_reparacion
-        {
-            get
-            {
-                if ((this._estados_reparacion == null))
-                {
-                    this._estados_reparacion = base.CreateQuery<estados_reparacion>("[estados_reparacion]");
-                }
-                return this._estados_reparacion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<estados_reparacion> _estados_reparacion;
-        /// <summary>
-        /// There are no comments for factura in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<factura> factura
-        {
-            get
-            {
-                if ((this._factura == null))
-                {
-                    this._factura = base.CreateQuery<factura>("[factura]");
-                }
-                return this._factura;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<factura> _factura;
-        /// <summary>
-        /// There are no comments for grupo_usuarios in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<grupo_usuarios> grupo_usuarios
-        {
-            get
-            {
-                if ((this._grupo_usuarios == null))
-                {
-                    this._grupo_usuarios = base.CreateQuery<grupo_usuarios>("[grupo_usuarios]");
-                }
-                return this._grupo_usuarios;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<grupo_usuarios> _grupo_usuarios;
-        /// <summary>
-        /// There are no comments for historial_devolucion_compras in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<historial_devolucion_compras> historial_devolucion_compras
-        {
-            get
-            {
-                if ((this._historial_devolucion_compras == null))
-                {
-                    this._historial_devolucion_compras = base.CreateQuery<historial_devolucion_compras>("[historial_devolucion_compras]");
-                }
-                return this._historial_devolucion_compras;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<historial_devolucion_compras> _historial_devolucion_compras;
-        /// <summary>
-        /// There are no comments for historial_devolucion_ventas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<historial_devolucion_ventas> historial_devolucion_ventas
-        {
-            get
-            {
-                if ((this._historial_devolucion_ventas == null))
-                {
-                    this._historial_devolucion_ventas = base.CreateQuery<historial_devolucion_ventas>("[historial_devolucion_ventas]");
-                }
-                return this._historial_devolucion_ventas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<historial_devolucion_ventas> _historial_devolucion_ventas;
-        /// <summary>
-        /// There are no comments for identificacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<identificacion> identificacion
-        {
-            get
-            {
-                if ((this._identificacion == null))
-                {
-                    this._identificacion = base.CreateQuery<identificacion>("[identificacion]");
-                }
-                return this._identificacion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<identificacion> _identificacion;
-        /// <summary>
-        /// There are no comments for ingresos_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<ingresos_caja> ingresos_caja
-        {
-            get
-            {
-                if ((this._ingresos_caja == null))
-                {
-                    this._ingresos_caja = base.CreateQuery<ingresos_caja>("[ingresos_caja]");
-                }
-                return this._ingresos_caja;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<ingresos_caja> _ingresos_caja;
-        /// <summary>
-        /// There are no comments for ingresos_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<ingresos_conceptos> ingresos_conceptos
-        {
-            get
-            {
-                if ((this._ingresos_conceptos == null))
-                {
-                    this._ingresos_conceptos = base.CreateQuery<ingresos_conceptos>("[ingresos_conceptos]");
-                }
-                return this._ingresos_conceptos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<ingresos_conceptos> _ingresos_conceptos;
-        /// <summary>
-        /// There are no comments for inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<inventario> inventario
-        {
-            get
-            {
-                if ((this._inventario == null))
-                {
-                    this._inventario = base.CreateQuery<inventario>("[inventario]");
-                }
-                return this._inventario;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<inventario> _inventario;
-        /// <summary>
-        /// There are no comments for inventario_reparacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<inventario_reparacion> inventario_reparacion
-        {
-            get
-            {
-                if ((this._inventario_reparacion == null))
-                {
-                    this._inventario_reparacion = base.CreateQuery<inventario_reparacion>("[inventario_reparacion]");
-                }
-                return this._inventario_reparacion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<inventario_reparacion> _inventario_reparacion;
-        /// <summary>
-        /// There are no comments for itebis in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<itebis> itebis
-        {
-            get
-            {
-                if ((this._itebis == null))
-                {
-                    this._itebis = base.CreateQuery<itebis>("[itebis]");
-                }
-                return this._itebis;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<itebis> _itebis;
-        /// <summary>
-        /// There are no comments for marcas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<marcas> marcas
-        {
-            get
-            {
-                if ((this._marcas == null))
-                {
-                    this._marcas = base.CreateQuery<marcas>("[marcas]");
-                }
-                return this._marcas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<marcas> _marcas;
-        /// <summary>
-        /// There are no comments for mesas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<mesas> mesas
-        {
-            get
-            {
-                if ((this._mesas == null))
-                {
-                    this._mesas = base.CreateQuery<mesas>("[mesas]");
-                }
-                return this._mesas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<mesas> _mesas;
-        /// <summary>
-        /// There are no comments for metodo_pago in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<metodo_pago> metodo_pago
-        {
-            get
-            {
-                if ((this._metodo_pago == null))
-                {
-                    this._metodo_pago = base.CreateQuery<metodo_pago>("[metodo_pago]");
-                }
-                return this._metodo_pago;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<metodo_pago> _metodo_pago;
-        /// <summary>
-        /// There are no comments for modelo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<modelo> modelo
-        {
-            get
-            {
-                if ((this._modelo == null))
-                {
-                    this._modelo = base.CreateQuery<modelo>("[modelo]");
-                }
-                return this._modelo;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<modelo> _modelo;
-        /// <summary>
-        /// There are no comments for moneda in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<moneda> moneda
-        {
-            get
-            {
-                if ((this._moneda == null))
-                {
-                    this._moneda = base.CreateQuery<moneda>("[moneda]");
-                }
-                return this._moneda;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<moneda> _moneda;
-        /// <summary>
-        /// There are no comments for moneda_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<moneda_historial> moneda_historial
-        {
-            get
-            {
-                if ((this._moneda_historial == null))
-                {
-                    this._moneda_historial = base.CreateQuery<moneda_historial>("[moneda_historial]");
-                }
-                return this._moneda_historial;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<moneda_historial> _moneda_historial;
-        /// <summary>
-        /// There are no comments for nomina in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<nomina> nomina
-        {
-            get
-            {
-                if ((this._nomina == null))
-                {
-                    this._nomina = base.CreateQuery<nomina>("[nomina]");
-                }
-                return this._nomina;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<nomina> _nomina;
-        /// <summary>
-        /// There are no comments for nomina_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<nomina_conceptos> nomina_conceptos
-        {
-            get
-            {
-                if ((this._nomina_conceptos == null))
-                {
-                    this._nomina_conceptos = base.CreateQuery<nomina_conceptos>("[nomina_conceptos]");
-                }
-                return this._nomina_conceptos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<nomina_conceptos> _nomina_conceptos;
-        /// <summary>
-        /// There are no comments for nomina_tipos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<nomina_tipos> nomina_tipos
-        {
-            get
-            {
-                if ((this._nomina_tipos == null))
-                {
-                    this._nomina_tipos = base.CreateQuery<nomina_tipos>("[nomina_tipos]");
-                }
-                return this._nomina_tipos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<nomina_tipos> _nomina_tipos;
-        /// <summary>
-        /// There are no comments for pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<pagos> pagos
-        {
-            get
-            {
-                if ((this._pagos == null))
-                {
-                    this._pagos = base.CreateQuery<pagos>("[pagos]");
-                }
-                return this._pagos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<pagos> _pagos;
-        /// <summary>
-        /// There are no comments for pagos_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<pagos_detalles> pagos_detalles
-        {
-            get
-            {
-                if ((this._pagos_detalles == null))
-                {
-                    this._pagos_detalles = base.CreateQuery<pagos_detalles>("[pagos_detalles]");
-                }
-                return this._pagos_detalles;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<pagos_detalles> _pagos_detalles;
-        /// <summary>
-        /// There are no comments for pais in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<pais> pais
-        {
-            get
-            {
-                if ((this._pais == null))
-                {
-                    this._pais = base.CreateQuery<pais>("[pais]");
-                }
-                return this._pais;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<pais> _pais;
-        /// <summary>
-        /// There are no comments for permiso in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<permiso> permiso
-        {
-            get
-            {
-                if ((this._permiso == null))
-                {
-                    this._permiso = base.CreateQuery<permiso>("[permiso]");
-                }
-                return this._permiso;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<permiso> _permiso;
-        /// <summary>
-        /// There are no comments for persona in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<persona> persona
-        {
-            get
-            {
-                if ((this._persona == null))
-                {
-                    this._persona = base.CreateQuery<persona>("[persona]");
-                }
-                return this._persona;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<persona> _persona;
-        /// <summary>
-        /// There are no comments for producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto> producto
-        {
-            get
-            {
-                if ((this._producto == null))
-                {
-                    this._producto = base.CreateQuery<producto>("[producto]");
-                }
-                return this._producto;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto> _producto;
-        /// <summary>
-        /// There are no comments for producto_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_detalle> producto_detalle
-        {
-            get
-            {
-                if ((this._producto_detalle == null))
-                {
-                    this._producto_detalle = base.CreateQuery<producto_detalle>("[producto_detalle]");
-                }
-                return this._producto_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_detalle> _producto_detalle;
-        /// <summary>
-        /// There are no comments for producto_oferta in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_oferta> producto_oferta
-        {
-            get
-            {
-                if ((this._producto_oferta == null))
-                {
-                    this._producto_oferta = base.CreateQuery<producto_oferta>("[producto_oferta]");
-                }
-                return this._producto_oferta;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_oferta> _producto_oferta;
-        /// <summary>
-        /// There are no comments for producto_permisos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_permisos> producto_permisos
-        {
-            get
-            {
-                if ((this._producto_permisos == null))
-                {
-                    this._producto_permisos = base.CreateQuery<producto_permisos>("[producto_permisos]");
-                }
-                return this._producto_permisos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_permisos> _producto_permisos;
-        /// <summary>
-        /// There are no comments for producto_unidad_conversion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_unidad_conversion> producto_unidad_conversion
-        {
-            get
-            {
-                if ((this._producto_unidad_conversion == null))
-                {
-                    this._producto_unidad_conversion = base.CreateQuery<producto_unidad_conversion>("[producto_unidad_conversion]");
-                }
-                return this._producto_unidad_conversion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_unidad_conversion> _producto_unidad_conversion;
-        /// <summary>
-        /// There are no comments for producto_vs_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_vs_detalle> producto_vs_detalle
-        {
-            get
-            {
-                if ((this._producto_vs_detalle == null))
-                {
-                    this._producto_vs_detalle = base.CreateQuery<producto_vs_detalle>("[producto_vs_detalle]");
-                }
-                return this._producto_vs_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_vs_detalle> _producto_vs_detalle;
-        /// <summary>
-        /// There are no comments for producto_vs_permisos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_vs_permisos> producto_vs_permisos
-        {
-            get
-            {
-                if ((this._producto_vs_permisos == null))
-                {
-                    this._producto_vs_permisos = base.CreateQuery<producto_vs_permisos>("[producto_vs_permisos]");
-                }
-                return this._producto_vs_permisos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_vs_permisos> _producto_vs_permisos;
-        /// <summary>
-        /// There are no comments for provincia in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<provincia> provincia
-        {
-            get
-            {
-                if ((this._provincia == null))
-                {
-                    this._provincia = base.CreateQuery<provincia>("[provincia]");
-                }
-                return this._provincia;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<provincia> _provincia;
-        /// <summary>
-        /// There are no comments for region in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<region> region
-        {
-            get
-            {
-                if ((this._region == null))
-                {
-                    this._region = base.CreateQuery<region>("[region]");
-                }
-                return this._region;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<region> _region;
-        /// <summary>
-        /// There are no comments for sector in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sector> sector
-        {
-            get
-            {
-                if ((this._sector == null))
-                {
-                    this._sector = base.CreateQuery<sector>("[sector]");
-                }
-                return this._sector;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sector> _sector;
-        /// <summary>
-        /// There are no comments for sexo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sexo> sexo
-        {
-            get
-            {
-                if ((this._sexo == null))
-                {
-                    this._sexo = base.CreateQuery<sexo>("[sexo]");
-                }
-                return this._sexo;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sexo> _sexo;
-        /// <summary>
-        /// There are no comments for sistema in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sistema> sistema
-        {
-            get
-            {
-                if ((this._sistema == null))
-                {
-                    this._sistema = base.CreateQuery<sistema>("[sistema]");
-                }
-                return this._sistema;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sistema> _sistema;
-        /// <summary>
-        /// There are no comments for sistema_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sistema_historial> sistema_historial
-        {
-            get
-            {
-                if ((this._sistema_historial == null))
-                {
-                    this._sistema_historial = base.CreateQuery<sistema_historial>("[sistema_historial]");
-                }
-                return this._sistema_historial;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sistema_historial> _sistema_historial;
-        /// <summary>
-        /// There are no comments for sistema_modulo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sistema_modulo> sistema_modulo
-        {
-            get
-            {
-                if ((this._sistema_modulo == null))
-                {
-                    this._sistema_modulo = base.CreateQuery<sistema_modulo>("[sistema_modulo]");
-                }
-                return this._sistema_modulo;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sistema_modulo> _sistema_modulo;
-        /// <summary>
-        /// There are no comments for sistema_modulo_opciones in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sistema_modulo_opciones> sistema_modulo_opciones
-        {
-            get
-            {
-                if ((this._sistema_modulo_opciones == null))
-                {
-                    this._sistema_modulo_opciones = base.CreateQuery<sistema_modulo_opciones>("[sistema_modulo_opciones]");
-                }
-                return this._sistema_modulo_opciones;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sistema_modulo_opciones> _sistema_modulo_opciones;
-        /// <summary>
-        /// There are no comments for situacion_empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<situacion_empleado> situacion_empleado
-        {
-            get
-            {
-                if ((this._situacion_empleado == null))
-                {
-                    this._situacion_empleado = base.CreateQuery<situacion_empleado>("[situacion_empleado]");
-                }
-                return this._situacion_empleado;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<situacion_empleado> _situacion_empleado;
-        /// <summary>
-        /// There are no comments for subcategoria_producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<subcategoria_producto> subcategoria_producto
-        {
-            get
-            {
-                if ((this._subcategoria_producto == null))
-                {
-                    this._subcategoria_producto = base.CreateQuery<subcategoria_producto>("[subcategoria_producto]");
-                }
-                return this._subcategoria_producto;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<subcategoria_producto> _subcategoria_producto;
-        /// <summary>
-        /// There are no comments for sucursal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sucursal> sucursal
-        {
-            get
-            {
-                if ((this._sucursal == null))
-                {
-                    this._sucursal = base.CreateQuery<sucursal>("[sucursal]");
-                }
-                return this._sucursal;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sucursal> _sucursal;
-        /// <summary>
-        /// There are no comments for suplidor in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<suplidor> suplidor
-        {
-            get
-            {
-                if ((this._suplidor == null))
-                {
-                    this._suplidor = base.CreateQuery<suplidor>("[suplidor]");
-                }
-                return this._suplidor;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<suplidor> _suplidor;
-        /// <summary>
-        /// There are no comments for sysdiagrams in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sysdiagrams> sysdiagrams
-        {
-            get
-            {
-                if ((this._sysdiagrams == null))
-                {
-                    this._sysdiagrams = base.CreateQuery<sysdiagrams>("[sysdiagrams]");
-                }
-                return this._sysdiagrams;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sysdiagrams> _sysdiagrams;
-        /// <summary>
-        /// There are no comments for tarjetas_credito in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tarjetas_credito> tarjetas_credito
-        {
-            get
-            {
-                if ((this._tarjetas_credito == null))
-                {
-                    this._tarjetas_credito = base.CreateQuery<tarjetas_credito>("[tarjetas_credito]");
-                }
-                return this._tarjetas_credito;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tarjetas_credito> _tarjetas_credito;
-        /// <summary>
-        /// There are no comments for tercero in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tercero> tercero
-        {
-            get
-            {
-                if ((this._tercero == null))
-                {
-                    this._tercero = base.CreateQuery<tercero>("[tercero]");
-                }
-                return this._tercero;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tercero> _tercero;
-        /// <summary>
-        /// There are no comments for tipo_comprobante_fiscal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tipo_comprobante_fiscal> tipo_comprobante_fiscal
-        {
-            get
-            {
-                if ((this._tipo_comprobante_fiscal == null))
-                {
-                    this._tipo_comprobante_fiscal = base.CreateQuery<tipo_comprobante_fiscal>("[tipo_comprobante_fiscal]");
-                }
-                return this._tipo_comprobante_fiscal;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tipo_comprobante_fiscal> _tipo_comprobante_fiscal;
-        /// <summary>
-        /// There are no comments for tipo_cuenta_bancaria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tipo_cuenta_bancaria> tipo_cuenta_bancaria
-        {
-            get
-            {
-                if ((this._tipo_cuenta_bancaria == null))
-                {
-                    this._tipo_cuenta_bancaria = base.CreateQuery<tipo_cuenta_bancaria>("[tipo_cuenta_bancaria]");
-                }
-                return this._tipo_cuenta_bancaria;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tipo_cuenta_bancaria> _tipo_cuenta_bancaria;
-        /// <summary>
-        /// There are no comments for tipo_identificacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tipo_identificacion> tipo_identificacion
-        {
-            get
-            {
-                if ((this._tipo_identificacion == null))
-                {
-                    this._tipo_identificacion = base.CreateQuery<tipo_identificacion>("[tipo_identificacion]");
-                }
-                return this._tipo_identificacion;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tipo_identificacion> _tipo_identificacion;
-        /// <summary>
-        /// There are no comments for tipo_movimiento_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tipo_movimiento_inventario> tipo_movimiento_inventario
-        {
-            get
-            {
-                if ((this._tipo_movimiento_inventario == null))
-                {
-                    this._tipo_movimiento_inventario = base.CreateQuery<tipo_movimiento_inventario>("[tipo_movimiento_inventario]");
-                }
-                return this._tipo_movimiento_inventario;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tipo_movimiento_inventario> _tipo_movimiento_inventario;
-        /// <summary>
-        /// There are no comments for transferencia_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<transferencia_inventario> transferencia_inventario
-        {
-            get
-            {
-                if ((this._transferencia_inventario == null))
-                {
-                    this._transferencia_inventario = base.CreateQuery<transferencia_inventario>("[transferencia_inventario]");
-                }
-                return this._transferencia_inventario;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<transferencia_inventario> _transferencia_inventario;
-        /// <summary>
-        /// There are no comments for unidad in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<unidad> unidad
-        {
-            get
-            {
-                if ((this._unidad == null))
-                {
-                    this._unidad = base.CreateQuery<unidad>("[unidad]");
-                }
-                return this._unidad;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<unidad> _unidad;
-        /// <summary>
-        /// There are no comments for vendedor in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<vendedor> vendedor
-        {
-            get
-            {
-                if ((this._vendedor == null))
-                {
-                    this._vendedor = base.CreateQuery<vendedor>("[vendedor]");
-                }
-                return this._vendedor;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<vendedor> _vendedor;
-        /// <summary>
-        /// There are no comments for catalogo_cuentas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<catalogo_cuentas> catalogo_cuentas
-        {
-            get
-            {
-                if ((this._catalogo_cuentas == null))
-                {
-                    this._catalogo_cuentas = base.CreateQuery<catalogo_cuentas>("[catalogo_cuentas]");
-                }
-                return this._catalogo_cuentas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<catalogo_cuentas> _catalogo_cuentas;
-        /// <summary>
-        /// There are no comments for compra_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<compra_detalle> compra_detalle
-        {
-            get
-            {
-                if ((this._compra_detalle == null))
-                {
-                    this._compra_detalle = base.CreateQuery<compra_detalle>("[compra_detalle]");
-                }
-                return this._compra_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<compra_detalle> _compra_detalle;
-        /// <summary>
-        /// There are no comments for empleado_historial_datos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<empleado_historial_datos> empleado_historial_datos
-        {
-            get
-            {
-                if ((this._empleado_historial_datos == null))
-                {
-                    this._empleado_historial_datos = base.CreateQuery<empleado_historial_datos>("[empleado_historial_datos]");
-                }
-                return this._empleado_historial_datos;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<empleado_historial_datos> _empleado_historial_datos;
-        /// <summary>
-        /// There are no comments for factura_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<factura_detalle> factura_detalle
-        {
-            get
-            {
-                if ((this._factura_detalle == null))
-                {
-                    this._factura_detalle = base.CreateQuery<factura_detalle>("[factura_detalle]");
-                }
-                return this._factura_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<factura_detalle> _factura_detalle;
-        /// <summary>
-        /// There are no comments for facturas_anuladas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<facturas_anuladas> facturas_anuladas
-        {
-            get
-            {
-                if ((this._facturas_anuladas == null))
-                {
-                    this._facturas_anuladas = base.CreateQuery<facturas_anuladas>("[facturas_anuladas]");
-                }
-                return this._facturas_anuladas;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<facturas_anuladas> _facturas_anuladas;
-        /// <summary>
-        /// There are no comments for mesas_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<mesas_detalles> mesas_detalles
-        {
-            get
-            {
-                if ((this._mesas_detalles == null))
-                {
-                    this._mesas_detalles = base.CreateQuery<mesas_detalles>("[mesas_detalles]");
-                }
-                return this._mesas_detalles;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<mesas_detalles> _mesas_detalles;
-        /// <summary>
-        /// There are no comments for nomina_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<nomina_detalle> nomina_detalle
-        {
-            get
-            {
-                if ((this._nomina_detalle == null))
-                {
-                    this._nomina_detalle = base.CreateQuery<nomina_detalle>("[nomina_detalle]");
-                }
-                return this._nomina_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<nomina_detalle> _nomina_detalle;
-        /// <summary>
-        /// There are no comments for oferta_producto_categoria_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<oferta_producto_categoria_detalle> oferta_producto_categoria_detalle
-        {
-            get
-            {
-                if ((this._oferta_producto_categoria_detalle == null))
-                {
-                    this._oferta_producto_categoria_detalle = base.CreateQuery<oferta_producto_categoria_detalle>("[oferta_producto_categoria_detalle]");
-                }
-                return this._oferta_producto_categoria_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<oferta_producto_categoria_detalle> _oferta_producto_categoria_detalle;
-        /// <summary>
-        /// There are no comments for oferta_producto_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<oferta_producto_detalle> oferta_producto_detalle
-        {
-            get
-            {
-                if ((this._oferta_producto_detalle == null))
-                {
-                    this._oferta_producto_detalle = base.CreateQuery<oferta_producto_detalle>("[oferta_producto_detalle]");
-                }
-                return this._oferta_producto_detalle;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<oferta_producto_detalle> _oferta_producto_detalle;
-        /// <summary>
-        /// There are no comments for producto_oferta_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<producto_oferta_historial> producto_oferta_historial
-        {
-            get
-            {
-                if ((this._producto_oferta_historial == null))
-                {
-                    this._producto_oferta_historial = base.CreateQuery<producto_oferta_historial>("[producto_oferta_historial]");
-                }
-                return this._producto_oferta_historial;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<producto_oferta_historial> _producto_oferta_historial;
-        /// <summary>
-        /// There are no comments for sucursal_vs_empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<sucursal_vs_empleado> sucursal_vs_empleado
-        {
-            get
-            {
-                if ((this._sucursal_vs_empleado == null))
-                {
-                    this._sucursal_vs_empleado = base.CreateQuery<sucursal_vs_empleado>("[sucursal_vs_empleado]");
-                }
-                return this._sucursal_vs_empleado;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<sucursal_vs_empleado> _sucursal_vs_empleado;
-        /// <summary>
-        /// There are no comments for tercero_observaciones in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tercero_observaciones> tercero_observaciones
-        {
-            get
-            {
-                if ((this._tercero_observaciones == null))
-                {
-                    this._tercero_observaciones = base.CreateQuery<tercero_observaciones>("[tercero_observaciones]");
-                }
-                return this._tercero_observaciones;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tercero_observaciones> _tercero_observaciones;
-        /// <summary>
-        /// There are no comments for tercero_vs_email in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tercero_vs_email> tercero_vs_email
-        {
-            get
-            {
-                if ((this._tercero_vs_email == null))
-                {
-                    this._tercero_vs_email = base.CreateQuery<tercero_vs_email>("[tercero_vs_email]");
-                }
-                return this._tercero_vs_email;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tercero_vs_email> _tercero_vs_email;
-        /// <summary>
-        /// There are no comments for tercero_vs_permiso in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tercero_vs_permiso> tercero_vs_permiso
-        {
-            get
-            {
-                if ((this._tercero_vs_permiso == null))
-                {
-                    this._tercero_vs_permiso = base.CreateQuery<tercero_vs_permiso>("[tercero_vs_permiso]");
-                }
-                return this._tercero_vs_permiso;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tercero_vs_permiso> _tercero_vs_permiso;
-        /// <summary>
-        /// There are no comments for tercero_vs_telefono in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> tercero_vs_telefono
-        {
-            get
-            {
-                if ((this._tercero_vs_telefono == null))
-                {
-                    this._tercero_vs_telefono = base.CreateQuery<tercero_vs_telefono>("[tercero_vs_telefono]");
-                }
-                return this._tercero_vs_telefono;
-            }
-        }
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        private global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> _tercero_vs_telefono;
-        /// <summary>
-        /// There are no comments for almacen in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToalmacen(almacen almacen)
-        {
-            base.AddObject("almacen", almacen);
-        }
-        /// <summary>
-        /// There are no comments for banco in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTobanco(banco banco)
-        {
-            base.AddObject("banco", banco);
-        }
-        /// <summary>
-        /// There are no comments for caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocaja(caja caja)
-        {
-            base.AddObject("caja", caja);
-        }
-        /// <summary>
-        /// There are no comments for cajero in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocajero(cajero cajero)
-        {
-            base.AddObject("cajero", cajero);
-        }
-        /// <summary>
-        /// There are no comments for cargo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocargo(cargo cargo)
-        {
-            base.AddObject("cargo", cargo);
-        }
-        /// <summary>
-        /// There are no comments for categoria_producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocategoria_producto(categoria_producto categoria_producto)
-        {
-            base.AddObject("categoria_producto", categoria_producto);
-        }
-        /// <summary>
-        /// There are no comments for cliente in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocliente(cliente cliente)
-        {
-            base.AddObject("cliente", cliente);
-        }
-        /// <summary>
-        /// There are no comments for cliente_categoria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocliente_categoria(cliente_categoria cliente_categoria)
-        {
-            base.AddObject("cliente_categoria", cliente_categoria);
-        }
-        /// <summary>
-        /// There are no comments for cliente_subcategoria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocliente_subcategoria(cliente_subcategoria cliente_subcategoria)
-        {
-            base.AddObject("cliente_subcategoria", cliente_subcategoria);
-        }
-        /// <summary>
-        /// There are no comments for cobros in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocobros(cobros cobros)
-        {
-            base.AddObject("cobros", cobros);
-        }
-        /// <summary>
-        /// There are no comments for cobros_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocobros_detalles(cobros_detalles cobros_detalles)
-        {
-            base.AddObject("cobros_detalles", cobros_detalles);
-        }
-        /// <summary>
-        /// There are no comments for compra in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra(compra compra)
-        {
-            base.AddObject("compra", compra);
-        }
-        /// <summary>
-        /// There are no comments for compra_pago_anulados in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra_pago_anulados(compra_pago_anulados compra_pago_anulados)
-        {
-            base.AddObject("compra_pago_anulados", compra_pago_anulados);
-        }
-        /// <summary>
-        /// There are no comments for compra_vs_pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra_vs_pagos(compra_vs_pagos compra_vs_pagos)
-        {
-            base.AddObject("compra_vs_pagos", compra_vs_pagos);
-        }
-        /// <summary>
-        /// There are no comments for comprobante_fiscal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocomprobante_fiscal(comprobante_fiscal comprobante_fiscal)
-        {
-            base.AddObject("comprobante_fiscal", comprobante_fiscal);
-        }
-        /// <summary>
-        /// There are no comments for comprobante_serie in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocomprobante_serie(comprobante_serie comprobante_serie)
-        {
-            base.AddObject("comprobante_serie", comprobante_serie);
-        }
-        /// <summary>
-        /// There are no comments for comprobante_ventas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocomprobante_ventas(comprobante_ventas comprobante_ventas)
-        {
-            base.AddObject("comprobante_ventas", comprobante_ventas);
-        }
-        /// <summary>
-        /// There are no comments for correo_electronicos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocorreo_electronicos(correo_electronicos correo_electronicos)
-        {
-            base.AddObject("correo_electronicos", correo_electronicos);
-        }
-        /// <summary>
-        /// There are no comments for cuadre_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocuadre_caja(cuadre_caja cuadre_caja)
-        {
-            base.AddObject("cuadre_caja", cuadre_caja);
-        }
-        /// <summary>
-        /// There are no comments for cuenta_bancaria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocuenta_bancaria(cuenta_bancaria cuenta_bancaria)
-        {
-            base.AddObject("cuenta_bancaria", cuenta_bancaria);
-        }
-        /// <summary>
-        /// There are no comments for departamento in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTodepartamento(departamento departamento)
-        {
-            base.AddObject("departamento", departamento);
-        }
-        /// <summary>
-        /// There are no comments for direccion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTodireccion(direccion direccion)
-        {
-            base.AddObject("direccion", direccion);
-        }
-        /// <summary>
-        /// There are no comments for egresos_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToegresos_caja(egresos_caja egresos_caja)
-        {
-            base.AddObject("egresos_caja", egresos_caja);
-        }
-        /// <summary>
-        /// There are no comments for egresos_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToegresos_conceptos(egresos_conceptos egresos_conceptos)
-        {
-            base.AddObject("egresos_conceptos", egresos_conceptos);
-        }
-        /// <summary>
-        /// There are no comments for empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToempleado(empleado empleado)
-        {
-            base.AddObject("empleado", empleado);
-        }
-        /// <summary>
-        /// There are no comments for empresa in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToempresa(empresa empresa)
-        {
-            base.AddObject("empresa", empresa);
-        }
-        /// <summary>
-        /// There are no comments for entrada_salida_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToentrada_salida_inventario(entrada_salida_inventario entrada_salida_inventario)
-        {
-            base.AddObject("entrada_salida_inventario", entrada_salida_inventario);
-        }
-        /// <summary>
-        /// There are no comments for estados_reparacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToestados_reparacion(estados_reparacion estados_reparacion)
-        {
-            base.AddObject("estados_reparacion", estados_reparacion);
-        }
-        /// <summary>
-        /// There are no comments for factura in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTofactura(factura factura)
-        {
-            base.AddObject("factura", factura);
-        }
-        /// <summary>
-        /// There are no comments for grupo_usuarios in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTogrupo_usuarios(grupo_usuarios grupo_usuarios)
-        {
-            base.AddObject("grupo_usuarios", grupo_usuarios);
-        }
-        /// <summary>
-        /// There are no comments for historial_devolucion_compras in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTohistorial_devolucion_compras(historial_devolucion_compras historial_devolucion_compras)
-        {
-            base.AddObject("historial_devolucion_compras", historial_devolucion_compras);
-        }
-        /// <summary>
-        /// There are no comments for historial_devolucion_ventas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTohistorial_devolucion_ventas(historial_devolucion_ventas historial_devolucion_ventas)
-        {
-            base.AddObject("historial_devolucion_ventas", historial_devolucion_ventas);
-        }
-        /// <summary>
-        /// There are no comments for identificacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToidentificacion(identificacion identificacion)
-        {
-            base.AddObject("identificacion", identificacion);
-        }
-        /// <summary>
-        /// There are no comments for ingresos_caja in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToingresos_caja(ingresos_caja ingresos_caja)
-        {
-            base.AddObject("ingresos_caja", ingresos_caja);
-        }
-        /// <summary>
-        /// There are no comments for ingresos_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToingresos_conceptos(ingresos_conceptos ingresos_conceptos)
-        {
-            base.AddObject("ingresos_conceptos", ingresos_conceptos);
-        }
-        /// <summary>
-        /// There are no comments for inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToinventario(inventario inventario)
-        {
-            base.AddObject("inventario", inventario);
-        }
-        /// <summary>
-        /// There are no comments for inventario_reparacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToinventario_reparacion(inventario_reparacion inventario_reparacion)
-        {
-            base.AddObject("inventario_reparacion", inventario_reparacion);
-        }
-        /// <summary>
-        /// There are no comments for itebis in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToitebis(itebis itebis)
-        {
-            base.AddObject("itebis", itebis);
-        }
-        /// <summary>
-        /// There are no comments for marcas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomarcas(marcas marcas)
-        {
-            base.AddObject("marcas", marcas);
-        }
-        /// <summary>
-        /// There are no comments for mesas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomesas(mesas mesas)
-        {
-            base.AddObject("mesas", mesas);
-        }
-        /// <summary>
-        /// There are no comments for metodo_pago in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTometodo_pago(metodo_pago metodo_pago)
-        {
-            base.AddObject("metodo_pago", metodo_pago);
-        }
-        /// <summary>
-        /// There are no comments for modelo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomodelo(modelo modelo)
-        {
-            base.AddObject("modelo", modelo);
-        }
-        /// <summary>
-        /// There are no comments for moneda in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomoneda(moneda moneda)
-        {
-            base.AddObject("moneda", moneda);
-        }
-        /// <summary>
-        /// There are no comments for moneda_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomoneda_historial(moneda_historial moneda_historial)
-        {
-            base.AddObject("moneda_historial", moneda_historial);
-        }
-        /// <summary>
-        /// There are no comments for nomina in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTonomina(nomina nomina)
-        {
-            base.AddObject("nomina", nomina);
-        }
-        /// <summary>
-        /// There are no comments for nomina_conceptos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTonomina_conceptos(nomina_conceptos nomina_conceptos)
-        {
-            base.AddObject("nomina_conceptos", nomina_conceptos);
-        }
-        /// <summary>
-        /// There are no comments for nomina_tipos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTonomina_tipos(nomina_tipos nomina_tipos)
-        {
-            base.AddObject("nomina_tipos", nomina_tipos);
-        }
-        /// <summary>
-        /// There are no comments for pagos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTopagos(pagos pagos)
-        {
-            base.AddObject("pagos", pagos);
-        }
-        /// <summary>
-        /// There are no comments for pagos_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTopagos_detalles(pagos_detalles pagos_detalles)
-        {
-            base.AddObject("pagos_detalles", pagos_detalles);
-        }
-        /// <summary>
-        /// There are no comments for pais in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTopais(pais pais)
-        {
-            base.AddObject("pais", pais);
-        }
-        /// <summary>
-        /// There are no comments for permiso in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTopermiso(permiso permiso)
-        {
-            base.AddObject("permiso", permiso);
-        }
-        /// <summary>
-        /// There are no comments for persona in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTopersona(persona persona)
-        {
-            base.AddObject("persona", persona);
-        }
-        /// <summary>
-        /// There are no comments for producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto(producto producto)
-        {
-            base.AddObject("producto", producto);
-        }
-        /// <summary>
-        /// There are no comments for producto_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_detalle(producto_detalle producto_detalle)
-        {
-            base.AddObject("producto_detalle", producto_detalle);
-        }
-        /// <summary>
-        /// There are no comments for producto_oferta in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_oferta(producto_oferta producto_oferta)
-        {
-            base.AddObject("producto_oferta", producto_oferta);
-        }
-        /// <summary>
-        /// There are no comments for producto_permisos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_permisos(producto_permisos producto_permisos)
-        {
-            base.AddObject("producto_permisos", producto_permisos);
-        }
-        /// <summary>
-        /// There are no comments for producto_unidad_conversion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_unidad_conversion(producto_unidad_conversion producto_unidad_conversion)
-        {
-            base.AddObject("producto_unidad_conversion", producto_unidad_conversion);
-        }
-        /// <summary>
-        /// There are no comments for producto_vs_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_vs_detalle(producto_vs_detalle producto_vs_detalle)
-        {
-            base.AddObject("producto_vs_detalle", producto_vs_detalle);
-        }
-        /// <summary>
-        /// There are no comments for producto_vs_permisos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_vs_permisos(producto_vs_permisos producto_vs_permisos)
-        {
-            base.AddObject("producto_vs_permisos", producto_vs_permisos);
-        }
-        /// <summary>
-        /// There are no comments for provincia in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToprovincia(provincia provincia)
-        {
-            base.AddObject("provincia", provincia);
-        }
-        /// <summary>
-        /// There are no comments for region in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToregion(region region)
-        {
-            base.AddObject("region", region);
-        }
-        /// <summary>
-        /// There are no comments for sector in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosector(sector sector)
-        {
-            base.AddObject("sector", sector);
-        }
-        /// <summary>
-        /// There are no comments for sexo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosexo(sexo sexo)
-        {
-            base.AddObject("sexo", sexo);
-        }
-        /// <summary>
-        /// There are no comments for sistema in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosistema(sistema sistema)
-        {
-            base.AddObject("sistema", sistema);
-        }
-        /// <summary>
-        /// There are no comments for sistema_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosistema_historial(sistema_historial sistema_historial)
-        {
-            base.AddObject("sistema_historial", sistema_historial);
-        }
-        /// <summary>
-        /// There are no comments for sistema_modulo in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosistema_modulo(sistema_modulo sistema_modulo)
-        {
-            base.AddObject("sistema_modulo", sistema_modulo);
-        }
-        /// <summary>
-        /// There are no comments for sistema_modulo_opciones in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosistema_modulo_opciones(sistema_modulo_opciones sistema_modulo_opciones)
-        {
-            base.AddObject("sistema_modulo_opciones", sistema_modulo_opciones);
-        }
-        /// <summary>
-        /// There are no comments for situacion_empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosituacion_empleado(situacion_empleado situacion_empleado)
-        {
-            base.AddObject("situacion_empleado", situacion_empleado);
-        }
-        /// <summary>
-        /// There are no comments for subcategoria_producto in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosubcategoria_producto(subcategoria_producto subcategoria_producto)
-        {
-            base.AddObject("subcategoria_producto", subcategoria_producto);
-        }
-        /// <summary>
-        /// There are no comments for sucursal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosucursal(sucursal sucursal)
-        {
-            base.AddObject("sucursal", sucursal);
-        }
-        /// <summary>
-        /// There are no comments for suplidor in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosuplidor(suplidor suplidor)
-        {
-            base.AddObject("suplidor", suplidor);
-        }
-        /// <summary>
-        /// There are no comments for sysdiagrams in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosysdiagrams(sysdiagrams sysdiagrams)
-        {
-            base.AddObject("sysdiagrams", sysdiagrams);
-        }
-        /// <summary>
-        /// There are no comments for tarjetas_credito in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotarjetas_credito(tarjetas_credito tarjetas_credito)
-        {
-            base.AddObject("tarjetas_credito", tarjetas_credito);
-        }
-        /// <summary>
-        /// There are no comments for tercero in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotercero(tercero tercero)
-        {
-            base.AddObject("tercero", tercero);
-        }
-        /// <summary>
-        /// There are no comments for tipo_comprobante_fiscal in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotipo_comprobante_fiscal(tipo_comprobante_fiscal tipo_comprobante_fiscal)
-        {
-            base.AddObject("tipo_comprobante_fiscal", tipo_comprobante_fiscal);
-        }
-        /// <summary>
-        /// There are no comments for tipo_cuenta_bancaria in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotipo_cuenta_bancaria(tipo_cuenta_bancaria tipo_cuenta_bancaria)
-        {
-            base.AddObject("tipo_cuenta_bancaria", tipo_cuenta_bancaria);
-        }
-        /// <summary>
-        /// There are no comments for tipo_identificacion in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotipo_identificacion(tipo_identificacion tipo_identificacion)
-        {
-            base.AddObject("tipo_identificacion", tipo_identificacion);
-        }
-        /// <summary>
-        /// There are no comments for tipo_movimiento_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotipo_movimiento_inventario(tipo_movimiento_inventario tipo_movimiento_inventario)
-        {
-            base.AddObject("tipo_movimiento_inventario", tipo_movimiento_inventario);
-        }
-        /// <summary>
-        /// There are no comments for transferencia_inventario in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotransferencia_inventario(transferencia_inventario transferencia_inventario)
-        {
-            base.AddObject("transferencia_inventario", transferencia_inventario);
-        }
-        /// <summary>
-        /// There are no comments for unidad in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTounidad(unidad unidad)
-        {
-            base.AddObject("unidad", unidad);
-        }
-        /// <summary>
-        /// There are no comments for vendedor in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTovendedor(vendedor vendedor)
-        {
-            base.AddObject("vendedor", vendedor);
-        }
-        /// <summary>
-        /// There are no comments for catalogo_cuentas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocatalogo_cuentas(catalogo_cuentas catalogo_cuentas)
-        {
-            base.AddObject("catalogo_cuentas", catalogo_cuentas);
-        }
-        /// <summary>
-        /// There are no comments for compra_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTocompra_detalle(compra_detalle compra_detalle)
-        {
-            base.AddObject("compra_detalle", compra_detalle);
-        }
-        /// <summary>
-        /// There are no comments for empleado_historial_datos in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToempleado_historial_datos(empleado_historial_datos empleado_historial_datos)
-        {
-            base.AddObject("empleado_historial_datos", empleado_historial_datos);
-        }
-        /// <summary>
-        /// There are no comments for factura_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTofactura_detalle(factura_detalle factura_detalle)
-        {
-            base.AddObject("factura_detalle", factura_detalle);
-        }
-        /// <summary>
-        /// There are no comments for facturas_anuladas in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTofacturas_anuladas(facturas_anuladas facturas_anuladas)
-        {
-            base.AddObject("facturas_anuladas", facturas_anuladas);
-        }
-        /// <summary>
-        /// There are no comments for mesas_detalles in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTomesas_detalles(mesas_detalles mesas_detalles)
-        {
-            base.AddObject("mesas_detalles", mesas_detalles);
-        }
-        /// <summary>
-        /// There are no comments for nomina_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTonomina_detalle(nomina_detalle nomina_detalle)
-        {
-            base.AddObject("nomina_detalle", nomina_detalle);
-        }
-        /// <summary>
-        /// There are no comments for oferta_producto_categoria_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTooferta_producto_categoria_detalle(oferta_producto_categoria_detalle oferta_producto_categoria_detalle)
-        {
-            base.AddObject("oferta_producto_categoria_detalle", oferta_producto_categoria_detalle);
-        }
-        /// <summary>
-        /// There are no comments for oferta_producto_detalle in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTooferta_producto_detalle(oferta_producto_detalle oferta_producto_detalle)
-        {
-            base.AddObject("oferta_producto_detalle", oferta_producto_detalle);
-        }
-        /// <summary>
-        /// There are no comments for producto_oferta_historial in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddToproducto_oferta_historial(producto_oferta_historial producto_oferta_historial)
-        {
-            base.AddObject("producto_oferta_historial", producto_oferta_historial);
-        }
-        /// <summary>
-        /// There are no comments for sucursal_vs_empleado in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTosucursal_vs_empleado(sucursal_vs_empleado sucursal_vs_empleado)
-        {
-            base.AddObject("sucursal_vs_empleado", sucursal_vs_empleado);
-        }
-        /// <summary>
-        /// There are no comments for tercero_observaciones in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotercero_observaciones(tercero_observaciones tercero_observaciones)
-        {
-            base.AddObject("tercero_observaciones", tercero_observaciones);
-        }
-        /// <summary>
-        /// There are no comments for tercero_vs_email in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotercero_vs_email(tercero_vs_email tercero_vs_email)
-        {
-            base.AddObject("tercero_vs_email", tercero_vs_email);
-        }
-        /// <summary>
-        /// There are no comments for tercero_vs_permiso in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotercero_vs_permiso(tercero_vs_permiso tercero_vs_permiso)
-        {
-            base.AddObject("tercero_vs_permiso", tercero_vs_permiso);
-        }
-        /// <summary>
-        /// There are no comments for tercero_vs_telefono in the schema.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
-        public void AddTotercero_vs_telefono(tercero_vs_telefono tercero_vs_telefono)
-        {
-            base.AddObject("tercero_vs_telefono", tercero_vs_telefono);
         }
     }
 }
