@@ -290,3 +290,5 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.c
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.exe
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pdb
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache
+D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVentaModelo.exe
+D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVentaModelo.pdb

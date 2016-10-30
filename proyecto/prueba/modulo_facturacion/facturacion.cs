@@ -646,9 +646,9 @@ namespace puntoVenta
                 unidad_combo_txt.DataSource = ds.Tables[0];
                 codigo_unidad_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando el codigo de la unidad");
+                MessageBox.Show("Error el producto no tiene unidad.: "+ex.ToString());
             }
         }
         public void ejecutar_codigo_producto(string dato)
@@ -666,9 +666,9 @@ namespace puntoVenta
                     nombre_producto_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando el nombre del producto");
+                MessageBox.Show("Error cargando el nombre del producto.: "+ex.ToString());
             }
         }
         private void label8_Click(object sender, EventArgs e)
@@ -694,12 +694,7 @@ namespace puntoVenta
 
         private void button10_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Desea anular la factura?", "Anulando factura", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                //anular la factura
-
-            }
+           
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -716,9 +711,9 @@ namespace puntoVenta
                 }
                 else
                 {
-                    imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
-                    iv.codigo_factura = codigo_factura_txt.Text.Trim();
-                    iv.ShowDialog();
+                    //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                    //iv.codigo_factura = codigo_factura_txt.Text.Trim();
+                    //iv.ShowDialog();
                 }
             }
             else

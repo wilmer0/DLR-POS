@@ -794,6 +794,7 @@
             this.cotizacionCheck.TabIndex = 100;
             this.cotizacionCheck.Text = "cotización";
             this.cotizacionCheck.UseVisualStyleBackColor = true;
+            this.cotizacionCheck.Visible = false;
             // 
             // pedicoCheck
             // 

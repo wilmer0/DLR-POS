@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Designer.cs">
+    <Compile Include="Mysql\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -52,20 +52,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model1.edmx">
+    <None Include="App.Config" />
+    <EntityDeploy Include="Mysql\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="Model1.edmx.diagram">
+    <None Include="Mysql\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Clases\" />
     <Folder Include="Modelos\" />
+    <Folder Include="Sql\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
