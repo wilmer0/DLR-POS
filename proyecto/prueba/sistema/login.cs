@@ -128,7 +128,7 @@ namespace puntoVenta
                     s.codigo_usuario = ds.Tables[0].Rows[0]["codigo"].ToString();
                     s.nombre = Utilidades.getNombreTercero(s.codigo_usuario.ToString());
 
-                    //sacando el codigo de sucursala la que pertenece el empleado
+                    //sacando el codigo de sucursal que pertenece el empleado
                     sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario.ToString() + "'";
                     ds = Utilidades.ejecutarcomando(sql);
                     s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();

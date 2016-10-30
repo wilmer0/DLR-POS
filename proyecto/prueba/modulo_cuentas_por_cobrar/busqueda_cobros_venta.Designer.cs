@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(busqueda_cobros_venta));
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,16 +41,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numer_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tarj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.che = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trans = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_gri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
@@ -75,6 +61,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.total_txt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numer_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clicgrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metodopagogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montogrid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_gri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,7 +78,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(876, 57);
+            this.label5.Location = new System.Drawing.Point(876, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 105;
@@ -210,14 +203,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.numer_factura,
-            this.monto,
-            this.tarj,
-            this.che,
-            this.trans,
-            this.codigo_empleado,
-            this.nombre_empleado,
+            this.clicgrid,
+            this.metodopagogrid,
+            this.montogrid,
             this.fecha_gri,
-            this.detalle});
+            this.nombre_empleado});
             this.dataGridView1.Location = new System.Drawing.Point(12, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -226,91 +216,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(940, 289);
             this.dataGridView1.TabIndex = 93;
             // 
-            // codigo
-            // 
-            this.codigo.FillWeight = 40F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // numer_factura
-            // 
-            this.numer_factura.FillWeight = 70F;
-            this.numer_factura.HeaderText = "Factura";
-            this.numer_factura.Name = "numer_factura";
-            this.numer_factura.ReadOnly = true;
-            // 
-            // monto
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "###,###,###,###.#0";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.monto.DefaultCellStyle = dataGridViewCellStyle5;
-            this.monto.HeaderText = "Efectivo";
-            this.monto.Name = "monto";
-            this.monto.ReadOnly = true;
-            // 
-            // tarj
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle6.Format = "###,###,###,###.#0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.tarj.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tarj.HeaderText = "Tarjeta";
-            this.tarj.Name = "tarj";
-            this.tarj.ReadOnly = true;
-            // 
-            // che
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle7.Format = "###,###,###,###.#0";
-            dataGridViewCellStyle7.NullValue = "0";
-            this.che.DefaultCellStyle = dataGridViewCellStyle7;
-            this.che.HeaderText = "Cheque";
-            this.che.Name = "che";
-            this.che.ReadOnly = true;
-            // 
-            // trans
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.trans.DefaultCellStyle = dataGridViewCellStyle8;
-            this.trans.HeaderText = "Transferencia";
-            this.trans.Name = "trans";
-            this.trans.ReadOnly = true;
-            // 
-            // codigo_empleado
-            // 
-            this.codigo_empleado.FillWeight = 60F;
-            this.codigo_empleado.HeaderText = "codigo empleado";
-            this.codigo_empleado.Name = "codigo_empleado";
-            this.codigo_empleado.ReadOnly = true;
-            // 
-            // nombre_empleado
-            // 
-            this.nombre_empleado.HeaderText = "Empleado";
-            this.nombre_empleado.Name = "nombre_empleado";
-            this.nombre_empleado.ReadOnly = true;
-            // 
-            // fecha_gri
-            // 
-            this.fecha_gri.FillWeight = 70F;
-            this.fecha_gri.HeaderText = "Fecha";
-            this.fecha_gri.Name = "fecha_gri";
-            this.fecha_gri.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.FillWeight = 150F;
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(811, 57);
+            this.label6.Location = new System.Drawing.Point(811, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 107;
@@ -339,7 +250,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.BackgroundImage = global::puntoVenta.Properties.Resources.printer_256;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(815, 14);
+            this.button1.Location = new System.Drawing.Point(815, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 40);
             this.button1.TabIndex = 106;
@@ -351,7 +262,7 @@
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.BackgroundImage = global::puntoVenta.Properties.Resources.cancel1;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Location = new System.Drawing.Point(876, 14);
+            this.button9.Location = new System.Drawing.Point(876, 70);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(55, 40);
             this.button9.TabIndex = 100;
@@ -419,7 +330,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(750, 57);
+            this.label3.Location = new System.Drawing.Point(750, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 114;
@@ -429,7 +340,7 @@
             // 
             this.button3.BackgroundImage = global::puntoVenta.Properties.Resources.find_icon;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(754, 15);
+            this.button3.Location = new System.Drawing.Point(754, 71);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(55, 39);
             this.button3.TabIndex = 115;
@@ -508,6 +419,52 @@
             this.groupBox1.Size = new System.Drawing.Size(940, 141);
             this.groupBox1.TabIndex = 121;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // codigo
+            // 
+            this.codigo.FillWeight = 40F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // numer_factura
+            // 
+            this.numer_factura.FillWeight = 50F;
+            this.numer_factura.HeaderText = "Factura";
+            this.numer_factura.Name = "numer_factura";
+            this.numer_factura.ReadOnly = true;
+            // 
+            // clicgrid
+            // 
+            this.clicgrid.HeaderText = "Cliente";
+            this.clicgrid.Name = "clicgrid";
+            this.clicgrid.ReadOnly = true;
+            // 
+            // metodopagogrid
+            // 
+            this.metodopagogrid.HeaderText = "Metodo pago";
+            this.metodopagogrid.Name = "metodopagogrid";
+            this.metodopagogrid.ReadOnly = true;
+            // 
+            // montogrid
+            // 
+            this.montogrid.HeaderText = "Monto";
+            this.montogrid.Name = "montogrid";
+            this.montogrid.ReadOnly = true;
+            // 
+            // fecha_gri
+            // 
+            this.fecha_gri.FillWeight = 70F;
+            this.fecha_gri.HeaderText = "Fecha";
+            this.fecha_gri.Name = "fecha_gri";
+            this.fecha_gri.ReadOnly = true;
+            // 
+            // nombre_empleado
+            // 
+            this.nombre_empleado.HeaderText = "Empleado";
+            this.nombre_empleado.Name = "nombre_empleado";
+            this.nombre_empleado.ReadOnly = true;
             // 
             // busqueda_cobros_venta
             // 
@@ -572,16 +529,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox total_txt;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn numer_factura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tarj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn che;
-        private System.Windows.Forms.DataGridViewTextBoxColumn trans;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo_empleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clicgrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metodopagogrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montogrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_gri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre_empleado;
     }
 }
