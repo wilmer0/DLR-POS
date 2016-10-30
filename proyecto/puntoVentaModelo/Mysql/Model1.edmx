@@ -179,6 +179,36 @@ warning 6002: The table/view 'def.punto_venta.compra_detalle' does not have a pr
           <Property Name="estado" Type="int" Nullable="false" />
           <Property Name="cod_metodo_pago" Type="int" />
         </EntityType>
+        <EntityType Name="compra_pago_anulados">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="cod_compra" Type="int" />
+          <Property Name="cod_pago" Type="int" />
+          <Property Name="detalle" Type="mediumtext" />
+          <Property Name="cod_empleado" Type="int" />
+          <Property Name="fecha" Type="date" />
+        </EntityType>
+        <EntityType Name="compra_vs_pagos">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="cod_compra" Type="int" Nullable="false" />
+          <Property Name="monto" Type="float" Nullable="false" />
+          <Property Name="devuelta" Type="float" />
+          <Property Name="tarjeta" Type="float" />
+          <Property Name="TRIAL_COLUMN6" Type="float" />
+          <Property Name="TRIAL_COLUMN7" Type="float" />
+          <Property Name="TRIAL_COLUMN8" Type="float" />
+          <Property Name="TRIAL_COLUMN9" Type="date" Nullable="false" />
+          <Property Name="TRIAL_COLUMN10" Type="utinyint" Nullable="false" />
+          <Property Name="TRIAL_COLUMN11" Type="int" Nullable="false" />
+          <Property Name="TRIAL_COLUMN12" Type="mediumtext" />
+          <Property Name="TRIAL_COLUMN13" Type="int" />
+          <Property Name="TRIAL_COLUMN14" Type="longtext" />
+        </EntityType>
         <EntityType Name="comprobante_fiscal">
           <Key>
             <PropertyRef Name="codigo" />
@@ -2228,6 +2258,42 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="pago_anulado_compra">
+          <End Role="compra" Type="Self.compra" Multiplicity="0..1" />
+          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="compra">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="compra_pago_anulados">
+              <PropertyRef Name="cod_compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pago_anulado_empleado">
+          <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="compra_pago_anulados">
+              <PropertyRef Name="cod_empleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pago_anulado_pago">
+          <End Role="compra_vs_pagos" Type="Self.compra_vs_pagos" Multiplicity="0..1" />
+          <End Role="compra_pago_anulados" Type="Self.compra_pago_anulados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="compra_vs_pagos">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="compra_pago_anulados">
+              <PropertyRef Name="cod_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="pagos_detalles_factura">
           <End Role="compra" Type="Self.compra" Multiplicity="1" />
           <End Role="pagos_detalles" Type="Self.pagos_detalles" Multiplicity="*" />
@@ -2745,6 +2811,8 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
           <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" />
           <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" />
@@ -3350,6 +3418,18 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="categoria_producto" EntitySet="categoria_producto" />
             <End Role="oferta_producto_categoria_detalle" EntitySet="oferta_producto_categoria_detalle" />
           </AssociationSet>
+          <AssociationSet Name="pago_anulado_compra" Association="Self.pago_anulado_compra">
+            <End Role="compra" EntitySet="compra" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+          </AssociationSet>
+          <AssociationSet Name="pago_anulado_empleado" Association="Self.pago_anulado_empleado">
+            <End Role="empleado" EntitySet="empleado" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+          </AssociationSet>
+          <AssociationSet Name="pago_anulado_pago" Association="Self.pago_anulado_pago">
+            <End Role="compra_vs_pagos" EntitySet="compra_vs_pagos" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+          </AssociationSet>
           <AssociationSet Name="pagos_detalles_factura" Association="Self.pagos_detalles_factura">
             <End Role="compra" EntitySet="compra" />
             <End Role="pagos_detalles" EntitySet="pagos_detalles" />
@@ -3536,6 +3616,8 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <EntitySet Name="cobros" EntityType="punto_ventaModel.cobros" />
           <EntitySet Name="cobros_detalles" EntityType="punto_ventaModel.cobros_detalles" />
           <EntitySet Name="compra" EntityType="punto_ventaModel.compra" />
+          <EntitySet Name="compra_pago_anulados" EntityType="punto_ventaModel.compra_pago_anulados" />
+          <EntitySet Name="compra_vs_pagos" EntityType="punto_ventaModel.compra_vs_pagos" />
           <EntitySet Name="comprobante_fiscal" EntityType="punto_ventaModel.comprobante_fiscal" />
           <EntitySet Name="comprobante_serie" EntityType="punto_ventaModel.comprobante_serie" />
           <EntitySet Name="comprobante_ventas" EntityType="punto_ventaModel.comprobante_ventas" />
@@ -3732,9 +3814,21 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="compra" EntitySet="compra" />
             <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
           </AssociationSet>
+          <AssociationSet Name="pago_anulado_compra" Association="punto_ventaModel.pago_anulado_compra">
+            <End Role="compra" EntitySet="compra" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+          </AssociationSet>
           <AssociationSet Name="pagos_detalles_factura" Association="punto_ventaModel.pagos_detalles_factura">
             <End Role="compra" EntitySet="compra" />
             <End Role="pagos_detalles" EntitySet="pagos_detalles" />
+          </AssociationSet>
+          <AssociationSet Name="pago_anulado_empleado" Association="punto_ventaModel.pago_anulado_empleado">
+            <End Role="empleado" EntitySet="empleado" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
+          </AssociationSet>
+          <AssociationSet Name="pago_anulado_pago" Association="punto_ventaModel.pago_anulado_pago">
+            <End Role="compra_vs_pagos" EntitySet="compra_vs_pagos" />
+            <End Role="compra_pago_anulados" EntitySet="compra_pago_anulados" />
           </AssociationSet>
           <AssociationSet Name="comprobante_serie1" Association="punto_ventaModel.comprobante_serie1">
             <End Role="comprobante_serie" EntitySet="comprobante_serie" />
@@ -4259,7 +4353,39 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="sucursal" Relationship="punto_ventaModel.compra_sucursal" FromRole="compra" ToRole="sucursal" />
           <NavigationProperty Name="suplidor" Relationship="punto_ventaModel.compra_suplidor" FromRole="compra" ToRole="suplidor" />
           <NavigationProperty Name="historial_devolucion_compras" Relationship="punto_ventaModel.historial_devolucion_compras_compra" FromRole="compra" ToRole="historial_devolucion_compras" />
+          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_compra" FromRole="compra" ToRole="compra_pago_anulados" />
           <NavigationProperty Name="pagos_detalles" Relationship="punto_ventaModel.pagos_detalles_factura" FromRole="compra" ToRole="pagos_detalles" />
+        </EntityType>
+        <EntityType Name="compra_pago_anulados">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="detalle" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" />
+          <NavigationProperty Name="compra" Relationship="punto_ventaModel.pago_anulado_compra" FromRole="compra_pago_anulados" ToRole="compra" />
+          <NavigationProperty Name="empleado" Relationship="punto_ventaModel.pago_anulado_empleado" FromRole="compra_pago_anulados" ToRole="empleado" />
+          <NavigationProperty Name="compra_vs_pagos" Relationship="punto_ventaModel.pago_anulado_pago" FromRole="compra_pago_anulados" ToRole="compra_vs_pagos" />
+        </EntityType>
+        <EntityType Name="compra_vs_pagos">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="cod_compra" Type="Int32" Nullable="false" />
+          <Property Name="monto" Type="Single" Nullable="false" />
+          <Property Name="devuelta" Type="Single" />
+          <Property Name="tarjeta" Type="Single" />
+          <Property Name="TRIAL_COLUMN6" Type="Single" />
+          <Property Name="TRIAL_COLUMN7" Type="Single" />
+          <Property Name="TRIAL_COLUMN8" Type="Single" />
+          <Property Name="TRIAL_COLUMN9" Type="DateTime" Nullable="false" />
+          <Property Name="TRIAL_COLUMN10" Type="Byte" Nullable="false" />
+          <Property Name="TRIAL_COLUMN11" Type="Int32" Nullable="false" />
+          <Property Name="TRIAL_COLUMN12" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="TRIAL_COLUMN13" Type="Int32" />
+          <Property Name="TRIAL_COLUMN14" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_pago" FromRole="compra_vs_pagos" ToRole="compra_pago_anulados" />
         </EntityType>
         <EntityType Name="comprobante_fiscal">
           <Key>
@@ -4407,6 +4533,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="cargo" Relationship="punto_ventaModel.empleado_cargo" FromRole="empleado" ToRole="cargo" />
           <NavigationProperty Name="cobros" Relationship="punto_ventaModel.cobro_empleado" FromRole="empleado" ToRole="cobros" />
           <NavigationProperty Name="compra" Relationship="punto_ventaModel.compra_empleado" FromRole="empleado" ToRole="compra" />
+          <NavigationProperty Name="compra_pago_anulados" Relationship="punto_ventaModel.pago_anulado_empleado" FromRole="empleado" ToRole="compra_pago_anulados" />
           <NavigationProperty Name="empleado_vs_conceptos_nomina" Relationship="punto_ventaModel.empleado_concepto_nomina_empelado_modifico" FromRole="empleado" ToRole="empleado_vs_conceptos_nomina" />
           <NavigationProperty Name="empleado_vs_conceptos_nomina1" Relationship="punto_ventaModel.empleado_concepto_nomina_empleado" FromRole="empleado" ToRole="empleado_vs_conceptos_nomina" />
           <NavigationProperty Name="empleado_historial_datos" Relationship="punto_ventaModel.empleado_empleado" FromRole="empleado" ToRole="empleado_historial_datos" />
@@ -5564,9 +5691,21 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="1" />
           <End Type="punto_ventaModel.historial_devolucion_compras" Role="historial_devolucion_compras" Multiplicity="*" />
         </Association>
+        <Association Name="pago_anulado_compra">
+          <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
+        </Association>
         <Association Name="pagos_detalles_factura">
           <End Type="punto_ventaModel.compra" Role="compra" Multiplicity="1" />
           <End Type="punto_ventaModel.pagos_detalles" Role="pagos_detalles" Multiplicity="*" />
+        </Association>
+        <Association Name="pago_anulado_empleado">
+          <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
+        </Association>
+        <Association Name="pago_anulado_pago">
+          <End Type="punto_ventaModel.compra_vs_pagos" Role="compra_vs_pagos" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.compra_pago_anulados" Role="compra_pago_anulados" Multiplicity="*" />
         </Association>
         <Association Name="comprobante_serie1">
           <End Type="punto_ventaModel.comprobante_serie" Role="comprobante_serie" Multiplicity="0..1" />
@@ -6460,6 +6599,35 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
                 <ScalarProperty Name="ncf" ColumnName="ncf" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="num_factura" ColumnName="num_factura" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compra_pago_anulados">
+            <EntityTypeMapping TypeName="punto_ventaModel.compra_pago_anulados">
+              <MappingFragment StoreEntitySet="compra_pago_anulados">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compra_vs_pagos">
+            <EntityTypeMapping TypeName="punto_ventaModel.compra_vs_pagos">
+              <MappingFragment StoreEntitySet="compra_vs_pagos">
+                <ScalarProperty Name="TRIAL_COLUMN14" ColumnName="TRIAL_COLUMN14" />
+                <ScalarProperty Name="TRIAL_COLUMN13" ColumnName="TRIAL_COLUMN13" />
+                <ScalarProperty Name="TRIAL_COLUMN12" ColumnName="TRIAL_COLUMN12" />
+                <ScalarProperty Name="TRIAL_COLUMN11" ColumnName="TRIAL_COLUMN11" />
+                <ScalarProperty Name="TRIAL_COLUMN10" ColumnName="TRIAL_COLUMN10" />
+                <ScalarProperty Name="TRIAL_COLUMN9" ColumnName="TRIAL_COLUMN9" />
+                <ScalarProperty Name="TRIAL_COLUMN8" ColumnName="TRIAL_COLUMN8" />
+                <ScalarProperty Name="TRIAL_COLUMN7" ColumnName="TRIAL_COLUMN7" />
+                <ScalarProperty Name="TRIAL_COLUMN6" ColumnName="TRIAL_COLUMN6" />
+                <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+                <ScalarProperty Name="devuelta" ColumnName="devuelta" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
                 <ScalarProperty Name="codigo" ColumnName="codigo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -7696,6 +7864,15 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="codigo_compra" />
             </EndProperty>
           </AssociationSetMapping>
+          <AssociationSetMapping Name="pago_anulado_compra" TypeName="punto_ventaModel.pago_anulado_compra" StoreEntitySet="compra_pago_anulados">
+            <EndProperty Name="compra_pago_anulados">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="compra">
+              <ScalarProperty Name="codigo" ColumnName="cod_compra" />
+            </EndProperty>
+            <Condition ColumnName="cod_compra" IsNull="false" />
+          </AssociationSetMapping>
           <AssociationSetMapping Name="pagos_detalles_factura" TypeName="punto_ventaModel.pagos_detalles_factura" StoreEntitySet="pagos_detalles">
             <EndProperty Name="pagos_detalles">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -7703,6 +7880,24 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="compra">
               <ScalarProperty Name="codigo" ColumnName="cod_compra" />
             </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="pago_anulado_empleado" TypeName="punto_ventaModel.pago_anulado_empleado" StoreEntitySet="compra_pago_anulados">
+            <EndProperty Name="compra_pago_anulados">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="empleado">
+              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
+            </EndProperty>
+            <Condition ColumnName="cod_empleado" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="pago_anulado_pago" TypeName="punto_ventaModel.pago_anulado_pago" StoreEntitySet="compra_pago_anulados">
+            <EndProperty Name="compra_pago_anulados">
+              <ScalarProperty Name="codigo" ColumnName="codigo" />
+            </EndProperty>
+            <EndProperty Name="compra_vs_pagos">
+              <ScalarProperty Name="codigo" ColumnName="cod_pago" />
+            </EndProperty>
+            <Condition ColumnName="cod_pago" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="comprobante_serie1" TypeName="punto_ventaModel.comprobante_serie1" StoreEntitySet="comprobante_fiscal">
             <EndProperty Name="comprobante_fiscal">
