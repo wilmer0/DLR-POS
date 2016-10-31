@@ -138,7 +138,9 @@
 // Generation date: 30/10/2016 06:27:17 p.m.
 namespace puntoVentaModelo.Mysql
 {
-    
+    using System;
+    using System.Data.Entity;
+    using  System.Configuration;
     /// <summary>
     /// There are no comments for puntoVentaEntities in the schema.
     /// </summary>
@@ -168,6 +170,18 @@ namespace puntoVentaModelo.Mysql
         {
             this.OnContextCreated();
         }
+
+        public puntoVentaEntities(string servidor, string baseDatos, string user, string pass, string port = "3306")
+            : base("name=puntoVentaEntities")
+                        {
+
+
+                            var connectionString = this.Connection.ConnectionString + ";password=" + pass;
+                            connectionString = "server=" + servidor + ";userid=" + user + ";persistsecurityinfo=true;database=" + baseDatos + ";password=" + pass + ";Port=" + port ;
+
+                            this.Connection.ConnectionString = connectionString;
+        					//this.Configuration.LazyLoadingEnabled = true;
+                        }
         partial void OnContextCreated();
         /// <summary>
         /// There are no comments for almacen in the schema.
@@ -1903,6 +1917,10 @@ namespace puntoVentaModelo.Mysql
         }
         [global::System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")]
         private global::System.Data.Objects.ObjectQuery<tercero_vs_telefono> _tercero_vs_telefono;
+        private string p1;
+        private string p2;
+        private string p3;
+        private string p4;
         /// <summary>
         /// There are no comments for almacen in the schema.
         /// </summary>
