@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using puntoVentaModelo.Mysql;
 using System.Data.Entity;
 
 namespace puntoVentaModelo.Modelos

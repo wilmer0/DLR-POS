@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
-using puntoVentaModelo.Mysql;
 using MessageBox = System.Windows.Forms.MessageBox;
 using System.Data.Entity;
+
 namespace puntoVentaModelo.Modelos
 {
     public class ModeloLogin
