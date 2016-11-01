@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="punto_ventaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="punto_ventaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="almacen">
           <Key>
             <PropertyRef Name="codigo" />
@@ -2799,91 +2799,91 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="punto_ventaModelStoreContainer">
-          <EntitySet Name="almacen" EntityType="Self.almacen" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="banco" EntityType="Self.banco" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="caja" EntityType="Self.caja" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cajero" EntityType="Self.cajero" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cargo" EntityType="Self.cargo" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="categoria_producto" EntityType="Self.categoria_producto" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cliente_categoria" EntityType="Self.cliente_categoria" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cliente_subcategoria" EntityType="Self.cliente_subcategoria" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="correo_electronicos" EntityType="Self.correo_electronicos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cuadre_caja" EntityType="Self.cuadre_caja" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cuadre_caja_detalles" EntityType="Self.cuadre_caja_detalles" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="cuenta_bancaria" EntityType="Self.cuenta_bancaria" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="direccion" EntityType="Self.direccion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="egresos_caja" EntityType="Self.egresos_caja" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="egresos_conceptos" EntityType="Self.egresos_conceptos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="empleado_vs_cargo" EntityType="Self.empleado_vs_cargo" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="empresa" EntityType="Self.empresa" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="entrada_salida_inventario" EntityType="Self.entrada_salida_inventario" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="estados_reparacion" EntityType="Self.estados_reparacion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="factura" EntityType="Self.factura" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="grupo_usuarios" EntityType="Self.grupo_usuarios" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="historial_devolucion_compras" EntityType="Self.historial_devolucion_compras" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="historial_devolucion_ventas" EntityType="Self.historial_devolucion_ventas" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="identificacion" EntityType="Self.identificacion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="ingresos_caja" EntityType="Self.ingresos_caja" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="ingresos_conceptos" EntityType="Self.ingresos_conceptos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="inventario" EntityType="Self.inventario" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="inventario_reparacion" EntityType="Self.inventario_reparacion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="itebis" EntityType="Self.itebis" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="marcas" EntityType="Self.marcas" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="mesas" EntityType="Self.mesas" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="metodo_pago" EntityType="Self.metodo_pago" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="modelo" EntityType="Self.modelo" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="moneda" EntityType="Self.moneda" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="moneda_historial" EntityType="Self.moneda_historial" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="nomina" EntityType="Self.nomina" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="nomina_conceptos" EntityType="Self.nomina_conceptos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="nomina_tipos" EntityType="Self.nomina_tipos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="pagos" EntityType="Self.pagos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="pagos_detalles" EntityType="Self.pagos_detalles" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="pais" EntityType="Self.pais" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="permiso" EntityType="Self.permiso" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="persona" EntityType="Self.persona" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto" EntityType="Self.producto" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_detalle" EntityType="Self.producto_detalle" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_oferta" EntityType="Self.producto_oferta" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_permisos" EntityType="Self.producto_permisos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_unidad" EntityType="Self.producto_unidad" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_unidad_conversion" EntityType="Self.producto_unidad_conversion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_vs_detalle" EntityType="Self.producto_vs_detalle" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="producto_vs_permisos" EntityType="Self.producto_vs_permisos" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="provincia" EntityType="Self.provincia" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="region" EntityType="Self.region" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sector" EntityType="Self.sector" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sexo" EntityType="Self.sexo" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sistema" EntityType="Self.sistema" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sistema_historial" EntityType="Self.sistema_historial" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sistema_modulo" EntityType="Self.sistema_modulo" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sistema_modulo_opciones" EntityType="Self.sistema_modulo_opciones" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="situacion_empleado" EntityType="Self.situacion_empleado" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="subcategoria_producto" EntityType="Self.subcategoria_producto" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="suplidor" EntityType="Self.suplidor" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tarjetas_credito" EntityType="Self.tarjetas_credito" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tercero" EntityType="Self.tercero" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tipo_comprobante_fiscal" EntityType="Self.tipo_comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tipo_cuenta_bancaria" EntityType="Self.tipo_cuenta_bancaria" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tipo_identificacion" EntityType="Self.tipo_identificacion" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="tipo_movimiento_inventario" EntityType="Self.tipo_movimiento_inventario" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="transferencia_inventario" EntityType="Self.transferencia_inventario" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="unidad" EntityType="Self.unidad" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="punto_venta" store:Type="Tables" />
-          <EntitySet Name="catalogo_cuentas" EntityType="Self.catalogo_cuentas" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="almacen" EntityType="Self.almacen" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="banco" EntityType="Self.banco" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="caja" EntityType="Self.caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cajero" EntityType="Self.cajero" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cargo" EntityType="Self.cargo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="categoria_producto" EntityType="Self.categoria_producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cliente_categoria" EntityType="Self.cliente_categoria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cliente_subcategoria" EntityType="Self.cliente_subcategoria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="correo_electronicos" EntityType="Self.correo_electronicos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cuadre_caja" EntityType="Self.cuadre_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cuadre_caja_detalles" EntityType="Self.cuadre_caja_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="cuenta_bancaria" EntityType="Self.cuenta_bancaria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="direccion" EntityType="Self.direccion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="egresos_caja" EntityType="Self.egresos_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="egresos_conceptos" EntityType="Self.egresos_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="empleado_vs_cargo" EntityType="Self.empleado_vs_cargo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="empresa" EntityType="Self.empresa" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="entrada_salida_inventario" EntityType="Self.entrada_salida_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="estados_reparacion" EntityType="Self.estados_reparacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="factura" EntityType="Self.factura" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="grupo_usuarios" EntityType="Self.grupo_usuarios" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="historial_devolucion_compras" EntityType="Self.historial_devolucion_compras" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="historial_devolucion_ventas" EntityType="Self.historial_devolucion_ventas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="identificacion" EntityType="Self.identificacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ingresos_caja" EntityType="Self.ingresos_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="ingresos_conceptos" EntityType="Self.ingresos_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="inventario" EntityType="Self.inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="inventario_reparacion" EntityType="Self.inventario_reparacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="itebis" EntityType="Self.itebis" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="marcas" EntityType="Self.marcas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="mesas" EntityType="Self.mesas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="metodo_pago" EntityType="Self.metodo_pago" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="modelo" EntityType="Self.modelo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="moneda" EntityType="Self.moneda" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="moneda_historial" EntityType="Self.moneda_historial" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="nomina" EntityType="Self.nomina" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="nomina_conceptos" EntityType="Self.nomina_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="nomina_tipos" EntityType="Self.nomina_tipos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="pagos" EntityType="Self.pagos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="pagos_detalles" EntityType="Self.pagos_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="pais" EntityType="Self.pais" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="persona" EntityType="Self.persona" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_detalle" EntityType="Self.producto_detalle" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_oferta" EntityType="Self.producto_oferta" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_permisos" EntityType="Self.producto_permisos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_unidad" EntityType="Self.producto_unidad" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_unidad_conversion" EntityType="Self.producto_unidad_conversion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_vs_detalle" EntityType="Self.producto_vs_detalle" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="producto_vs_permisos" EntityType="Self.producto_vs_permisos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="provincia" EntityType="Self.provincia" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="region" EntityType="Self.region" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sector" EntityType="Self.sector" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sexo" EntityType="Self.sexo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sistema" EntityType="Self.sistema" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sistema_historial" EntityType="Self.sistema_historial" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sistema_modulo" EntityType="Self.sistema_modulo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sistema_modulo_opciones" EntityType="Self.sistema_modulo_opciones" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="situacion_empleado" EntityType="Self.situacion_empleado" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="subcategoria_producto" EntityType="Self.subcategoria_producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="suplidor" EntityType="Self.suplidor" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tarjetas_credito" EntityType="Self.tarjetas_credito" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tercero" EntityType="Self.tercero" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tipo_comprobante_fiscal" EntityType="Self.tipo_comprobante_fiscal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tipo_cuenta_bancaria" EntityType="Self.tipo_cuenta_bancaria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tipo_identificacion" EntityType="Self.tipo_identificacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tipo_movimiento_inventario" EntityType="Self.tipo_movimiento_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="transferencia_inventario" EntityType="Self.transferencia_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="unidad" EntityType="Self.unidad" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="catalogo_cuentas" EntityType="Self.catalogo_cuentas" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `catalogo_cuentas`.`codigo`, 
 `catalogo_cuentas`.`descripcion`, 
@@ -2897,7 +2897,7 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
 `catalogo_cuentas`.`estado`
 FROM `catalogo_cuentas` AS `catalogo_cuentas`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="compra_detalle" EntityType="Self.compra_detalle" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="compra_detalle" EntityType="Self.compra_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `compra_detalle`.`codigo`, 
 `compra_detalle`.`cod_compra`, 
@@ -2912,7 +2912,7 @@ FROM `catalogo_cuentas` AS `catalogo_cuentas`</DefiningQuery>
 `compra_detalle`.`cod_metodo_pago`
 FROM `compra_detalle` AS `compra_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="empleado_historial_datos" EntityType="Self.empleado_historial_datos" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="empleado_historial_datos" EntityType="Self.empleado_historial_datos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `empleado_historial_datos`.`codigo`, 
 `empleado_historial_datos`.`cod_empleado`, 
@@ -2934,7 +2934,7 @@ FROM `compra_detalle` AS `compra_detalle`</DefiningQuery>
 `empleado_historial_datos`.`cod_tipo_nomina`
 FROM `empleado_historial_datos` AS `empleado_historial_datos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="empleado_vs_conceptos_nomina" EntityType="Self.empleado_vs_conceptos_nomina" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="empleado_vs_conceptos_nomina" EntityType="Self.empleado_vs_conceptos_nomina" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `empleado_vs_conceptos_nomina`.`cod_nomina`, 
 `empleado_vs_conceptos_nomina`.`cod_empleado`, 
@@ -2943,7 +2943,7 @@ FROM `empleado_historial_datos` AS `empleado_historial_datos`</DefiningQuery>
 `empleado_vs_conceptos_nomina`.`cod_empleado_modifico`
 FROM `empleado_vs_conceptos_nomina` AS `empleado_vs_conceptos_nomina`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="factura_detalle" EntityType="Self.factura_detalle" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="factura_detalle" EntityType="Self.factura_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `factura_detalle`.`cod_factura`, 
 `factura_detalle`.`cod_producto`, 
@@ -2957,7 +2957,7 @@ FROM `empleado_vs_conceptos_nomina` AS `empleado_vs_conceptos_nomina`</DefiningQ
 `factura_detalle`.`detalles`
 FROM `factura_detalle` AS `factura_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="facturas_anuladas" EntityType="Self.facturas_anuladas" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="facturas_anuladas" EntityType="Self.facturas_anuladas" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `facturas_anuladas`.`cod_factura`, 
 `facturas_anuladas`.`fecha`, 
@@ -2965,13 +2965,13 @@ FROM `factura_detalle` AS `factura_detalle`</DefiningQuery>
 `facturas_anuladas`.`cod_cajero`
 FROM `facturas_anuladas` AS `facturas_anuladas`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="grupo_usuarios_permisos" EntityType="Self.grupo_usuarios_permisos" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="grupo_usuarios_permisos" EntityType="Self.grupo_usuarios_permisos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `grupo_usuarios_permisos`.`cod_grupo`, 
 `grupo_usuarios_permisos`.`cod_permiso`
 FROM `grupo_usuarios_permisos` AS `grupo_usuarios_permisos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="historial_inventario_agotado" EntityType="Self.historial_inventario_agotado" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="historial_inventario_agotado" EntityType="Self.historial_inventario_agotado" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `historial_inventario_agotado`.`cod_producto`, 
 `historial_inventario_agotado`.`cod_unidad`, 
@@ -2982,14 +2982,14 @@ FROM `grupo_usuarios_permisos` AS `grupo_usuarios_permisos`</DefiningQuery>
 `historial_inventario_agotado`.`precio`
 FROM `historial_inventario_agotado` AS `historial_inventario_agotado`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="mesas_detalles" EntityType="Self.mesas_detalles" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="mesas_detalles" EntityType="Self.mesas_detalles" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `mesas_detalles`.`codigo_mesa`, 
 `mesas_detalles`.`cod_detalle`, 
 `mesas_detalles`.`descripcion`
 FROM `mesas_detalles` AS `mesas_detalles`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="nomina_detalle" EntityType="Self.nomina_detalle" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="nomina_detalle" EntityType="Self.nomina_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `nomina_detalle`.`cod_nomina`, 
 `nomina_detalle`.`cod_empleado`, 
@@ -2999,21 +2999,21 @@ FROM `mesas_detalles` AS `mesas_detalles`</DefiningQuery>
 `nomina_detalle`.`estado`
 FROM `nomina_detalle` AS `nomina_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="oferta_producto_categoria_detalle" EntityType="Self.oferta_producto_categoria_detalle" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="oferta_producto_categoria_detalle" EntityType="Self.oferta_producto_categoria_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `oferta_producto_categoria_detalle`.`cod_oferta`, 
 `oferta_producto_categoria_detalle`.`cod_categoria`, 
 `oferta_producto_categoria_detalle`.`estado`
 FROM `oferta_producto_categoria_detalle` AS `oferta_producto_categoria_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="oferta_producto_detalle" EntityType="Self.oferta_producto_detalle" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="oferta_producto_detalle" EntityType="Self.oferta_producto_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `oferta_producto_detalle`.`cod_oferta`, 
 `oferta_producto_detalle`.`cod_prod`, 
 `oferta_producto_detalle`.`estado`
 FROM `oferta_producto_detalle` AS `oferta_producto_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_codigobarra" EntityType="Self.producto_codigobarra" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="producto_codigobarra" EntityType="Self.producto_codigobarra" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `producto_codigobarra`.`codigo`, 
 `producto_codigobarra`.`cod_producto`, 
@@ -3021,7 +3021,7 @@ FROM `oferta_producto_detalle` AS `oferta_producto_detalle`</DefiningQuery>
 `producto_codigobarra`.`codigo_barra`
 FROM `producto_codigobarra` AS `producto_codigobarra`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_oferta_historial" EntityType="Self.producto_oferta_historial" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="producto_oferta_historial" EntityType="Self.producto_oferta_historial" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `producto_oferta_historial`.`codigo`, 
 `producto_oferta_historial`.`nombre`, 
@@ -3034,7 +3034,7 @@ FROM `producto_codigobarra` AS `producto_codigobarra`</DefiningQuery>
 `producto_oferta_historial`.`cod_sucursal`
 FROM `producto_oferta_historial` AS `producto_oferta_historial`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_productos_requisitos" EntityType="Self.producto_productos_requisitos" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="producto_productos_requisitos" EntityType="Self.producto_productos_requisitos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `producto_productos_requisitos`.`codpro_titular`, 
 `producto_productos_requisitos`.`codpro_requisito`, 
@@ -3042,14 +3042,14 @@ FROM `producto_oferta_historial` AS `producto_oferta_historial`</DefiningQuery>
 `producto_productos_requisitos`.`cantidad`
 FROM `producto_productos_requisitos` AS `producto_productos_requisitos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="sucursal_vs_empleado" EntityType="Self.sucursal_vs_empleado" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="sucursal_vs_empleado" EntityType="Self.sucursal_vs_empleado" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `sucursal_vs_empleado`.`cod_sucursal`, 
 `sucursal_vs_empleado`.`cod_empleado`, 
 `sucursal_vs_empleado`.`estado`
 FROM `sucursal_vs_empleado` AS `sucursal_vs_empleado`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_observaciones" EntityType="Self.tercero_observaciones" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="tercero_observaciones" EntityType="Self.tercero_observaciones" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `tercero_observaciones`.`codigo`, 
 `tercero_observaciones`.`cod_tercero`, 
@@ -3059,7 +3059,7 @@ FROM `sucursal_vs_empleado` AS `sucursal_vs_empleado`</DefiningQuery>
 `tercero_observaciones`.`fecha`
 FROM `tercero_observaciones` AS `tercero_observaciones`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_direccion" EntityType="Self.tercero_vs_direccion" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="tercero_vs_direccion" EntityType="Self.tercero_vs_direccion" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `tercero_vs_direccion`.`cod_tercero`, 
 `tercero_vs_direccion`.`cod_direccion`, 
@@ -3067,14 +3067,14 @@ FROM `tercero_observaciones` AS `tercero_observaciones`</DefiningQuery>
 `tercero_vs_direccion`.`tipo_entidad`
 FROM `tercero_vs_direccion` AS `tercero_vs_direccion`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_email" EntityType="Self.tercero_vs_email" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="tercero_vs_email" EntityType="Self.tercero_vs_email" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `tercero_vs_email`.`cod_tercero`, 
 `tercero_vs_email`.`email`, 
 `tercero_vs_email`.`tipo_entidad`
 FROM `tercero_vs_email` AS `tercero_vs_email`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_permiso" EntityType="Self.tercero_vs_permiso" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="tercero_vs_permiso" EntityType="Self.tercero_vs_permiso" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `tercero_vs_permiso`.`cod_tercero`, 
 `tercero_vs_permiso`.`cod_permiso`, 
@@ -3082,7 +3082,7 @@ FROM `tercero_vs_email` AS `tercero_vs_email`</DefiningQuery>
 `tercero_vs_permiso`.`estado`
 FROM `tercero_vs_permiso` AS `tercero_vs_permiso`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_telefono" EntityType="Self.tercero_vs_telefono" store:Type="Tables" store:Schema="punto_venta">
+          <EntitySet Name="tercero_vs_telefono" EntityType="Self.tercero_vs_telefono" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
             <DefiningQuery>SELECT
 `tercero_vs_telefono`.`cod_tercero`, 
 `tercero_vs_telefono`.`telefono`, 
@@ -3602,7 +3602,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="punto_ventaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <Schema Namespace="punto_ventaModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="puntoVentaEntities">
           <EntitySet Name="almacen" EntityType="punto_ventaModel.almacen" />
           <EntitySet Name="banco" EntityType="punto_ventaModel.banco" />
@@ -5024,7 +5024,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Key>
             <PropertyRef Name="codigo" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="ruta_imagen_productos" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
           <Property Name="ruta_backup" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
           <Property Name="ruta_logo_empresa" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
@@ -5135,7 +5135,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="version" Type="Int32" />
@@ -5298,7 +5298,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <PropertyRef Name="cod_sucursal" />
             <PropertyRef Name="fecha" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Name="cod_empleado" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -6470,7 +6470,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="punto_ventaModelStoreContainer" CdmEntityContainer="puntoVentaEntities">
           <EntitySetMapping Name="almacen">
             <EntityTypeMapping TypeName="punto_ventaModel.almacen">
@@ -8820,7 +8820,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -8835,6 +8835,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams />
   </Designer>
 </edmx:Edmx>
