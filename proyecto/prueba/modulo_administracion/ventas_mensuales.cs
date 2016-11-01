@@ -556,5 +556,11 @@ namespace puntoVenta
             items_impreso_por_hoja2 = 0;
             items_por_hoja2 = 0;
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            buscar_facturado();
+            buscar_cobrado();
+        }
     }
 }
