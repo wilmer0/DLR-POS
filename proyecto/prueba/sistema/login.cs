@@ -132,22 +132,22 @@ namespace puntoVenta
 
                 string claveEncriptada = Utilidades.encriptar(claveText.Text.Trim());
 
-                empleado = modeloLogin.login(usuarioText.Text.Trim(), claveEncriptada.ToString().Trim());
-                if (empleado == null)
-                {
-                    MessageBox.Show("Los datos no son correctos","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                    return false;
-                }
+                //empleado = modeloLogin.login(usuarioText.Text.Trim(), claveEncriptada.ToString().Trim());
+                //if (empleado == null)
+                //{
+                //    MessageBox.Show("Los datos no son correctos","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                //    return false;
+                //}
                 
                 //s = singleton.obtenerDatos();
                 //s.codigo_usuario = empleado.codigo.ToString();
                 //s.nombre = empleado.cod_
 
-                //    //sacando el codigo de sucursal que pertenece el empleado
-                //    sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario.ToString() + "'";
-                //    ds = Utilidades.ejecutarcomando(sql);
-                //    s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
-                //    s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
+                    //sacando el codigo de sucursal que pertenece el empleado
+                    sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario.ToString() + "'";
+                    ds = Utilidades.ejecutarcomando(sql);
+                    s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
+                    s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
                     menuPrincipal = new principal();
                     menuPrincipal.Show();
 

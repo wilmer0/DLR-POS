@@ -4,15 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="punto_ventaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="punto_ventaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="almacen">
           <Key>
             <PropertyRef Name="codigo" />
           </Key>
           <Property Name="codigo" Type="int" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="cod_sucursal" Type="int" Nullable="false" />
-          <Property Name="estado" Type="utinyint" Nullable="false" />
+          <Property Name="estado" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="banco">
           <Key>
@@ -337,16 +337,15 @@ warning 6002: The table/view 'def.punto_venta.compra_detalle' does not have a pr
           <Property Name="login" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="sueldo" Type="decimal" Precision="20" Scale="2" />
-          <Property Name="cod_situacion" Type="int" />
+          <Property Name="cod_situacion" Type="int" Nullable="false" />
           <Property Name="estado" Type="utinyint" Nullable="false" />
-          <Property Name="cod_sucursal" Type="int" />
-          <Property Name="cod_departamento" Type="int" />
-          <Property Name="cod_cargo" Type="int" />
-          <Property Name="cod_cliente" Type="int" />
+          <Property Name="cod_sucursal" Type="int" Nullable="false" />
+          <Property Name="cod_departamento" Type="int" Nullable="false" />
+          <Property Name="cod_cargo" Type="int" Nullable="false" />
           <Property Name="cod_grupo_usuario" Type="int" />
           <Property Name="fecha_ingreso" Type="date" />
           <Property Name="permiso" Type="varchar" MaxLength="1" />
-          <Property Name="cod_tipo_nomina" Type="int" />
+          <Property Name="cod_tipo_nomina" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'def.punto_venta.empleado_historial_datos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1599,7 +1598,7 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
           </ReferentialConstraint>
         </Association>
         <Association Name="empleado_cargo">
-          <End Role="cargo" Type="Self.cargo" Multiplicity="0..1" />
+          <End Role="cargo" Type="Self.cargo" Multiplicity="1" />
           <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cargo">
@@ -1739,6 +1738,18 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
             </Principal>
             <Dependent Role="empleado_historial_datos">
               <PropertyRef Name="cod_sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="empleado_tercero">
+          <End Role="tercero" Type="Self.tercero" Multiplicity="1" />
+          <End Role="empleado" Type="Self.empleado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tercero">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2799,91 +2810,91 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="punto_ventaModelStoreContainer">
-          <EntitySet Name="almacen" EntityType="Self.almacen" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="banco" EntityType="Self.banco" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="caja" EntityType="Self.caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cajero" EntityType="Self.cajero" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cargo" EntityType="Self.cargo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="categoria_producto" EntityType="Self.categoria_producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cliente_categoria" EntityType="Self.cliente_categoria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cliente_subcategoria" EntityType="Self.cliente_subcategoria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="correo_electronicos" EntityType="Self.correo_electronicos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cuadre_caja" EntityType="Self.cuadre_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cuadre_caja_detalles" EntityType="Self.cuadre_caja_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="cuenta_bancaria" EntityType="Self.cuenta_bancaria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="direccion" EntityType="Self.direccion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="egresos_caja" EntityType="Self.egresos_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="egresos_conceptos" EntityType="Self.egresos_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="empleado_vs_cargo" EntityType="Self.empleado_vs_cargo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="empresa" EntityType="Self.empresa" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="entrada_salida_inventario" EntityType="Self.entrada_salida_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="estados_reparacion" EntityType="Self.estados_reparacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="factura" EntityType="Self.factura" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="grupo_usuarios" EntityType="Self.grupo_usuarios" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="historial_devolucion_compras" EntityType="Self.historial_devolucion_compras" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="historial_devolucion_ventas" EntityType="Self.historial_devolucion_ventas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="identificacion" EntityType="Self.identificacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="ingresos_caja" EntityType="Self.ingresos_caja" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="ingresos_conceptos" EntityType="Self.ingresos_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="inventario" EntityType="Self.inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="inventario_reparacion" EntityType="Self.inventario_reparacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="itebis" EntityType="Self.itebis" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="marcas" EntityType="Self.marcas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="mesas" EntityType="Self.mesas" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="metodo_pago" EntityType="Self.metodo_pago" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="modelo" EntityType="Self.modelo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="moneda" EntityType="Self.moneda" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="moneda_historial" EntityType="Self.moneda_historial" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="nomina" EntityType="Self.nomina" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="nomina_conceptos" EntityType="Self.nomina_conceptos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="nomina_tipos" EntityType="Self.nomina_tipos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="pagos" EntityType="Self.pagos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="pagos_detalles" EntityType="Self.pagos_detalles" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="pais" EntityType="Self.pais" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="permiso" EntityType="Self.permiso" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="persona" EntityType="Self.persona" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto" EntityType="Self.producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_detalle" EntityType="Self.producto_detalle" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_oferta" EntityType="Self.producto_oferta" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_permisos" EntityType="Self.producto_permisos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_unidad" EntityType="Self.producto_unidad" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_unidad_conversion" EntityType="Self.producto_unidad_conversion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_vs_detalle" EntityType="Self.producto_vs_detalle" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="producto_vs_permisos" EntityType="Self.producto_vs_permisos" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="provincia" EntityType="Self.provincia" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="region" EntityType="Self.region" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sector" EntityType="Self.sector" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sexo" EntityType="Self.sexo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sistema" EntityType="Self.sistema" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sistema_historial" EntityType="Self.sistema_historial" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sistema_modulo" EntityType="Self.sistema_modulo" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sistema_modulo_opciones" EntityType="Self.sistema_modulo_opciones" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="situacion_empleado" EntityType="Self.situacion_empleado" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="subcategoria_producto" EntityType="Self.subcategoria_producto" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="suplidor" EntityType="Self.suplidor" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tarjetas_credito" EntityType="Self.tarjetas_credito" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tercero" EntityType="Self.tercero" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tipo_comprobante_fiscal" EntityType="Self.tipo_comprobante_fiscal" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tipo_cuenta_bancaria" EntityType="Self.tipo_cuenta_bancaria" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tipo_identificacion" EntityType="Self.tipo_identificacion" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="tipo_movimiento_inventario" EntityType="Self.tipo_movimiento_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="transferencia_inventario" EntityType="Self.transferencia_inventario" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="unidad" EntityType="Self.unidad" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="punto_venta" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="catalogo_cuentas" EntityType="Self.catalogo_cuentas" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="almacen" EntityType="Self.almacen" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="banco" EntityType="Self.banco" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="caja" EntityType="Self.caja" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cajero" EntityType="Self.cajero" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cargo" EntityType="Self.cargo" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="categoria_producto" EntityType="Self.categoria_producto" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cliente_categoria" EntityType="Self.cliente_categoria" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cliente_subcategoria" EntityType="Self.cliente_subcategoria" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cobros" EntityType="Self.cobros" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cobros_detalles" EntityType="Self.cobros_detalles" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="compra" EntityType="Self.compra" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="compra_pago_anulados" EntityType="Self.compra_pago_anulados" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="compra_vs_pagos" EntityType="Self.compra_vs_pagos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="comprobante_fiscal" EntityType="Self.comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="comprobante_serie" EntityType="Self.comprobante_serie" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="comprobante_ventas" EntityType="Self.comprobante_ventas" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="correo_electronicos" EntityType="Self.correo_electronicos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cuadre_caja" EntityType="Self.cuadre_caja" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cuadre_caja_detalles" EntityType="Self.cuadre_caja_detalles" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="cuenta_bancaria" EntityType="Self.cuenta_bancaria" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="direccion" EntityType="Self.direccion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="egresos_caja" EntityType="Self.egresos_caja" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="egresos_conceptos" EntityType="Self.egresos_conceptos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="empleado_vs_cargo" EntityType="Self.empleado_vs_cargo" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="empresa" EntityType="Self.empresa" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="entrada_salida_inventario" EntityType="Self.entrada_salida_inventario" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="estados_reparacion" EntityType="Self.estados_reparacion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="factura" EntityType="Self.factura" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="grupo_usuarios" EntityType="Self.grupo_usuarios" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="historial_devolucion_compras" EntityType="Self.historial_devolucion_compras" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="historial_devolucion_ventas" EntityType="Self.historial_devolucion_ventas" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="identificacion" EntityType="Self.identificacion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="ingresos_caja" EntityType="Self.ingresos_caja" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="ingresos_conceptos" EntityType="Self.ingresos_conceptos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="inventario" EntityType="Self.inventario" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="inventario_reparacion" EntityType="Self.inventario_reparacion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="itebis" EntityType="Self.itebis" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="marcas" EntityType="Self.marcas" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="mesas" EntityType="Self.mesas" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="metodo_pago" EntityType="Self.metodo_pago" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="modelo" EntityType="Self.modelo" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="moneda" EntityType="Self.moneda" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="moneda_historial" EntityType="Self.moneda_historial" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="nomina" EntityType="Self.nomina" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="nomina_conceptos" EntityType="Self.nomina_conceptos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="nomina_tipos" EntityType="Self.nomina_tipos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="pagos" EntityType="Self.pagos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="pagos_detalles" EntityType="Self.pagos_detalles" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="pais" EntityType="Self.pais" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="permiso" EntityType="Self.permiso" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="persona" EntityType="Self.persona" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_detalle" EntityType="Self.producto_detalle" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_oferta" EntityType="Self.producto_oferta" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_permisos" EntityType="Self.producto_permisos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_unidad" EntityType="Self.producto_unidad" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_unidad_conversion" EntityType="Self.producto_unidad_conversion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_vs_detalle" EntityType="Self.producto_vs_detalle" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="producto_vs_permisos" EntityType="Self.producto_vs_permisos" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="provincia" EntityType="Self.provincia" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="region" EntityType="Self.region" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sector" EntityType="Self.sector" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sexo" EntityType="Self.sexo" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sistema" EntityType="Self.sistema" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sistema_historial" EntityType="Self.sistema_historial" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sistema_modulo" EntityType="Self.sistema_modulo" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sistema_modulo_opciones" EntityType="Self.sistema_modulo_opciones" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="situacion_empleado" EntityType="Self.situacion_empleado" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="subcategoria_producto" EntityType="Self.subcategoria_producto" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sucursal" EntityType="Self.sucursal" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="suplidor" EntityType="Self.suplidor" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tarjetas_credito" EntityType="Self.tarjetas_credito" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tercero" EntityType="Self.tercero" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tipo_comprobante_fiscal" EntityType="Self.tipo_comprobante_fiscal" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tipo_cuenta_bancaria" EntityType="Self.tipo_cuenta_bancaria" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tipo_identificacion" EntityType="Self.tipo_identificacion" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="tipo_movimiento_inventario" EntityType="Self.tipo_movimiento_inventario" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="transferencia_inventario" EntityType="Self.transferencia_inventario" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="unidad" EntityType="Self.unidad" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="vendedor" EntityType="Self.vendedor" Schema="punto_venta" store:Type="Tables" />
+          <EntitySet Name="catalogo_cuentas" EntityType="Self.catalogo_cuentas" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `catalogo_cuentas`.`codigo`, 
 `catalogo_cuentas`.`descripcion`, 
@@ -2897,7 +2908,7 @@ warning 6035: The relationship 'cuadre_caja_detalles_cuadre_caja' has columns th
 `catalogo_cuentas`.`estado`
 FROM `catalogo_cuentas` AS `catalogo_cuentas`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="compra_detalle" EntityType="Self.compra_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="compra_detalle" EntityType="Self.compra_detalle" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `compra_detalle`.`codigo`, 
 `compra_detalle`.`cod_compra`, 
@@ -2912,7 +2923,7 @@ FROM `catalogo_cuentas` AS `catalogo_cuentas`</DefiningQuery>
 `compra_detalle`.`cod_metodo_pago`
 FROM `compra_detalle` AS `compra_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="empleado_historial_datos" EntityType="Self.empleado_historial_datos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="empleado_historial_datos" EntityType="Self.empleado_historial_datos" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `empleado_historial_datos`.`codigo`, 
 `empleado_historial_datos`.`cod_empleado`, 
@@ -2934,7 +2945,7 @@ FROM `compra_detalle` AS `compra_detalle`</DefiningQuery>
 `empleado_historial_datos`.`cod_tipo_nomina`
 FROM `empleado_historial_datos` AS `empleado_historial_datos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="empleado_vs_conceptos_nomina" EntityType="Self.empleado_vs_conceptos_nomina" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="empleado_vs_conceptos_nomina" EntityType="Self.empleado_vs_conceptos_nomina" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `empleado_vs_conceptos_nomina`.`cod_nomina`, 
 `empleado_vs_conceptos_nomina`.`cod_empleado`, 
@@ -2943,7 +2954,7 @@ FROM `empleado_historial_datos` AS `empleado_historial_datos`</DefiningQuery>
 `empleado_vs_conceptos_nomina`.`cod_empleado_modifico`
 FROM `empleado_vs_conceptos_nomina` AS `empleado_vs_conceptos_nomina`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="factura_detalle" EntityType="Self.factura_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="factura_detalle" EntityType="Self.factura_detalle" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `factura_detalle`.`cod_factura`, 
 `factura_detalle`.`cod_producto`, 
@@ -2957,7 +2968,7 @@ FROM `empleado_vs_conceptos_nomina` AS `empleado_vs_conceptos_nomina`</DefiningQ
 `factura_detalle`.`detalles`
 FROM `factura_detalle` AS `factura_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="facturas_anuladas" EntityType="Self.facturas_anuladas" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="facturas_anuladas" EntityType="Self.facturas_anuladas" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `facturas_anuladas`.`cod_factura`, 
 `facturas_anuladas`.`fecha`, 
@@ -2965,13 +2976,13 @@ FROM `factura_detalle` AS `factura_detalle`</DefiningQuery>
 `facturas_anuladas`.`cod_cajero`
 FROM `facturas_anuladas` AS `facturas_anuladas`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="grupo_usuarios_permisos" EntityType="Self.grupo_usuarios_permisos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="grupo_usuarios_permisos" EntityType="Self.grupo_usuarios_permisos" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `grupo_usuarios_permisos`.`cod_grupo`, 
 `grupo_usuarios_permisos`.`cod_permiso`
 FROM `grupo_usuarios_permisos` AS `grupo_usuarios_permisos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="historial_inventario_agotado" EntityType="Self.historial_inventario_agotado" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="historial_inventario_agotado" EntityType="Self.historial_inventario_agotado" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `historial_inventario_agotado`.`cod_producto`, 
 `historial_inventario_agotado`.`cod_unidad`, 
@@ -2982,14 +2993,14 @@ FROM `grupo_usuarios_permisos` AS `grupo_usuarios_permisos`</DefiningQuery>
 `historial_inventario_agotado`.`precio`
 FROM `historial_inventario_agotado` AS `historial_inventario_agotado`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="mesas_detalles" EntityType="Self.mesas_detalles" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="mesas_detalles" EntityType="Self.mesas_detalles" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `mesas_detalles`.`codigo_mesa`, 
 `mesas_detalles`.`cod_detalle`, 
 `mesas_detalles`.`descripcion`
 FROM `mesas_detalles` AS `mesas_detalles`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="nomina_detalle" EntityType="Self.nomina_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="nomina_detalle" EntityType="Self.nomina_detalle" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `nomina_detalle`.`cod_nomina`, 
 `nomina_detalle`.`cod_empleado`, 
@@ -2999,21 +3010,21 @@ FROM `mesas_detalles` AS `mesas_detalles`</DefiningQuery>
 `nomina_detalle`.`estado`
 FROM `nomina_detalle` AS `nomina_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="oferta_producto_categoria_detalle" EntityType="Self.oferta_producto_categoria_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="oferta_producto_categoria_detalle" EntityType="Self.oferta_producto_categoria_detalle" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `oferta_producto_categoria_detalle`.`cod_oferta`, 
 `oferta_producto_categoria_detalle`.`cod_categoria`, 
 `oferta_producto_categoria_detalle`.`estado`
 FROM `oferta_producto_categoria_detalle` AS `oferta_producto_categoria_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="oferta_producto_detalle" EntityType="Self.oferta_producto_detalle" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="oferta_producto_detalle" EntityType="Self.oferta_producto_detalle" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `oferta_producto_detalle`.`cod_oferta`, 
 `oferta_producto_detalle`.`cod_prod`, 
 `oferta_producto_detalle`.`estado`
 FROM `oferta_producto_detalle` AS `oferta_producto_detalle`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_codigobarra" EntityType="Self.producto_codigobarra" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="producto_codigobarra" EntityType="Self.producto_codigobarra" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `producto_codigobarra`.`codigo`, 
 `producto_codigobarra`.`cod_producto`, 
@@ -3021,7 +3032,7 @@ FROM `oferta_producto_detalle` AS `oferta_producto_detalle`</DefiningQuery>
 `producto_codigobarra`.`codigo_barra`
 FROM `producto_codigobarra` AS `producto_codigobarra`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_oferta_historial" EntityType="Self.producto_oferta_historial" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="producto_oferta_historial" EntityType="Self.producto_oferta_historial" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `producto_oferta_historial`.`codigo`, 
 `producto_oferta_historial`.`nombre`, 
@@ -3034,7 +3045,7 @@ FROM `producto_codigobarra` AS `producto_codigobarra`</DefiningQuery>
 `producto_oferta_historial`.`cod_sucursal`
 FROM `producto_oferta_historial` AS `producto_oferta_historial`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="producto_productos_requisitos" EntityType="Self.producto_productos_requisitos" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="producto_productos_requisitos" EntityType="Self.producto_productos_requisitos" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `producto_productos_requisitos`.`codpro_titular`, 
 `producto_productos_requisitos`.`codpro_requisito`, 
@@ -3042,14 +3053,14 @@ FROM `producto_oferta_historial` AS `producto_oferta_historial`</DefiningQuery>
 `producto_productos_requisitos`.`cantidad`
 FROM `producto_productos_requisitos` AS `producto_productos_requisitos`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="sucursal_vs_empleado" EntityType="Self.sucursal_vs_empleado" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="sucursal_vs_empleado" EntityType="Self.sucursal_vs_empleado" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `sucursal_vs_empleado`.`cod_sucursal`, 
 `sucursal_vs_empleado`.`cod_empleado`, 
 `sucursal_vs_empleado`.`estado`
 FROM `sucursal_vs_empleado` AS `sucursal_vs_empleado`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_observaciones" EntityType="Self.tercero_observaciones" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="tercero_observaciones" EntityType="Self.tercero_observaciones" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `tercero_observaciones`.`codigo`, 
 `tercero_observaciones`.`cod_tercero`, 
@@ -3059,7 +3070,7 @@ FROM `sucursal_vs_empleado` AS `sucursal_vs_empleado`</DefiningQuery>
 `tercero_observaciones`.`fecha`
 FROM `tercero_observaciones` AS `tercero_observaciones`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_direccion" EntityType="Self.tercero_vs_direccion" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="tercero_vs_direccion" EntityType="Self.tercero_vs_direccion" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `tercero_vs_direccion`.`cod_tercero`, 
 `tercero_vs_direccion`.`cod_direccion`, 
@@ -3067,14 +3078,14 @@ FROM `tercero_observaciones` AS `tercero_observaciones`</DefiningQuery>
 `tercero_vs_direccion`.`tipo_entidad`
 FROM `tercero_vs_direccion` AS `tercero_vs_direccion`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_email" EntityType="Self.tercero_vs_email" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="tercero_vs_email" EntityType="Self.tercero_vs_email" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `tercero_vs_email`.`cod_tercero`, 
 `tercero_vs_email`.`email`, 
 `tercero_vs_email`.`tipo_entidad`
 FROM `tercero_vs_email` AS `tercero_vs_email`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_permiso" EntityType="Self.tercero_vs_permiso" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="tercero_vs_permiso" EntityType="Self.tercero_vs_permiso" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `tercero_vs_permiso`.`cod_tercero`, 
 `tercero_vs_permiso`.`cod_permiso`, 
@@ -3082,7 +3093,7 @@ FROM `tercero_vs_email` AS `tercero_vs_email`</DefiningQuery>
 `tercero_vs_permiso`.`estado`
 FROM `tercero_vs_permiso` AS `tercero_vs_permiso`</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tercero_vs_telefono" EntityType="Self.tercero_vs_telefono" store:Type="Tables" store:Schema="punto_venta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+          <EntitySet Name="tercero_vs_telefono" EntityType="Self.tercero_vs_telefono" store:Type="Tables" store:Schema="punto_venta">
             <DefiningQuery>SELECT
 `tercero_vs_telefono`.`cod_tercero`, 
 `tercero_vs_telefono`.`telefono`, 
@@ -3245,6 +3256,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <AssociationSet Name="empleado_sucursal" Association="Self.empleado_sucursal">
             <End Role="sucursal" EntitySet="sucursal" />
             <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
+          </AssociationSet>
+          <AssociationSet Name="empleado_tercero" Association="Self.empleado_tercero">
+            <End Role="tercero" EntitySet="tercero" />
+            <End Role="empleado" EntitySet="empleado" />
           </AssociationSet>
           <AssociationSet Name="empleado_tipo_nomina" Association="Self.empleado_tipo_nomina">
             <End Role="nomina_tipos" EntitySet="nomina_tipos" />
@@ -3878,6 +3893,10 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <End Role="empleado" EntitySet="empleado" />
             <End Role="empleado_historial_datos" EntitySet="empleado_historial_datos" />
           </AssociationSet>
+          <AssociationSet Name="empleado_tercero" Association="punto_ventaModel.empleado_tercero">
+            <End Role="tercero" EntitySet="tercero" />
+            <End Role="empleado" EntitySet="empleado" />
+          </AssociationSet>
           <AssociationSet Name="historial_devolucion_compras_empleado" Association="punto_ventaModel.historial_devolucion_compras_empleado">
             <End Role="empleado" EntitySet="empleado" />
             <End Role="historial_devolucion_compras" EntitySet="historial_devolucion_compras" />
@@ -4208,8 +4227,8 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <PropertyRef Name="codigo" />
           </Key>
           <Property Name="codigo" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="estado" Type="Byte" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="SByte" Nullable="false" />
           <NavigationProperty Name="sucursal" Relationship="punto_ventaModel.almacen_sucursal" FromRole="almacen" ToRole="sucursal" />
           <NavigationProperty Name="producto" Relationship="punto_ventaModel.producto_almacen" FromRole="almacen" ToRole="producto" />
         </EntityType>
@@ -4520,15 +4539,14 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="login" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="sueldo" Type="Decimal" />
-          <Property Name="cod_situacion" Type="Int32" />
+          <Property Name="cod_situacion" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="Byte" Nullable="false" />
-          <Property Name="cod_sucursal" Type="Int32" />
-          <Property Name="cod_departamento" Type="Int32" />
-          <Property Name="cod_cliente" Type="Int32" />
+          <Property Name="cod_sucursal" Type="Int32" Nullable="false" />
+          <Property Name="cod_departamento" Type="Int32" Nullable="false" />
           <Property Name="cod_grupo_usuario" Type="Int32" />
           <Property Name="fecha_ingreso" Type="DateTime" />
           <Property Name="permiso" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="cod_tipo_nomina" Type="Int32" />
+          <Property Name="cod_tipo_nomina" Type="Int32" Nullable="false" />
           <NavigationProperty Name="cajero" Relationship="punto_ventaModel.cajero_empleado" FromRole="empleado" ToRole="cajero" />
           <NavigationProperty Name="cargo" Relationship="punto_ventaModel.empleado_cargo" FromRole="empleado" ToRole="cargo" />
           <NavigationProperty Name="cobros" Relationship="punto_ventaModel.cobro_empleado" FromRole="empleado" ToRole="cobros" />
@@ -4538,6 +4556,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <NavigationProperty Name="empleado_vs_conceptos_nomina1" Relationship="punto_ventaModel.empleado_concepto_nomina_empleado" FromRole="empleado" ToRole="empleado_vs_conceptos_nomina" />
           <NavigationProperty Name="empleado_historial_datos" Relationship="punto_ventaModel.empleado_empleado" FromRole="empleado" ToRole="empleado_historial_datos" />
           <NavigationProperty Name="empleado_historial_datos1" Relationship="punto_ventaModel.empleado_empleado_cambio" FromRole="empleado" ToRole="empleado_historial_datos" />
+          <NavigationProperty Name="tercero" Relationship="punto_ventaModel.empleado_tercero" FromRole="empleado" ToRole="tercero" />
           <NavigationProperty Name="historial_devolucion_compras" Relationship="punto_ventaModel.historial_devolucion_compras_empleado" FromRole="empleado" ToRole="historial_devolucion_compras" />
           <NavigationProperty Name="historial_devolucion_ventas" Relationship="punto_ventaModel.historial_devolucion_ventas_empleado" FromRole="empleado" ToRole="historial_devolucion_ventas" />
           <NavigationProperty Name="nomina_detalle" Relationship="punto_ventaModel.nomina_detalle_empleado" FromRole="empleado" ToRole="nomina_detalle" />
@@ -5024,7 +5043,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Key>
             <PropertyRef Name="codigo" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ruta_imagen_productos" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
           <Property Name="ruta_backup" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
           <Property Name="ruta_logo_empresa" Type="String" MaxLength="999" FixedLength="false" Unicode="false" />
@@ -5135,7 +5154,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="version" Type="Int32" />
@@ -5157,6 +5176,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="identificacion" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="empleado" Relationship="punto_ventaModel.empleado_tercero" FromRole="tercero" ToRole="empleado" />
           <NavigationProperty Name="empresa" Relationship="punto_ventaModel.empresa_tercero" FromRole="tercero" ToRole="empresa" />
           <NavigationProperty Name="identificacion1" Relationship="punto_ventaModel.identificacion_tercero" FromRole="tercero" ToRole="identificacion" />
           <NavigationProperty Name="persona" Relationship="punto_ventaModel.persona_tercero" FromRole="tercero" ToRole="persona" />
@@ -5298,7 +5318,7 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <PropertyRef Name="cod_sucursal" />
             <PropertyRef Name="fecha" />
           </Key>
-          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cod_empleado" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -5578,7 +5598,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="cuadre_cajero">
           <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="1" />
@@ -5591,7 +5610,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_cajero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="egresos_caja_cajero">
           <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="1" />
@@ -5608,14 +5626,13 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_cajero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="ingresos_caja_cajero">
           <End Type="punto_ventaModel.cajero" Role="cajero" Multiplicity="0..1" />
           <End Type="punto_ventaModel.ingresos_caja" Role="ingresos_caja" Multiplicity="*" />
         </Association>
         <Association Name="empleado_cargo">
-          <End Type="punto_ventaModel.cargo" Role="cargo" Multiplicity="0..1" />
+          <End Type="punto_ventaModel.cargo" Role="cargo" Multiplicity="1" />
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="*" />
         </Association>
         <Association Name="oferta_producto_subcate_detalle_categoria">
@@ -5673,7 +5690,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_compra" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="compra_empleado">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
@@ -5742,7 +5758,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_direccion" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="egresos_caja_concepto">
           <End Type="punto_ventaModel.egresos_conceptos" Role="egresos_conceptos" Multiplicity="1" />
@@ -5763,7 +5778,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_empleado" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empleado_empleado">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="1" />
@@ -5776,11 +5790,22 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_empleado" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empleado_empleado_cambio">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
           <End Type="punto_ventaModel.empleado_historial_datos" Role="empleado_historial_datos" Multiplicity="*" />
+        </Association>
+        <Association Name="empleado_tercero">
+          <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
+          <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tercero">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="historial_devolucion_compras_empleado">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
@@ -5801,7 +5826,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_empleado" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="nomina_empleado">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="0..1" />
@@ -5830,7 +5854,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_empleado" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="vendedor_empleado">
           <End Type="punto_ventaModel.empleado" Role="empleado" Multiplicity="1" />
@@ -5843,7 +5866,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empresa_tercero">
           <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
@@ -5856,7 +5878,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="inventario_reparacion_estado_reparacion">
           <End Type="punto_ventaModel.estados_reparacion" Role="estados_reparacion" Multiplicity="0..1" />
@@ -5873,7 +5894,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_factura" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="facturas_anuladas_factura">
           <End Type="punto_ventaModel.factura" Role="factura" Multiplicity="1" />
@@ -5886,7 +5906,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_factura" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="historial_devolucion_ventas_factura">
           <End Type="punto_ventaModel.factura" Role="factura" Multiplicity="0..1" />
@@ -5919,7 +5938,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_tercero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="ingresos_caja_concepto">
           <End Type="punto_ventaModel.ingresos_conceptos" Role="ingresos_conceptos" Multiplicity="0..1" />
@@ -5964,7 +5982,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo_mesa" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="compra_detalle_metodo_pago">
           <End Type="punto_ventaModel.metodo_pago" Role="metodo_pago" Multiplicity="0..1" />
@@ -5993,7 +6010,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_nomina" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="nomina_detalle_nomina">
           <End Type="punto_ventaModel.nomina" Role="nomina" Multiplicity="1" />
@@ -6006,7 +6022,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_nomina" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="nomina_sucursal">
           <End Type="punto_ventaModel.sucursal" Role="sucursal" Multiplicity="0..1" />
@@ -6027,7 +6042,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_concepto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="nomina_detalle_concepto">
           <End Type="punto_ventaModel.nomina_conceptos" Role="nomina_conceptos" Multiplicity="1" />
@@ -6040,7 +6054,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_concepto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empleado_tipo_nomina">
           <End Type="punto_ventaModel.nomina_tipos" Role="nomina_tipos" Multiplicity="0..1" />
@@ -6065,7 +6078,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_permiso" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="persona_sexo">
           <End Type="punto_ventaModel.sexo" Role="sexo" Multiplicity="0..1" />
@@ -6082,7 +6094,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="compra_detalle_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6095,7 +6106,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="factura_detalle_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6108,7 +6118,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="historial_inventario_agotado_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6121,7 +6130,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="oferta_producto_detalle_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6134,7 +6142,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_prod" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_codigobarra_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6147,7 +6154,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_productos_requisitos_producto_requisito">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6160,7 +6166,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codpro_requisito" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_productos_requisitos_producto_titular">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="1" />
@@ -6173,7 +6178,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codpro_titular" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_subcategoria">
           <End Type="punto_ventaModel.subcategoria_producto" Role="subcategoria_producto" Multiplicity="0..1" />
@@ -6190,7 +6194,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_unidad_minima">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6207,7 +6210,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo_producto" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_vs_permisos_producto">
           <End Type="punto_ventaModel.producto" Role="producto" Multiplicity="0..1" />
@@ -6224,7 +6226,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_detalle" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_vs_detalle_producto_Detalle">
           <End Type="punto_ventaModel.producto_detalle" Role="producto_detalle" Multiplicity="1" />
@@ -6237,7 +6238,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo_detalle" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="oferta_producto_detalle_oferta">
           <End Type="punto_ventaModel.producto_oferta" Role="producto_oferta" Multiplicity="1" />
@@ -6250,7 +6250,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_oferta" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_vs_permisos_permiso">
           <End Type="punto_ventaModel.producto_permisos" Role="producto_permisos" Multiplicity="0..1" />
@@ -6267,7 +6266,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="provincia_region">
           <End Type="punto_ventaModel.region" Role="region" Multiplicity="1" />
@@ -6292,7 +6290,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_situacion" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empleado_sucursal">
           <End Type="punto_ventaModel.sucursal" Role="sucursal" Multiplicity="1" />
@@ -6305,7 +6302,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_sucursal" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_oferta_historial_sucursal">
           <End Type="punto_ventaModel.sucursal" Role="sucursal" Multiplicity="1" />
@@ -6318,7 +6314,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_sucursal" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="sucursal_vs_empleado_sucursal">
           <End Type="punto_ventaModel.sucursal" Role="sucursal" Multiplicity="1" />
@@ -6331,7 +6326,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_sucursal" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="suplidor_tercero">
           <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
@@ -6344,7 +6338,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="codigo" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="tercero_observaciones_tercero">
           <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="0..1" />
@@ -6361,7 +6354,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_tercero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="tercero_vs_permiso_tercero">
           <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
@@ -6374,7 +6366,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_tercero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="tercero_vs_telefono_tercero">
           <End Type="punto_ventaModel.tercero" Role="tercero" Multiplicity="1" />
@@ -6387,7 +6378,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_tercero" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="compra_detalle_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6400,7 +6390,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="factura_detalle_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6413,7 +6402,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="historial_inventario_agotado_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6426,7 +6414,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_codigobarra_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6439,7 +6426,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="producto_productos_requisitos_unidad">
           <End Type="punto_ventaModel.unidad" Role="unidad" Multiplicity="1" />
@@ -6452,7 +6438,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <PropertyRef Name="cod_unidad" />
             </Dependent>
           </ReferentialConstraint>
-          
         </Association>
         <Association Name="empleado_vs_cargo">
           <End Type="punto_ventaModel.cargo" Role="cargo" Multiplicity="*" />
@@ -6758,7 +6743,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
                 <ScalarProperty Name="permiso" ColumnName="permiso" />
                 <ScalarProperty Name="fecha_ingreso" ColumnName="fecha_ingreso" />
                 <ScalarProperty Name="cod_grupo_usuario" ColumnName="cod_grupo_usuario" />
-                <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
                 <ScalarProperty Name="cod_departamento" ColumnName="cod_departamento" />
                 <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
@@ -7663,39 +7647,9 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="cod_caja" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="cajero_empleado" TypeName="punto_ventaModel.cajero_empleado" StoreEntitySet="cajero">
-            <EndProperty Name="cajero">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="cuadre_cajero" TypeName="punto_ventaModel.cuadre_cajero" StoreEntitySet="cuadre_caja">
-            <EndProperty Name="cuadre_caja">
-              <ScalarProperty Name="turno" ColumnName="turno" />
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="cajero">
-              <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="egresos_caja_cajero" TypeName="punto_ventaModel.egresos_caja_cajero" StoreEntitySet="egresos_caja">
             <EndProperty Name="egresos_caja">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="cajero">
-              <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="facturas_anuladas_cajero" TypeName="punto_ventaModel.facturas_anuladas_cajero" StoreEntitySet="facturas_anuladas">
-            <EndProperty Name="facturas_anuladas">
-              <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
-              <ScalarProperty Name="detalle" ColumnName="detalle" />
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
             </EndProperty>
             <EndProperty Name="cajero">
               <ScalarProperty Name="codigo" ColumnName="cod_cajero" />
@@ -7717,7 +7671,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             <EndProperty Name="cargo">
               <ScalarProperty Name="codigo" ColumnName="cod_cargo" />
             </EndProperty>
-            <Condition ColumnName="cod_cargo" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="oferta_producto_subcate_detalle_categoria" TypeName="punto_ventaModel.oferta_producto_subcate_detalle_categoria" StoreEntitySet="oferta_producto_categoria_detalle">
             <EndProperty Name="oferta_producto_categoria_detalle">
@@ -7812,22 +7765,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <EndProperty Name="factura">
               <ScalarProperty Name="codigo" ColumnName="cod_factura" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="compra_detalle1" TypeName="punto_ventaModel.compra_detalle1" StoreEntitySet="compra_detalle">
-            <EndProperty Name="compra_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="compra">
-              <ScalarProperty Name="codigo" ColumnName="cod_compra" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="compra_empleado" TypeName="punto_ventaModel.compra_empleado" StoreEntitySet="compra">
@@ -7956,17 +7893,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_sector" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="tercero_vs_direccion_direccion" TypeName="punto_ventaModel.tercero_vs_direccion_direccion" StoreEntitySet="tercero_vs_direccion">
-            <EndProperty Name="tercero_vs_direccion">
-              <ScalarProperty Name="tipo_entidad" ColumnName="tipo_entidad" />
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="cod_direccion" ColumnName="cod_direccion" />
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-            </EndProperty>
-            <EndProperty Name="direccion">
-              <ScalarProperty Name="codigo" ColumnName="cod_direccion" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="egresos_caja_concepto" TypeName="punto_ventaModel.egresos_caja_concepto" StoreEntitySet="egresos_caja">
             <EndProperty Name="egresos_caja">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -7985,29 +7911,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_empleado_modifico" />
             </EndProperty>
             <Condition ColumnName="cod_empleado_modifico" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_concepto_nomina_empleado" TypeName="punto_ventaModel.empleado_concepto_nomina_empleado" StoreEntitySet="empleado_vs_conceptos_nomina">
-            <EndProperty Name="empleado_vs_conceptos_nomina">
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_empleado" TypeName="punto_ventaModel.empleado_empleado" StoreEntitySet="empleado_historial_datos">
-            <EndProperty Name="empleado_historial_datos">
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-              <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
-              <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="empleado_empleado_cambio" TypeName="punto_ventaModel.empleado_empleado_cambio" StoreEntitySet="empleado_historial_datos">
             <EndProperty Name="empleado_historial_datos">
@@ -8040,17 +7943,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="codigo_empleado" />
             </EndProperty>
             <Condition ColumnName="codigo_empleado" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="nomina_detalle_empleado" TypeName="punto_ventaModel.nomina_detalle_empleado" StoreEntitySet="nomina_detalle">
-            <EndProperty Name="nomina_detalle">
-              <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="nomina_empleado" TypeName="punto_ventaModel.nomina_empleado" StoreEntitySet="nomina">
             <EndProperty Name="nomina">
@@ -8089,31 +7981,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="cod_empleado_modifico" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="sucursal_vs_empleado_empleado" TypeName="punto_ventaModel.sucursal_vs_empleado_empleado" StoreEntitySet="sucursal_vs_empleado">
-            <EndProperty Name="sucursal_vs_empleado">
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_empleado" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="vendedor_empleado" TypeName="punto_ventaModel.vendedor_empleado" StoreEntitySet="vendedor">
-            <EndProperty Name="vendedor">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="empleado">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empresa_tercero" TypeName="punto_ventaModel.empresa_tercero" StoreEntitySet="empresa">
-            <EndProperty Name="empresa">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="inventario_reparacion_estado_reparacion" TypeName="punto_ventaModel.inventario_reparacion_estado_reparacion" StoreEntitySet="inventario_reparacion">
             <EndProperty Name="inventario_reparacion">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -8122,33 +7989,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="estado_reparacion" />
             </EndProperty>
             <Condition ColumnName="estado_reparacion" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="factura_detalle_factura" TypeName="punto_ventaModel.factura_detalle_factura" StoreEntitySet="factura_detalle">
-            <EndProperty Name="factura_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="itebis" ColumnName="itebis" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio" ColumnName="precio" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
-            </EndProperty>
-            <EndProperty Name="factura">
-              <ScalarProperty Name="codigo" ColumnName="cod_factura" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="facturas_anuladas_factura" TypeName="punto_ventaModel.facturas_anuladas_factura" StoreEntitySet="facturas_anuladas">
-            <EndProperty Name="facturas_anuladas">
-              <ScalarProperty Name="cod_cajero" ColumnName="cod_cajero" />
-              <ScalarProperty Name="detalle" ColumnName="detalle" />
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
-            </EndProperty>
-            <EndProperty Name="factura">
-              <ScalarProperty Name="codigo" ColumnName="cod_factura" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="historial_devolucion_ventas_factura" TypeName="punto_ventaModel.historial_devolucion_ventas_factura" StoreEntitySet="historial_devolucion_ventas">
             <EndProperty Name="historial_devolucion_ventas">
@@ -8194,16 +8034,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="codigo_unidad" />
             </EndProperty>
             <Condition ColumnName="codigo_unidad" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="identificacion_tercero" TypeName="punto_ventaModel.identificacion_tercero" StoreEntitySet="identificacion">
-            <EndProperty Name="identificacion">
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-              <ScalarProperty Name="identificacion1" ColumnName="identificacion" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="ingresos_caja_concepto" TypeName="punto_ventaModel.ingresos_caja_concepto" StoreEntitySet="ingresos_caja">
             <EndProperty Name="ingresos_caja">
@@ -8274,15 +8104,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_itebis" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="mesas_detalles_mesa" TypeName="punto_ventaModel.mesas_detalles_mesa" StoreEntitySet="mesas_detalles">
-            <EndProperty Name="mesas_detalles">
-              <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
-              <ScalarProperty Name="codigo_mesa" ColumnName="codigo_mesa" />
-            </EndProperty>
-            <EndProperty Name="mesas">
-              <ScalarProperty Name="codigo" ColumnName="codigo_mesa" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="compra_detalle_metodo_pago" TypeName="punto_ventaModel.compra_detalle_metodo_pago" StoreEntitySet="compra_detalle">
             <EndProperty Name="compra_detalle">
               <ScalarProperty Name="estado" ColumnName="estado" />
@@ -8325,27 +8146,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="codigo_moneda" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_concepto_nomina_nomina" TypeName="punto_ventaModel.empleado_concepto_nomina_nomina" StoreEntitySet="empleado_vs_conceptos_nomina">
-            <EndProperty Name="empleado_vs_conceptos_nomina">
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="nomina">
-              <ScalarProperty Name="codigo" ColumnName="cod_nomina" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="nomina_detalle_nomina" TypeName="punto_ventaModel.nomina_detalle_nomina" StoreEntitySet="nomina_detalle">
-            <EndProperty Name="nomina_detalle">
-              <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="nomina">
-              <ScalarProperty Name="codigo" ColumnName="cod_nomina" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="nomina_sucursal" TypeName="punto_ventaModel.nomina_sucursal" StoreEntitySet="nomina">
             <EndProperty Name="nomina">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -8363,27 +8163,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_tipo" />
             </EndProperty>
             <Condition ColumnName="cod_tipo" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_concepto_nomina_concepto" TypeName="punto_ventaModel.empleado_concepto_nomina_concepto" StoreEntitySet="empleado_vs_conceptos_nomina">
-            <EndProperty Name="empleado_vs_conceptos_nomina">
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="nomina_conceptos">
-              <ScalarProperty Name="codigo" ColumnName="cod_concepto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="nomina_detalle_concepto" TypeName="punto_ventaModel.nomina_detalle_concepto" StoreEntitySet="nomina_detalle">
-            <EndProperty Name="nomina_detalle">
-              <ScalarProperty Name="monto_sueldo" ColumnName="monto_sueldo" />
-              <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_nomina" ColumnName="cod_nomina" />
-            </EndProperty>
-            <EndProperty Name="nomina_conceptos">
-              <ScalarProperty Name="codigo" ColumnName="cod_concepto" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="empleado_tipo_nomina" TypeName="punto_ventaModel.empleado_tipo_nomina" StoreEntitySet="empleado_historial_datos">
             <EndProperty Name="empleado_historial_datos">
@@ -8415,16 +8194,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_pais" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="tercero_vs_permiso_permiso" TypeName="punto_ventaModel.tercero_vs_permiso_permiso" StoreEntitySet="tercero_vs_permiso">
-            <EndProperty Name="tercero_vs_permiso">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="cod_permiso" ColumnName="cod_permiso" />
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-            </EndProperty>
-            <EndProperty Name="permiso">
-              <ScalarProperty Name="codigo" ColumnName="cod_permiso" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="persona_sexo" TypeName="punto_ventaModel.persona_sexo" StoreEntitySet="persona">
             <EndProperty Name="persona">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -8433,93 +8202,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_sexo" />
             </EndProperty>
             <Condition ColumnName="cod_sexo" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="persona_tercero" TypeName="punto_ventaModel.persona_tercero" StoreEntitySet="persona">
-            <EndProperty Name="persona">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="compra_detalle_producto" TypeName="punto_ventaModel.compra_detalle_producto" StoreEntitySet="compra_detalle">
-            <EndProperty Name="compra_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="factura_detalle_producto" TypeName="punto_ventaModel.factura_detalle_producto" StoreEntitySet="factura_detalle">
-            <EndProperty Name="factura_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="itebis" ColumnName="itebis" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio" ColumnName="precio" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="historial_inventario_agotado_producto" TypeName="punto_ventaModel.historial_inventario_agotado_producto" StoreEntitySet="historial_inventario_agotado">
-            <EndProperty Name="historial_inventario_agotado">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="oferta_producto_detalle_producto" TypeName="punto_ventaModel.oferta_producto_detalle_producto" StoreEntitySet="oferta_producto_detalle">
-            <EndProperty Name="oferta_producto_detalle">
-              <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
-              <ScalarProperty Name="cod_oferta" ColumnName="cod_oferta" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_prod" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_codigobarra_producto" TypeName="punto_ventaModel.producto_codigobarra_producto" StoreEntitySet="producto_codigobarra">
-            <EndProperty Name="producto_codigobarra">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_productos_requisitos_producto_requisito" TypeName="punto_ventaModel.producto_productos_requisitos_producto_requisito" StoreEntitySet="producto_productos_requisitos">
-            <EndProperty Name="producto_productos_requisitos">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="codpro_requisito" ColumnName="codpro_requisito" />
-              <ScalarProperty Name="codpro_titular" ColumnName="codpro_titular" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="codpro_requisito" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_productos_requisitos_producto_titular" TypeName="punto_ventaModel.producto_productos_requisitos_producto_titular" StoreEntitySet="producto_productos_requisitos">
-            <EndProperty Name="producto_productos_requisitos">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="codpro_requisito" ColumnName="codpro_requisito" />
-              <ScalarProperty Name="codpro_titular" ColumnName="codpro_titular" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="codpro_titular" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="producto_subcategoria" TypeName="punto_ventaModel.producto_subcategoria" StoreEntitySet="producto">
             <EndProperty Name="producto">
@@ -8530,30 +8212,12 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="cod_subcategoria" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_unidad_conversion_producto" TypeName="punto_ventaModel.producto_unidad_conversion_producto" StoreEntitySet="producto_unidad_conversion">
-            <EndProperty Name="producto_unidad_conversion">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="cod_producto" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="producto_unidad_minima" TypeName="punto_ventaModel.producto_unidad_minima" StoreEntitySet="producto">
             <EndProperty Name="producto">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
             </EndProperty>
             <EndProperty Name="unidad">
               <ScalarProperty Name="codigo" ColumnName="cod_unidad_minima" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_vs_detalle_producto" TypeName="punto_ventaModel.producto_vs_detalle_producto" StoreEntitySet="producto_vs_detalle">
-            <EndProperty Name="producto_vs_detalle">
-              <ScalarProperty Name="codigo_detalle" ColumnName="codigo_detalle" />
-              <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
-            </EndProperty>
-            <EndProperty Name="producto">
-              <ScalarProperty Name="codigo" ColumnName="codigo_producto" />
             </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="producto_vs_permisos_producto" TypeName="punto_ventaModel.producto_vs_permisos_producto" StoreEntitySet="producto_vs_permisos">
@@ -8565,33 +8229,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="cod_producto" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="mesas_detalles_detalle" TypeName="punto_ventaModel.mesas_detalles_detalle" StoreEntitySet="mesas_detalles">
-            <EndProperty Name="mesas_detalles">
-              <ScalarProperty Name="cod_detalle" ColumnName="cod_detalle" />
-              <ScalarProperty Name="codigo_mesa" ColumnName="codigo_mesa" />
-            </EndProperty>
-            <EndProperty Name="producto_detalle">
-              <ScalarProperty Name="codigo" ColumnName="cod_detalle" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_vs_detalle_producto_Detalle" TypeName="punto_ventaModel.producto_vs_detalle_producto_Detalle" StoreEntitySet="producto_vs_detalle">
-            <EndProperty Name="producto_vs_detalle">
-              <ScalarProperty Name="codigo_detalle" ColumnName="codigo_detalle" />
-              <ScalarProperty Name="codigo_producto" ColumnName="codigo_producto" />
-            </EndProperty>
-            <EndProperty Name="producto_detalle">
-              <ScalarProperty Name="codigo" ColumnName="codigo_detalle" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="oferta_producto_detalle_oferta" TypeName="punto_ventaModel.oferta_producto_detalle_oferta" StoreEntitySet="oferta_producto_detalle">
-            <EndProperty Name="oferta_producto_detalle">
-              <ScalarProperty Name="cod_prod" ColumnName="cod_prod" />
-              <ScalarProperty Name="cod_oferta" ColumnName="cod_oferta" />
-            </EndProperty>
-            <EndProperty Name="producto_oferta">
-              <ScalarProperty Name="codigo" ColumnName="cod_oferta" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="producto_vs_permisos_permiso" TypeName="punto_ventaModel.producto_vs_permisos_permiso" StoreEntitySet="producto_vs_permisos">
             <EndProperty Name="producto_vs_permisos">
               <ScalarProperty Name="codigo" ColumnName="codigo" />
@@ -8600,15 +8237,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_permiso" />
             </EndProperty>
             <Condition ColumnName="cod_permiso" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_unidad_conversion_unidad" TypeName="punto_ventaModel.producto_unidad_conversion_unidad" StoreEntitySet="producto_unidad_conversion">
-            <EndProperty Name="producto_unidad_conversion">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="provincia_region" TypeName="punto_ventaModel.provincia_region" StoreEntitySet="provincia">
             <EndProperty Name="provincia">
@@ -8640,58 +8268,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
             </EndProperty>
             <Condition ColumnName="cod_sexo" IsNull="false" />
           </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_situacion" TypeName="punto_ventaModel.empleado_situacion" StoreEntitySet="empleado_historial_datos">
-            <EndProperty Name="empleado_historial_datos">
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-              <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
-              <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="situacion_empleado">
-              <ScalarProperty Name="codigo" ColumnName="cod_situacion" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="empleado_sucursal" TypeName="punto_ventaModel.empleado_sucursal" StoreEntitySet="empleado_historial_datos">
-            <EndProperty Name="empleado_historial_datos">
-              <ScalarProperty Name="fecha" ColumnName="fecha" />
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-              <ScalarProperty Name="cod_cargo" ColumnName="cod_cargo" />
-              <ScalarProperty Name="cod_situacion" ColumnName="cod_situacion" />
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="sucursal">
-              <ScalarProperty Name="codigo" ColumnName="cod_sucursal" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_oferta_historial_sucursal" TypeName="punto_ventaModel.producto_oferta_historial_sucursal" StoreEntitySet="producto_oferta_historial">
-            <EndProperty Name="producto_oferta_historial">
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="sucursal">
-              <ScalarProperty Name="codigo" ColumnName="cod_sucursal" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="sucursal_vs_empleado_sucursal" TypeName="punto_ventaModel.sucursal_vs_empleado_sucursal" StoreEntitySet="sucursal_vs_empleado">
-            <EndProperty Name="sucursal_vs_empleado">
-              <ScalarProperty Name="cod_empleado" ColumnName="cod_empleado" />
-              <ScalarProperty Name="cod_sucursal" ColumnName="cod_sucursal" />
-            </EndProperty>
-            <EndProperty Name="sucursal">
-              <ScalarProperty Name="codigo" ColumnName="cod_sucursal" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="suplidor_tercero" TypeName="punto_ventaModel.suplidor_tercero" StoreEntitySet="suplidor">
-            <EndProperty Name="suplidor">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="tercero_observaciones_tercero" TypeName="punto_ventaModel.tercero_observaciones_tercero" StoreEntitySet="tercero_observaciones">
             <EndProperty Name="tercero_observaciones">
               <ScalarProperty Name="observacion" ColumnName="observacion" />
@@ -8700,96 +8276,6 @@ FROM `tercero_vs_telefono` AS `tercero_vs_telefono`</DefiningQuery>
               <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
             </EndProperty>
             <Condition ColumnName="cod_tercero" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="tercero_vs_direccion_tercero" TypeName="punto_ventaModel.tercero_vs_direccion_tercero" StoreEntitySet="tercero_vs_direccion">
-            <EndProperty Name="tercero_vs_direccion">
-              <ScalarProperty Name="tipo_entidad" ColumnName="tipo_entidad" />
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="cod_direccion" ColumnName="cod_direccion" />
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="tercero_vs_permiso_tercero" TypeName="punto_ventaModel.tercero_vs_permiso_tercero" StoreEntitySet="tercero_vs_permiso">
-            <EndProperty Name="tercero_vs_permiso">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="cod_permiso" ColumnName="cod_permiso" />
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="tercero_vs_telefono_tercero" TypeName="punto_ventaModel.tercero_vs_telefono_tercero" StoreEntitySet="tercero_vs_telefono">
-            <EndProperty Name="tercero_vs_telefono">
-              <ScalarProperty Name="telefono" ColumnName="telefono" />
-              <ScalarProperty Name="cod_tercero" ColumnName="cod_tercero" />
-            </EndProperty>
-            <EndProperty Name="tercero">
-              <ScalarProperty Name="codigo" ColumnName="cod_tercero" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="compra_detalle_unidad" TypeName="punto_ventaModel.compra_detalle_unidad" StoreEntitySet="compra_detalle">
-            <EndProperty Name="compra_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_compra" ColumnName="cod_compra" />
-              <ScalarProperty Name="codigo" ColumnName="codigo" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="factura_detalle_unidad" TypeName="punto_ventaModel.factura_detalle_unidad" StoreEntitySet="factura_detalle">
-            <EndProperty Name="factura_detalle">
-              <ScalarProperty Name="estado" ColumnName="estado" />
-              <ScalarProperty Name="descuento" ColumnName="descuento" />
-              <ScalarProperty Name="itebis" ColumnName="itebis" />
-              <ScalarProperty Name="monto" ColumnName="monto" />
-              <ScalarProperty Name="precio" ColumnName="precio" />
-              <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-              <ScalarProperty Name="cod_factura" ColumnName="cod_factura" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="historial_inventario_agotado_unidad" TypeName="punto_ventaModel.historial_inventario_agotado_unidad" StoreEntitySet="historial_inventario_agotado">
-            <EndProperty Name="historial_inventario_agotado">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_codigobarra_unidad" TypeName="punto_ventaModel.producto_codigobarra_unidad" StoreEntitySet="producto_codigobarra">
-            <EndProperty Name="producto_codigobarra">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="producto_productos_requisitos_unidad" TypeName="punto_ventaModel.producto_productos_requisitos_unidad" StoreEntitySet="producto_productos_requisitos">
-            <EndProperty Name="producto_productos_requisitos">
-              <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
-              <ScalarProperty Name="codpro_requisito" ColumnName="codpro_requisito" />
-              <ScalarProperty Name="codpro_titular" ColumnName="codpro_titular" />
-            </EndProperty>
-            <EndProperty Name="unidad">
-              <ScalarProperty Name="codigo" ColumnName="cod_unidad" />
-            </EndProperty>
           </AssociationSetMapping>
           <AssociationSetMapping Name="empleado_vs_cargo" TypeName="punto_ventaModel.empleado_vs_cargo" StoreEntitySet="empleado_vs_cargo">
             <EndProperty Name="empleado">

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using puntoVentaModelo.Modelos;
+using System.Data.EntityClient;
 
 namespace puntoVentaModelo.Modelos
 {
@@ -36,7 +38,6 @@ namespace puntoVentaModelo.Modelos
         {
 
         }
-
 
         public puntoVentaEntities getConeccion()
         {
@@ -89,4 +90,5 @@ namespace puntoVentaModelo.Modelos
 
         }
     }
+
 }
