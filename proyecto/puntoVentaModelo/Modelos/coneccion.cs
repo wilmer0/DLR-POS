@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.Entity;
 using puntoVentaModelo.Modelos;
 using System.Data.EntityClient;
+using MySql.Data.MySqlClient;
 
 namespace puntoVentaModelo.Modelos
 {

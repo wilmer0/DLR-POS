@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Threading;
-using puntoVentaModelo.Modelos;
+//using puntoVentaModelo.Modelos;
 using System.Data.Entity;
 
 namespace puntoVenta
@@ -21,11 +21,11 @@ namespace puntoVenta
 
 
         //modelos
-        private ModeloLogin modeloLogin = new ModeloLogin();
+        //private ModeloLogin modeloLogin = new ModeloLogin();
 
 
         //objetos
-        public puntoVentaModelo.Modelos.empleado empleado;
+        //public puntoVentaModelo.Modelos.empleado empleado;
 
 
         //variables
@@ -139,19 +139,34 @@ namespace puntoVenta
                 //    return false;
                 //}
                 
-                //s = singleton.obtenerDatos();
-                //s.codigo_usuario = empleado.codigo.ToString();
-                //s.nombre = empleado.cod_
+                s=singleton.obtenerDatos();
+                sql = "select *from empleado where login='"+usuarioText.Text.Trim()+"' and clave='"+claveEncriptada.ToString()+"'";
+                ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("No hubo coincidencia", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
 
-                    //sacando el codigo de sucursal que pertenece el empleado
-                    sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario.ToString() + "'";
-                    ds = Utilidades.ejecutarcomando(sql);
-                    s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
-                    s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
-                    menuPrincipal = new principal();
-                    menuPrincipal.Show();
+                
+                s.codigo_usuario = ds.Tables[0].Rows[0][0].ToString();
+                
+                //sacando el nombre del usuario
+                sql ="select (t.nombre+' '+p.apellido) from tercero t join persona p on t.codigo=p.codigo where t.codigo='"+s.codigo_usuario+"'";
+                ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows[0][0].ToString()!="")
+                s.nombre = ds.Tables[0].Rows[0][0].ToString();
 
-                    this.Hide();
+
+
+                //sacando el codigo de sucursal que pertenece el empleado
+                sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario+ "'";
+                ds = Utilidades.ejecutarcomando(sql);
+                s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
+                s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
+                menuPrincipal = new principal();
+                menuPrincipal.Show();
+                this.Hide();
                 
                     
                 return true;
