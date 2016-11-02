@@ -9,12 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
+using MySql.Data.MySqlClient;
 using System.Threading;
+//using puntoVentaModelo.Modelos;
+using System.Data.Entity;
 
 namespace puntoVenta
 {
     public partial class login : Form
     {
+
+
+        //modelos
+        //private ModeloLogin modeloLogin = new ModeloLogin();
+
+
+        //objetos
+        //public puntoVentaModelo.Modelos.empleado empleado;
+
 
         //variables
         DataSet ds;
@@ -115,34 +127,49 @@ namespace puntoVenta
         {
             try
             {
-                if (!validarCampos())
+                Boolean validar = validarCampos();
+                if (!validar)
                     return false;
 
-                string cmd = "";
                 string claveEncriptada = Utilidades.encriptar(claveText.Text.Trim());
-                cmd = "select *from empleado where login='" + usuarioText.Text.Trim() + "' and clave ='" + claveEncriptada.ToString() + "' and estado='1'";
-                ds = Utilidades.ejecutarcomando(cmd);
-                if (ds.Tables[0].Rows.Count == 1)
-                {
-                    s = singleton.obtenerDatos();
-                    s.codigo_usuario = ds.Tables[0].Rows[0]["codigo"].ToString();
-                    s.nombre = Utilidades.getNombreTercero(s.codigo_usuario.ToString());
 
-                    //sacando el codigo de sucursal que pertenece el empleado
-                    sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario.ToString() + "'";
-                    ds = Utilidades.ejecutarcomando(sql);
-                    s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
-                    s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
-                    menuPrincipal = new principal();
-                    menuPrincipal.Show();
-
-                    this.Hide();
-                }
-                else
+                //empleado = modeloLogin.login(usuarioText.Text.Trim(), claveEncriptada.ToString().Trim());
+                //if (empleado == null)
+                //{
+                //    MessageBox.Show("Los datos no son correctos","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                //    return false;
+                //}
+                
+                s=singleton.obtenerDatos();
+                sql = "select *from empleado where login='"+usuarioText.Text.Trim()+"' and clave='"+claveEncriptada.ToString()+"'";
+                ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows.Count == 0)
                 {
-                    MessageBox.Show("Los datos no son correctos","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("No hubo coincidencia", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
+
+                
+                s.codigo_usuario = ds.Tables[0].Rows[0][0].ToString();
+                
+                //sacando el nombre del usuario
+                sql ="select (t.nombre+' '+p.apellido) from tercero t join persona p on t.codigo=p.codigo where t.codigo='"+s.codigo_usuario+"'";
+                ds = Utilidades.ejecutarcomando(sql);
+                if (ds.Tables[0].Rows[0][0].ToString()!="")
+                s.nombre = ds.Tables[0].Rows[0][0].ToString();
+
+
+
+                //sacando el codigo de sucursal que pertenece el empleado
+                sql = "select s.codigo,s.codigo_empresa from sucursal s join empleado e on e.cod_sucursal=s.codigo where e.codigo='" + s.codigo_usuario+ "'";
+                ds = Utilidades.ejecutarcomando(sql);
+                s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
+                s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
+                menuPrincipal = new principal();
+                menuPrincipal.Show();
+                this.Hide();
+                
+                    
                 return true;
             }
             catch (Exception ex)

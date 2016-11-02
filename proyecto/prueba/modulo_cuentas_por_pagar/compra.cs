@@ -253,9 +253,9 @@ namespace puntoVenta
                 unidad_combo_txt.DataSource = ds.Tables[0];
                 codigo_unidad_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error cargando las unidades del producto");
+                MessageBox.Show("Error cargando las unidades del producto .:"+ex.ToString());
             }
         }
         public void ejecutar_codigo_producto(string dato)

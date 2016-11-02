@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>puntoVenta</RootNamespace>
     <AssemblyName>puntoVenta</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile>
@@ -85,6 +85,8 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web.Extensions" />
@@ -1555,12 +1557,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contabilidad\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\puntoVentaModelo\puntoVentaModelo.csproj">
-      <Project>{c866b0c5-e943-4462-b25c-fb3bcfc6c58d}</Project>
-      <Name>puntoVentaModelo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

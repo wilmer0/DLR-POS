@@ -89,6 +89,16 @@ namespace puntoVenta
                         sql = "exec insert_producto_unidad_conversion '" + codigo_producto_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[3].Value.ToString() + "'";
                         Utilidades.ejecutarcomando(sql);
                     }
+                    //para insertarlo en producto_unidad es decir todas las unidades que maneja el producto
+                    /*
+                     create proc insert_producto_unidad @cod_prod int,@cod_unidad int*/
+                    sql = "delete from producto_unidad where cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
+                    Utilidades.ejecutarcomando(sql);
+                    foreach (DataGridViewRow row in dataGridView4.Rows)
+                    {
+                        sql = "exec insert_producto_unidad '" + codigo_producto_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "'";
+                        Utilidades.ejecutarcomando(sql);
+                    }
                 
             }
             catch(Exception)

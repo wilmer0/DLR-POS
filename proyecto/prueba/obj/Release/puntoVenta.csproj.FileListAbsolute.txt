@@ -148,6 +148,7 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.e
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.exe
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.pdb
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\MySql.Data.dll
+D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_en.idioma-en.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_es.idioma-es.resources
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.abrir_caja.resources
@@ -289,4 +290,3 @@ D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.c
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.compiled
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.exe
 D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pdb
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache

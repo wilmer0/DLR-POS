@@ -177,7 +177,7 @@ namespace puntoVenta
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection("server=127.0.0.1;uid=root;" +"pwd=wilmerlomas1;database=prueba;");
+                MySqlConnection conn = new MySqlConnection("server=127.0.0.1;uid=root;" +"pwd=wilmerlomas1;database=punto_venta;");
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -996,6 +996,24 @@ namespace puntoVenta
         }
 
 
-
+        public static Boolean limpiarDatosTodasTablasMysql()
+        {
+            try
+            {
+                string sql = "select CONCAT(' SET FOREIGN_KEY_CHECKS=0; SET SQL_SAFE_UPDATES = 0; truncate table ',table_name) from information_schema.tables where table_schema='punto_venta';";
+                DataSet ds = Utilidades.ejecutarcomando_mysql(sql);
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    //MessageBox.Show(row[0].ToString());
+                    Utilidades.ejecutarcomando_mysql(row[0].ToString());
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+                return false;
+            }
+        }
     }
 }
