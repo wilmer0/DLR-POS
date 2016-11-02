@@ -127,7 +127,8 @@ namespace puntoVenta
         {
             try
             {
-                if (!validarCampos())
+                Boolean validar = validarCampos();
+                if (!validar)
                     return false;
 
                 string claveEncriptada = Utilidades.encriptar(claveText.Text.Trim());
