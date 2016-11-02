@@ -16,10 +16,13 @@ namespace puntoVenta
 {
     public partial class facturacion : Form
     {
+
         public facturacion()
         {
             InitializeComponent();
         }
+        
+
         internal singleton s { get; set; }
         string fecha_actual = "";
         string fecha_pago = "";
