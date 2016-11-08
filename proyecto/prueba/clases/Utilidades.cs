@@ -514,7 +514,7 @@ namespace puntoVenta
                 }
                 printDocument.DefaultPageSettings.PaperSize = tamano;
                 printDocument.DefaultPageSettings.Landscape = false;
-                printDocument.PrintPage +=printDocument1_PrintPage;
+                printDocument.PrintPage += ImprimirVentaRollo_PrintPage;
                 printPreviewDialog.Document = printDocument;
                 printPreviewDialog.ShowDialog();
 
@@ -522,12 +522,12 @@ namespace puntoVenta
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error imprimiendo rollo: "+ex.ToString());
+                MessageBox.Show("Error imprimiendo rollo.: "+ex.ToString());
                 return false;
             }
         }
 
-        private static void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        private static void ImprimirVentaRollo_PrintPage(object sender, PrintPageEventArgs e)
         {
             try
             {
@@ -626,7 +626,7 @@ namespace puntoVenta
                 e.Graphics.DrawString("RNC:", pf7, Brushes.Black, x, y);
                 e.Graphics.DrawString(rnc, pf7, Brushes.Black, (x + 50), y);
                 y += 10;
-                e.Graphics.DrawString("Tel.:  "+telefonoEmpresa.ToString(), pf7, Brushes.Black, x, y);
+                e.Graphics.DrawString("Tel:  "+telefonoEmpresa.ToString(), pf7, Brushes.Black, x, y);
                 y += 10;
                 e.Graphics.DrawString("Fact:", pf7, Brushes.Black, x, y);
                 e.Graphics.DrawString(tipoVenta.ToString() + "-" + codigoFactura, pf7, Brushes.Black, (x + 50), y);
@@ -761,8 +761,9 @@ namespace puntoVenta
                 e.Graphics.DrawString("Autorizado por", pf7, Brushes.Black, (x + 50), y);
                 y += 10;
                 e.Graphics.DrawString("GRACIAS POR PREFERIRNOS", pf7, Brushes.Black, (x + 20), y);
-
-                e.PageSettings.PaperSize.Width += 200;
+                y += 40;
+                e.Graphics.DrawString("", pf7, Brushes.Black, 0, y);
+                //e.PageSettings.PaperSize.Width += 200;
             }
             catch (Exception ex)
             {
