@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(producto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.punto_maximo_txt = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.ck_activo = new System.Windows.Forms.CheckBox();
@@ -101,12 +101,16 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre_detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle_producto_txt = new System.Windows.Forms.TextBox();
+            this.detalle_producto_descripcion_txt = new System.Windows.Forms.TextBox();
             this.codigo_barra_txt = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.precio_venta_txt = new System.Windows.Forms.TextBox();
             this.cantidad_txt = new System.Windows.Forms.TextBox();
             this.nombre_unidad_conversion_txt = new System.Windows.Forms.TextBox();
@@ -124,6 +128,9 @@
             this.codigo_unidad_minima_txt = new System.Windows.Forms.TextBox();
             this.button19 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.codigo_unidad_requisito_txt = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.unidad_combo_txt = new System.Windows.Forms.ComboBox();
             this.cantidadProductoRequisitoTxt = new System.Windows.Forms.TextBox();
             this.productoNombreRequisitoTxt = new System.Windows.Forms.TextBox();
             this.codigoProductoRequisitoTxt = new System.Windows.Forms.TextBox();
@@ -136,13 +143,6 @@
             this.codunidadgridddd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreunidadgriddd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_unidad_requisito_txt = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.unidad_combo_txt = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -734,14 +734,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
@@ -846,14 +846,14 @@
             this.dataGridView3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -888,16 +888,16 @@
             this.detalle.Name = "detalle";
             this.detalle.ReadOnly = true;
             // 
-            // detalle_producto_txt
+            // detalle_producto_descripcion_txt
             // 
-            this.detalle_producto_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.detalle_producto_txt.Location = new System.Drawing.Point(256, 109);
-            this.detalle_producto_txt.MaxLength = 100;
-            this.detalle_producto_txt.Multiline = true;
-            this.detalle_producto_txt.Name = "detalle_producto_txt";
-            this.detalle_producto_txt.Size = new System.Drawing.Size(407, 57);
-            this.detalle_producto_txt.TabIndex = 118;
-            this.detalle_producto_txt.TextChanged += new System.EventHandler(this.detalle_producto_txt_TextChanged);
+            this.detalle_producto_descripcion_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.detalle_producto_descripcion_txt.Location = new System.Drawing.Point(256, 109);
+            this.detalle_producto_descripcion_txt.MaxLength = 100;
+            this.detalle_producto_descripcion_txt.Multiline = true;
+            this.detalle_producto_descripcion_txt.Name = "detalle_producto_descripcion_txt";
+            this.detalle_producto_descripcion_txt.Size = new System.Drawing.Size(407, 57);
+            this.detalle_producto_descripcion_txt.TabIndex = 118;
+            this.detalle_producto_descripcion_txt.TextChanged += new System.EventHandler(this.detalle_producto_txt_TextChanged);
             // 
             // codigo_barra_txt
             // 
@@ -922,7 +922,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridView3);
-            this.tabPage1.Controls.Add(this.detalle_producto_txt);
+            this.tabPage1.Controls.Add(this.detalle_producto_descripcion_txt);
             this.tabPage1.Controls.Add(this.button18);
             this.tabPage1.Controls.Add(this.ck_activo);
             this.tabPage1.Controls.Add(this.punto_maximo_txt);
@@ -1021,6 +1021,54 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Conversion unidades";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label20.Location = new System.Drawing.Point(407, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(46, 24);
+            this.label20.TabIndex = 132;
+            this.label20.Text = "venta";
+            this.label20.UseCompatibleTextRendering = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label19.Location = new System.Drawing.Point(297, 86);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(68, 24);
+            this.label19.TabIndex = 131;
+            this.label19.Text = "cantidad";
+            this.label19.UseCompatibleTextRendering = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label18.Location = new System.Drawing.Point(154, 86);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(62, 24);
+            this.label18.TabIndex = 130;
+            this.label18.Text = "nombre";
+            this.label18.UseCompatibleTextRendering = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label17.Location = new System.Drawing.Point(16, 86);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(54, 24);
+            this.label17.TabIndex = 129;
+            this.label17.Text = "codigo";
+            this.label17.UseCompatibleTextRendering = true;
             // 
             // precio_venta_txt
             // 
@@ -1133,8 +1181,8 @@
             // 
             // cantidad_unida_grid
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.cantidad_unida_grid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.cantidad_unida_grid.DefaultCellStyle = dataGridViewCellStyle8;
             this.cantidad_unida_grid.FillWeight = 40F;
             this.cantidad_unida_grid.HeaderText = "Cantidad";
             this.cantidad_unida_grid.Name = "cantidad_unida_grid";
@@ -1142,8 +1190,8 @@
             // 
             // prevengrid
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.prevengrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.prevengrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.prevengrid.FillWeight = 40F;
             this.prevengrid.HeaderText = "Venta";
             this.prevengrid.Name = "prevengrid";
@@ -1207,6 +1255,43 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Requisitos";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // codigo_unidad_requisito_txt
+            // 
+            this.codigo_unidad_requisito_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.codigo_unidad_requisito_txt.Location = new System.Drawing.Point(562, 27);
+            this.codigo_unidad_requisito_txt.Name = "codigo_unidad_requisito_txt";
+            this.codigo_unidad_requisito_txt.ReadOnly = true;
+            this.codigo_unidad_requisito_txt.Size = new System.Drawing.Size(102, 20);
+            this.codigo_unidad_requisito_txt.TabIndex = 138;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label14.Location = new System.Drawing.Point(351, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 24);
+            this.label14.TabIndex = 136;
+            this.label14.Text = "Unidad";
+            this.label14.UseCompatibleTextRendering = true;
+            // 
+            // unidad_combo_txt
+            // 
+            this.unidad_combo_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.unidad_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unidad_combo_txt.FormattingEnabled = true;
+            this.unidad_combo_txt.Location = new System.Drawing.Point(414, 26);
+            this.unidad_combo_txt.Name = "unidad_combo_txt";
+            this.unidad_combo_txt.Size = new System.Drawing.Size(143, 21);
+            this.unidad_combo_txt.TabIndex = 137;
+            this.unidad_combo_txt.TextChanged += new System.EventHandler(this.unidad_combo_txt_TextChanged);
+            this.unidad_combo_txt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.unidad_combo_txt_KeyUp);
             // 
             // cantidadProductoRequisitoTxt
             // 
@@ -1324,96 +1409,12 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn4.FillWeight = 50F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // codigo_unidad_requisito_txt
-            // 
-            this.codigo_unidad_requisito_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.codigo_unidad_requisito_txt.Location = new System.Drawing.Point(562, 27);
-            this.codigo_unidad_requisito_txt.Name = "codigo_unidad_requisito_txt";
-            this.codigo_unidad_requisito_txt.ReadOnly = true;
-            this.codigo_unidad_requisito_txt.Size = new System.Drawing.Size(102, 20);
-            this.codigo_unidad_requisito_txt.TabIndex = 138;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label14.Location = new System.Drawing.Point(351, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 24);
-            this.label14.TabIndex = 136;
-            this.label14.Text = "Unidad";
-            this.label14.UseCompatibleTextRendering = true;
-            // 
-            // unidad_combo_txt
-            // 
-            this.unidad_combo_txt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.unidad_combo_txt.FormattingEnabled = true;
-            this.unidad_combo_txt.Location = new System.Drawing.Point(414, 26);
-            this.unidad_combo_txt.Name = "unidad_combo_txt";
-            this.unidad_combo_txt.Size = new System.Drawing.Size(143, 21);
-            this.unidad_combo_txt.TabIndex = 137;
-            this.unidad_combo_txt.TextChanged += new System.EventHandler(this.unidad_combo_txt_TextChanged);
-            this.unidad_combo_txt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.unidad_combo_txt_KeyUp);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label17.Location = new System.Drawing.Point(16, 86);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 24);
-            this.label17.TabIndex = 129;
-            this.label17.Text = "codigo";
-            this.label17.UseCompatibleTextRendering = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label18.Location = new System.Drawing.Point(154, 86);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 24);
-            this.label18.TabIndex = 130;
-            this.label18.Text = "nombre";
-            this.label18.UseCompatibleTextRendering = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label19.Location = new System.Drawing.Point(297, 86);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 24);
-            this.label19.TabIndex = 131;
-            this.label19.Text = "cantidad";
-            this.label19.UseCompatibleTextRendering = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label20.Location = new System.Drawing.Point(407, 86);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(46, 24);
-            this.label20.TabIndex = 132;
-            this.label20.Text = "venta";
-            this.label20.UseCompatibleTextRendering = true;
             // 
             // producto
             // 
@@ -1512,7 +1513,7 @@
         private System.Windows.Forms.TextBox nombre_detalle_producto_txt;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TextBox detalle_producto_txt;
+        private System.Windows.Forms.TextBox detalle_producto_descripcion_txt;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;

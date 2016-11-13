@@ -89,6 +89,16 @@ namespace puntoVenta
                         sql = "exec insert_producto_unidad_conversion '" + codigo_producto_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "','" + row.Cells[2].Value.ToString() + "','" + row.Cells[3].Value.ToString() + "'";
                         Utilidades.ejecutarcomando(sql);
                     }
+                    //para insertarlo en producto_unidad es decir todas las unidades que maneja el producto
+                    /*
+                     create proc insert_producto_unidad @cod_prod int,@cod_unidad int*/
+                    sql = "delete from producto_unidad where cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
+                    Utilidades.ejecutarcomando(sql);
+                    foreach (DataGridViewRow row in dataGridView4.Rows)
+                    {
+                        sql = "exec insert_producto_unidad '" + codigo_producto_txt.Text.Trim() + "','" + row.Cells[0].Value.ToString() + "'";
+                        Utilidades.ejecutarcomando(sql);
+                    }
                 
             }
             catch(Exception)
@@ -498,17 +508,14 @@ namespace puntoVenta
                     nombre_imagen = ds.Tables[0].Rows[0]["imagen"].ToString();
                     codigo_unidad_minima_txt.Text = ds.Tables[0].Rows[0]["cod_unidad_minima"].ToString();
                     cargar_nombre_unidad_minima();
-                    if (ds.Tables[0].Rows[0][9].ToString() != "" && ds.Tables[0].Rows[0][9].ToString() != null)
+                    if (nombre_imagen!="")//ds.Tables[0].Rows[0][9].ToString() != "" && ds.Tables[0].Rows[0][9].ToString() != null
                     {
                         sql = "select top(1) ruta_imagen_productos from sistema";
                         ds = Utilidades.ejecutarcomando(sql);
                         ruta = ds.Tables[0].Rows[0][0].ToString();
                         ruta += @"\";
-                        ruta += nombre_imagen.ToString();
-                    }
-                    imagen_ruta_txt.Text = ruta;
-                    if (ruta.ToString() != "")
-                    {
+                        ruta += nombre_imagen.ToString(); 
+                        imagen_ruta_txt.Text = ruta;
                         //MessageBox.Show(ruta.ToString());
                         panel4.Visible = true;
                         panel4.BackgroundImage = Image.FromFile(ruta.ToString());
@@ -606,6 +613,10 @@ namespace puntoVenta
         {
             try
             {
+
+                codigo_detalle_producto_txt.Clear();
+                nombre_detalle_producto_txt.Clear();
+                detalle_producto_descripcion_txt.Clear();
                 dataGridView1.Rows.Clear();
                 dataGridView2.Rows.Clear();
                 dataGridView3.Rows.Clear();
@@ -625,7 +636,7 @@ namespace puntoVenta
                 nombre_producto_txt.Focus();
                 codigo_detalle_producto_txt.Clear();
                 nombre_detalle_producto_txt.Clear();
-                detalle_producto_txt.Clear();
+                detalle_producto_descripcion_txt.Clear();
                 codigo_barra_txt.Clear();
                 codigo_unidad_txt.Clear();
                 nombre_unidad_txt.Clear();
@@ -987,7 +998,7 @@ namespace puntoVenta
                 {
                     if(nombre_detalle_producto_txt.Text.Trim()!="")
                     {
-                        if(detalle_producto_txt.Text.Trim()!="")
+                        if(detalle_producto_descripcion_txt.Text.Trim()!="")
                         {
                             foreach (DataGridViewRow row in dataGridView3.Rows)
                             {
@@ -998,7 +1009,7 @@ namespace puntoVenta
                             }
                             if (cont == 0)
                             {
-                                dataGridView3.Rows.Add(codigo_detalle_producto_txt.Text.Trim(),nombre_detalle_producto_txt.Text.Trim(),detalle_producto_txt.Text.Trim());
+                                dataGridView3.Rows.Add(codigo_detalle_producto_txt.Text.Trim(),nombre_detalle_producto_txt.Text.Trim(),detalle_producto_descripcion_txt.Text.Trim());
                             }
                             else
                             {

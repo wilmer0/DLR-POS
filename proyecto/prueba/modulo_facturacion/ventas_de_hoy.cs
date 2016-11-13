@@ -155,9 +155,9 @@ namespace puntoVenta
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 nombre_cajero_txt.Text = ds.Tables[0].Rows[0][0].ToString();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error cargando nombre del cajero");
+                MessageBox.Show("Error cargando nombre del cajero: "+ex.ToString());
             }
         }
 
@@ -165,21 +165,12 @@ namespace puntoVenta
         {
             try
             {
-                DialogResult dr = MessageBox.Show("Desea imprimir en rollo?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dr = MessageBox.Show("Desea imprimir?", "Imprimiento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    //printDocument1.Print();
-                    imprimir_venta_rollo ivr = new imprimir_venta_rollo();
-                    ivr.codigo_factura = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    ivr.ShowDialog();
-                }
-                else
-                {
-                    //printDocument1.Print();
-                    imprimir_venta_hoja_completa ihc = new imprimir_venta_hoja_completa();
-                    ihc.codigo_factura = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
-                    ihc.ShowDialog();
-                    
+                    string codigoFactura = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                    Utilidades.imprimirVentaRollo(codigoFactura);
+                   
                 }
             }
             catch(Exception)

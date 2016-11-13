@@ -39,6 +39,10 @@ namespace puntoVenta
 
         private void button6_Click(object sender, EventArgs e)
         {
+            imprimir();
+        }
+        public void imprimir()
+        {
             DialogResult dr = MessageBox.Show("Desea imprimir?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
@@ -51,7 +55,7 @@ namespace puntoVenta
                 }
                 else
                 {
-                    MessageBox.Show("No hay elementos para imprimir","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("No hay elementos para imprimir", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -106,7 +110,7 @@ namespace puntoVenta
             int sumax = 120;
             e.Graphics.DrawString(linea, new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 150);
 
-            e.Graphics.DrawString("COD", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
+            e.Graphics.DrawString("ID", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax-50;
             e.Graphics.DrawString("NOMBRE", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax;
@@ -119,9 +123,7 @@ namespace puntoVenta
             e.Graphics.DrawString("LIMITE CRED.", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
             x += sumax;
             e.Graphics.DrawString("CRED. ABIERTO", new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x, 170);
-
             e.Graphics.DrawString(linea, new Font("Georgie", letra, FontStyle.Regular), Brushes.Black, x_temporal, 177);
-
             y = y + 50;
             y = 190;
             x = 10;
@@ -168,16 +170,12 @@ namespace puntoVenta
                 string autorizado_line = "---------------------------------------------------------------------------------------------";
                 y += 30;
                 x = 10;
-                
-
                 items_por_hoja = 0;
                 items_impreso_por_hoja = 0;
-
-               
+                          
         }
         private void button15_Click(object sender, EventArgs e)
         {
-           
         }
        
        

@@ -1,292 +1,303 @@
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\bin\Release\puntoVenta.exe.config
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_en.idioma-en.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_es.idioma-es.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.Properties.Resources.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.abrir_caja.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.busqueda_ingresos_caja_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.imprimir_codigo_barra_productos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.almacen.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.backup.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.banco.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_almacen.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_caja.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cajero.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cargo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_categoria.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_categoria.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_subcategoria.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cobros_venta.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_compras.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_comprobantes_fiscales.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre_caja.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_departamento.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_egresos_caja_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_empleado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_empresa.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_entrada_salida_inventario.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_existencia.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_cliente.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_suplidor.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_grupo_usuario.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_itebis.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_mesa.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_moneda.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_nomina_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_ofertas_productos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_oferta_producto_descuento.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_pagos_compras.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_permisos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_permiso_producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor_dgii.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_tercero.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto_detalle.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_sexo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_situacion_empleado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_subcategoria.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_sucursal.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_nomina.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_unidad.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedores.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedor_pedidos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.caja.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.caja_egresos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.caja_egresos_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cajeros.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cambiar_precio_producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cargo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.categoria_subcatecoria_cliente.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.categoria_subcategoria_producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cliente.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.compra.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.compras_devolucion.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.comprobante_fiscal.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.comprobante_serie.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.comprobante_tipo_comprobante.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cuadre_caja.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_cobrar.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_pagar_suplidores.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.departamento.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.detalles_factura.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.devolucion_venta.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cliente_estado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.estado_resultado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.sistema.busqueda_correo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.sistema.correo_electronico.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.form_base.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.host.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.imprimir_cobros.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.imprimir_compra.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.imprimir_nomina_volante.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_hoja_completa.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_rollo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.impuesto_sobre_renta.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.itebis.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.mesas.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.modificar_factura.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.moneda.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.nomima.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.nomina_conceptos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.nomina_tipos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.pago_desglose.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.direccion.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.dlrsoft.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.empresa.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.entrada_salida_inventario.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.facturacion.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.facturacion_flash.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.pedidos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.principal_mdi.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.movimiento_inventario.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.inventario_entrada_salida.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.observaciones_empleados.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.cambiar_clave.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.login.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.pais.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.permisos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.prestamo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.principal.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.producto.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.productos_ofertas.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.producto_detalle.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.provincia.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.recibir_producto_reparacion.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.region.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.empleado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.reporte_cliente.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.reporte_suplidor.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.reporte_ventas.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.sector.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.sexo.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.puntoVenta.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.situacion_empleado.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.splashscreen.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.sucursal.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.suplidores.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.vendedores.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.ventas.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.ventas_mensuales.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\bin\Release\puntoVenta.exe
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\bin\Release\puntoVenta.pdb
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.exe
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.pdb
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\puntoVenta.Reportes.ventana_reporte.resources
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\RdlCompile.cache
-D:\wilmer\proyecto\punto de venta\proyecto\prueba\obj\Release\RdlCompile.compiled
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.exe.config
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.exe
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pdb
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.exe
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.pdb
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_en.idioma-en.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_es.idioma-es.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.abrir_caja.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.busqueda_ingresos_caja_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.imprimir_codigo_barra_productos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.almacen.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.backup.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.Reportes.ventana_reporte.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.banco.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_almacen.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_caja.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cajero.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cargo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_categoria.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_categoria.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_subcategoria.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cobros_venta.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_compras.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_comprobantes_fiscales.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre_caja.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_departamento.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_egresos_caja_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_empleado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_empresa.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_entrada_salida_inventario.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_existencia.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_cliente.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_suplidor.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_grupo_usuario.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_itebis.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_mesa.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_moneda.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_nomina_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_ofertas_productos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_oferta_producto_descuento.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_pagos_compras.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_permisos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_permiso_producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor_dgii.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tercero.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto_detalle.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_sexo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_situacion_empleado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_subcategoria.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_sucursal.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_nomina.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_unidad.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedores.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedor_pedidos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja_egresos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja_egresos_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cajeros.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cambiar_precio_producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cargo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.categoria_subcatecoria_cliente.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.categoria_subcategoria_producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cliente.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.compra.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.compras_devolucion.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_fiscal.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_serie.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_tipo_comprobante.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuadre_caja.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_cobrar.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_pagar_suplidores.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.departamento.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.detalles_factura.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.devolucion_venta.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cliente_estado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.estado_resultado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.busqueda_correo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.correo_electronico.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.form_base.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.host.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_cobros.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_compra.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_nomina_volante.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_hoja_completa.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_rollo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.impuesto_sobre_renta.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.itebis.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.mesas.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modificar_factura.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.moneda.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomima.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomina_conceptos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomina_tipos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pago_desglose.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.direccion.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.dlrsoft.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.empresa.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.entrada_salida_inventario.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion_flash.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pedidos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.principal_mdi.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.movimiento_inventario.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.inventario_entrada_salida.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.observaciones_empleados.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cambiar_clave.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.login.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pais.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.permisos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.prestamo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.principal.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.producto.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.productos_ofertas.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.producto_detalle.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.Properties.Resources.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.provincia.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.recibir_producto_reparacion.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.region.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.empleado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_cliente.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_suplidor.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_ventas.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sector.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sexo.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.puntoVenta.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.situacion_empleado.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.splashscreen.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sucursal.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.suplidores.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.vendedores.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_mensuales.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.cache
-D:\wilmer\developer\github\data\DLR-POS\proyecto\prueba\obj\Release\RdlCompile.compiled
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_en.idioma-en.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_es.idioma-es.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.abrir_caja.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.busqueda_ingresos_caja_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.imprimir_codigo_barra_productos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.almacen.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.backup.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.Reportes.ventana_reporte.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.banco.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_almacen.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_caja.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cajero.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cargo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_categoria.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_categoria.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_subcategoria.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cobros_venta.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_compras.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_comprobantes_fiscales.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre_caja.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_departamento.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_egresos_caja_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_empleado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_empresa.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_entrada_salida_inventario.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_existencia.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_cliente.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_suplidor.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_grupo_usuario.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_itebis.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_mesa.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_moneda.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_nomina_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_ofertas_productos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_oferta_producto_descuento.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_pagos_compras.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_permisos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_permiso_producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor_dgii.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_tercero.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto_detalle.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_sexo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_situacion_empleado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_subcategoria.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_sucursal.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_nomina.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_unidad.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedores.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedor_pedidos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.caja.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.caja_egresos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.caja_egresos_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cajeros.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cambiar_precio_producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cargo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.categoria_subcatecoria_cliente.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.categoria_subcategoria_producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cliente.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.compra.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.compras_devolucion.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.comprobante_fiscal.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.comprobante_serie.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.comprobante_tipo_comprobante.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cuadre_caja.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_cobrar.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_pagar_suplidores.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.departamento.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.detalles_factura.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.devolucion_venta.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cliente_estado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.estado_resultado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.sistema.busqueda_correo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.sistema.correo_electronico.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.FormBase.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.host.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.imprimir_compra.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.imprimir_nomina_volante.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_hoja_completa.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_rollo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.impuesto_sobre_renta.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.itebis.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.mesas.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.modificar_factura.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.moneda.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.nomima.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.nomina_conceptos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.nomina_tipos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.pago_desglose.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.direccion.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.dlrsoft.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.empresa.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.entrada_salida_inventario.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.facturacion.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.facturacion_flash.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.pedidos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.movimiento_inventario.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.inventario_entrada_salida.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.observaciones_empleados.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.cambiar_clave.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.login.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.pais.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.permisos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.prestamo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.principal.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.producto.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.productos_ofertas.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.producto_detalle.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.Properties.Resources.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.provincia.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.recibir_producto_reparacion.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.region.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.empleado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.reporte_cliente.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.reporte_suplidor.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.reporte_ventas.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.sector.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.sexo.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.puntoVenta.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.situacion_empleado.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.splashscreen.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.sucursal.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.suplidores.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.vendedores.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.ventas.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.ventas_mensuales.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\puntoVenta.exe.config
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\puntoVenta.exe
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\puntoVenta.pdb
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\BarcodeLib.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\MySql.Data.Entity.EF6.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.xml
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\bin\Release\MySql.Data.Entity.EF6.xml
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.exe
+C:\Users\wilmer\Documents\GitHub\DLR-POS-2.0\proyecto\prueba\obj\Release\puntoVenta.pdb
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.exe.config
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.exe
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\puntoVenta.pdb
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\BarcodeLib.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\Ionic.Zip.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\MySql.Data.Entity.EF6.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.xml
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\bin\Release\MySql.Data.Entity.EF6.xml
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_en.idioma-en.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.archivos.Idioma_es.idioma-es.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.abrir_caja.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.busqueda_ingresos_caja_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.imprimir_codigo_barra_productos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.almacen.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.backup.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.Reportes.ventana_reporte.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.banco.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_almacen.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_caja.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cajero.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cargo.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_categoria.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_categoria.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cliente_subcategoria.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cobros_venta.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_compras.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_comprobantes_fiscales.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre_caja.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_departamento.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_egresos_caja_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_empleado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_empresa.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_entrada_salida_inventario.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_existencia.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_cliente.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_factura_suplidor.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_grupo_usuario.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_itebis.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_mesa.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_moneda.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_nomina_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_ofertas_productos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_oferta_producto_descuento.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_pagos_compras.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_permisos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_permiso_producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor_dgii.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tercero.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_producto_detalle.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_sexo.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_situacion_empleado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_subcategoria.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_sucursal.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_suplidor.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_nomina.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_tipo_producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_unidad.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedores.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_vendedor_pedidos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja_egresos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.caja_egresos_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cajeros.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cambiar_precio_producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cargo.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.categoria_subcatecoria_cliente.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.categoria_subcategoria_producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cliente.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.compra.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.compras_devolucion.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_fiscal.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_serie.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.comprobante_tipo_comprobante.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuadre_caja.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_cobrar.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cuenta_por_pagar_suplidores.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.departamento.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.detalles_factura.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.devolucion_venta.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cliente_estado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.estado_resultado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.busqueda_correo.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sistema.correo_electronico.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.FormBase.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.grupo_usuarios.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.host.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_compra.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_nomina_volante.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.imprimir_venta_hoja_completa.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.impuesto_sobre_renta.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.itebis.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.mesas.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modificar_factura.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.moneda.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomima.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomina_conceptos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.nomina_tipos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pago_desglose.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.direccion.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.dlrsoft.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.empresa.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.entrada_salida_inventario.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion_flash.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pedidos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.movimiento_inventario.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.inventario_entrada_salida.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.observaciones_empleados.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cambiar_clave.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.login.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pais.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.permisos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.principal.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.producto.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.productos_ofertas.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.producto_detalle.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.Properties.Resources.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.provincia.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.recibir_producto_reparacion.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.region.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.empleado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_cliente.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_suplidor.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.reporte_ventas.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sector.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sexo.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.puntoVenta.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.situacion_empleado.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.splashscreen.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.sucursal.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.suplidores.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.vendedores.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_mensuales.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.exe
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pdb
+C:\Users\wilmer\Desktop\utesa\proyecto3\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csprojResolveAssemblyReference.cache

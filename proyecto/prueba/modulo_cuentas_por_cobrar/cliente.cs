@@ -99,7 +99,10 @@ namespace puntoVenta
         public void cargar_datos_personales()
         {
             try
-            { 
+            {
+                if (codigo_cliente_txt.Text.Trim() == "")
+                    return;
+
                 string sql = "select t.nombre,p.apellido,t.identificacion,p.cod_sexo,s.sexo,p.fecha_nacimiento from tercero t join persona p on p.codigo=t.codigo join sexo s on s.codigo=p.cod_sexo  where t.codigo='" + codigo_cliente_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 nombre_txt.Text = ds.Tables[0].Rows[0][0].ToString();
@@ -111,20 +114,24 @@ namespace puntoVenta
             }
             catch (Exception)
             {
-                MessageBox.Show("Error cargando los datos personales");
+                MessageBox.Show("Error cargando los datos personales","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         public void cargar_datos_cliente()
         {
             try
             {
-                string sql = "select t.nombre,p.apellido,t.identificacion,p.cod_sexo,s.sexo,p.fecha_nacimiento,c.cod_categoria,cc.nombre,c.cod_subcategoria,csc.nombre,c.limite_credito,c.estado,c.abrir_credito from tercero t join persona p on p.codigo=t.codigo join cliente c on c.codigo=p.codigo join sexo s on s.codigo=p.cod_sexo join cliente_categoria cc on cc.codigo=c.cod_categoria join cliente_subcategoria csc on csc.codigo=c.cod_subcategoria where c.codigo='"+codigo_cliente_txt.Text.Trim()+"'";
+                if (codigo_cliente_txt.Text.Trim() == "")
+                    return;
+
+                string sql = "select t.nombre,p.apellido,t.identificacion,p.cod_sexo,s.sexo,p.fecha_nacimiento,c.cod_categoria,cc.nombre,c.cod_subcategoria,csc.nombre,c.limite_credito,c.estado,c.abrir_credito,c.cliente_contado from tercero t join persona p on p.codigo=t.codigo join cliente c on c.codigo=p.codigo join sexo s on s.codigo=p.cod_sexo join cliente_categoria cc on cc.codigo=c.cod_categoria join cliente_subcategoria csc on csc.codigo=c.cod_subcategoria where c.codigo='"+codigo_cliente_txt.Text.Trim()+"'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 codigo_categoria_txt.Text = ds.Tables[0].Rows[0][6].ToString();
                 nombre_categoria_txt.Text = ds.Tables[0].Rows[0][7].ToString();
                 codigo_subcategoria_txt.Text = ds.Tables[0].Rows[0][8].ToString();
                 nombre_subcategria_txt.Text = ds.Tables[0].Rows[0][9].ToString();
                 credito_txt.Text = ds.Tables[0].Rows[0][10].ToString();
+                //cliente activo
                 if(ds.Tables[0].Rows[0][11].ToString()=="True")
                 {
                     ck_activo.Checked = true;
@@ -133,6 +140,8 @@ namespace puntoVenta
                 {
                     ck_activo.Checked = false;
                 }
+
+                //tiene credito abierto
                 if (ds.Tables[0].Rows[0][12].ToString() == "True")
                 {
                     ck_abrir_credito.Checked = true;
@@ -141,18 +150,31 @@ namespace puntoVenta
                 {
                     ck_abrir_credito.Checked = false;
                 }
+                //cliente al contado
+                if (ds.Tables[0].Rows[0][13].ToString() == "True")
+                {
+                    clienteContadoCheck.Checked = true;
+                }
+                else
+                {
+                    clienteContadoCheck.Checked = false;
+                }
+                cargar_numeros_telefonos();
                 
             }
             catch(Exception)
             {
-                MessageBox.Show("Error cargando los datos del cliente, este usuario no existe como cliente");
+                MessageBox.Show("No existe como cliente","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            cargar_numeros_telefonos();
+            
         }
         public void cargar_numeros_telefonos()
         {
             try
             {
+                if (codigo_cliente_txt.Text.Trim() == "")
+                    return;
+
                 dataGridView1.Rows.Clear();
                 string sql = "select telefono,tipo_telefono from tercero_vs_telefono where tipo_entidad='CLI' and cod_tercero='" + codigo_cliente_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
@@ -263,7 +285,7 @@ namespace puntoVenta
                                      create proc insert_cliente
                                      @nombre varchar(100),@apellido varchar(100),@identificacion varchar(15),
                                      @estado bit,@cod_sexo int,@fecha_nacimiento date,@cod_categoria int,
-                                     @cod_subcategoria int,@limite_credito float,@abrir_credito bit,@cod_sucursal_creado int,@codigo_cliente int
+                                     @cod_subcategoria int,@limite_credito float,@abrir_credito bit,@cod_sucursal_creado int,@cliente_contado,@codigo_cliente int
                                      */
                                     if (codigo_cliente_txt.Text.Trim() == "")
                                            {
@@ -272,7 +294,7 @@ namespace puntoVenta
                                                if (ds.Tables[0].Rows.Count == 0)
                                                {
                                                   
-                                                   sql = "exec insert_cliente '" + nombre_txt.Text.Trim() + "','" + apellido_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + estado.ToString() + "','" + codigo_sexo_txt.Text.Trim() + "','" + fecha_nacimiento.Value.ToString("yyyy-MM-dd") + "','" + codigo_categoria_txt.Text.Trim() + "','" + codigo_subcategoria_txt.Text.Trim() + "','" + credito_txt.Text.Trim() + "','" + abrir_cre.ToString() +"','"+s.codigo_sucursal.ToString()+ "','0'";
+                                                   sql = "exec insert_cliente '" + nombre_txt.Text.Trim() + "','" + apellido_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + estado.ToString() + "','" + codigo_sexo_txt.Text.Trim() + "','" + fecha_nacimiento.Value.ToString("yyyy-MM-dd") + "','" + codigo_categoria_txt.Text.Trim() + "','" + codigo_subcategoria_txt.Text.Trim() + "','" + credito_txt.Text.Trim() + "','" + abrir_cre.ToString() +"','"+s.codigo_sucursal.ToString()+"','"+(bool)clienteContadoCheck.Checked+ "','0'";
                                                    ds = Utilidades.ejecutarcomando(sql);
                                                    if (ds.Tables[0].Rows.Count > 0)
                                                    {
@@ -297,17 +319,17 @@ namespace puntoVenta
                                                DataSet ds = Utilidades.ejecutarcomando(sql);
                                                if (ds.Tables[0].Rows.Count == 0)
                                                {
-                                                   sql = "exec insert_cliente '" + nombre_txt.Text.Trim() + "','" + apellido_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + estado.ToString() + "','" + codigo_sexo_txt.Text.Trim() + "','" + fecha_nacimiento.Value.ToString("yyyy-MM-dd") + "','" + codigo_categoria_txt.Text.Trim() + "','" + codigo_subcategoria_txt.Text.Trim() + "','" + credito_txt.Text.Trim() + "','" + abrir_cre.ToString() + "','"+s.codigo_sucursal.ToString()+"','" + codigo_cliente_txt.Text.Trim() + "'";
+                                                   sql = "exec insert_cliente '" + nombre_txt.Text.Trim() + "','" + apellido_txt.Text.Trim() + "','" + identificacion_txt.Text.Trim() + "','" + estado.ToString() + "','" + codigo_sexo_txt.Text.Trim() + "','" + fecha_nacimiento.Value.ToString("yyyy-MM-dd") + "','" + codigo_categoria_txt.Text.Trim() + "','" + codigo_subcategoria_txt.Text.Trim() + "','" + credito_txt.Text.Trim() + "','" + abrir_cre.ToString() + "','" + s.codigo_sucursal.ToString() + "','"+ (bool)clienteContadoCheck.Checked+"','" + codigo_cliente_txt.Text.Trim() + "'";
                                                    ds = Utilidades.ejecutarcomando(sql);
                                                    if (ds.Tables[0].Rows.Count > 0)
                                                    {
                                                        codigo_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                                                        actualiza_telefono();
-                                                       MessageBox.Show("Se actualizo");
+                                                       MessageBox.Show("Se actualizo", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                    }
                                                    else
                                                    {
-                                                       MessageBox.Show("No se actualizo");
+                                                       MessageBox.Show("No se actualizo","",MessageBoxButtons.OK,MessageBoxIcon.Error);
                                                    }
                                                }
                                                else
@@ -340,9 +362,9 @@ namespace puntoVenta
                                nombre_txt.Focus();
                            }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error guardando");
+                    MessageBox.Show("Error guardando: "+ex.ToString());
                 }
             }
         }

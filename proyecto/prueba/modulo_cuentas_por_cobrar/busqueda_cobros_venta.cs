@@ -68,12 +68,12 @@ namespace puntoVenta
                         if (detalle_txt.Text.Trim() != "")
                         {
                             int fila = dataGridView1.CurrentRow.Index;
-                            string sql = "update venta_vs_pagos set estado='0',cod_empleado_anular='" + s.codigo_usuario.ToString() + "',motivo_anulado='" + detalle_txt.Text.Trim() + "' where  codigo='" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "'";
+                            string sql = "update cobros_detalles set estado='0',cod_empleado_anular='" + s.codigo_usuario.ToString() + "',motivo_anulado='" + detalle_txt.Text.Trim() + "' where  codigo='" + dataGridView1.Rows[fila].Cells[0].Value.ToString() + "'";
                             Utilidades.ejecutarcomando(sql);
                             dataGridView1.Rows.Clear();
                             cargar_cobros();
                             MessageBox.Show("Se anulo el pago");
-                            MessageBox.Show("Ahora debes realizar un egreso de su caja con el monto del pago cancelado");
+                            MessageBox.Show("Si el metodo de pago es en efectivo debe realizar un egreso de caja por el monto anulado","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         }
                         else
                         {
@@ -85,16 +85,13 @@ namespace puntoVenta
                         MessageBox.Show("Usted no tiene permisos para anular cobros");
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error anulando el pago");
+                    MessageBox.Show("Error anulando el pago.: "+ex.ToString());
                 }
             }
         }
-        public void cargar_facturas()
-        {
-            
-        }
+       
         private void button4_Click(object sender, EventArgs e)
         {
             try
@@ -103,7 +100,7 @@ namespace puntoVenta
                 bc.pasado += new busqueda_cliente.pasar(ejecutar_codigo_cliente);
                 bc.ShowDialog();
                 cargar_nombre_cliente();
-                cargar_facturas();
+                
             }
             catch(Exception)
             {
@@ -136,9 +133,9 @@ namespace puntoVenta
             {
                 int fila = dataGridView1.CurrentRow.Index;
                 string codigo_cobro = dataGridView1.Rows[fila].Cells[0].Value.ToString();       
-                imprimir_cobros ic = new imprimir_cobros();
-                ic.codigo_cobro = codigo_cobro.ToString();
-                ic.ShowDialog();
+                //imprimir_cobros ic = new imprimir_cobros();
+                //ic.codigo_cobro = codigo_cobro.ToString();
+                //ic.ShowDialog();
             }
         }
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -221,6 +218,7 @@ namespace puntoVenta
             {
                 string sql = "select caj.cod_caja,ca.nombre from cajero caj join caja ca on ca.codigo=caj.cod_caja where caj.cod_empleado='" + codigo_cajero_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
+                cargar_cobros();
             }
             catch (Exception)
             {
@@ -260,10 +258,7 @@ namespace puntoVenta
         {
             cargar_cobros();
         }
-        double tarjeta = 0;
-        double cheque = 0;
-        double efectivo = 0;
-        double tranferencia = 0;
+      
         public void cargar_cobros()
         {
             try
@@ -271,43 +266,45 @@ namespace puntoVenta
                 if (codigo_cajero_txt.Text.Trim() != "")
                 {
                     dataGridView1.Rows.Clear();
-                    string sql = "select vp.codigo,f.num_factura,(vp.monto-vp.devuelta),vp.tarjeta,vp.cheque,vp.transferencia,vp.cod_empleado,(t.nombre+' '+p.apellido) as nombre,vp.fecha,vp.detalle from venta_vs_pagos vp join factura f on f.codigo=vp.cod_factura join empleado e on e.codigo=vp.cod_empleado join tercero t on t.codigo=e.codigo join persona p on p.codigo=t.codigo join cajero c on c.codigo=vp.cod_empleado where vp.estado='1'  and f.estado='1' and vp.fecha>='" + fecha_inicial.Value.ToString("yyyy-MM-dd") + "' and vp.fecha<='" + fecha_final.Value.ToString("yyyy-MM-dd") + "'";                   
+                    //--codigo cobro,factura,cliente,metodo pago,monto,fecha,cod_empleado
+                    string sql = "select cd.codigo,cd.cod_factura,ter.nombre,mp.descripcion,((cd.monto_pagado)-(cd.monto_descontado)) as monto_pagado,c.fecha,c.cod_empleado  from cobros_detalles cd join cobros c on cd.cod_cobro=c.codigo join factura f on cd.cod_factura=f.codigo join tercero ter on ter.codigo=f.codigo_cliente join metodo_pago mp on mp.codigo=cd.cod_metodo_pago where c.codigo>'0' and c.estado='1' and cd.estado='1' and f.estado='1' and c.fecha>='"+fecha_inicial.Value.ToString("yyyy-MM-dd")+"' and c.fecha<='"+fecha_final.Value.ToString("yyyy-MM-dd")+"'";                   
                     if(codigo_cajero_txt.Text.Trim()!="")
                     {
-                        sql += " and c.codigo='" + codigo_cajero_txt.Text.Trim() + "'";
+                        sql += " and c.cod_empleado='" + codigo_cajero_txt.Text.Trim() + "'";
                     }
                     if(codigo_cliente_txt.Text.Trim()!="")
                     {
-                        sql += " and f.codigo_cliente='"+codigo_cliente_txt.Text.Trim()+"'";
+                        sql += "and f.codigo_cliente='" + codigo_cliente_txt.Text.Trim() + "'";
                     }
-                    sql += " order by vp.codigo desc";
+                    sql += " order by c.codigo desc";
                     DataSet ds = Utilidades.ejecutarcomando(sql);
                     foreach (DataRow row in ds.Tables[0].Rows)
                     {
-                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString(), row[9].ToString());
+                        string empleado = Utilidades.getNombreByTercero(row[6].ToString());
+                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(),empleado);
                     }
-                    efectivo = 0;
-                    cheque = 0;
-                    tranferencia = 0;
-                    tarjeta = 0;
+                    double montoTotal = 0;
                     foreach(DataGridViewRow row in dataGridView1.Rows)
                     {
-                        efectivo += Convert.ToDouble(row.Cells[2].Value.ToString());
-                        tarjeta += Convert.ToDouble(row.Cells[3].Value.ToString());
-                        cheque += Convert.ToDouble(row.Cells[4].Value.ToString());
-                        tranferencia += Convert.ToDouble(row.Cells[5].Value.ToString());
+
+                        montoTotal += Convert.ToDouble(row.Cells[4].Value.ToString());
                     }
-                    total_txt.Text = (efectivo + tarjeta + cheque + tranferencia).ToString("###,###,###,###,###.#0");
+                    total_txt.Text = (montoTotal).ToString("N");
                 }
                 else
                 {
                     MessageBox.Show("Falta el cajero");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando los cobros");
+                MessageBox.Show("Error cargando los cobros.: "+ex.ToString());
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

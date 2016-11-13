@@ -137,7 +137,7 @@ namespace puntoVenta
                                     /*
                                      alter proc insert_compra
                                      @numero_factura varchar(10),@cod_suplidor int,@ncf varchar(20),@rnc varchar(20),
-                                     @cod_tipo varchar(5),@fecha date,@fecha_limite date,@cod_sucursal
+                                     @cod_tipo varchar(5),@fecha date,@fecha_limite date,@cod_sucursal,@cod_usuario
                                     */
                                     //MessageBox.Show(dateTimePicker1.Value.ToString("yyyy-mm-dd")+"---"+dateTimePicker2.Value.ToString("yyyy-mm-dd"));
                                 s = singleton.obtenerDatos();
@@ -150,7 +150,7 @@ namespace puntoVenta
                                         ds = Utilidades.ejecutarcomando(sql);
                                         if (ds.Tables[0].Rows.Count == 0)
                                         {
-                                            sql = "exec insert_compra '" + numero_compra_txt.Text.Trim() + "','" + codigo_suplidor_txt.Text.Trim() + "','" + numero_comprobante_fiscal_txt.Text.Trim() + "','" + rnc_txt.Text.Trim() + "','" + tipo_compra.ToString() + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_sucursal.ToString() + "'";
+                                            sql = "exec insert_compra '" + numero_compra_txt.Text.Trim() + "','" + codigo_suplidor_txt.Text.Trim() + "','" + numero_comprobante_fiscal_txt.Text.Trim() + "','" + rnc_txt.Text.Trim() + "','" + tipo_compra.ToString() + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "','" + s.codigo_sucursal.ToString() + "','"+s.codigo_usuario.ToString()+"'";
                                             ds = Utilidades.ejecutarcomando(sql);
                                             if (ds.Tables[0].Rows.Count > 0)
                                             {
@@ -246,16 +246,16 @@ namespace puntoVenta
         {
             try
             {
-                string sql = "select u.nombre,u.codigo from producto_unidad p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
+                string sql = "select u.nombre,u.codigo from producto_unidad_conversion p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 unidad_combo_txt.ValueMember = "nombre";
                 unidad_combo_txt.DisplayMember = "nombre";
                 unidad_combo_txt.DataSource = ds.Tables[0];
                 codigo_unidad_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error cargando las unidades del producto");
+                MessageBox.Show("Error cargando las unidades del producto .:"+ex.ToString());
             }
         }
         public void ejecutar_codigo_producto(string dato)

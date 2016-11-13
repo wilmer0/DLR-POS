@@ -71,9 +71,15 @@ namespace puntoVenta
                          */
                         string cmd = "exec mostrar_existencia_unidad_minima '"+row[0].ToString()+"'";
                         DataSet dx = Utilidades.ejecutarcomando(cmd);
-                        double existencia = Convert.ToDouble(dx.Tables[0].Rows[0][0].ToString());
-                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), existencia.ToString("###,###,###,###,###,###.#0"), row[5].ToString(),Convert.ToDouble(row[6].ToString()).ToString("###,###,###,###,###.#0"),Convert.ToDouble(row[7].ToString()).ToString("###,###,###,###,###.#0"));
+                        double existencia = 0;
+                        if (dx.Tables[0].Rows[0][0].ToString() != "")
+                        {
+                            existencia = Convert.ToDouble(dx.Tables[0].Rows[0][0].ToString());
+                        }
+                        dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), existencia.ToString("N"), row[5].ToString(),row[6].ToString(),row[7].ToString());
                     }
+
+
                     //para sombrear si la existencia es menor que el reorden
                     foreach(DataGridViewRow row in dataGridView1.Rows)
                     {
@@ -90,9 +96,9 @@ namespace puntoVenta
                     nombre_producto_txt.Clear();
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error cargando productos");
+                MessageBox.Show("Error cargando productos.:"+ex.ToString());
             }
             
         }
