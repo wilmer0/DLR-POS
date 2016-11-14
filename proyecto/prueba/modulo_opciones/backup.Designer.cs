@@ -92,6 +92,7 @@
             this.ruta_txt.Name = "ruta_txt";
             this.ruta_txt.Size = new System.Drawing.Size(185, 20);
             this.ruta_txt.TabIndex = 101;
+            this.ruta_txt.Text = "D:\\wilmer\\backup\\proyecto3";
             // 
             // button2
             // 

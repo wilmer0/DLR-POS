@@ -13,6 +13,9 @@ namespace puntoVenta
 {
     public partial class backup : Form
     {
+
+
+        public  Utilidades utilidades = new Utilidades();
         public backup()
         {
             InitializeComponent();
@@ -42,9 +45,18 @@ namespace puntoVenta
 
                          */
                         string ruta = ruta_txt.Text.Trim() + @"\";
-                        string sql = "exec backup_sistema '"+ruta.ToString()+"','"+base_datos.ToString()+"'";
-                        DataSet ds = Utilidades.ejecutarcomando(sql);
-                        MessageBox.Show("Se genero el backup");
+
+                        //string sql = "exec backup_sistema '"+ruta.ToString()+"','"+base_datos.ToString()+"'";
+                        //DataSet ds = Utilidades.ejecutarcomando(sql);
+                        if (Utilidades.backupSql(ruta, base_datos))
+                        {
+                            MessageBox.Show("Se genero el backup");
+                        }
+                        else
+                        {
+                                MessageBox.Show("No genero el backup");
+                        }
+                        
                     }
                     else
                     {

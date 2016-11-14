@@ -267,7 +267,7 @@ namespace puntoVenta
                 {
                     dataGridView1.Rows.Clear();
                     //--codigo cobro,factura,cliente,metodo pago,monto,fecha,cod_empleado
-                    string sql = "select cd.codigo,cd.cod_factura,ter.nombre,mp.descripcion,(cd.monto_pagado-cd.monto_descontado) as monto_pagado,c.fecha,c.cod_empleado from cobros_detalles cd join cobros c on c.codigo=cd.cod_cobro join factura f on cd.cod_factura=f.codigo join tercero ter on ter.codigo=f.codigo_cliente join metodo_pago mp on mp.codigo=cd.cod_metodo_pago where c.codigo>0 and c.estado='1' and c.fecha>='"+fecha_inicial.Value.ToString("yyyy-MM-dd")+"' and c.fecha<='"+fecha_final.Value.ToString("yyyy-MM-dd")+"'";                   
+                    string sql = "select cd.codigo,cd.cod_factura,ter.nombre,mp.descripcion,((cd.monto_pagado)-(cd.monto_descontado)) as monto_pagado,c.fecha,c.cod_empleado  from cobros_detalles cd join cobros c on cd.cod_cobro=c.codigo join factura f on cd.cod_factura=f.codigo join tercero ter on ter.codigo=f.codigo_cliente join metodo_pago mp on mp.codigo=cd.cod_metodo_pago where c.codigo>'0' and c.estado='1' and cd.estado='1' and f.estado='1' and c.fecha>='"+fecha_inicial.Value.ToString("yyyy-MM-dd")+"' and c.fecha<='"+fecha_final.Value.ToString("yyyy-MM-dd")+"'";                   
                     if(codigo_cajero_txt.Text.Trim()!="")
                     {
                         sql += " and c.cod_empleado='" + codigo_cajero_txt.Text.Trim() + "'";

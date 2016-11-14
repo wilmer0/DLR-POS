@@ -30,13 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(busqueda_pagos_compras));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numer_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -50,6 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numer_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -69,8 +68,7 @@
             this.monto,
             this.codigo_empleado,
             this.nombre_empleado,
-            this.fecha,
-            this.detalle});
+            this.fecha});
             this.dataGridView1.Location = new System.Drawing.Point(12, 99);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -78,53 +76,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(908, 331);
             this.dataGridView1.TabIndex = 76;
-            // 
-            // codigo
-            // 
-            this.codigo.FillWeight = 40F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // numer_factura
-            // 
-            this.numer_factura.FillWeight = 70F;
-            this.numer_factura.HeaderText = "Numero factura";
-            this.numer_factura.Name = "numer_factura";
-            this.numer_factura.ReadOnly = true;
-            // 
-            // monto
-            // 
-            this.monto.HeaderText = "Monto";
-            this.monto.Name = "monto";
-            this.monto.ReadOnly = true;
-            // 
-            // codigo_empleado
-            // 
-            this.codigo_empleado.FillWeight = 60F;
-            this.codigo_empleado.HeaderText = "codigo empleado";
-            this.codigo_empleado.Name = "codigo_empleado";
-            this.codigo_empleado.ReadOnly = true;
-            // 
-            // nombre_empleado
-            // 
-            this.nombre_empleado.HeaderText = "Empleado";
-            this.nombre_empleado.Name = "nombre_empleado";
-            this.nombre_empleado.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.FillWeight = 70F;
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.FillWeight = 150F;
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
             // 
             // panel3
             // 
@@ -267,6 +218,46 @@
             this.label5.TabIndex = 92;
             this.label5.Text = "Anular";
             // 
+            // codigo
+            // 
+            this.codigo.FillWeight = 40F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // numer_factura
+            // 
+            this.numer_factura.FillWeight = 70F;
+            this.numer_factura.HeaderText = "Numero factura";
+            this.numer_factura.Name = "numer_factura";
+            this.numer_factura.ReadOnly = true;
+            // 
+            // monto
+            // 
+            this.monto.HeaderText = "Monto";
+            this.monto.Name = "monto";
+            this.monto.ReadOnly = true;
+            // 
+            // codigo_empleado
+            // 
+            this.codigo_empleado.FillWeight = 60F;
+            this.codigo_empleado.HeaderText = "codigo empleado";
+            this.codigo_empleado.Name = "codigo_empleado";
+            this.codigo_empleado.ReadOnly = true;
+            // 
+            // nombre_empleado
+            // 
+            this.nombre_empleado.HeaderText = "Empleado";
+            this.nombre_empleado.Name = "nombre_empleado";
+            this.nombre_empleado.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.FillWeight = 70F;
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
             // busqueda_pagos_compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,14 +304,13 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox detalle_txt;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn numer_factura;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }

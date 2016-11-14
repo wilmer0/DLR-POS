@@ -12,11 +12,17 @@ namespace puntoVenta
 {
     public partial class busqueda_pagos_compras : Form
     {
+
+        Utilidades utilidades=new Utilidades();
+        internal singleton s { get; set; }
+
+
+
         public busqueda_pagos_compras()
         {
             InitializeComponent();
         }
-        internal singleton s { get; set; }
+       
         private void button7_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Desea salir?", "Saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -48,9 +54,6 @@ namespace puntoVenta
             try
             {
                 codigo_suplidor_txt.Text = dato.ToString();
-                string sql = "select nombre from tercero where codigo='" + codigo_suplidor_txt.Text.Trim() + "'";
-                DataSet ds = Utilidades.ejecutarcomando(sql);
-                nombre_suplidor_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 cargar_datos_suplidor();
             }
             catch (Exception)
@@ -63,9 +66,9 @@ namespace puntoVenta
         {
             try
             {
-                string sql = "";
-                DataSet ds = new DataSet();
-                sql = "select apellido from persona where codigo='" + codigo_suplidor_txt.Text.Trim() + "'";
+                string sql = "select (t.nombre+' '+p.apellido) from tercero t join persona p on t.codigo=p.codigo where t.codigo='" + codigo_suplidor_txt.Text.Trim() + "'";
+                DataSet ds = Utilidades.ejecutarcomando(sql);
+                nombre_suplidor_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 ds = Utilidades.ejecutarcomando(sql);
                 nombre_suplidor_txt.Text += " " + ds.Tables[0].Rows[0][0].ToString();
             }
@@ -131,16 +134,16 @@ namespace puntoVenta
             {
                 int fila = 0;
                 dataGridView1.Rows.Clear();
-                string sql = "select cp.codigo,c.num_factura,cp.monto,cp.cod_empleado,(t.nombre+''+p.apellido)as nombre,cp.fecha,cp.detalle from compra_vs_pagos cp join compra c on c.codigo=cp.cod_compra join tercero t on t.codigo=cp.cod_empleado join persona p on p.codigo=t.codigo where cp.estado='1' and c.cod_suplidor='"+codigo_suplidor_txt.Text.Trim()+"'";
+                string sql = "select pd.codigo,c.num_factura,pd.monto_pagado,c.codigo_empleado,(t.nombre+''+p.apellido)as nombre,c.fecha from pagos_detalles pd join compra c on pd.cod_compra=c.codigo join tercero t on t.codigo=c.codigo_empleado join persona p on p.codigo=t.codigo where pd.estado='1' and c.estado='1' and c.cod_suplidor='"+codigo_suplidor_txt.Text.Trim()+"'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString());
+                    dataGridView1.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando los pagos para este suplidor");
+                MessageBox.Show("Error cargando los pagos para este suplidor.: "+ex.ToString());
             }
         }
         private void button9_Click(object sender, EventArgs e)
