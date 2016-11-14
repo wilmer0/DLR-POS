@@ -442,16 +442,16 @@ namespace puntoVenta
         {
             try
             {
-                string sql = "select u.nombre,u.codigo from producto_unidad p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
+                string sql = "select u.nombre,u.codigo from producto_unidad_conversion p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 unidad_combo_txt.ValueMember = "nombre";
                 unidad_combo_txt.DisplayMember = "nombre";
                 unidad_combo_txt.DataSource = ds.Tables[0];
                 codigo_unidad_txt.Text = ds.Tables[0].Rows[0][1].ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error cargando el codigo de la unidad");
+                MessageBox.Show("Error el producto no tiene unidad.: " + ex.ToString());
             }
         }
         public void cargar_itebis()
@@ -845,9 +845,7 @@ namespace puntoVenta
                                                             //iv.codigo_factura = codigo_factura_txt.Text.Trim();
                                                             //iv.ShowDialog();
 
-                                                            imprimir_venta_rollo ih = new imprimir_venta_rollo();
-                                                            ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                                                            ih.ShowDialog();
+                                                            Utilidades.imprimirVentaRollo(codigo_factura_txt.Text.Trim());
                                                         }
                                                         if (dr == DialogResult.No)
                                                         {
@@ -989,9 +987,7 @@ namespace puntoVenta
                     //iv.codigo_factura = codigo_factura_txt.Text.Trim();
                     //iv.ShowDialog();
 
-                    imprimir_venta_rollo ih = new imprimir_venta_rollo();
-                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                    ih.ShowDialog();
+                    Utilidades.imprimirVentaRollo(codigo_factura_txt.Text.Trim());
                 }
                 //limpiar la pantalla para la proxima venta
 

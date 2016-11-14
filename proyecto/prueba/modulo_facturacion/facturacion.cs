@@ -16,13 +16,10 @@ namespace puntoVenta
 {
     public partial class facturacion : Form
     {
-
         public facturacion()
         {
             InitializeComponent();
         }
-        
-
         internal singleton s { get; set; }
         string fecha_actual = "";
         string fecha_pago = "";
@@ -111,9 +108,9 @@ namespace puntoVenta
                 codigo_cliente_txt.Text = ds.Tables[0].Rows[0][0].ToString();
                 cargar_nombre_cliente();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error cargando el primer cliente");
+                MessageBox.Show("Error cargando el primer cliente.:"+ex.ToString());
             }
         }
         public void cargar_cajero()
@@ -376,13 +373,16 @@ namespace puntoVenta
                     }
                 }
 
-                cantidad_total_itebis_txt.Text = sumatoria_itebis.ToString("###,###,###,###.#0");
+                cantidad_total_itebis_txt.Text = sumatoria_itebis.ToString("N");
                 
-                cantidad_total_factura_txt.Text =(sumatoria_total-sumatoria_descuento).ToString("###,###,###,###.#0");
+                cantidad_total_factura_txt.Text =(sumatoria_total-sumatoria_descuento).ToString("N");
                 //monto propina
-                double monto_propina = Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()) * (Convert.ToDouble(porciento_propina_txt.Text.Trim())/100);
-
-                cantidad_total_factura_txt.Text=(Convert.ToDouble(cantidad_total_factura_txt.Text.Trim())+monto_propina).ToString("###,###,###,###.#0");
+                double monto_propina = Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()) * (Convert.ToDouble(porciento_propina_txt.Text.Trim()) / 100);
+                if (monto_propina == null)
+                {
+                    monto_propina = 0;
+                }
+                cantidad_total_factura_txt.Text = (Convert.ToDouble(cantidad_total_factura_txt.Text.Trim()) + monto_propina).ToString("###,###,###,###.#0");
 
                
                 
@@ -642,7 +642,7 @@ namespace puntoVenta
         {
             try
             {
-                string sql = "select u.nombre,u.codigo from producto_unidad p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
+                string sql = "select u.nombre,u.codigo from producto_unidad_conversion p join unidad u on p.cod_unidad=u.codigo where p.cod_producto='" + codigo_producto_txt.Text.Trim() + "'";
                 DataSet ds = Utilidades.ejecutarcomando(sql);
                 unidad_combo_txt.ValueMember = "nombre";
                 unidad_combo_txt.DisplayMember = "nombre";
@@ -708,9 +708,7 @@ namespace puntoVenta
                 if (dr == DialogResult.Yes)
                 {
 
-                    imprimir_venta_rollo ih = new imprimir_venta_rollo();
-                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                    ih.ShowDialog();
+                    Utilidades.imprimirVentaRollo(codigo_factura_txt.Text.Trim());
                 }
                 else
                 {
@@ -1463,9 +1461,8 @@ namespace puntoVenta
                     //iv.codigo_factura = codigo_factura_txt.Text.Trim();
                     //iv.ShowDialog();
 
-                    imprimir_venta_rollo ih = new imprimir_venta_rollo();
-                    ih.codigo_factura = codigo_factura_txt.Text.Trim();
-                    ih.ShowDialog();
+                    Utilidades.imprimirVentaRollo(codigo_factura_txt.Text.Trim());
+                    
                 }
                 if (dr == DialogResult.No)
                 {

@@ -401,15 +401,13 @@ namespace puntoVenta
                     DialogResult dr = MessageBox.Show("Desea imprimir el pedido en rollo?", "Imprimiendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dr == DialogResult.Yes)
                     {
-                        imprimir_venta_rollo iv = new imprimir_venta_rollo();
-                        iv.codigo_factura = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                        iv.ShowDialog();
+                        Utilidades.imprimirVentaRollo(dataGridView1.Rows[fila].Cells[0].Value.ToString());
                     }
                     else
                     {
-                        imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
-                        iv.codigo_factura = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                        iv.ShowDialog();
+                        //imprimir_venta_hoja_completa iv = new imprimir_venta_hoja_completa();
+                        //iv.codigo_factura = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                        //iv.ShowDialog();
                     }
                 }
                 else
