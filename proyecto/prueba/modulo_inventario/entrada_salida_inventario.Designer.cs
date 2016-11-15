@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(entrada_salida_inventario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existencia_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,13 +69,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.unidad_combo_txt = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existencia_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,64 @@
             this.dataGridView1.TabIndex = 78;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // codigo
+            // 
+            this.codigo.FillWeight = 30F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // cod_unidad
+            // 
+            this.cod_unidad.FillWeight = 30F;
+            this.cod_unidad.HeaderText = "Codigo";
+            this.cod_unidad.Name = "cod_unidad";
+            this.cod_unidad.ReadOnly = true;
+            this.cod_unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // unidad
+            // 
+            this.unidad.HeaderText = "Unidad";
+            this.unidad.Name = "unidad";
+            this.unidad.ReadOnly = true;
+            this.unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // existencia_grid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.existencia_grid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.existencia_grid.FillWeight = 40F;
+            this.existencia_grid.HeaderText = "Existencia";
+            this.existencia_grid.Name = "existencia_grid";
+            this.existencia_grid.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.NullValue = "0";
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cantidad.FillWeight = 30F;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // mov
+            // 
+            this.mov.FillWeight = 20F;
+            this.mov.HeaderText = "Mov";
+            this.mov.Name = "mov";
+            this.mov.ReadOnly = true;
             // 
             // panel2
             // 
@@ -406,6 +464,7 @@
             // 
             // unidad_combo_txt
             // 
+            this.unidad_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unidad_combo_txt.FormattingEnabled = true;
             this.unidad_combo_txt.Location = new System.Drawing.Point(431, 111);
             this.unidad_combo_txt.Name = "unidad_combo_txt";
@@ -424,64 +483,6 @@
             this.button8.TabIndex = 131;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.FillWeight = 30F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // cod_unidad
-            // 
-            this.cod_unidad.FillWeight = 30F;
-            this.cod_unidad.HeaderText = "Codigo";
-            this.cod_unidad.Name = "cod_unidad";
-            this.cod_unidad.ReadOnly = true;
-            this.cod_unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // unidad
-            // 
-            this.unidad.HeaderText = "Unidad";
-            this.unidad.Name = "unidad";
-            this.unidad.ReadOnly = true;
-            this.unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // existencia_grid
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.existencia_grid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.existencia_grid.FillWeight = 40F;
-            this.existencia_grid.HeaderText = "Existencia";
-            this.existencia_grid.Name = "existencia_grid";
-            this.existencia_grid.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle4.NullValue = "0";
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle4;
-            this.cantidad.FillWeight = 30F;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // mov
-            // 
-            this.mov.FillWeight = 20F;
-            this.mov.HeaderText = "Mov";
-            this.mov.Name = "mov";
-            this.mov.ReadOnly = true;
             // 
             // entrada_salida_inventario
             // 

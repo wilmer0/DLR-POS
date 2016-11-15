@@ -671,8 +671,6 @@ namespace puntoVenta
 
         private void button11_Click(object sender, EventArgs e)
         {
-            movimiento_inventario i = new movimiento_inventario();
-            i.ShowDialog();
         }
 
         private void label8_Click(object sender, EventArgs e)

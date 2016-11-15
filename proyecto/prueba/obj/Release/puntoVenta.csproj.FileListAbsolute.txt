@@ -421,7 +421,6 @@ C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.facturacion_flash.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.pedidos.resources
-C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.movimiento_inventario.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.inventario_entrada_salida.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.observaciones_empleados.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.cambiar_clave.resources
