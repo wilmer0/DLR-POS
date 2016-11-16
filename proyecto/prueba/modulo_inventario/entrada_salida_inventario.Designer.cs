@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(entrada_salida_inventario));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existencia_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -62,13 +69,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.unidad_combo_txt = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existencia_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mov = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,64 @@
             this.dataGridView1.TabIndex = 78;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
+            // codigo
+            // 
+            this.codigo.FillWeight = 30F;
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // cod_unidad
+            // 
+            this.cod_unidad.FillWeight = 30F;
+            this.cod_unidad.HeaderText = "Codigo";
+            this.cod_unidad.Name = "cod_unidad";
+            this.cod_unidad.ReadOnly = true;
+            this.cod_unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // unidad
+            // 
+            this.unidad.HeaderText = "Unidad";
+            this.unidad.Name = "unidad";
+            this.unidad.ReadOnly = true;
+            this.unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // existencia_grid
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            this.existencia_grid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.existencia_grid.FillWeight = 40F;
+            this.existencia_grid.HeaderText = "Existencia";
+            this.existencia_grid.Name = "existencia_grid";
+            this.existencia_grid.ReadOnly = true;
+            // 
+            // cantidad
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.NullValue = "0";
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.cantidad.FillWeight = 30F;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // mov
+            // 
+            this.mov.FillWeight = 20F;
+            this.mov.HeaderText = "Mov";
+            this.mov.Name = "mov";
+            this.mov.ReadOnly = true;
             // 
             // panel2
             // 
@@ -161,7 +219,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(325, 110);
             this.label14.Name = "label14";
             this.label14.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -183,7 +241,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(8, 110);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -204,7 +262,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(567, 110);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -225,7 +283,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(781, 110);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -269,7 +327,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(818, 439);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -281,7 +339,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(892, 439);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -295,7 +353,7 @@
             this.ck_producto_activo.Checked = true;
             this.ck_producto_activo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ck_producto_activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_producto_activo.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.ck_producto_activo.ForeColor = System.Drawing.Color.Black;
             this.ck_producto_activo.Location = new System.Drawing.Point(12, 393);
             this.ck_producto_activo.Name = "ck_producto_activo";
             this.ck_producto_activo.Size = new System.Drawing.Size(167, 28);
@@ -309,7 +367,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(10, 439);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -358,7 +416,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(10, 68);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 25);
@@ -397,7 +455,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(10, 29);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 25);
@@ -406,6 +464,7 @@
             // 
             // unidad_combo_txt
             // 
+            this.unidad_combo_txt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.unidad_combo_txt.FormattingEnabled = true;
             this.unidad_combo_txt.Location = new System.Drawing.Point(431, 111);
             this.unidad_combo_txt.Name = "unidad_combo_txt";
@@ -424,64 +483,6 @@
             this.button8.TabIndex = 131;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.FillWeight = 30F;
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // cod_unidad
-            // 
-            this.cod_unidad.FillWeight = 30F;
-            this.cod_unidad.HeaderText = "Codigo";
-            this.cod_unidad.Name = "cod_unidad";
-            this.cod_unidad.ReadOnly = true;
-            this.cod_unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // unidad
-            // 
-            this.unidad.HeaderText = "Unidad";
-            this.unidad.Name = "unidad";
-            this.unidad.ReadOnly = true;
-            this.unidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // existencia_grid
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.existencia_grid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.existencia_grid.FillWeight = 40F;
-            this.existencia_grid.HeaderText = "Existencia";
-            this.existencia_grid.Name = "existencia_grid";
-            this.existencia_grid.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle4.NullValue = "0";
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle4;
-            this.cantidad.FillWeight = 30F;
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // mov
-            // 
-            this.mov.FillWeight = 20F;
-            this.mov.HeaderText = "Mov";
-            this.mov.Name = "mov";
-            this.mov.ReadOnly = true;
             // 
             // entrada_salida_inventario
             // 
