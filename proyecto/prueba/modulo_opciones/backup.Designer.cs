@@ -92,7 +92,7 @@
             this.ruta_txt.Name = "ruta_txt";
             this.ruta_txt.Size = new System.Drawing.Size(185, 20);
             this.ruta_txt.TabIndex = 101;
-            this.ruta_txt.Text = "D:\\wilmer\\backup\\proyecto3";
+            this.ruta_txt.Text = "C:\\Users\\wilmer\\Documents\\GitHub\\DLR-POS\\proyecto\\otros\\backups";
             // 
             // button2
             // 

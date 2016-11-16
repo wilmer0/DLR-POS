@@ -35,33 +35,33 @@ namespace puntoVenta
             DialogResult dr = MessageBox.Show("Desea generar el backup?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                //salvar
-                string base_datos = "punto_venta";
-                    if (ruta_txt.Text.Trim() != "")
-                    {
-                        /*
-                         *create proc backup_sistema
-                            @ruta varchar(max),@base_de_datos varchar(max)
+                ////salvar
+                //string base_datos = "punto_venta";
+                //    if (ruta_txt.Text.Trim() != "")
+                //    {
+                //        /*
+                //         *create proc backup_sistema
+                //            @ruta varchar(max),@base_de_datos varchar(max)
 
-                         */
-                        string ruta = ruta_txt.Text.Trim() + @"\";
+                //         */
+                //        string ruta = ruta_txt.Text.Trim() + @"\";
 
-                        //string sql = "exec backup_sistema '"+ruta.ToString()+"','"+base_datos.ToString()+"'";
-                        //DataSet ds = Utilidades.ejecutarcomando(sql);
-                        if (Utilidades.backupSql(ruta, base_datos))
-                        {
-                            MessageBox.Show("Se genero el backup");
-                        }
-                        else
-                        {
-                                MessageBox.Show("No genero el backup");
-                        }
+                //        //string sql = "exec backup_sistema '"+ruta.ToString()+"','"+base_datos.ToString()+"'";
+                //        //DataSet ds = Utilidades.ejecutarcomando(sql);
+                //        if (Utilidades.backupSql(ruta, base_datos))
+                //        {
+                //            MessageBox.Show("Se genero el backup");
+                //        }
+                //        else
+                //        {
+                //                MessageBox.Show("No genero el backup");
+                //        }
                         
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe elegir una ruta donde guardar el backup");
-                    }
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Debe elegir una ruta donde guardar el backup");
+                //    }
             }
         }
 
@@ -83,16 +83,7 @@ namespace puntoVenta
 
         private void backup_Load(object sender, EventArgs e)
         {
-            try
-            {
-                string sql = "select top(1) ruta_backup from sistema";
-                DataSet ds = Utilidades.ejecutarcomando(sql);
-                ruta_txt.Text = ds.Tables[0].Rows[0][0].ToString();
-            }
-            catch(Exception)
-            {
-
-            }
+            
         }
     }
 }
