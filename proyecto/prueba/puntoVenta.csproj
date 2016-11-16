@@ -912,6 +912,12 @@
     <Compile Include="modulo_administracion\ventas_productos.Designer.cs">
       <DependentUpon>ventas_productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ventanas_comunes\ventana_busqueda_comun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventanas_comunes\ventana_busqueda_comun.Designer.cs">
+      <DependentUpon>ventana_busqueda_comun.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="archivos\Idioma-en\idioma-en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>idioma-en.Designer.cs</LastGenOutput>
@@ -1314,6 +1320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modulo_administracion\ventas_productos.resx">
       <DependentUpon>ventas_productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventanas_comunes\ventana_busqueda_comun.resx">
+      <DependentUpon>ventana_busqueda_comun.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="modulo_facturacion\reporte_factura_dataset.xsc">
       <DependentUpon>reporte_factura_dataset.xsd</DependentUpon>
