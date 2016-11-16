@@ -326,7 +326,6 @@ C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.caja_ingresos_conceptos.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_facturacion.imprimir_codigo_barra_productos.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.almacen.resources
-C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.backup.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.Reportes.ventana_reporte.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.banco.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.busqueda_cuadre.resources
@@ -451,3 +450,4 @@ C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_mensuales.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
+C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_opciones.backup.resources

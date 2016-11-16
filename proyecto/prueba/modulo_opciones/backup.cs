@@ -1,5 +1,4 @@
-﻿using puntoVenta;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,81 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace puntoVenta
+namespace puntoVenta.modulo_opciones
 {
     public partial class backup : Form
     {
-
-
-        public  Utilidades utilidades = new Utilidades();
+        Utilidades utilidades=new Utilidades();
         public backup()
         {
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Desea salir?", "Saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+
+            if (ckSistema.Checked)
             {
-                this.Close();
+                Utilidades.backupSql(@"C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\otros\backups\","punto_venta");
+                
             }
-        }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Desea generar el backup?", "Guardando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (ckBaseDatos.Checked)
             {
-                ////salvar
-                //string base_datos = "punto_venta";
-                //    if (ruta_txt.Text.Trim() != "")
-                //    {
-                //        /*
-                //         *create proc backup_sistema
-                //            @ruta varchar(max),@base_de_datos varchar(max)
-
-                //         */
-                //        string ruta = ruta_txt.Text.Trim() + @"\";
-
-                //        //string sql = "exec backup_sistema '"+ruta.ToString()+"','"+base_datos.ToString()+"'";
-                //        //DataSet ds = Utilidades.ejecutarcomando(sql);
-                //        if (Utilidades.backupSql(ruta, base_datos))
-                //        {
-                //            MessageBox.Show("Se genero el backup");
-                //        }
-                //        else
-                //        {
-                //                MessageBox.Show("No genero el backup");
-                //        }
-                        
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Debe elegir una ruta donde guardar el backup");
-                //    }
+                //Utilidades.backupSql(@"C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\otros\backups\", "punto_venta");
+                
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FolderBrowserDialog fol = new FolderBrowserDialog();
-                if(fol.ShowDialog()==DialogResult.OK)
-                {
-                    ruta_txt.Text = fol.SelectedPath;
-                }
-            }
-            catch (Exception)
-            {
-                //MessageBox.Show("Error pasando la imagen al directorio local");
-            }
-        }
-
-        private void backup_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

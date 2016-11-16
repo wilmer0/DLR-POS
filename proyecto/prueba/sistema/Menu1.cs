@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using puntoVenta;
 using puntoVenta.modulo_facturacion;
 using puntoVenta;
-
+using puntoVenta.modulo_opciones;
 namespace puntoVenta
 {
     public partial class principal : Form
@@ -987,8 +987,11 @@ namespace puntoVenta
 
         private void button50_Click(object sender, EventArgs e)
         {
-            backup b = new backup();
-            b.ShowDialog();
+            string sql ="exec backup_sistema '"+@"C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\otros\backups\"+"','punto_venta'";
+            Utilidades.ejecutarcomando(sql);
+            //Utilidades.backupSql(@"C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\otros\backups\", "punto_venta");
+            //backup b = new backup();
+            //b.ShowDialog();
         }
 
         private void button51_Click(object sender, EventArgs e)
