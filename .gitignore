@@ -12,7 +12,6 @@ proyecto/prueba/obj
 
 tmp/
 *.tmp
-*.bak
 *.swp
 *~.nib
 local.properties
