@@ -451,3 +451,4 @@ C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventas_productos.resources
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.csproj.GenerateResource.Cache
 C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.modulo_opciones.backup.resources
+C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\prueba\obj\Release\puntoVenta.ventanas_comunes.ventana_busqueda_comun.resources
