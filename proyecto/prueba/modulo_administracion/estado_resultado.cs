@@ -15,11 +15,17 @@ namespace puntoVenta
 
 
         public Utilidades utilidades = new Utilidades();
+        internal singleton s { get; set; }
+        
+        
+        
         public estado_resultado()
         {
             InitializeComponent();
         }
-        internal singleton s { get; set; }
+
+
+        
         private void estado_resultado_Load(object sender, EventArgs e)
         {
             s = singleton.obtenerDatos();
@@ -284,7 +290,7 @@ namespace puntoVenta
                     utilidad_bruta = Convert.ToDouble(ds.Tables[0].Rows[0][2].ToString());
                     cobrado = Convert.ToDouble(ds.Tables[0].Rows[0][3].ToString());
                     pagado = Convert.ToDouble(ds.Tables[0].Rows[0][4].ToString());
-                    dataGridView1.Rows.Add(a.ToString(), ventas_netas.ToString("###,###,###,###,#0"), costo_ventas.ToString("###,###,###,###,#0"), utilidad_bruta.ToString("###,###,###,###,#0"), cobrado.ToString("###,###,###,###,#0"), pagado.ToString("###,###,###,###,#0"));
+                    dataGridView1.Rows.Add(a.ToString(), ventas_netas.ToString("N"), costo_ventas.ToString("N"), utilidad_bruta.ToString("N"), cobrado.ToString("N"), pagado.ToString("N"));
                     fila++;
                 }
                 MessageBox.Show("Finalizado");
