@@ -165,7 +165,7 @@ namespace puntoVenta
                 s.codigo_sucursal = ds.Tables[0].Rows[0][0].ToString();
                 s.codigo_empresa = ds.Tables[0].Rows[0][1].ToString();
                 menuPrincipal = new principal();
-                Utilidades.backupSql("", "");
+                Utilidades.backupSql(@"C:\Users\wilmer\Documents\GitHub\DLR-POS\proyecto\otros\backups\","punto_venta");
                 menuPrincipal.Show();
                 this.Hide();
                 
